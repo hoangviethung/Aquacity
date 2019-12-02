@@ -1,0 +1,63 @@
+header {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	z-index: 100;
+	background: linear-gradient(0deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.7) 85%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#ffffff", GradientType=1);
+
+	.row {
+		padding: 30px 0;
+		align-items: center;
+
+		@media (max-width: 1024px) {
+			padding: 10px 0;
+		}
+	}
+
+	.logo {
+		height: 40px;
+
+		img {
+			height: 100%;
+		}
+
+		@media (max-width: 1659px) {
+			height: 35px;
+		}
+
+		@media (max-width: 1024px) {
+			height: 30px;
+		}
+	}
+
+	.header-nav-icon {
+		margin-left: auto;
+		font-size: 35px;
+		text-transform: uppercase;
+		font-weight: 700;
+		color: map-get($mau, main);
+		cursor: pointer;
+		transition: all .4s ease-in-out;
+
+		@media (max-width: 1659px) {
+			font-size: 28px;
+		}
+
+		@media (max-width: 1024px) {
+			font-size: 22px;
+		}
+
+		@media (min-width: 1025px) {
+			&.active {
+				color: white;
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		background: white;
+		box-shadow: 0 0 8px rgba(black, .15);
+	}
+}

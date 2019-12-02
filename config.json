@@ -1,0 +1,24 @@
+{
+	"build": true,
+	"filePath": [
+		"./src/about.pug"
+	],
+	"vendor": {
+		"font": [
+			"src/fonts/**",
+			"bower_components/mdi/fonts/**",
+			"bower_components/font-awesome/webfonts/**"
+		],
+		"js": [
+			"bower_components/object-fit-images/dist/ofi.browser.js",
+			"bower_components/lazysizes/lazysizes.js",
+			"bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.js",
+			"bower_components/jquery/dist/jquery.js",
+			"bower_components/fancybox/dist/jquery.fancybox.js"
+		],
+		"css": [
+			"bower_components/swiper/dist/css/swiper.css",
+			"bower_components/fancybox/dist/jquery.fancybox.css"
+		]
+	}
+}

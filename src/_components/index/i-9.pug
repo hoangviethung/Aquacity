@@ -1,0 +1,34 @@
+.section.fp-section#sec-9
+	.img
+		img.ofcv(src="./assets/index/i_9.jpg", alt="")
+	.content.row.no-gutters
+		.title-block
+			h2.title đăng ký nhận thông tin dự án
+			.tagline
+				img(src="./assets/tagline.png", alt="")
+		form
+			p Quý khách vui lòng để lại thông tin, chúng tôi sẽ liên hệ ngay
+			.row
+				.col-sm-6.form-group
+					input(type="text" name="FullName" placeholder="Họ tên")
+				.col-sm-6.form-group
+					input(type="text" name="Address" placeholder="Địa chỉ")
+				.col-sm-6.form-group
+					input(type="text" name="Phone" placeholder="Điện thoại")
+				.col-sm-6.form-group
+					input(type="text" name="Email" placeholder="Email")
+				.col-12.form-group
+					textarea(name="content" placeholder="Nội dung")
+			p Bạn quan tâm đến dự án nào?
+			.form-checks
+				.form-check
+					input#project-1(type="radio" name="Projects")
+					label(for="project-1") The Grand Villas
+				.form-check
+					input#project-2(type="radio" name="Projects")
+					label(for="project-2") The Elite
+				.form-check
+					input#project-3(type="radio" name="Projects")
+					label(for="project-3") The Stella
+			.form-button
+				button.btn.btn-discover(type='button') Đăng ký ngay

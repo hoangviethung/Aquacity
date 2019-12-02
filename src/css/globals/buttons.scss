@@ -1,0 +1,46 @@
+.btn {
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	border: 0;
+	padding: 0;
+}
+
+.btn-discover {
+	text-transform: uppercase;
+	font-weight: 700;
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	color: map-get($mau, main);
+	background-image: url('../assets/bg_btn_discover.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	// background-image: url('/Content/Resources/assets/bg_btn_discover.png');
+
+	&:hover {
+		color: #ffffff;
+		background: rgb(7, 65, 76);
+		background: linear-gradient(90deg, rgba(7, 65, 76, 1) 0%, rgba(154, 201, 210, 1) 50%, rgba(7, 65, 76, 1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#07414c", endColorstr="#07414c", GradientType=1);
+	}
+
+	@media (min-width: 1025px) {
+		font-size: 19px;
+	}
+
+	@media (min-width: 1660px) {
+		font-size: 25px;
+	}
+}
+
+.btn-readmore {
+	display: inline-flex;
+	align-items: center;
+	color: #ffffff;
+	background-image: url('../assets/bg_btn_readmore.png');
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	width: 160px;
+	height: 28px;
+}

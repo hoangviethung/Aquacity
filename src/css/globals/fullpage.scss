@@ -1,0 +1,129 @@
+@media (min-width: 1025px) {
+	body {
+		overflow: hidden;
+	}
+
+	#fullpage {
+		position: relative;
+		height: 100vh;
+
+		.fp-section {
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			opacity: 0;
+			overflow: hidden;
+
+			&.sliding {
+				opacity: 1;
+				z-index: 2;
+			}
+
+			&.active {
+				z-index: 1;
+				opacity: 1;
+			}
+		}
+	}
+
+	#fullpage-navigation {
+		position: fixed;
+		right: 0px;
+		bottom: 230px;
+		z-index: 5;
+		justify-content: flex-end;
+		display: flex;
+		padding: 5px;
+		flex-direction: column;
+		background: rgba(map-get($mau, main), .5);
+		border-top-left-radius: 10px;
+		border-bottom-left-radius: 10px;
+
+		.item {
+			margin: 5px 0;
+
+			a {
+				color: white;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				height: 25px;
+				width: 25px;
+				border-radius: 50%;
+				font-size: 13px;
+				position: relative;
+
+				.title {
+					position: absolute;
+					right: 100%;
+					margin-right: 25px;
+					white-space: nowrap;
+					transform: translateX(25px);
+					transition: all .3s linear;
+					opacity: 0;
+					pointer-events: none;
+					font-size: 14px;
+				}
+			}
+
+			&:first-child {
+				margin-top: 0;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			&:hover {
+				a {
+					background: rgba(#e8de8b, .75);
+
+					.title {
+						transform: translateX(0);
+						opacity: 1;
+					}
+				}
+			}
+
+			&.active {
+				a {
+					background: #e8de8b;
+
+					span:not(.title) {
+						color: map-get($mau, main);
+					}
+				}
+			}
+		}
+
+		@media (min-width: 1660px) {
+			bottom: 270px;
+			padding: 8px;
+		}
+	}
+
+	#fullpage-mask {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		left: 0;
+		z-index: 106;
+		background: linear-gradient(45deg, rgba(232, 222, 139, 1) 0%, rgba(7, 65, 76, 1) 99%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e8de8b", endColorstr="#07414c", GradientType=1);
+
+		&.sliding {
+			z-index: 3;
+			// transition: all .4s linear;
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	#fullpage-navigation {
+		display: none;
+	}
+}
+
+// .section{
+// 	display: none;
+// }
