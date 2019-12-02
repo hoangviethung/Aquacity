@@ -81,27 +81,25 @@ const homepageAnimation = () => {
 	})();
 }
 
-
-// ==> Call functions here
-document.addEventListener('DOMContentLoaded', () => {
-	// GGMapInit();
-	homepageAnimation();
-	objectFitImages('.ofcv');
-	objectFitImages('.ofct');
-	// Loading();
-
+const imageMap = () => {
 	Array.from(document.querySelectorAll('area')).forEach(item => {
 		const marker = document.createElement('div');
 		const infoMarker = document.createElement('div');
+		marker.classList.add('marker');
+		infoMarker.classList.add('info-marker');
 		item.addEventListener('click', e => {
 			e.preventDefault();
 		})
 		item.addEventListener('mouseenter', e => {
-			marker.classList.add('marker');
 			const size = Number(item.getAttribute('coords').split(',')[2]);
 			const top = Number(item.getAttribute('coords').split(',')[1]);
 			const left = Number(item.getAttribute('coords').split(',')[0]);
+			const img = document.createElement('img');
+			const imageUrl = item.getAttribute('href');
 			const offsetTop = document.querySelector('.imgmap').getBoundingClientRect().top;
+			img.setAttribute('src', imageUrl);
+			infoMarker.innerHTML = img.outerHTML
+
 			marker.setAttribute('style', `
 				position: absolute;
 				background: rgba(7, 65, 76,.35);
@@ -114,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
 				top: ${top - (size * 0.95) + offsetTop + 0.5}px;
 				left: ${left - (size * 0.95)}px;
 			`);
+
 			if (left - (size * 0.95) + 50 <= Number(window.innerWidth - 450 - 60)) {
 				infoMarker.setAttribute('style', `
 					position: absolute;
@@ -124,8 +123,11 @@ document.addEventListener('DOMContentLoaded', () => {
 					box-shadow: 0 0 12px rgba(255,255,255,.35);
 					padding: 15px;
 					margin-left: 50px;
+					transform-origin: 0 0;
 					top: ${top - (size * 0.95) + offsetTop}px;
 					left: ${left - (size * 0.95)}px;
+					transform: scale(0.5);
+					opacity: 0;
 				`);
 			} else {
 				infoMarker.setAttribute('style', `
@@ -136,24 +138,37 @@ document.addEventListener('DOMContentLoaded', () => {
 					border-radius: 10px;
 					box-shadow: 0 0 12px rgba(255,255,255,.35);
 					padding: 15px;
+					transform-origin: 100% 0;
 					margin-left: -${50 + size}px;
 					top: ${top - (size * 0.95) + offsetTop}px;
 					left: ${left - (size * 0.95) + 50 - 450}px;
+					transform: scale(0.5);
+					opacity: 0;
 				`);
 			}
-			// if(infoMarker.innerHeight)
-			console.log(infoMarker.innerHeight);
 			
-			const imageUrl = item.getAttribute('href');
-			const img = document.createElement('img')
-			img.setAttribute('src', imageUrl);
-			infoMarker.innerHTML = img.outerHTML
 			document.querySelector('body').append(marker);
 			document.querySelector('body').append(infoMarker);
+
+			setTimeout(() => {
+				infoMarker.classList.add('active');
+			}, 150);
 		});
 		item.addEventListener('mouseout', e => {
 			marker.parentNode.removeChild(marker);
 			infoMarker.parentNode.removeChild(infoMarker);
+			infoMarker.classList.remove('active');
 		})
 	})
+}
+
+
+// ==> Call functions here
+document.addEventListener('DOMContentLoaded', () => {
+	// GGMapInit();
+	homepageAnimation();
+	objectFitImages('.ofcv');
+	objectFitImages('.ofct');
+	// Loading();
+	imageMap();
 });
