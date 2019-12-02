@@ -1,0 +1,26 @@
+.info-marker {
+	transition: all .3s ease-in-out;
+	z-index: 20;
+	width: 450px;
+	background: rgb(7, 65, 76);
+	border-radius: 10px;
+	box-shadow: 0 0 20px rgba(0,0,0, .5);
+	padding: 15px;
+	transform: scale(0.5);
+	opacity: 0;
+	position: absolute;
+
+	&.active {
+		transform: scale(1) !important;
+		opacity: 1 !important;
+	}
+}
+
+.marker {
+	z-index: 20;
+	position: absolute;
+	pointer-events: none;
+	border-radius: 50%;
+	border: 2px solid white;
+	background: rgba(7, 65, 76, .35);
+}

@@ -212,12 +212,3 @@ main {
 		display: none;
 	}
 }
-
-.info-marker {
-	transition: all .3s ease-in-out;
-
-	&.active {
-		transform: scale(1) !important;
-		opacity: 1 !important;
-	}
-}

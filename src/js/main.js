@@ -4,7 +4,6 @@ import {
 } from '../../vendors/tab';
 import Swiper from "swiper";
 import Loading from "../../vendors/loading";
-// import DATABG from '../../vendors/bg';
 // export for others scripts to use
 // import GGMapInit from "../../vendors/map";
 
@@ -82,6 +81,8 @@ const homepageAnimation = () => {
 }
 
 const imageMap = () => {
+
+	$('map').imageMapResize();
 	Array.from(document.querySelectorAll('area')).forEach(item => {
 		const marker = document.createElement('div');
 		const infoMarker = document.createElement('div');
@@ -91,68 +92,53 @@ const imageMap = () => {
 			e.preventDefault();
 		})
 		item.addEventListener('mouseenter', e => {
-			const size = Number(item.getAttribute('coords').split(',')[2]);
-			const top = Number(item.getAttribute('coords').split(',')[1]);
-			const left = Number(item.getAttribute('coords').split(',')[0]);
-			const img = document.createElement('img');
-			const imageUrl = item.getAttribute('href');
-			const offsetTop = document.querySelector('.imgmap').getBoundingClientRect().top;
-			img.setAttribute('src', imageUrl);
-			infoMarker.innerHTML = img.outerHTML
+			const mouseEnterHandler = () => {
+				return new Promise((resolve, reject) => {
+					const size = Number(item.getAttribute('coords').split(',')[2]);
+					const top = Number(item.getAttribute('coords').split(',')[1]);
+					const left = Number(item.getAttribute('coords').split(',')[0]);
+					const img = document.createElement('img');
+					const imageUrl = item.getAttribute('href');
+					const offsetTop = document.querySelector('.imgmap').getBoundingClientRect().top;
+					img.setAttribute('src', imageUrl);
+					infoMarker.innerHTML = img.outerHTML
 
-			marker.setAttribute('style', `
-				position: absolute;
-				background: rgba(7, 65, 76,.35);
-				z-index: 20;
-				pointer-events: none;
-				border-radius: 50%;
-				width: ${size * 2}px;
-				height: ${size * 2}px;
-				border: 2px solid white;
-				top: ${top - (size * 0.95) + offsetTop + 0.5}px;
-				left: ${left - (size * 0.95)}px;
-			`);
-
-			if (left - (size * 0.95) + 50 <= Number(window.innerWidth - 450 - 60)) {
-				infoMarker.setAttribute('style', `
-					position: absolute;
-					z-index: 20;
-					width: 450px;
-					background: rgb(7, 65, 76);
-					border-radius: 10px;
-					box-shadow: 0 0 12px rgba(255,255,255,.35);
-					padding: 15px;
-					margin-left: 50px;
-					transform-origin: 0 0;
-					top: ${top - (size * 0.95) + offsetTop}px;
+					marker.setAttribute('style', `
+					top: ${top - (size * 0.95) + offsetTop + 0.5}px;
 					left: ${left - (size * 0.95)}px;
-					transform: scale(0.5);
-					opacity: 0;
+					width: ${size * 2}px;
+					height: ${size * 2}px;
 				`);
-			} else {
-				infoMarker.setAttribute('style', `
-					position: absolute;
-					z-index: 20;
-					width: 450px;
-					background: rgb(7, 65, 76);
-					border-radius: 10px;
-					box-shadow: 0 0 12px rgba(255,255,255,.35);
-					padding: 15px;
-					transform-origin: 100% 0;
-					margin-left: -${50 + size}px;
-					top: ${top - (size * 0.95) + offsetTop}px;
-					left: ${left - (size * 0.95) + 50 - 450}px;
-					transform: scale(0.5);
-					opacity: 0;
-				`);
-			}
-			
-			document.querySelector('body').append(marker);
-			document.querySelector('body').append(infoMarker);
 
-			setTimeout(() => {
-				infoMarker.classList.add('active');
-			}, 150);
+					if (left - (size * 0.95) + 50 <= Number(window.innerWidth - 450 - 60)) {
+						infoMarker.setAttribute('style', `
+						top: ${top - (size * 0.95) + offsetTop}px;
+						left: ${left - (size * 0.95)}px;
+						margin-left: 50px;
+						transform-origin: 0 0;
+					`);
+					} else {
+						infoMarker.setAttribute('style', `
+						top: ${top - (size * 0.95) + offsetTop}px;
+						left: ${left - (size * 0.95) + 50 - 450}px;
+						margin-left: -${50 + size}px;
+						transform-origin: 100% 0;
+					`);
+					}
+					document.querySelector('body').append(marker);
+					document.querySelector('body').append(infoMarker);
+
+					resolve();
+				})
+			}
+
+			infoMarker.classList.remove('active');
+			infoMarker.setAttribute('style', "");
+			mouseEnterHandler().then(() => {
+				setTimeout(() => {
+					infoMarker.classList.add('active');
+				}, 50);
+			});
 		});
 		item.addEventListener('mouseout', e => {
 			marker.parentNode.removeChild(marker);
@@ -166,6 +152,7 @@ const imageMap = () => {
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
+	imageMap();
 	homepageAnimation();
 	objectFitImages('.ofcv');
 	objectFitImages('.ofct');

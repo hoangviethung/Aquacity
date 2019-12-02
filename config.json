@@ -14,6 +14,7 @@
 			"bower_components/lazysizes/lazysizes.js",
 			"bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.js",
 			"bower_components/jquery/dist/jquery.js",
+			"vendors/imagemap.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js"
 		],
 		"css": [

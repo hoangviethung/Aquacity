@@ -63,6 +63,21 @@
 					opacity: 0;
 					pointer-events: none;
 					font-size: 14px;
+					background: map-get($mau, main);
+					padding: 0 10px;
+					height: 30px;
+					display: flex;
+					align-items: center;
+
+					&:before {
+						position: absolute;
+						top: 0;
+						content: '';
+						border-top: 15px solid transparent;
+						border-bottom: 15px solid transparent;
+						border-left: 12px solid map-get($mau, main);
+						left: 100%;
+					}
 				}
 			}
 
