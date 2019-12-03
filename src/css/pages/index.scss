@@ -1509,6 +1509,12 @@
 				h3 {
 					font-size: 18px;
 					color: map-get($mau, main);
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 2;
+					height: 54px;
 				}
 			}
 
@@ -1578,7 +1584,7 @@
 						display: -webkit-box;
 						-webkit-box-orient: vertical;
 						-webkit-line-clamp: 3;
-						max-height: 72px;
+						height: 72px;
 					}
 				}
 
