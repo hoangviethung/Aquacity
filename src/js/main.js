@@ -9,7 +9,8 @@ import Loading from "../../vendors/loading";
 
 const homepageAnimation = () => {
 	const fullpage = () => {
-		if (window.innerWidth >= 1025) {
+		const device = navigator.platform.includes('Win32') || navigator.platform.includes('MacIntel');
+		if (window.innerWidth >= 1025 && device) {
 			if (document.getElementById('fullpage')) {
 				return new FullPage('#fullpage', {
 					selector: '.fp-section',
