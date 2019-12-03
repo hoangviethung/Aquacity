@@ -104,6 +104,7 @@
 	}
 
 	@media (max-width: 1024px) {
+		padding: 20px 10px 0;
 
 		.content {
 			background: map-get($mau, main);
@@ -112,6 +113,7 @@
 			.text {
 				h2 {
 					color: white;
+					font-size: 20px;
 				}
 
 				.btn-discover {
@@ -355,7 +357,7 @@
 	@media (min-width: 1025px) {
 		padding: 100px 25px 50px;
 
-		.col-lg-6.col-xxl-auto {
+		.col-md-6.col-xxl-auto {
 			opacity: 0;
 			transition: all .4s linear;
 			transform: translateX(-15px);
@@ -367,7 +369,7 @@
 				transform: translateY(0);
 			}
 
-			.col-lg-6.col-xxl-auto {
+			.col-md-6.col-xxl-auto {
 				opacity: 1;
 				transform: translateX(0px);
 			}
@@ -566,8 +568,8 @@
 			}
 
 			.item {
-				flex: 0 0 50%;
-				max-width: 50%;
+				flex: 0 0 25%;
+				max-width: 25%;
 				padding: 0 10px;
 				margin-bottom: 30px;
 				text-align: center;
@@ -601,6 +603,13 @@
 					padding: 0 35px;
 					height: 45px;
 				}
+			}
+		}
+
+		@media (max-width: 768px) {
+			.item {
+				max-width: 50%;
+				flex: 0 0 50%;
 			}
 		}
 	}
@@ -805,12 +814,12 @@
 				.text {
 					flex: 0 0 100%;
 					max-width: 100%;
-					padding: 10px 0;
+					padding: 7px 0;
 
 					h3 {
 						font-weight: 500;
 						color: map-get($mau, main);
-						font-size: 18px;
+						font-size: 16px;
 					}
 				}
 			}
@@ -1251,6 +1260,13 @@
 	}
 
 	@media (max-width: 1024px) {
+
+		.title-block {
+			.main-title {
+				margin-bottom: 0;
+			}
+		}
+
 		.video-block {
 			display: none;
 			background: black;
@@ -1279,6 +1295,12 @@
 						img {
 							width: 100%;
 						}
+					}
+				}
+
+				.text {
+					h3 {
+						font-size: 16px;
 					}
 				}
 
