@@ -21,6 +21,7 @@
     "lazysizes": "5.1.0",
     "object-fit-images": "*",
     "font-awesome": "^5.11.2",
-    "mdi": "^4.6.95"
+    "mdi": "^4.6.95",
+    "linearicons": "^1.0.2"
   }
 }

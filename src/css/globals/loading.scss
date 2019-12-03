@@ -6,7 +6,8 @@
 	left: 0;
 	z-index: 99999;
 	transition: .8s;
-	background: #fff;
+	background: linear-gradient(45deg, rgba(232, 222, 139, 1) 0%, rgba(7, 65, 76, 1) 99%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e8de8b", endColorstr="#07414c", GradientType=1);
 	width: 100%;
 	height: 100%;
 
@@ -40,8 +41,96 @@
 		position: absolute;
 		top: 50%;
 		left: 50%;
-		margin-top: -100px;
-		width: 150px;
-		height: 150px
+		margin-top: -50px;
+		width: 750px;
+		max-width: 100%;
+
+		svg {
+			path {
+				stroke-dasharray: 835;
+				stroke-dashoffset: 835;
+				stroke-width: 2;
+				stroke: #e8de8b;
+				fill: rgba(0, 0, 0, 0);
+				animation: dashOffset 2s linear forwards, fillColor .5s linear forwards;
+				animation-delay: 0s, 1.6s;
+			}
+		}
+	}
+}
+
+@keyframes dashOffset {
+	to {
+		stroke-dashoffset: 0;
+	}
+}
+
+@keyframes fillColor {
+	to {
+		stroke: rgba(0, 0, 0, 0);
+		fill: map-get($mau, main);
+	}
+}
+
+body {
+	header .logo {
+		transform: translateX(-25px);
+		opacity: 0;
+		transition: all .4s linear;
+	}
+
+	header .header-nav-icon {
+		transform: translateX(25px);
+		opacity: 0;
+		transition-delay: .2s;
+		transition: all .4s linear;
+	}
+
+	#widget-left {
+		transform: translateY(100%);
+		opacity: 0;
+		transition-delay: .6s;
+		transition: all .4s linear;
+	}
+
+	#widget-right {
+		transform: translateY(100%);
+		opacity: 0;
+		transition-delay: .8s;
+		transition: all .4s linear;
+	}
+
+	#fullpage-navigation {
+		transform: translateX(100%);
+		opacity: 0;
+		transition-delay: 1.2s;
+		transition: all .4s linear;
+	}
+
+	&.show-page {
+		header .logo {
+			transform: translateX(0);
+			opacity: 1;
+		}
+
+		header .header-nav-icon {
+			transform: translateX(0);
+			opacity: 1;
+		}
+
+		#widget-left {
+			transform: translateY(0%);
+			opacity: 1;
+		}
+
+		#widget-right {
+			transform: translateY(0%);
+			opacity: 1;
+		}
+
+		#fullpage-navigation {
+			transform: translateX(0);
+			opacity: 1;
+		}
 	}
 }

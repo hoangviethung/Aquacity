@@ -39,7 +39,7 @@ module.exports = class FullPage {
 				top: '100%',
 			}, {
 				top: '0%',
-				duration: 1.2,
+				duration: .8,
 				onComplete: function(e) {
 					currentSection.classList.remove('active');
 					currentSection.setAttribute('data-active', -1);
@@ -70,7 +70,7 @@ module.exports = class FullPage {
 				bottom: '100%',
 			}, {
 				bottom: '0%',
-				duration: 1.2,
+				duration: .8,
 				onComplete: function(e) {
 					currentSection.classList.remove('active');
 					currentSection.setAttribute('data-active', -1);

@@ -39,37 +39,70 @@ const homepageAnimation = () => {
 
 	const sliderSection7 = () => {
 		if (document.getElementById('sec-7')) {
-			if (window.innerWidth >= 1025) {
-				return new Swiper('#sec-7 .swiper-container', {
-					slidesPerView: 3,
-					observer: true,
-					observeParents: true,
-					spaceBetween: 10,
-					loop: true,
-					on: {
-						init: function() {
-							Array.from(document.querySelectorAll('#sec-7 .video-items .item')).forEach(item => {
-								item.addEventListener('click', () => {
-									const url = item.querySelector('a').getAttribute('data-href');
-									const imgUrl = item.querySelector('.img img').getAttribute('src')
-
-									document.querySelector('#sec-7 .video-block>a').setAttribute('href', url);
-									document.querySelector('#sec-7 .video-block>a>img').setAttribute('src', imgUrl);
-								})
-							})
-						}
+			return new Swiper('#sec-7 .swiper-container', {
+				slidesPerView: 1,
+				observer: true,
+				observeParents: true,
+				spaceBetween: 10,
+				speed: 900,
+				loop: true,
+				navigation: {
+					prevEl: '#sec-7 .video-items .swiper-prev',
+					nextEl: '#sec-7 .video-items .swiper-next'
+				},
+				breakpoints: {
+					1025: {
+						slidesPerView: 3,
+					},
+					576: {
+						slidesPerView: 2,
 					}
-				})
-			} else {
-				let tempHTML = '';
-				Array.from(document.querySelectorAll('#sec-7 .video-items .item')).forEach(item => {
-					const url = item.querySelector('a').getAttribute('data-href');
-					item.querySelector('a').setAttribute('href', url)
-					item.querySelector('a').setAttribute('data-fancybox', '')
-					tempHTML += item.outerHTML.toString();
-				})
-				document.querySelector('#sec-7 .video-items').innerHTML = tempHTML;
-			}
+				},
+				on: {
+					init: function() {
+						Array.from(document.querySelectorAll('#sec-7 .video-items .item')).forEach(item => {
+							item.addEventListener('click', () => {
+								const url = item.querySelector('a').getAttribute('data-href');
+								const imgUrl = item.querySelector('.img img').getAttribute('src')
+
+								document.querySelector('#sec-7 .video-block>a').setAttribute('href', url);
+								document.querySelector('#sec-7 .video-block>a>img').setAttribute('src', imgUrl);
+							})
+						})
+					}
+				}
+			})
+			// if (window.innerWidth >= 1025) {
+			// 	return new Swiper('#sec-7 .swiper-container', {
+			// 		slidesPerView: 3,
+			// 		observer: true,
+			// 		observeParents: true,
+			// 		spaceBetween: 10,
+			// 		loop: true,
+			// 		on: {
+			// 			init: function() {
+			// 				Array.from(document.querySelectorAll('#sec-7 .video-items .item')).forEach(item => {
+			// 					item.addEventListener('click', () => {
+			// 						const url = item.querySelector('a').getAttribute('data-href');
+			// 						const imgUrl = item.querySelector('.img img').getAttribute('src')
+
+			// 						document.querySelector('#sec-7 .video-block>a').setAttribute('href', url);
+			// 						document.querySelector('#sec-7 .video-block>a>img').setAttribute('src', imgUrl);
+			// 					})
+			// 				})
+			// 			}
+			// 		}
+			// 	})
+			// } else {
+			// 	let tempHTML = '';
+			// 	Array.from(document.querySelectorAll('#sec-7 .video-items .item')).forEach(item => {
+			// 		const url = item.querySelector('a').getAttribute('data-href');
+			// 		item.querySelector('a').setAttribute('href', url)
+			// 		item.querySelector('a').setAttribute('data-fancybox', '')
+			// 		tempHTML += item.outerHTML.toString();
+			// 	})
+			// 	document.querySelector('#sec-7 .video-items').innerHTML = tempHTML;
+			// }
 		}
 	}
 
@@ -160,5 +193,5 @@ document.addEventListener('DOMContentLoaded', () => {
 	homepageAnimation();
 	objectFitImages('.ofcv');
 	objectFitImages('.ofct');
-	// Loading();
+	Loading();
 });

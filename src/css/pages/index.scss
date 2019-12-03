@@ -400,6 +400,10 @@
 			top: 130px;
 			left: 80px;
 			z-index: 5;
+			transform: translateX(-28px);
+			opacity: 0;
+			transition: all .4s ease-in-out;
+
 		}
 
 		@media (min-width: 1660px) {
@@ -701,6 +705,11 @@
 					}
 				}
 			}
+
+			.title-block {
+				transform: translateX(0);
+				opacity: 1;
+			}
 		}
 	}
 }
@@ -722,6 +731,10 @@
 
 			@media (min-width: 1025px) {
 				font-size: 50px;
+				transform: translateX(-20px);
+				opacity: 0;
+				transition: all .4s linear;
+
 			}
 
 			@media (min-width: 1660px) {
@@ -734,6 +747,10 @@
 
 			@media (min-width: 1025px) {
 				font-size: 28px;
+				transform: translateX(-20px);
+				opacity: 0;
+				transition-delay: .2s;
+				transition: all .5s linear;
 			}
 
 			@media (min-width: 1660px) {
@@ -766,6 +783,17 @@
 				width: 100%;
 				top: 0;
 				left: 0;
+			}
+		}
+
+		&.active {
+			.title-block {
+
+				h2,
+				h3 {
+					transform: translateX(0);
+					opacity: 1;
+				}
 			}
 		}
 	}
@@ -1157,6 +1185,7 @@
 		position: absolute;
 		bottom: 0;
 		width: 100%;
+		padding: 0 40px;
 		display: flex;
 		justify-content: center;
 		z-index: 10;
@@ -1197,6 +1226,30 @@
 				}
 			}
 		}
+	}
+
+	.swiper-prev,
+	.swiper-next {
+		position: absolute;
+		top: 50%;
+		width: 36px;
+		height: 36px;
+		background: #e8de8b;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 10;
+		color: map-get($mau, main);
+		border-radius: 5px;
+		cursor: pointer;
+	}
+
+	.swiper-prev {
+		left: 10px;
+	}
+
+	.swiper-next {
+		right: 10px;
 	}
 
 	@media (min-width: 1025px) {
@@ -1284,25 +1337,29 @@
 		}
 
 		.video-items {
-			position: static;
+			position: relative;
 			flex-wrap: wrap;
-			padding: 20px;
+			padding: 10px 30px;
+
+			.swiper-slide {
+				background: #faf8ef;
+			}
 
 			.item {
 				flex: 0 0 100%;
 				max-width: 100%;
 
 				a {
-					display: flex;
+					// display: flex;
 
-					.img {
-						flex: 0 0 240px;
-						max-width: 240px;
+					// .img {
+					// 	flex: 0 0 240px;
+					// 	max-width: 240px;
 
-						img {
-							width: 100%;
-						}
-					}
+					// 	img {
+					// 		width: 100%;
+					// 	}
+					// }
 				}
 
 				.text {

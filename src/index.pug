@@ -33,17 +33,46 @@ block main
 		include _components/index/i-8
 		include _components/index/i-9
 		include _components/index/i-10
-	#fullpage-mask
 	#fullpage-navigation
-		- for(let i=1;i<11;i++)
-			- if(i===1)
-				.item
-					a(href='#sec-'+i)
-						span.title Title #{i}
-						span #{i}
-			-else
-				.item
-					a(href='#sec-'+i)
-						span.title Title #{i}
-						span #{i}
+		.item
+			a(href='#sec-1')
+				span.title Trang chủ
+				span 1
+		.item
+			a(href='#sec-2')
+				span.title Mặt bằng
+				span 2
+		.item
+			a(href='#sec-3')
+				span.title Vị trí
+				span 3
+		.item
+			a(href='#sec-4')
+				span.title Sinh thái
+				span 4
+		.item
+			a(href='#sec-5')
+				span.title Tiện ích
+				span 5
+		.item
+			a(href='#sec-6')
+				span.title Phân khu
+				span 6
+		.item
+			a(href='#sec-7')
+				span.title Thư viện
+				span 7
+		.item
+			a(href='#sec-8')
+				span.title Tin tức
+				span 8
+		.item
+			a(href='#sec-9')
+				span.title Liên hệ
+				span 9
+		.item
+			a(href='#sec-10')
+				span.title Thông tin chung
+				span 10
+	#fullpage-mask
 block scripts
