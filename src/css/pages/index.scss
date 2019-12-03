@@ -163,8 +163,9 @@
 
 	.img {
 		position: relative;
-		background-color: #faf8ef;
+		// background-color: #faf8ef;
 		opacity: 0;
+		padding-left: 20px;
 		transition: all .5s linear;
 
 		&:before {
@@ -173,7 +174,7 @@
 			top: 0;
 			right: 100%;
 			width: 30px;
-			content: '';
+			// content: '';
 			background-color: #faf8ef;
 		}
 
@@ -629,12 +630,32 @@
 		width: 100%;
 		opacity: 0;
 
+		.sub-title {
+			text-transform: uppercase;
+			background-image: url('../assets/gradient_1.jpg');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-position: center;
+			font-size: 55px;
+			margin-bottom: 50px;
+
+			&.grad {
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+			}
+
+			@media (max-width: 1659.98px) {
+				margin-bottom: 30px;
+				font-size: 45px;
+			}
+		}
+
 		.text {
 			position: absolute;
 			width: 50%;
 			text-align: center;
 			top: 50%;
-			left: 50%;
+			left: 45%;
 			transform: translateY(-50%);
 
 			.item {
@@ -656,17 +677,26 @@
 					}
 				}
 
-				+.item {
-					margin-top: 90px;
-				}
 
 				@media (min-width: 1025px) {
 					font-size: 20px;
+
+					+.item {
+						margin-top: 45px;
+					}
 				}
 
 				@media (min-width: 1660px) {
 					font-size: 28px;
+
+					+.item {
+						margin-top: 90px;
+					}
 				}
+			}
+
+			@media (min-width: 1660px) {
+				left: 50%;
 			}
 		}
 
@@ -2007,6 +2037,7 @@
 }
 
 .fancybox-content#frame-2 {
+	margin-bottom: -40px;
 	overflow: visible;
 	padding: 15px;
 	background: map-get($mau, main);
@@ -2026,6 +2057,22 @@
 
 	.text {
 		padding-top: 20px;
+
+		.sub-title {
+			text-transform: uppercase;
+			background-image: url('../assets/gradient_1.jpg');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-position: center;
+			font-size: 28px;
+			margin-bottom: 15px;
+			text-align: center;
+
+			&.grad {
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+			}
+		}
 
 		.item {
 			p {
