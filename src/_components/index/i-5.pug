@@ -1,7 +1,5 @@
 .section.fp-section#sec-5
-	//- .img
-	//- 	img.ofcv(src="./assets/index/i_5.jpg", alt="")
-	.imgmap
+	.imgmap.desktop
 		img.ofcv(src="./assets/index/i_5.jpg", alt="" usemap="#imgmap201912216417" )
 		map#imgmap201912216417(name='imgmap201912216417')
 			area(shape='circle', alt='1', title='', coords='407,564,19', href='./assets/utilities/1.jpg', target='')
@@ -37,8 +35,42 @@
 			area(shape='circle', alt='10', title='', coords='778,423,19', href='./assets/utilities/10.jpg', target='')
 			area(shape='circle', alt='11', title='', coords='1209,300,19', href='./assets/utilities/11.jpg', target='')
 			area(shape='circle', alt='12', title='', coords='753,382,19', href='./assets/utilities/12.jpg', target='')
-
-	.container
+	.container.utilities-title
 		.title-block
 			h2 Tiện ích đa dạng
 			h3 Thăng hoa cuộc sống
+	.container.mobile
+		.utilities-list.row
+			.col-12
+				.img
+					img(src="./assets/index/i_5.jpg", alt="")
+			-for(let i =1; i<13; i++)
+				.col-6.col-sm-4
+					a(href="./assets/utilities/"+i+".jpg" data-fancybox="utilities_"+i)
+						.img
+							img(src="./assets/utilities/"+i+".jpg", alt="")
+						.text
+							-if(i==1)
+								h3 Đường dạo ven sông
+							-if(i==2)
+								h3 Bến du thuyền
+							-if(i==3)
+								h3 Công viên xanh
+							-if(i==4)
+								h3 Vườn ươm cây
+							-if(i==5)
+								h3 Bến thuyền Kayak
+							-if(i==6)
+								h3 Blubhouse & hồ bơi
+							-if(i==7)
+								h3 Aqua central mall
+							-if(i==8)
+								h3 Game center
+							-if(i==9)
+								h3 Khu vui chơi trẻ em
+							-if(i==10)
+								h3 Trường học các cấp
+							-if(i==11)
+								h3 Aqua sport complex
+							-if(i==12)
+								h3 Phòng khám đa khoa quốc tế

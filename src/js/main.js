@@ -81,7 +81,6 @@ const homepageAnimation = () => {
 }
 
 const imageMap = () => {
-
 	$('map').imageMapResize();
 	Array.from(document.querySelectorAll('area')).forEach(item => {
 		const marker = document.createElement('div');
@@ -93,7 +92,15 @@ const imageMap = () => {
 		})
 		item.addEventListener('mouseenter', e => {
 			const mouseEnterHandler = () => {
+				infoMarker.classList.remove('active');
+				infoMarker.setAttribute('style', "");
 				return new Promise((resolve, reject) => {
+					let boxSize;
+					if (window.innerWidth >= 1660) {
+						boxSize = 450;
+					} else {
+						boxSize = 350;
+					}
 					const size = Number(item.getAttribute('coords').split(',')[2]);
 					const top = Number(item.getAttribute('coords').split(',')[1]);
 					const left = Number(item.getAttribute('coords').split(',')[0]);
@@ -102,15 +109,13 @@ const imageMap = () => {
 					const offsetTop = document.querySelector('.imgmap').getBoundingClientRect().top;
 					img.setAttribute('src', imageUrl);
 					infoMarker.innerHTML = img.outerHTML
-
 					marker.setAttribute('style', `
-					top: ${top - (size * 0.95) + offsetTop + 0.5}px;
-					left: ${left - (size * 0.95)}px;
-					width: ${size * 2}px;
-					height: ${size * 2}px;
-				`);
-
-					if (left - (size * 0.95) + 50 <= Number(window.innerWidth - 450 - 60)) {
+						top: ${top - (size * 0.95) + offsetTop + 0.5}px;
+						left: ${left - (size * 0.95)}px;
+						width: ${size * 2}px;
+						height: ${size * 2}px;
+					`);
+					if (left - (size * 0.95) + 50 <= Number(window.innerWidth - boxSize - 60)) {
 						infoMarker.setAttribute('style', `
 						top: ${top - (size * 0.95) + offsetTop}px;
 						left: ${left - (size * 0.95)}px;
@@ -120,7 +125,7 @@ const imageMap = () => {
 					} else {
 						infoMarker.setAttribute('style', `
 						top: ${top - (size * 0.95) + offsetTop}px;
-						left: ${left - (size * 0.95) + 50 - 450}px;
+						left: ${left - (size * 0.95) + 50 - boxSize}px;
 						margin-left: -${50 + size}px;
 						transform-origin: 100% 0;
 					`);
@@ -132,14 +137,13 @@ const imageMap = () => {
 				})
 			}
 
-			infoMarker.classList.remove('active');
-			infoMarker.setAttribute('style', "");
 			mouseEnterHandler().then(() => {
 				setTimeout(() => {
 					infoMarker.classList.add('active');
 				}, 50);
 			});
 		});
+
 		item.addEventListener('mouseout', e => {
 			marker.parentNode.removeChild(marker);
 			infoMarker.parentNode.removeChild(infoMarker);
@@ -147,7 +151,6 @@ const imageMap = () => {
 		})
 	})
 }
-
 
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
@@ -157,5 +160,4 @@ document.addEventListener('DOMContentLoaded', () => {
 	objectFitImages('.ofcv');
 	objectFitImages('.ofct');
 	// Loading();
-	imageMap();
 });
