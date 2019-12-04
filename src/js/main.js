@@ -4,6 +4,17 @@ import ImageMapCanvas from "./lib/ImageMapCanvas";
 import Swiper from "../../bower_components/swiper/package/js/swiper.esm.browser.bundle";
 import Loading from "./lib/loading";
 
+(() => {
+	Array.from(document.querySelectorAll('.svg-image')).forEach(item => {
+		const imgUrl = item.getAttribute('src');
+		const httpRequest = new XMLHttpRequest();
+		httpRequest.onload = data => {
+			item.parentElement.innerHTML = data.srcElement.response;
+		}
+		httpRequest.open('GET', imgUrl)
+		httpRequest.send();
+	})
+})()
 
 const fullpage = () => {
 	const device = navigator.platform.includes('Win32') || navigator.platform.includes('MacIntel');
@@ -93,18 +104,6 @@ const imageMapCanvas = () => {
 	const imageMap_2 = new ImageMapCanvas('#sec-5 .imgMapCanvas');
 }
 
-const getSVGContent = () => {
-	Array.from(document.querySelectorAll('.svg-image')).forEach(item => {
-		const imgUrl = item.getAttribute('src');
-		const httpRequest = new XMLHttpRequest();
-		httpRequest.onload = data => {
-			item.parentElement.innerHTML = data.srcElement.response;
-		}
-		httpRequest.open('GET', imgUrl)
-		httpRequest.send();
-	})
-}
-
 const changeMapByTime = () => {
 	const section3 = document.getElementById('sec-3');
 	Array.from(section3.querySelectorAll('.tab-titles .tab-title')).forEach(item => {
@@ -117,6 +116,7 @@ const changeMapByTime = () => {
 	})
 }
 
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -125,7 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	activeFrame2Section4();
 	sliderSection7();
 	imageMapCanvas();
-	getSVGContent();
 	changeMapByTime();
 	objectFitImages('.ofcv');
 	objectFitImages('.ofct');

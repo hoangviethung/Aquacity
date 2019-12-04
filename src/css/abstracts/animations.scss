@@ -27,3 +27,17 @@
 		stroke-dashoffset: 0;
 	}
 }
+
+@keyframes LogoDashOffset {
+	to {
+		stroke-dashoffset: 0;
+		opacity: 1;
+	}
+}
+
+@keyframes fillColor {
+	to {
+		stroke: rgba(0, 0, 0, 0);
+		fill: #e8de8b;
+	}
+}
