@@ -85,37 +85,6 @@ const sliderSection7 = () => {
 				}
 			}
 		})
-		// if (window.innerWidth >= 1025) {
-		// 	return new Swiper('#sec-7 .swiper-container', {
-		// 		slidesPerView: 3,
-		// 		observer: true,
-		// 		observeParents: true,
-		// 		spaceBetween: 10,
-		// 		loop: true,
-		// 		on: {
-		// 			init: function() {
-		// 				Array.from(document.querySelectorAll('#sec-7 .video-items .item')).forEach(item => {
-		// 					item.addEventListener('click', () => {
-		// 						const url = item.querySelector('a').getAttribute('data-href');
-		// 						const imgUrl = item.querySelector('.img img').getAttribute('src')
-
-		// 						document.querySelector('#sec-7 .video-block>a').setAttribute('href', url);
-		// 						document.querySelector('#sec-7 .video-block>a>img').setAttribute('src', imgUrl);
-		// 					})
-		// 				})
-		// 			}
-		// 		}
-		// 	})
-		// } else {
-		// 	let tempHTML = '';
-		// 	Array.from(document.querySelectorAll('#sec-7 .video-items .item')).forEach(item => {
-		// 		const url = item.querySelector('a').getAttribute('data-href');
-		// 		item.querySelector('a').setAttribute('href', url)
-		// 		item.querySelector('a').setAttribute('data-fancybox', '')
-		// 		tempHTML += item.outerHTML.toString();
-		// 	})
-		// 	document.querySelector('#sec-7 .video-items').innerHTML = tempHTML;
-		// }
 	}
 }
 

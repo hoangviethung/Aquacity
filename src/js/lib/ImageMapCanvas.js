@@ -30,12 +30,32 @@ export default class ImageMapCanvas {
 		this.canvasContext.restore();
 	}
 
+	drawCircle = (coords) => {
+		// set style
+		this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
+		this.canvasContext.fillStyle = 'rgba(7, 65, 76, .4)';
+		this.canvasContext.lineWidth = 4;
+		const coordsRef = coords.split(",");
+		this.canvasContext.save();
+		this.canvasContext.beginPath();
+		this.canvasContext.arc(coordsRef[0], coordsRef[1], coordsRef[2], 0, 2 * Math.PI);
+		this.canvasContext.closePath();
+		this.canvasContext.stroke();
+		this.canvasContext.fill();
+		this.canvasContext.restore();
+	}
+
 	registerEvents() {
 		Array.from(this.map.querySelectorAll('area')).forEach(mapArea => {
-			let coords;
 			mapArea.addEventListener('mouseover', () => {
-				coords = mapArea.getAttribute('coords');
-				this.drawPolygon(coords, true);
+				let coords = mapArea.getAttribute('coords');
+				let shape = mapArea.getAttribute('shape');
+				if (shape === 'poly') {
+					this.drawPolygon(coords);
+				}
+				if (shape === 'circle') {
+					this.drawCircle(coords);
+				}
 			});
 			mapArea.addEventListener('mouseout', () => {
 				this.clearAllImageMap();
