@@ -22,17 +22,19 @@
 	.img {
 		padding-left: 20px;
 		max-width: 100%;
+		// background: #faf8ef;
 
 		.road-path {
 			opacity: 0;
-			fill: #003b28;
+			fill: #7d998b;
 			transition: .3s ease-in-out;
 
-			polygon,
-			path {
-				stroke-dasharray: 50;
+			.road {
+				stroke-dasharray: 25;
 				stroke-dashoffset: 200;
-				animation: MapDash infinite 2s forwards;
+				animation: MapDash infinite 5s linear backwards;
+				// stroke: #e8de8b;
+				stroke: map-get($mau, main);
 			}
 
 			&.active {
@@ -181,7 +183,10 @@
 		}
 
 		.img {
-			width: 100%;
+			max-width: 109%;
+			width: 109%;
+			margin-top: -7%;
+			margin-left: -4%;
 		}
 
 		.description {

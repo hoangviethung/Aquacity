@@ -29,12 +29,12 @@ module.exports = class FullPage {
 		const _this = this;
 		const mask = document.getElementById('fullpage-mask');
 		// Run animation when change section
+		const hrefValue = nextSection.getAttribute('id');
+		mask.classList.add('sliding');
+		nextSection.setAttribute('data-active', 1);
+		this.setActiveNavigation(hrefValue);
 		if (direction === 'down') {
 			mask.style.top = '100%';
-			mask.classList.add('sliding');
-			nextSection.setAttribute('data-active', 1);
-			const hrefValue = nextSection.getAttribute('id');
-			this.setActiveNavigation(hrefValue);
 			gsap.fromTo(mask, {
 				top: '100%',
 			}, {
@@ -62,10 +62,6 @@ module.exports = class FullPage {
 			})
 		} else {
 			mask.style.bottom = '100%';
-			mask.classList.add('sliding');
-			nextSection.setAttribute('data-active', 1);
-			const hrefValue = nextSection.getAttribute('id');
-			this.setActiveNavigation(hrefValue);
 			gsap.fromTo(mask, {
 				bottom: '100%',
 			}, {
@@ -92,89 +88,44 @@ module.exports = class FullPage {
 				}
 			})
 		}
-		// if (direction === 'down') {
-		// 	nextSection.style.top = '100%';
-		// 	nextSection.classList.add('sliding');
-		// 	nextSection.setAttribute('data-active', 1);
-		// 	const hrefValue = nextSection.getAttribute('id');
-		// 	this.setActiveNavigation(hrefValue);
-		// 	gsap.fromTo(nextSection, {
-		// 		top: '100%',
-		// 		opacity: 0.9,
-		// 	}, {
-		// 		top: '0%',
-		// 		opacity: 1,
-		// 		duration: (this.duration / 1000),
-		// 		onComplete: function(e) {
-		// 			nextSection.classList.remove('sliding');
-		// 			currentSection.classList.remove('active');
-		// 			nextSection.classList.add('active');
-		// 			nextSection.removeAttribute('style');
-		// 			currentSection.setAttribute('data-active', -1);
-		// 			// Close everything when change section
-		// 			_this.clearActive()
-		// 		}
-		// 	})
-		// } else {
-		// 	nextSection.style.bottom = '100%';
-		// 	nextSection.classList.add('sliding');
-		// 	nextSection.setAttribute('data-active', 1);
-		// 	const hrefValue = nextSection.getAttribute('id');
-		// 	this.setActiveNavigation(hrefValue);
-		// 	gsap.fromTo(nextSection, {
-		// 		bottom: '100%',
-		// 		opacity: 0.9,
-		// 	}, {
-		// 		bottom: '0%',
-		// 		opacity: 1,
-		// 		duration: (this.duration / 1000),
-		// 		onComplete: function(e) {
-		// 			nextSection.classList.remove('sliding');
-		// 			currentSection.classList.remove('active');
-		// 			nextSection.classList.add('active');
-		// 			nextSection.removeAttribute('style');
-		// 			currentSection.setAttribute('data-active', -1);
-		// 			// Close everything when change section
-		// 			_this.clearActive()
-		// 		}
-		// 	})
-		// }
 	}
 
 	navigation() {
-		let navItems = Array.from(document.querySelector(this.navigator).querySelectorAll('.item a')).forEach(item => {
-			item.addEventListener('click', e => {
-				e.preventDefault();
-				if (this.canBeScrolled) {
-					this.canBeScrolled = false;
-					const target = this.element.querySelector(item.getAttribute('href'));
-					const active = this.element.querySelector('.fp-section.active');
-					const targetIndex = Number(target.getAttribute('data-index'));
-					const activeIndex = Number(active.getAttribute('data-index'));
-					let scrollDirection;
-					if (targetIndex > activeIndex) {
-						scrollDirection = 'down';
-					} else if (targetIndex < activeIndex) {
-						scrollDirection = 'up';
-					} else {
-						scrollDirection = undefined;
+		if (this.navigator) {
+			let navItems = Array.from(this.navigator.querySelectorAll('.item a')).forEach(item => {
+				item.addEventListener('click', e => {
+					e.preventDefault();
+					if (this.canBeScrolled) {
+						this.canBeScrolled = false;
+						const target = this.element.querySelector(item.getAttribute('href'));
+						const active = this.element.querySelector('.fp-section.active');
+						const targetIndex = Number(target.getAttribute('data-index'));
+						const activeIndex = Number(active.getAttribute('data-index'));
+						let scrollDirection;
+						if (targetIndex > activeIndex) {
+							scrollDirection = 'down';
+						} else if (targetIndex < activeIndex) {
+							scrollDirection = 'up';
+						} else {
+							scrollDirection = undefined;
+						}
+						if (scrollDirection) {
+							this.runEffect(active, target, scrollDirection);
+						}
+						setTimeout(() => {
+							this.canBeScrolled = true;
+						}, 2000);
 					}
-					if (scrollDirection) {
-						this.runEffect(active, target, scrollDirection);
-					}
-					setTimeout(() => {
-						this.canBeScrolled = true;
-					}, 2000);
-				}
+				})
 			})
-		})
+		}
 	}
 	setActiveNavigation(href) {
 		const hrefValue = `#${href}`
-		Array.from(document.querySelector(this.navigator).querySelectorAll(`.item`)).forEach(item => {
+		Array.from(this.navigator.querySelectorAll(`.item`)).forEach(item => {
 			item.classList.remove('active');
 		})
-		document.querySelector(this.navigator).querySelector(`.item a[href='${hrefValue}']`).parentElement.classList.add('active')
+		this.navigator.querySelector(`.item a[href='${hrefValue}']`).parentElement.classList.add('active')
 	}
 	run() {
 		document.addEventListener('wheel', e => {
@@ -197,18 +148,22 @@ module.exports = class FullPage {
 	constructor(element, opts) {
 		this.element = document.querySelector(element);
 		this.selector = opts.selector;
-		this.navigator = opts.navigator;
-		Array.from(document.querySelector(this.navigator).querySelectorAll('.item'))[0].classList.add('active');
 		this.frameList = Array.from(this.element.querySelectorAll(this.selector));
-		this.frameList.forEach((item, index) => {
-			if (index === 0) {
-				item.classList.add('active');
-				item.setAttribute('data-active', 1);
-			} else {
-				item.setAttribute('data-active', -1);
-			}
-			item.setAttribute('data-index', index);
-		})
+		this.navigator = document.querySelector(opts.navigator);
+		if (this.frameList) {
+			this.frameList.forEach((item, index) => {
+				if (index === 0) {
+					item.classList.add('active');
+					item.setAttribute('data-active', 1);
+				} else {
+					item.setAttribute('data-active', -1);
+				}
+				item.setAttribute('data-index', index);
+			})
+		}
+		if (this.navigator) {
+			Array.from(this.navigator.querySelectorAll('.item'))[0].classList.add('active');
+		}
 		this.canBeScrolled = true;
 		this.run();
 	}

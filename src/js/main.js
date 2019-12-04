@@ -102,6 +102,7 @@ const sliderSection7 = () => {
 const imageMapCanvas = () => {
 	const imageMap_1 = new ImageMapCanvas('#sec-2 .imgMapCanvas');
 	const imageMap_2 = new ImageMapCanvas('#sec-5 .imgMapCanvas');
+	imageMap_2.customLabel();
 }
 
 const changeMapByTime = () => {

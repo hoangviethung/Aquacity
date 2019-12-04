@@ -1,13 +1,10 @@
 export default class ImageMapCanvas {
 
-
-
-	clearAllImageMap = () => {
+	clearImageMap = () => {
 		this.canvasContext.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	}
 
 	drawPolygon = (coords) => {
-
 		const coordsRef = coords.split(",");
 		const regionLength = coordsRef.length;
 		this.canvasContext.save();
@@ -25,7 +22,6 @@ export default class ImageMapCanvas {
 	}
 
 	drawCircle = (coords) => {
-
 		const coordsRef = coords.split(",");
 		this.canvasContext.save();
 		this.canvasContext.beginPath();
@@ -51,13 +47,13 @@ export default class ImageMapCanvas {
 				if (shape === 'circle') {
 					// set style
 					this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
-					this.canvasContext.fillStyle = 'rgba(7, 65, 76, .4)';
+					this.canvasContext.fillStyle = 'rgba(7, 65, 76, .35)';
 					this.canvasContext.lineWidth = 4;
 					this.drawCircle(coords);
 				}
 			});
 			mapArea.addEventListener('mouseout', () => {
-				this.clearAllImageMap();
+				this.clearImageMap();
 			})
 		})
 	}
@@ -69,26 +65,77 @@ export default class ImageMapCanvas {
 		this.canvas.setAttribute('height', height);
 	}
 
+	customLabel() {
+		Array.from(this.map.querySelectorAll('area')).forEach(area => {
+			let infoMarker;
+			area.addEventListener('click', e => {
+				e.preventDefault();
+			})
+			area.addEventListener('mouseenter', e => {
+				infoMarker = document.createElement('div');
+				infoMarker.classList.add('info-marker');
+				infoMarker.innerHTML = `<div class="img"><img src="${area.getAttribute('href')}" /></div><div class="text">${area.getAttribute('title')}</div>`;
+				const offsetTop = this.canvas.getBoundingClientRect().top;
+				const coordsRef = area.getAttribute('coords').split(',');
+				const size = Number(coordsRef[2]);
+				const top = Number(coordsRef[1]);
+				const left = Number(coordsRef[0]);
+				if (left - (size * 0.95) + 50 <= Number(window.innerWidth - 450 - 60)) {
+					infoMarker.setAttribute('style', `
+						margin-left: 25px;
+						transform-origin: 0 0;
+						top: ${top - (size /2)}px;
+						left: ${left}px;
+						// top: ${top - (size * 0.95)}px;
+						// left: ${left - (size * 0.95)}px;
+					`);
+				} else {
+
+					infoMarker.setAttribute('style', `
+						margin-right: 25px;
+						transform-origin: 100% 0;
+						top: ${top - (size*1.1 / 2)}px;
+						right: ${this.canvas.clientWidth - left}px;
+						// top: ${top - (size * 0.95) + offsetTop}px;
+						// left: ${left - (size * 0.95) + 50 - 450}px;
+					`);
+				}
+				this.canvas.parentNode.append(infoMarker);
+				// document.querySelector('body');
+
+				setTimeout(() => {
+					infoMarker.classList.add('active');
+				}, 150);
+			});
+			area.addEventListener('mouseout', e => {
+				infoMarker.parentNode.removeChild(infoMarker);
+				infoMarker.classList.remove('active');
+			})
+		})
+	}
+
 	init() {
 		imageMapResize();
 		this.canvas.style.backgroundImage = `url('${this.imageUrl}')`;
 		this.canvas.classList.add('background-added');
 		this.setSizeImageMapCanvas();
 		window.addEventListener('resize', () => {
-			this.clearAllImageMap();
+			this.clearImageMap();
 			this.setSizeImageMapCanvas();
 		})
 		this.registerEvents();
 	}
 
-	constructor(selector, opts) {
+	constructor(selector) {
 		// initialize value
 		this.selector = document.querySelector(selector);
-		this.map = this.selector.querySelector('map');
-		this.canvas = this.selector.querySelector('canvas');
-		this.canvasContext = this.canvas.getContext("2d");
-		this.mapImage = this.selector.querySelector('img');
-		this.imageUrl = this.mapImage.getAttribute('src');
+		if (this.selector) {
+			this.map = this.selector.querySelector('map');
+			this.canvas = this.selector.querySelector('canvas');
+			this.canvasContext = this.canvas.getContext("2d");
+			this.mapImage = this.selector.querySelector('img');
+			this.imageUrl = this.mapImage.getAttribute('src');
+		}
 
 		// Start plugins
 		if (this.canvas) {
