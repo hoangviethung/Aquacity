@@ -123,12 +123,11 @@
 		height: 100%;
 		left: 0;
 		z-index: 101;
-		background: linear-gradient(45deg, rgba(232, 222, 139, 1) 0%, rgba(7, 65, 76, 1) 99%);
+		background: linear-gradient(180deg, #e8de8b -105%, #07414c 62%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e8de8b", endColorstr="#07414c", GradientType=1);
 
 		&.sliding {
 			z-index: 150;
-			// transition: all .4s linear;
 		}
 	}
 }

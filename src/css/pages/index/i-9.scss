@@ -1,0 +1,254 @@
+
+#sec-9 {
+	>.img {
+		height: 100%;
+	}
+
+	.title-block {
+		flex: 0 0 100%;
+		max-width: 100%;
+		text-align: center;
+
+		h2 {
+			text-transform: uppercase;
+			background-image: url('../assets/gradient_1.jpg');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-position: center;
+
+			@media (min-width: 1025px) {
+				font-size: 35px;
+			}
+
+			@media (min-width: 1660px) {
+				font-size: 60px;
+			}
+
+			&.title {
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+			}
+		}
+	}
+
+	form {
+		width: 100%;
+		margin: 0 auto;
+		max-width: 650px;
+
+		@media (min-width: 1660px) {
+			max-width: 850px;
+		}
+
+		>p {
+			text-align: center;
+			color: white;
+
+			@media (min-width: 1025px) {
+				font-size: 16px;
+				margin-bottom: 15px;
+			}
+
+			@media (min-width: 1660px) {
+				font-size: 22px;
+				margin-bottom: 30px;
+			}
+		}
+
+		.form-group {
+			display: flex;
+			margin-bottom: 10px;
+
+			@media (min-width: 1025px) {
+				margin-bottom: 15px;
+			}
+
+			@media (min-width: 1660px) {
+				margin-bottom: 30px;
+			}
+		}
+
+		textarea,
+		input[type='text'] {
+			border: 1px solid map-get($mau, main-2);
+			background: rgba(black, .3);
+			width: 100%;
+			color: white;
+			font-size: 22px;
+			padding: 8px 15px;
+			font-weight: 300;
+
+			&::placeholder {
+				color: white;
+				font-size: 22px;
+			}
+
+			&:focus {
+				// border: 1px solid map-get($mau, main);
+				box-shadow: 0 0 5px rgba(map-get($mau, main-2), .5);
+			}
+		}
+
+		textarea {
+			height: 130px;
+			resize: none;
+		}
+
+		input[type='text'] {
+			@media (min-width: 1025px) {
+				height: 40px;
+			}
+
+			@media (min-width: 1660px) {
+				height: 45px;
+			}
+		}
+
+		.form-checks {
+			display: flex;
+			justify-content: center;
+
+			.form-check {
+				padding: 0 30px;
+
+				label {
+					font-weight: 700;
+					color: white;
+					text-transform: uppercase;
+					position: relative;
+					cursor: pointer;
+					font-size: 26px;
+					padding-left: 25px;
+
+					&:before {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 20px;
+						height: 20px;
+						border-radius: 50%;
+						border: 2px solid map-get($mau, main-2);
+					}
+
+					&:after {
+						content: '';
+						position: absolute;
+						left: 5px;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						background: map-get($mau, main-2);
+						display: none;
+					}
+
+					@media (min-width: 1660px) {
+						font-size: 32px;
+						padding-left: 30px;
+
+						&:before {
+							width: 25px;
+							height: 25px;
+						}
+
+						&:after {
+							width: 15px;
+							height: 15px;
+						}
+					}
+				}
+
+				input[type='radio'] {
+					display: none;
+
+					&:checked~label:after {
+						display: block;
+					}
+				}
+			}
+		}
+
+		.form-button {
+			text-align: center;
+			margin-top: 30px;
+
+			.btn-discover {
+				width: 290px;
+				height: 50px;
+				border-radius: 30px;
+			}
+		}
+	}
+
+	@media (min-width: 1025px) {
+		.content {
+			padding: 80px 25px 50px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		background: map-get($mau, main);
+		padding: 30px 0;
+
+		>.img {
+			display: none;
+		}
+
+		.title-block {
+			margin-bottom: 15px;
+		}
+
+		form {
+			padding: 0 10px;
+
+			>.row {
+				padding: 15px 0 10px 0;
+			}
+
+			>p {
+				font-size: 14px;
+			}
+
+			input[type='text'],
+			textarea {
+				font-size: 15px;
+
+				&::placeholder {
+					font-size: 15px;
+				}
+			}
+
+			input[type='text'] {
+				height: 35px;
+			}
+
+			.form-checks {
+				flex-wrap: wrap;
+				width: 100%;
+				max-width: 225px;
+				margin: 0 auto;
+
+				.form-check {
+					flex: 0 0 100%;
+					max-width: 100%;
+					margin-top: 10px;
+
+					label {
+						font-size: 15px;
+					}
+				}
+			}
+		}
+	}
+}

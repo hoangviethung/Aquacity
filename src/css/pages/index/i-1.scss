@@ -1,0 +1,11 @@
+#sec-1 {
+	.video {
+		width: 100%;
+		display: flex;
+
+		@media (min-width: 1025px) {
+			display: block;
+			height: 100%;
+		}
+	}
+}

@@ -24,7 +24,7 @@ const Loading = () => {
 		if (progress.style.width = `${n}`, progressStat.innerHTML = `${n}`, counter === imagesLength) {
 			setTimeout(() => {
 				return turnOffLoadingScreen();
-			}, 1500);
+			}, 2400);
 		}
 	};
 

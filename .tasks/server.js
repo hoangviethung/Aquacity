@@ -36,17 +36,13 @@ const server = () => {
 	})
 
 	watch([
-		"src/js/*.js"
-	], {
-		delay: 750
-	}, series(jsTask));
+		"src/js/**/**.js"
+	], series(jsTask));
 
 	watch([
-		"src/**.pug",
+		"src/**/**.pug",
 		"src/_components/**/**.pug"
-	], {
-		delay: 750
-	}, series(pugTask));
+	], series(pugTask));
 
 	watch([
 		"src/css/**/**.scss"

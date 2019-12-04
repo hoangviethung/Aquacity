@@ -15,13 +15,15 @@
     "tests"
   ],
   "dependencies": {
-    "jquery": "3.4.1",
+    "jquery": "^3.4.1",
     "fancybox": "3.5.7",
-    "swiper": "4.5.0",
+    "swiper": "^5.2.1",
     "lazysizes": "5.1.0",
     "object-fit-images": "*",
     "font-awesome": "^5.11.2",
     "mdi": "^4.6.95",
-    "linearicons": "^1.0.2"
+    "linearicons": "^1.0.2",
+    "gsap": "^3.0.1",
+    "image-map-resizer": "^1.0.10"
   }
 }

@@ -1,0 +1,269 @@
+#sec-3 {
+	background: #ffffff;
+	padding: 30px 0;
+
+	.title-block {
+		display: flex;
+		justify-content: center;
+		margin-bottom: 15px;
+
+
+		h2 {
+			padding: 0 30px;
+			background-color: white;
+			display: inline-flex;
+		}
+	}
+
+	.content {
+		height: 100%;
+	}
+
+	.img {
+		padding-left: 20px;
+		max-width: 100%;
+
+		.road-path {
+			opacity: 0;
+			fill: #003b28;
+			transition: .3s ease-in-out;
+
+			polygon,
+			path {
+				stroke-dasharray: 50;
+				stroke-dashoffset: 200;
+				animation: MapDash infinite 2s forwards;
+			}
+
+			&.active {
+				opacity: 1;
+			}
+		}
+	}
+
+	.description {
+
+		.tab-titles {
+			display: flex;
+
+			.tab-title {
+				background: #598a8e;
+				transition: all .3s ease-in-out;
+				padding: 10px;
+				margin: 0 5px;
+				cursor: pointer;
+
+				span {
+					line-height: 1;
+					display: block;
+					color: #faf8ef;
+					text-align: center;
+
+					&.number {
+						text-transform: uppercase;
+						font-weight: 700;
+
+						@media (min-width: 1025px) {
+							font-size: 32px;
+						}
+
+						@media (min-width: 1660px) {
+							font-size: 50px;
+						}
+					}
+
+					&.text {
+						text-transform: uppercase;
+						text-align: center;
+
+						@media (min-width: 1025px) {
+							font-size: 18px;
+						}
+
+						@media (min-width: 1660px) {
+							font-size: 26px;
+						}
+					}
+				}
+
+				&.active {
+					background: map-get($mau, main);
+				}
+			}
+		}
+
+		.tab-contents {
+			position: relative;
+			background-color: #faf8ef;
+			margin-left: 5px;
+			padding: 25px 40px;
+			background-size: 130%;
+			background: rgb(16, 93, 95);
+			background: radial-gradient(circle, rgba(16, 93, 95, 1) 0%, rgba(5, 56, 70, 1) 85%);
+			filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#105d5f", endColorstr="#053846", GradientType=1);
+
+			.tab-content {
+				opacity: 0;
+				transition: all .3s linear;
+				transform: translateX(15px);
+
+				p {
+					color: #faf8ef;
+
+					@media (min-width: 1025px) {
+						font-size: 18px;
+					}
+
+					@media (min-width: 1660px) {
+						font-size: 26px;
+					}
+				}
+
+				&.show {
+					transition-delay: .1s;
+					opacity: 1;
+					transform: translateY(0);
+				}
+			}
+		}
+	}
+
+	.button-wrapper {
+		padding-left: 50px;
+
+		.btn-discover {
+			margin-left: 5px;
+			margin-top: 35px;
+			height: 55px;
+			padding: 0 35px;
+		}
+
+		@media (min-width: 1025px) {
+			opacity: 0;
+			transform: translateX(20px);
+			transition: all .3s ease-in-out;
+		}
+
+		@media (max-width: 1024px) {
+			text-align: center;
+			padding-left: 0;
+
+			.btn-discover {
+				margin-top: 10px;
+				margin-left: 0;
+				height: 45px;
+			}
+		}
+	}
+
+	@media (min-width: 1025px) {
+		padding: 100px 25px 50px;
+
+		.col-md-6.col-xxl-auto {
+			opacity: 0;
+			transition: all .4s linear;
+			transform: translateX(-15px);
+		}
+
+		.title-block {
+			margin-bottom: 0;
+			opacity: 0;
+			transform: translateY(20px);
+			transition: all .3s ease-in-out;
+
+			h2 {
+				margin-top: -38px;
+			}
+		}
+
+		.content {
+			border: 5px solid map-get($mau, main-2);
+		}
+
+		.img {
+			width: 100%;
+		}
+
+		.description {
+			padding-top: 120px;
+			padding-left: 50px;
+			opacity: 0;
+			transform: translateX(20px);
+			transition: all .3s ease-in-out;
+
+			.tab-contents {
+				&:before {
+					position: absolute;
+					height: 100%;
+					top: 0;
+					left: 100%;
+					width: 30px;
+					content: '';
+					background: #09454f;
+				}
+			}
+		}
+
+		&.active {
+			.title-block {
+				opacity: 1;
+				transform: translateY(0);
+			}
+
+			.col-md-6.col-xxl-auto {
+				opacity: 1;
+				transform: translateX(0px);
+			}
+
+			.description {
+				opacity: 1;
+				transform: translateY(0);
+				transition-delay: .4s;
+			}
+
+			.button-wrapper {
+				opacity: 1;
+				transform: translateX(0);
+				transition-delay: .6s;
+			}
+		}
+	}
+
+	@media (min-width: 1660px) {
+		padding: 110px 25px 50px;
+	}
+
+	@media (max-width: 1024px) {
+		.description {
+			display: flex;
+
+			.tab-titles {
+				flex: 0 0 80px;
+				max-width: 80px;
+				flex-wrap: wrap;
+
+				.tab-title {
+					padding: 5px;
+					margin: 0;
+					width: 100%;
+					height: 45px;
+
+					span {
+						&.text {
+							font-size: 13px;
+						}
+					}
+				}
+			}
+
+			.tab-contents {
+				border-left: 4px solid #e8de8b;
+				margin-left: 0;
+				flex-basis: 0;
+				flex-grow: 1;
+				max-width: 100%;
+				padding: 15px 20px;
+			}
+		}
+	}
+}

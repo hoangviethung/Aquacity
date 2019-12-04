@@ -1,4 +1,4 @@
-export class Tab {
+export default class Tab {
 	options = {};
 
 	constructor(selector, obj) {

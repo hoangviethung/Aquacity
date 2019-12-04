@@ -6,7 +6,7 @@
 	left: 0;
 	z-index: 99999;
 	transition: .8s;
-	background: linear-gradient(45deg, rgba(232, 222, 139, 1) 0%, rgba(7, 65, 76, 1) 99%);
+	background: linear-gradient(180deg, rgba(232, 222, 139, 1) -200%, rgba(7, 65, 76, 1) 99%);
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e8de8b", endColorstr="#07414c", GradientType=1);
 	width: 100%;
 	height: 100%;
@@ -68,7 +68,7 @@
 @keyframes fillColor {
 	to {
 		stroke: rgba(0, 0, 0, 0);
-		fill: map-get($mau, main);
+		fill: #e8de8b;
 	}
 }
 

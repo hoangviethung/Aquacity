@@ -15,11 +15,11 @@
 			"bower_components/lazysizes/lazysizes.js",
 			"bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.js",
 			"bower_components/jquery/dist/jquery.js",
-			"vendors/imagemap.js",
-			"bower_components/fancybox/dist/jquery.fancybox.js"
+			"bower_components/fancybox/dist/jquery.fancybox.js",
+			"bower_components/image-map-resizer/js/imageMapResizer.js"
 		],
 		"css": [
-			"bower_components/swiper/dist/css/swiper.css",
+			"bower_components/swiper/package/css/swiper.css",
 			"bower_components/fancybox/dist/jquery.fancybox.css"
 		]
 	}

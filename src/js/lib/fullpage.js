@@ -1,6 +1,6 @@
 import {
 	gsap
-} from "gsap";
+} from "../../../bower_components/gsap/esm/index.js";
 
 module.exports = class FullPage {
 	clearActive() {

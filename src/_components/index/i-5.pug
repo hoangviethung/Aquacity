@@ -1,76 +1,82 @@
 .section.fp-section#sec-5
-	.imgmap.desktop
-		img.ofcv(src="./assets/index/i_5.jpg", alt="" usemap="#imgmap201912216417" )
-		map#imgmap201912216417(name='imgmap201912216417')
-			area(shape='circle', alt='1', title='', coords='407,564,19', href='./assets/utilities/1.jpg', target='')
-			area(shape='circle', alt='1', title='', coords='1116,292,19', href='./assets/utilities/1.jpg', target='')
-			area(shape='circle', alt='1', title='', coords='1414,679,19', href='./assets/utilities/1.jpg', target='')
-			area(shape='circle', alt='2', title='', coords='1694,380,19', href='./assets/utilities/2.jpg', target='')
-			area(shape='circle', alt='3', title='', coords='517,255,19', href='./assets/utilities/3.jpg', target='')
-			area(shape='circle', alt='3', title='', coords='972,284,19', href='./assets/utilities/3.jpg', target='')
-			area(shape='circle', alt='3', title='', coords='245,542,19', href='./assets/utilities/3.jpg', target='')
-			area(shape='circle', alt='3', title='', coords='346,509,19', href='./assets/utilities/3.jpg', target='')
-			area(shape='circle', alt='3', title='', coords='581,450,19', href='./assets/utilities/3.jpg', target='')
-			area(shape='circle', alt='4', title='', coords='1150,305,19', href='./assets/utilities/4.jpg', target='')
-			area(shape='circle', alt='4', title='', coords='1519,614,19', href='./assets/utilities/4.jpg', target='')
-			area(shape='circle', alt='5', title='', coords='1155,208,19', href='./assets/utilities/5.jpg', target='')
-			area(shape='circle', alt='5', title='', coords='1250,632,19', href='./assets/utilities/5.jpg', target='')
-			area(shape='circle', alt='5', title='', coords='603,206,19', href='./assets/utilities/5.jpg', target='')
-			area(shape="circle", alt="6", title='', coords="643,206,19", href='./assets/utilities/6.jpg', target="")
-			area(shape='circle', alt='6', title='', coords='1214,194,19', href='./assets/utilities/6.jpg', target='')
-			area(shape='circle', alt='6', title='', coords='643,-205,19', href='./assets/utilities/6.jpg', target='')
-			area(shape='circle', alt='6', title='', coords='446,306,19', href='./assets/utilities/6.jpg', target='')
-			area(shape='circle', alt='6', title='', coords='385,474,19', href='./assets/utilities/6.jpg', target='')
-			area(shape='circle', alt='6', title='', coords='865,367,19', href='./assets/utilities/6.jpg', target='')
-			area(shape='circle', alt='6', title='', coords='1231,593,19', href='./assets/utilities/6.jpg', target='')
-			area(shape='circle', alt='7', title='', coords='1432,371,19', href='./assets/utilities/7.jpg', target='')
-			area(shape='circle', alt='8', title='', coords='1352,358,19', href='./assets/utilities/8.jpg', target='')
-			area(shape='circle', alt='9', title='', coords='1277,458,19', href='./assets/utilities/9.jpg', target='')
-			area(shape='circle', alt='9', title='', coords='1146,439,19', href='./assets/utilities/9.jpg', target='')
-			area(shape='circle', alt='10', title='', coords='1099,470,19', href='./assets/utilities/10.jpg', target='')
-			area(shape='circle', alt='10', title='', coords='1243,235,19', href='./assets/utilities/10.jpg', target='')
-			area(shape='circle', alt='10', title='', coords='1365,496,19', href='./assets/utilities/10.jpg', target='')
-			area(shape='circle', alt='10', title='', coords='800,254,19', href='./assets/utilities/10.jpg', target='')
-			area(shape='circle', alt='10', title='', coords='390,371,19', href='./assets/utilities/10.jpg', target='')
-			area(shape='circle', alt='10', title='', coords='778,423,19', href='./assets/utilities/10.jpg', target='')
-			area(shape='circle', alt='11', title='', coords='1209,300,19', href='./assets/utilities/11.jpg', target='')
-			area(shape='circle', alt='12', title='', coords='753,382,19', href='./assets/utilities/12.jpg', target='')
-	.container.utilities-title
-		.title-block
-			h2 Tiện ích đa dạng
-			h3 Thăng hoa cuộc sống
-	.container.mobile
-		.utilities-list.row
-			.col-12
-				.img
-					img(src="./assets/index/i_5.jpg", alt="")
-			-for(let i =1; i<13; i++)
-				.col-6.col-sm-4
-					a(href="./assets/utilities/"+i+".jpg" data-fancybox="utilities_"+i)
-						.img
-							img(src="./assets/utilities/"+i+".jpg", alt="")
-						.text
-							-if(i==1)
-								h3 Đường dạo ven sông
-							-if(i==2)
-								h3 Bến du thuyền
-							-if(i==3)
-								h3 Công viên xanh
-							-if(i==4)
-								h3 Vườn ươm cây
-							-if(i==5)
-								h3 Bến thuyền Kayak
-							-if(i==6)
-								h3 Blubhouse & hồ bơi
-							-if(i==7)
-								h3 Aqua central mall
-							-if(i==8)
-								h3 Game center
-							-if(i==9)
-								h3 Khu vui chơi trẻ em
-							-if(i==10)
-								h3 Trường học các cấp
-							-if(i==11)
-								h3 Aqua sport complex
-							-if(i==12)
-								h3 Phòng khám đa khoa quốc tế
+	.imgMapCanvas.desktop
+		.map-canvas
+			map(name="imageMap2", id="imageMap2")
+				//- area(shape='poly', coords='1213, 1, 1330, 192, 1334, 210, 1356, 210, 1348, 187, 1224, 0')
+				area(shape='circle', alt='1', title=titlePosition[1-1], coords='407,564,19', href='./assets/utilities/1.jpg', target='')
+				area(shape='circle', alt='1', title=titlePosition[1-1], coords='1116,292,19', href='./assets/utilities/1.jpg', target='')
+				area(shape='circle', alt='1', title=titlePosition[1-1], coords='1414,679,19', href='./assets/utilities/1.jpg', target='')
+				area(shape='circle', alt='2', title=titlePosition[2-1], coords='1694,380,19', href='./assets/utilities/2.jpg', target='')
+				area(shape='circle', alt='3', title=titlePosition[3-1], coords='517,255,19', href='./assets/utilities/3.jpg', target='')
+				area(shape='circle', alt='3', title=titlePosition[3-1], coords='972,284,19', href='./assets/utilities/3.jpg', target='')
+				area(shape='circle', alt='3', title=titlePosition[3-1], coords='245,542,19', href='./assets/utilities/3.jpg', target='')
+				area(shape='circle', alt='3', title=titlePosition[3-1], coords='346,509,19', href='./assets/utilities/3.jpg', target='')
+				area(shape='circle', alt='3', title=titlePosition[3-1], coords='581,450,19', href='./assets/utilities/3.jpg', target='')
+				area(shape='circle', alt='4', title=titlePosition[4-1], coords='1150,305,19', href='./assets/utilities/4.jpg', target='')
+				area(shape='circle', alt='4', title=titlePosition[4-1], coords='1519,614,19', href='./assets/utilities/4.jpg', target='')
+				area(shape='circle', alt='5', title=titlePosition[5-1], coords='1155,208,19', href='./assets/utilities/5.jpg', target='')
+				area(shape='circle', alt='5', title=titlePosition[5-1], coords='1250,632,19', href='./assets/utilities/5.jpg', target='')
+				area(shape='circle', alt='5', title=titlePosition[5-1], coords='603,206,19', href='./assets/utilities/5.jpg', target='')
+				area(shape="circle", alt='6', title=titlePosition[6-1], coords="643,206,19", href='./assets/utilities/6.jpg', target="")
+				area(shape='circle', alt='6', title=titlePosition[6-1], coords='1214,194,19', href='./assets/utilities/6.jpg', target='')
+				area(shape='circle', alt='6', title=titlePosition[6-1], coords='643,-205,19', href='./assets/utilities/6.jpg', target='')
+				area(shape='circle', alt='6', title=titlePosition[6-1], coords='446,306,19', href='./assets/utilities/6.jpg', target='')
+				area(shape='circle', alt='6', title=titlePosition[6-1], coords='385,474,19', href='./assets/utilities/6.jpg', target='')
+				area(shape='circle', alt='6', title=titlePosition[6-1], coords='865,367,19', href='./assets/utilities/6.jpg', target='')
+				area(shape='circle', alt='6', title=titlePosition[6-1], coords='1231,593,19', href='./assets/utilities/6.jpg', target='')
+				area(shape='circle', alt='7', title=titlePosition[7-1], coords='1432,371,19', href='./assets/utilities/7.jpg', target='')
+				area(shape='circle', alt='8', title=titlePosition[8-1], coords='1352,358,19', href='./assets/utilities/8.jpg', target='')
+				area(shape='circle', alt='9', title=titlePosition[9-1], coords='1277,458,19', href='./assets/utilities/9.jpg', target='')
+				area(shape='circle', alt='9', title=titlePosition[9-1], coords='1146,439,19', href='./assets/utilities/9.jpg', target='')
+				area(shape='circle', alt='10', title=titlePosition[10-1], coords='1099,470,19', href='./assets/utilities/10.jpg', target='')
+				area(shape='circle', alt='10', title=titlePosition[10-1], coords='1243,235,19', href='./assets/utilities/10.jpg', target='')
+				area(shape='circle', alt='10', title=titlePosition[10-1], coords='1365,496,19', href='./assets/utilities/10.jpg', target='')
+				area(shape='circle', alt='10', title=titlePosition[10-1], coords='800,254,19', href='./assets/utilities/10.jpg', target='')
+				area(shape='circle', alt='10', title=titlePosition[10-1], coords='390,371,19', href='./assets/utilities/10.jpg', target='')
+				area(shape='circle', alt='10', title=titlePosition[10-1], coords='778,423,19', href='./assets/utilities/10.jpg', target='')
+				area(shape='circle', alt='11', title=titlePosition[11-1], coords='1209,300,19', href='./assets/utilities/11.jpg', target='')
+				area(shape='circle', alt='12', title=titlePosition[12-1], coords='753,382,19', href='./assets/utilities/12.jpg', target='')
+			canvas
+		.map-image
+			img(src="./assets/index/i_5.jpg", usemap="#imageMap2")
+	.content
+		.container.utilities-title
+			.title-block
+				h2 Tiện ích đa dạng
+				h3 Thăng hoa cuộc sống
+	.content.mobile
+		.container
+			.utilities-list.row
+				.col-12
+					.img
+						img(src="./assets/index/i_5.jpg", alt="")
+				-for(let i =1; i<13; i++)
+					.col-6.col-sm-4
+						a(href="./assets/utilities/"+i+".jpg" data-fancybox="utilities_"+i)
+							.img
+								img(src="./assets/utilities/"+i+".jpg", alt="")
+							.text
+								-if(i==1)
+									h3 Đường dạo ven sông
+								-if(i==2)
+									h3 Bến du thuyền
+								-if(i==3)
+									h3 Công viên xanh
+								-if(i==4)
+									h3 Vườn ươm cây
+								-if(i==5)
+									h3 Bến thuyền Kayak
+								-if(i==6)
+									h3 Blubhouse & hồ bơi
+								-if(i==7)
+									h3 Aqua central mall
+								-if(i==8)
+									h3 Game center
+								-if(i==9)
+									h3 Khu vui chơi trẻ em
+								-if(i==10)
+									h3 Trường học các cấp
+								-if(i==11)
+									h3 Aqua sport complex
+								-if(i==12)
+									h3 Phòng khám đa khoa quốc tế
