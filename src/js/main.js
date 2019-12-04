@@ -97,7 +97,7 @@ const getSVGContent = () => {
 	Array.from(document.querySelectorAll('.svg-image')).forEach(item => {
 		const imgUrl = item.getAttribute('src');
 		const httpRequest = new XMLHttpRequest();
-		httpRequest.onloadend = data => {
+		httpRequest.onload = data => {
 			item.parentElement.innerHTML = data.srcElement.response;
 		}
 		httpRequest.open('GET', imgUrl)

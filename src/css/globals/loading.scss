@@ -45,6 +45,10 @@
 		width: 750px;
 		max-width: 100%;
 
+		img {
+			opacity: 0;
+		}
+
 		svg {
 			path {
 				stroke-dasharray: 835;

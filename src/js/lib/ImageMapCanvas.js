@@ -1,18 +1,12 @@
 export default class ImageMapCanvas {
 
-	strokeStyle = '#e8de8b';
-	fillColour = 'rgba(7, 65, 76,.25)';
-	lineWidth = 5;
+
 
 	clearAllImageMap = () => {
 		this.canvasContext.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	}
 
 	drawPolygon = (coords) => {
-		// set style
-		this.canvasContext.strokeStyle = this.strokeStyle;
-		this.canvasContext.fillStyle = this.fillColour;
-		this.canvasContext.lineWidth = this.lineWidth;
 
 		const coordsRef = coords.split(",");
 		const regionLength = coordsRef.length;
@@ -31,10 +25,7 @@ export default class ImageMapCanvas {
 	}
 
 	drawCircle = (coords) => {
-		// set style
-		this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
-		this.canvasContext.fillStyle = 'rgba(7, 65, 76, .4)';
-		this.canvasContext.lineWidth = 4;
+
 		const coordsRef = coords.split(",");
 		this.canvasContext.save();
 		this.canvasContext.beginPath();
@@ -51,9 +42,17 @@ export default class ImageMapCanvas {
 				let coords = mapArea.getAttribute('coords');
 				let shape = mapArea.getAttribute('shape');
 				if (shape === 'poly') {
+					// set style
+					this.canvasContext.strokeStyle = '#e8de8b';
+					this.canvasContext.fillStyle = 'rgba(7, 65, 76,.25)';
+					this.canvasContext.lineWidth = 5;
 					this.drawPolygon(coords);
 				}
 				if (shape === 'circle') {
+					// set style
+					this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
+					this.canvasContext.fillStyle = 'rgba(7, 65, 76, .4)';
+					this.canvasContext.lineWidth = 4;
 					this.drawCircle(coords);
 				}
 			});
