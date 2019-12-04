@@ -6,13 +6,16 @@ export default class ImageMapCanvas {
 
 	drawPolygon = (coords) => {
 		const coordsRef = coords.split(",");
+		const coordsRef2 = coordsRef.map(item=>{
+			return Number(item) +3;
+		})
 		const regionLength = coordsRef.length;
 		this.canvasContext.save();
 		this.canvasContext.beginPath();
-		this.canvasContext.moveTo(coordsRef[0], coordsRef[1]);
+		this.canvasContext.moveTo(coordsRef2[0], coordsRef2[1]);
 		for (let i = 0; i < regionLength; i++) {
 			if (i % 2 == 0 && i > 1) {
-				this.canvasContext.lineTo(coordsRef[i], coordsRef[i + 1]);
+				this.canvasContext.lineTo(coordsRef2[i], coordsRef2[i + 1]);
 			}
 		}
 		this.canvasContext.closePath();
