@@ -1,18 +1,20 @@
 @media (min-width: 1025px) {
-	body {
+	.fp-container {
+		z-index: 10;
+		height: 100vh;
+		width: 100%;
 		overflow: hidden;
 	}
 
-	#fullpage {
+	.fp-wrapper {
 		position: relative;
-		height: 100vh;
+		height: 100%;
 
 		.fp-section {
 			width: 100%;
 			height: 100%;
 			position: absolute;
 			opacity: 0;
-			overflow: hidden;
 
 			&.sliding {
 				opacity: 1;
@@ -26,23 +28,25 @@
 		}
 	}
 
-	#fullpage-navigation {
+	.fp-navigation {
 		position: fixed;
 		right: 0px;
-		bottom: 230px;
-		z-index: 5;
-		justify-content: flex-end;
+		top: 50%;
+		transform: translateY(-50%);
+		z-index: 11;
 		display: flex;
+		justify-content: flex-end;
 		padding: 5px;
 		flex-direction: column;
 		background: rgba(map-get($mau, main), .5);
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
 
-		.item {
+		.fp-nav-item {
 			margin: 5px 0;
 
 			a {
+				cursor: pointer;
 				color: white;
 				display: flex;
 				justify-content: center;
@@ -52,6 +56,7 @@
 				border-radius: 50%;
 				font-size: 13px;
 				position: relative;
+				transition: all .5s ease-in-out;
 
 				.title {
 					position: absolute;
@@ -112,17 +117,16 @@
 		}
 
 		@media (min-width: 1660px) {
-			bottom: 270px;
 			padding: 8px;
 		}
 	}
 
-	#fullpage-mask {
+	.fp-mask {
 		position: fixed;
 		width: 100%;
 		height: 100%;
 		left: 0;
-		z-index: 101;
+		z-index: 200;
 		background: linear-gradient(180deg, #e8de8b -105%, #07414c 62%);
 		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#e8de8b", endColorstr="#07414c", GradientType=1);
 

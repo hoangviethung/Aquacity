@@ -6,22 +6,7 @@ block var
 	- let titlePosition = ['Đường dạo ven sông', 'Bến du thuyền','Công viên xanh','Vườn ươm cây','Bến thuyền Kayak','Blubhouse & hồ bơi', 'Aqua central mall','Game center','Khu vui chơi trẻ em','Trường học các cấp','Aqua sport complex','Phòng khám đa khoa quốc tế'];
 block banner,breadcrumb
 block main
-	#widget-left
-		a.subscribe(href="#") 
-			span Nhận tin
-		a.social.facebook(href="#")
-			span.fab.fa-facebook-f
-		a.social.youtube(href="#")
-			span.fab.fa-youtube
-	#widget-right
-		a.item(href="#")
-			span.fas.fa-home
-		a.item(href="#")
-			span.fas.fa-envelope
-		a.item(href="#")
-			span.mdi.mdi-phone-in-talk
-		a.item(href="#")
-			span.mdi.mdi-arrow-up-bold
+	include _components/_layout/_widget
 	#fullpage
 		include _components/index/i-1
 		include _components/index/i-2
@@ -33,46 +18,4 @@ block main
 		include _components/index/i-8
 		include _components/index/i-9
 		include _components/index/i-10
-	#fullpage-navigation
-		.item
-			a(href='#sec-1')
-				span.title Trang chủ
-				span 1
-		.item
-			a(href='#sec-2')
-				span.title Mặt bằng
-				span 2
-		.item
-			a(href='#sec-3')
-				span.title Vị trí
-				span 3
-		.item
-			a(href='#sec-4')
-				span.title Sinh thái
-				span 4
-		.item
-			a(href='#sec-5')
-				span.title Tiện ích
-				span 5
-		.item
-			a(href='#sec-6')
-				span.title Phân khu
-				span 6
-		.item
-			a(href='#sec-7')
-				span.title Thư viện
-				span 7
-		.item
-			a(href='#sec-8')
-				span.title Tin tức
-				span 8
-		.item
-			a(href='#sec-9')
-				span.title Liên hệ
-				span 9
-		.item
-			a(href='#sec-10')
-				span.title Thông tin chung
-				span 10
-	#fullpage-mask
 block scripts

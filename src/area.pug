@@ -1,0 +1,17 @@
+extends _components/_layout/_layout.pug
+
+block var
+	- let title = 'Phân khu';
+	- let bodyClass = 'area-page';
+
+block banner,breadcrumb
+block main
+	include _components/_layout/_widget
+	#fullpage
+		include _components/area/a-1
+		include _components/area/a-2
+		include _components/area/a-3
+		include _components/area/a-4
+		include _components/area/a-5
+		include _components/area/a-6
+block scripts

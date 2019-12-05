@@ -17,32 +17,40 @@ import Loading from "./lib/loading";
 })()
 
 const fullpage = () => {
-	const device = navigator.platform.includes('Win32') || navigator.platform.includes('MacIntel');
-	if (window.innerWidth >= 1025 && device) {
+	// const device = navigator.platform.includes('Win32') || navigator.platform.includes('MacIntel');
+	if (window.innerWidth >= 1025) {
 		if (document.getElementById('fullpage')) {
 			const fullpage = new FullPage('#fullpage', {
-				selector: '.fp-section',
-				navigator: '#fullpage-navigation',
-			});
-			const subscribe = document.querySelector('#widget-left .subscribe');
-			subscribe.addEventListener('click', e => {
-				e.preventDefault();
-				const currentSection = document.querySelector('.fp-section[data-active="1"]');
-				const currentPosition = currentSection.getAttribute('data-index');
-				const contactSection = document.querySelector('.fp-section[data-index="8"]');
-				const contactPosition = contactSection.getAttribute('data-index');
-
-				if (currentPosition < contactPosition) {
-					fullpage.runEffect(currentSection, contactSection, 'down');
-				} else if (currentPosition > contactPosition) {
-					fullpage.runEffect(currentSection, contactSection, 'up');
-				} else {
-					return;
+				section: '.section',
+				titles: true,
+				on: {
+					afterRunEffect: function() {
+						if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
+							document.querySelector('header .header-nav-icon').classList.remove('active');
+							document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
+							document.querySelector('.section .frame-2').classList.remove('active');
+						}
+					}
 				}
-			})
+			});
+
+			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
+				document.querySelector('#widget-left .subscribe').addEventListener('click', e => {
+					e.preventDefault();
+					const currentSection = document.querySelector('.fp-section[fp-active="1"]');
+					const currentPosition = currentSection.getAttribute('fp-index');
+					const contactSection = document.querySelector('.fp-section[fp-index="8"]');
+					const contactPosition = contactSection.getAttribute('fp-index');
+
+					if (currentPosition < contactPosition) {
+						fullpage.runEffect(currentSection, contactSection, 'down');
+					}
+					if (currentPosition > contactPosition) {
+						fullpage.runEffect(currentSection, contactSection, 'up');
+					}
+				})
+			}
 		}
-	} else {
-		return void(0);
 	}
 }
 
@@ -107,14 +115,16 @@ const imageMapCanvas = () => {
 
 const changeMapByTime = () => {
 	const section3 = document.getElementById('sec-3');
-	Array.from(section3.querySelectorAll('.tab-titles .tab-title')).forEach(item => {
-		item.addEventListener('click', () => {
-			section3.querySelector(`.img .road-path.active`).classList.remove('active');
-			const itemID = item.getAttribute('toggle-for');
-			const pathSVG = section3.querySelector(`.img #${itemID}`);
-			pathSVG.classList.add('active');
+	if (section3) {
+		Array.from(section3.querySelectorAll('.tab-titles .tab-title')).forEach(item => {
+			item.addEventListener('click', () => {
+				section3.querySelector(`.img .road-path.active`).classList.remove('active');
+				const itemID = item.getAttribute('toggle-for');
+				const pathSVG = section3.querySelector(`.img #${itemID}`);
+				pathSVG.classList.add('active');
+			})
 		})
-	})
+	}
 }
 
 

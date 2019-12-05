@@ -1,4 +1,5 @@
-@import 'abstracts/main';
-@import 'globals/main';
+@import './abstracts/_main.scss';
+@import './globals/_main.scss';
 
-@import 'pages/index/_main';
+@import './pages/index/_main.scss';
+@import './pages/area/_main.scss';

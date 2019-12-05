@@ -6,8 +6,8 @@ export default class ImageMapCanvas {
 
 	drawPolygon = (coords) => {
 		const coordsRef = coords.split(",");
-		const coordsRef2 = coordsRef.map(item=>{
-			return Number(item) +3;
+		const coordsRef2 = coordsRef.map(item => {
+			return Number(item) + 3;
 		})
 		const regionLength = coordsRef.length;
 		this.canvasContext.save();
@@ -69,52 +69,51 @@ export default class ImageMapCanvas {
 	}
 
 	customLabel() {
-		Array.from(this.map.querySelectorAll('area')).forEach(area => {
-			let infoMarker;
-			area.addEventListener('click', e => {
-				e.preventDefault();
+		if (this.selector) {
+			Array.from(this.map.querySelectorAll('area')).forEach(area => {
+				let infoMarker;
+				area.addEventListener('click', e => {
+					e.preventDefault();
+				})
+				area.addEventListener('mouseenter', e => {
+					infoMarker = document.createElement('div');
+					infoMarker.classList.add('info-marker');
+					infoMarker.innerHTML = `<div class="img"><img src="${area.getAttribute('href')}" /></div><div class="text">${area.getAttribute('title')}</div>`;
+					const offsetTop = this.canvas.getBoundingClientRect().top;
+					const coordsRef = area.getAttribute('coords').split(',');
+					const size = Number(coordsRef[2]);
+					const top = Number(coordsRef[1]);
+					const left = Number(coordsRef[0]);
+					if (left - (size * 0.95) + 50 <= Number(window.innerWidth - 450 - 60)) {
+						infoMarker.setAttribute('style', `
+							margin-left: 25px;
+							transform-origin: 0 0;
+							top: ${top - (size /2)}px;
+							left: ${left}px;
+							// top: ${top - (size * 0.95)}px;
+							// left: ${left - (size * 0.95)}px;
+						`);
+					} else {
+						infoMarker.setAttribute('style', `
+							margin-right: 25px;
+							transform-origin: 100% 0;
+							top: ${top - (size*1.1 / 2)}px;
+							right: ${this.canvas.clientWidth - left}px;
+							// top: ${top - (size * 0.95) + offsetTop}px;
+							// left: ${left - (size * 0.95) + 50 - 450}px;
+						`);
+					}
+					this.canvas.parentNode.append(infoMarker);
+					setTimeout(() => {
+						infoMarker.classList.add('active');
+					}, 150);
+				});
+				area.addEventListener('mouseout', e => {
+					infoMarker.parentNode.removeChild(infoMarker);
+					infoMarker.classList.remove('active');
+				})
 			})
-			area.addEventListener('mouseenter', e => {
-				infoMarker = document.createElement('div');
-				infoMarker.classList.add('info-marker');
-				infoMarker.innerHTML = `<div class="img"><img src="${area.getAttribute('href')}" /></div><div class="text">${area.getAttribute('title')}</div>`;
-				const offsetTop = this.canvas.getBoundingClientRect().top;
-				const coordsRef = area.getAttribute('coords').split(',');
-				const size = Number(coordsRef[2]);
-				const top = Number(coordsRef[1]);
-				const left = Number(coordsRef[0]);
-				if (left - (size * 0.95) + 50 <= Number(window.innerWidth - 450 - 60)) {
-					infoMarker.setAttribute('style', `
-						margin-left: 25px;
-						transform-origin: 0 0;
-						top: ${top - (size /2)}px;
-						left: ${left}px;
-						// top: ${top - (size * 0.95)}px;
-						// left: ${left - (size * 0.95)}px;
-					`);
-				} else {
-
-					infoMarker.setAttribute('style', `
-						margin-right: 25px;
-						transform-origin: 100% 0;
-						top: ${top - (size*1.1 / 2)}px;
-						right: ${this.canvas.clientWidth - left}px;
-						// top: ${top - (size * 0.95) + offsetTop}px;
-						// left: ${left - (size * 0.95) + 50 - 450}px;
-					`);
-				}
-				this.canvas.parentNode.append(infoMarker);
-				// document.querySelector('body');
-
-				setTimeout(() => {
-					infoMarker.classList.add('active');
-				}, 150);
-			});
-			area.addEventListener('mouseout', e => {
-				infoMarker.parentNode.removeChild(infoMarker);
-				infoMarker.classList.remove('active');
-			})
-		})
+		}
 	}
 
 	init() {
