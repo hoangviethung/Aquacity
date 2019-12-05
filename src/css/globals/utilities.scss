@@ -190,12 +190,54 @@ main {
 			border-radius: 50%;
 		}
 
+		span:first-child {
+			font-size: 14px;
+			color: white;
+		}
+
+		span:not(:first-child) {
+			position: absolute;
+			right: 100%;
+			padding: 10px;
+			white-space: nowrap;
+			background: map-get($mau, main);
+			line-height: 1;
+			margin-right: 18px;
+			transform: translateX(20px);
+			opacity: 0;
+			font-size: 14px;
+			transition: all .3s ease-in-out;
+			display: flex;
+			align-items: center;
+			height: 30px;
+
+			&:before {
+				position: absolute;
+				top: 0;
+				left: 100%;
+				border-top: 15px solid transparent;
+				border-bottom: 15px solid transparent;
+				border-left: 12px solid #07414c;
+				content: '';
+			}
+		}
+
 		&:hover {
 			background: #e8de8b;
 			color: map-get($mau, main);
 			transition: all .3s ease-in-out;
-			animation: wiggle .1s infinite alternate;
 			transform-origin: center 60%;
+
+			span:nth-child(1) {
+				color: map-get($mau, main);
+				animation: wiggle .1s infinite alternate;
+			}
+
+			span:not(:first-child) {
+				color: white;
+				transform: translateX(0);
+				opacity: 1;
+			}
 
 			&:before {
 				transition: all .3s ease-in-out;

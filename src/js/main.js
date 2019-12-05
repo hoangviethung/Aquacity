@@ -137,6 +137,23 @@ const changeMapByTime = () => {
 	}
 }
 
+const areaRipple = () => {
+	$('.area-4 .img').ripples({
+		resolution: 350,
+		perturbance: 0.01,
+		interactive: false,
+	});
+	setInterval(function() {
+		var $el = $('.area-4 .img');
+		var x = Math.random() * $el.outerWidth();
+		var y = Math.random() * $el.outerHeight();
+		var dropRadius = 20;
+		var strength = 0.04 + Math.random() * 0.04;
+
+		$el.ripples("drop", x, y, dropRadius, strength);
+	}, 1000);
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -153,5 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		sliderSection7();
 		imageMapCanvas();
 		changeMapByTime();
+		areaRipple();
 	})
 });
