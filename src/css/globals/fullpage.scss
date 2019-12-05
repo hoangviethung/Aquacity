@@ -111,6 +111,7 @@
 
 					span:not(.title) {
 						color: map-get($mau, main);
+						font-weight: 700;
 					}
 				}
 			}
@@ -137,11 +138,7 @@
 }
 
 @media (max-width: 1024px) {
-	#fullpage-navigation {
+	.fp-navigation {
 		display: none;
 	}
 }
-
-// .section{
-// 	display: none;
-// }

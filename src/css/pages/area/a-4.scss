@@ -1,0 +1,54 @@
+.area-4 {
+	.title {
+		position: absolute;
+		top: 200px;
+		right: 0;
+		background-color: #0d4432;
+		padding-top: 10px;
+		padding-bottom: 10px;
+
+		p:not(.title-text) {
+			color: white;
+			font-size: 40px;
+			text-transform: uppercase;
+			text-align: right;
+			padding-left: 60px;
+			padding-right: 120px;
+			line-height: 1.2;
+
+			span {
+				display: block;
+			}
+		}
+
+		.title-text {
+			font-size: 70px;
+			text-transform: uppercase;
+			line-height: 1.2;
+			font-weight: 700;
+			background-image: url('../assets/gradient_1.jpg');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-position: center;
+			padding-right: 120px;
+			padding-left: 120px;
+			text-align: right;
+
+			&.grad {
+				-webkit-text-fill-color: transparent;
+				-webkit-background-clip: text;
+			}
+		}
+
+		&:before {
+			position: absolute;
+			content: '';
+			top: -10px;
+			bottom: -10px;
+			left: 10px;
+			border: 4px solid #d4b76f;
+			border-right: 0;
+			right: 0;
+		}
+	}
+}

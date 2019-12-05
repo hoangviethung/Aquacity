@@ -1,19 +1,15 @@
 {
 	"build": true,
 	"filePath": [
-		"./src/about.pug"
+		"./src/area.pug"
 	],
 	"vendor": {
 		"font": [
 			"src/fonts/**",
 			"bower_components/mdi/fonts/**",
-			"bower_components/font-awesome/webfonts/**",
-			"bower_components/linearicons/dist/web-font/fonts/**"
+			"bower_components/font-awesome/webfonts/**"
 		],
 		"js": [
-			"bower_components/object-fit-images/dist/ofi.browser.js",
-			"bower_components/lazysizes/lazysizes.js",
-			"bower_components/lazysizes/plugins/unveilhooks/ls.unveilhooks.js",
 			"bower_components/jquery/dist/jquery.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js",
 			"bower_components/image-map-resizer/js/imageMapResizer.js"

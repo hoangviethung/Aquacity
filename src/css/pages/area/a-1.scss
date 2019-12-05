@@ -1,11 +1,90 @@
 .area-1 {
+	display: flex;
+	flex-direction: column;
+
 	.img {
+		max-width: 100%;
+
 		img {
 			width: 100%;
 		}
 	}
 
 	.content {
+		width: 100%;
+		height: 100%;
 		text-align: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+
+		.logo,
+		.text {
+			width: 100%;
+			text-align: center;
+
+			img {
+				width: 100%;
+				max-width: 610px;
+
+				@media (max-width: 1024px) {
+					max-width: 450px;
+				}
+
+				@media (max-width: 576px) {
+					max-width: 240px;
+				}
+			}
+
+			svg {
+				width: 100%;
+				max-width: 1040px;
+
+				path {
+					stroke: #4C8343;
+					stroke-width: .5;
+					stroke-dasharray: 470;
+					stroke-dashoffset: 470;
+					fill: transparent;
+				}
+			}
+		}
+		.logo{
+			transform: translateY(-25px);
+			opacity: 0;
+			transition: all .5s ease-in-out;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		.content {
+			padding: 30px 15px;
+
+			.text {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+.show-page {
+	.area-1 {
+		.content {
+			.logo {
+				transform: translateY(0);
+				opacity: 1;
+			}
+
+			.text {
+				svg {
+					path {
+						animation: MapDash linear 2s forwards;
+						fill: #4C8343;
+						transition: fill .5s linear;
+						transition-delay: 1.5s;
+					}
+				}
+			}
+		}
 	}
 }

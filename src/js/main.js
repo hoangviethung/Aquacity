@@ -118,6 +118,9 @@ const imageMapCanvas = () => {
 	const imageMap_1 = new ImageMapCanvas('#sec-2 .imgMapCanvas');
 	const imageMap_2 = new ImageMapCanvas('#sec-5 .imgMapCanvas');
 	imageMap_2.customLabel();
+
+	// Custom Canvas
+	const imageMap_3 = new ImageMapCanvas('.area-2 .imgMapCanvas');
 }
 
 const changeMapByTime = () => {
@@ -140,10 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (window.innerWidth >= 1025) {
 		document.querySelector('body').setAttribute('style', `overflow: hidden`)
 	}
+	const className = document.getElementById('js-page-verify').getAttribute('class');
+	document.querySelector('body').classList.add(className);
 	Promise.all(getSVGImage()).then(() => {
 		fullpage();
-		objectFitImages('.ofcv');
-		objectFitImages('.ofct');
 		Loading();
 		sectionVitriTab();
 		activeFrame2Section4();
