@@ -56,27 +56,4 @@
 							.img
 								img(src="./assets/utilities/"+i+".jpg", alt="")
 							.text
-								-if(i==1)
-									h3 Đường dạo ven sông
-								-if(i==2)
-									h3 Bến du thuyền
-								-if(i==3)
-									h3 Công viên xanh
-								-if(i==4)
-									h3 Vườn ươm cây
-								-if(i==5)
-									h3 Bến thuyền Kayak
-								-if(i==6)
-									h3 Clubhouse & hồ bơi
-								-if(i==7)
-									h3 Aqua central mall
-								-if(i==8)
-									h3 Game center
-								-if(i==9)
-									h3 Khu vui chơi trẻ em
-								-if(i==10)
-									h3 Trường học các cấp
-								-if(i==11)
-									h3 Aqua sport complex
-								-if(i==12)
-									h3 Phòng khám đa khoa quốc tế
+								h3= titlePosition[i-1]
