@@ -4,17 +4,21 @@ import ImageMapCanvas from "./lib/ImageMapCanvas";
 import Swiper from "../../bower_components/swiper/package/js/swiper.esm.browser.bundle";
 import Loading from "./lib/loading";
 
-(() => {
-	Array.from(document.querySelectorAll('.svg-image')).forEach(item => {
-		const imgUrl = item.getAttribute('src');
-		const httpRequest = new XMLHttpRequest();
-		httpRequest.onload = data => {
-			item.parentElement.innerHTML = data.srcElement.response;
-		}
-		httpRequest.open('GET', imgUrl)
-		httpRequest.send();
+
+const getSVGImage = () => {
+	return Array.prototype.map.call(document.querySelectorAll('.svg-image'), item => {
+		return new Promise((resolve, reject) => {
+			const imgUrl = item.getAttribute('data-src');
+			const request = new XMLHttpRequest();
+			request.open('GET', imgUrl)
+			request.onload = data => {
+				item.parentElement.innerHTML = data.srcElement.response;
+				resolve();
+			}
+			request.send();
+		})
 	})
-})()
+}
 
 const fullpage = () => {
 	// const device = navigator.platform.includes('Win32') || navigator.platform.includes('MacIntel');
@@ -24,6 +28,9 @@ const fullpage = () => {
 				section: '.section',
 				titles: true,
 				on: {
+					init: function() {
+						getSVGImage();
+					},
 					afterRunEffect: function() {
 						if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
 							document.querySelector('header .header-nav-icon').classList.remove('active');
@@ -127,17 +134,21 @@ const changeMapByTime = () => {
 	}
 }
 
-
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
-	fullpage();
-	sectionVitriTab();
-	activeFrame2Section4();
-	sliderSection7();
-	imageMapCanvas();
-	changeMapByTime();
-	objectFitImages('.ofcv');
-	objectFitImages('.ofct');
-	Loading();
+	if (window.innerWidth >= 1025) {
+		document.querySelector('body').setAttribute('style', `overflow: hidden`)
+	}
+	Promise.all(getSVGImage()).then(() => {
+		fullpage();
+		objectFitImages('.ofcv');
+		objectFitImages('.ofct');
+		Loading();
+		sectionVitriTab();
+		activeFrame2Section4();
+		sliderSection7();
+		imageMapCanvas();
+		changeMapByTime();
+	})
 });

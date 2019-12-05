@@ -7,15 +7,15 @@ module.exports = class FullPage {
 	titles = false;
 	titlesArray = [];
 	on = {
+		init: function() {
+			console.log(1);
+		},
 		afterRunEffect: function() {
 			return;
 		},
 	}
 
-	generateFullpageComponent() {
-		document.querySelector('body').setAttribute('style', `
-			overflow: hidden;
-		`)
+	generateFullpageComponent(callback) {
 
 		const sectionList = Array.from(this.selector.querySelectorAll(this.section));
 		this.navigator = document.createElement('div');
@@ -57,6 +57,10 @@ module.exports = class FullPage {
 
 		this.selector.appendChild(this.navigator);
 		this.selector.appendChild(this.mask);
+
+		if (callback) {
+			callback();
+		}
 	}
 
 	run() {
@@ -220,9 +224,10 @@ module.exports = class FullPage {
 		this.section = opts.section;
 		this.titles = opts.titles;
 		this.on.afterRunEffect = opts.on.afterRunEffect;
+		this.on.init = opts.on.init;
 
 		if (this.selector) {
-			this.generateFullpageComponent();
+			this.generateFullpageComponent(this.on.init);
 			this.run();
 		}
 	}
