@@ -308,15 +308,19 @@
 					}
 
 					&:nth-child(2) {
-						transition-delay: .3s;
+						transition-delay: .25s;
 					}
 
 					&:nth-child(3) {
-						transition-delay: .5s;
+						transition-delay: .4s;
 					}
 
 					&:nth-child(4) {
-						transition-delay: .7s;
+						transition-delay: .65s;
+					}
+
+					&:nth-child(5) {
+						transition-delay: .8s;
 					}
 				}
 			}
