@@ -77,12 +77,8 @@ module.exports = (gsap, fp) => {
 	// Click menu
 	Array.prototype.forEach.call(menuWrapper.querySelectorAll('nav a'), (item, index) => {
 		item.addEventListener('click', e => {
-			e.preventDefault();
-			Array.prototype.forEach.call(menuWrapper.querySelectorAll('nav a'), (ele, eleIndex) => {
-				ele.classList.remove('active');
-			})
-			item.classList.add('active');
 			if (currentPage === 'index-page') {
+				e.preventDefault();
 				if (checkScreenSize) {
 					const nextIndex = Number(item.getAttribute('fp-target'));
 					const nextSection = Array.from(document.querySelectorAll('#fullpage .fp-wrapper .fp-section'))[nextIndex];
@@ -144,8 +140,13 @@ module.exports = (gsap, fp) => {
 					})
 				}
 			} else {
-
+				localStorage.setItem('isScroll', true)
+				localStorage.setItem('nextIndex', index)
 			}
+			Array.prototype.forEach.call(menuWrapper.querySelectorAll('nav a'), (ele, eleIndex) => {
+				ele.classList.remove('active');
+			})
+			item.classList.add('active');
 		})
 	})
 }
