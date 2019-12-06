@@ -10,21 +10,6 @@ module.exports = (gsap, fp) => {
 		}
 		menuIconDesktop.classList.add('active');
 		setTimeout(() => {
-			if (checkScreenSize) {
-				gsap.fromTo('main', {
-					css: {
-						scale: '1',
-						background: 'rgba(7, 65, 76, 0)',
-					}
-				}, {
-					duration: 0.6,
-					css: {
-						overflow: 'hidden',
-						scale: '.8',
-						background: 'rgb(7, 65, 76)',
-					}
-				})
-			}
 			gsap.fromTo(menuWrapper, {
 				left: '100%',
 			}, {
@@ -42,21 +27,6 @@ module.exports = (gsap, fp) => {
 		}
 		menuWrapper.classList.remove('active');
 		setTimeout(() => {
-			if (checkScreenSize) {
-				gsap.fromTo('main', {
-					css: {
-						scale: '.8',
-						background: 'rgba(7, 65, 76, 1)',
-					}
-				}, {
-					duration: 0.6,
-					css: {
-						scale: '1',
-						overflow: 'visible',
-						background: 'rgba(7, 65, 76, 0)',
-					}
-				})
-			}
 			gsap.fromTo(menuWrapper, {
 				left: 0,
 			}, {
@@ -95,19 +65,6 @@ module.exports = (gsap, fp) => {
 					}
 					if (fp.canBeScrolled) {
 						menuWrapper.classList.remove('active');
-						gsap.fromTo('main', {
-							css: {
-								scale: '.8',
-								background: 'rgb(7, 65, 76)',
-							}
-						}, {
-							duration: 0.6,
-							css: {
-								scale: '1',
-								overflow: 'visible',
-								background: 'transparent',
-							}
-						})
 						gsap.fromTo(menuWrapper, {
 							left: 0,
 						}, {
