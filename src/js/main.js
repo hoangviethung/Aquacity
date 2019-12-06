@@ -40,26 +40,39 @@ const fullpage = () => {
 							ele.classList.remove('active');
 						})
 						Array.from(document.querySelectorAll('.header-nav-wrapper nav a'))[currentIndex].classList.add('active');
-
 						if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
 							document.querySelector('header .header-nav-icon').classList.remove('active');
 							document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
 							document.querySelector('.section .frame-2').classList.remove('active');
 						}
+						localStorage.removeItem('isScroll');
+						localStorage.removeItem('nextIndex');
 					}
 				}
 			});
 
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
-				if (localStorage.getItem('isScroll')) {
-					const targetIndex = localStorage.getItem('nextIndex');
+
+				const callback = () => {
+					const currentIndex = Number(document.querySelector('#fullpage [fp-active="1"]').getAttribute('fp-index'));
+					Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
+						ele.classList.remove('active');
+					})
+					Array.from(document.querySelectorAll('.header-nav-wrapper nav a'))[currentIndex].classList.add('active');
+					if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
+						document.querySelector('header .header-nav-icon').classList.remove('active');
+						document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
+						document.querySelector('.section .frame-2').classList.remove('active');
+					}
 					localStorage.removeItem('isScroll');
 					localStorage.removeItem('nextIndex');
+				}
+				if (localStorage.getItem('isScroll')) {
+					const targetIndex = localStorage.getItem('nextIndex');
 					const targetSection = document.querySelector(`.fp-section[fp-index="${targetIndex}"]`);
 					const currentSection = document.querySelector(`.fp-section[fp-index="0"]`);
-					fullpage.runEffect(currentSection, targetSection, 'down');
+					fullpage.runEffect(currentSection, targetSection, 'down', callback);
 				}
-
 
 				document.querySelector('#widget-left .subscribe').addEventListener('click', e => {
 					e.preventDefault();
