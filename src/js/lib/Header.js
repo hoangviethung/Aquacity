@@ -86,8 +86,8 @@ module.exports = (gsap, fp) => {
 				if (checkScreenSize) {
 					const nextIndex = Number(item.getAttribute('fp-target'));
 					const nextSection = Array.from(document.querySelectorAll('#fullpage .fp-wrapper .fp-section'))[nextIndex];
-					const currentIndex = Number(currentSection.getAttribute('fp-index'));
 					const currentSection = document.querySelector('.fp-section[fp-active="1"]');
+					const currentIndex = Number(currentSection.getAttribute('fp-index'));
 					let scrollDirection;
 					if (currentIndex < nextIndex) {
 						scrollDirection = 'down';
