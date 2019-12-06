@@ -132,7 +132,7 @@ export default class ImageMapCanvas {
 							// left: ${left - (size * 0.95) + 50 - 450}px;
 						`);
 					}
-					this.canvas.parentNode.append(infoMarker);
+					document.querySelector('body').parentNode.append(infoMarker);
 					setTimeout(() => {
 						infoMarker.classList.add('active');
 					}, 150);

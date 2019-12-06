@@ -47,6 +47,8 @@ const fullpage = () => {
 						}
 						localStorage.removeItem('isScroll');
 						localStorage.removeItem('nextIndex');
+
+						customFancybox(fullpage);
 					}
 				}
 			});
@@ -168,6 +170,19 @@ const changeMapByTime = () => {
 			})
 		})
 	}
+}
+
+const customFancybox = param => {
+	param.canBeScrolled = false;
+	$('[data-fancybox]').fancybox({
+		hash: false,
+		closeExisting: true,
+		parentEl: 'main',
+		touch: false,
+		afterClose: function() {
+			param.canBeScrolled = true;
+		}
+	})
 }
 
 // ==> Call functions here

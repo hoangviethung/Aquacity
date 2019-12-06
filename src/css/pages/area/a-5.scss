@@ -1,5 +1,9 @@
 .area-5 {
-	padding: 130px 30px 60px 30px;
+	padding: 170px 30px 60px 30px;
+	background-image: url('../assets/area/leave.png');
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+	background-size: 170px;
 
 	.content {
 		border: 5px solid map-get($mau, main-2);

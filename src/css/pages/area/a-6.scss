@@ -1,9 +1,13 @@
 .area-6 {
 	position: relative;
+	background-image: url('../assets/area/leave.png');
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+	background-size: 170px;
 
 	.content {
 		position: absolute;
-		top: 130px;
+		top: 160px;
 		bottom: 130px;
 		left: 160px;
 		right: 160px;
@@ -12,9 +16,81 @@
 
 	.img {
 		height: 100%;
+		max-width: 60%;
 
 		img {
 			height: 100%;
 		}
 	}
+
+	.title {
+		position: absolute;
+		top: -30px;
+		right: -10px;
+		display: flex;
+		align-items: flex-end;
+		flex-direction: column;
+
+		p {
+			padding-left: 30px;
+			font-size: 60px;
+			text-transform: uppercase;
+			color: #4c8343;
+			background: #f8f5ee;
+		}
+
+		h2 {
+			text-align: right;
+			font-size: 70px;
+			font-weight: 700;
+			text-transform: uppercase;
+			color: #4c8343;
+		}
+	}
+
+	.number {
+		font-size: 350px;
+		line-height: 1;
+		color: #b3c4ab;
+		position: absolute;
+		top: 0px;
+		right: -5px;
+		padding-right: 470px;
+		background: #f8f5ee;
+
+		@media (max-width: 1659.98px) {
+			font-size: 225px;
+		}
+	}
+
+	.items {
+		position: absolute;
+		bottom: 100px;
+		right: 45px;
+		text-align: right;
+
+		.item {
+			h3 {
+				font-size: 32px;
+			}
+
+			hr {
+				width: 160px;
+				margin-right: 0;
+				height: 4px;
+				display: block;
+				margin-left: auto;
+				background-size: 100%;
+				background-repeat: no-repeat;
+				background-position: center;
+				background-image: url('../assets/bg_btn_discover.png');
+				border: 0;
+			}
+
+			+.item {
+				margin-top: 40px;
+			}
+		}
+	}
+
 }
