@@ -117,9 +117,9 @@ module.exports = (gsap, fp) => {
 								menuWrapper.classList.remove('active');
 								menuIconDesktop.classList.remove('active');
 								document.querySelector('main').removeAttribute('style');
+								fp.runEffect(currentSection, nextSection, scrollDirection);
 							}
 						})
-						fp.runEffect(currentSection, nextSection, scrollDirection);
 					}
 				} else {
 					const nextIndex = Number(item.getAttribute('fp-target'));
