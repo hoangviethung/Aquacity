@@ -80,7 +80,7 @@ export default class ImageMapCanvas {
 					// set style
 					this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
 					this.canvasContext.fillStyle = 'rgba(7, 65, 76, .35)';
-					this.canvasContext.lineWidth = 4;
+					this.canvasContext.lineWidth = 3;
 					this.drawCircle(coords);
 				}
 			});
@@ -117,19 +117,15 @@ export default class ImageMapCanvas {
 						infoMarker.setAttribute('style', `
 							margin-left: 25px;
 							transform-origin: 0 0;
-							top: ${top - (size /2)}px;
+							top: ${top - size + this.selector.offsetTop}px;
 							left: ${left}px;
-							// top: ${top - (size * 0.95)}px;
-							// left: ${left - (size * 0.95)}px;
 						`);
 					} else {
 						infoMarker.setAttribute('style', `
 							margin-right: 25px;
 							transform-origin: 100% 0;
-							top: ${top - (size*1.1 / 2)}px;
+							top: ${top - size + this.selector.offsetTop}px;
 							right: ${this.canvas.clientWidth - left}px;
-							// top: ${top - (size * 0.95) + offsetTop}px;
-							// left: ${left - (size * 0.95) + 50 - 450}px;
 						`);
 					}
 					document.querySelector('body').parentNode.append(infoMarker);
