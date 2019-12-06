@@ -158,12 +158,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('body').classList.add(className);
 	Promise.all(getSVGImage()).then(() => {
 		fullpage();
-		// Loading();
 		sectionVitriTab();
 		activeFrame2Section4();
 		sliderSection7();
 		imageMapCanvas();
 		changeMapByTime();
+		Loading();
 	})
 });
 
