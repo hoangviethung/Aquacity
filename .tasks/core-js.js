@@ -9,21 +9,17 @@ import {
 	readFileSync,
 } from 'graceful-fs';
 
-const jsCore = (cb) => {
-	const glob = JSON.parse(readFileSync('config.json'));
-	const jsVendorList = glob.vendor.js;
-	if(jsVendorList.length > 0){
-		return src(jsVendorList, {
-				allowEmpty: true,
-			})
-			.pipe(sourcemap.init())
-			.pipe(concat('core.min.js'))
-			.pipe(uglify())
-			.pipe(sourcemap.write('.'))
-			.pipe(dest('./_dist/js'))
-	} else {
-		return cb();
-	}
+const jsCore = () => {
+	let glob = JSON.parse(readFileSync('config.json'));
+	let jsVendorList = glob.vendor.js;
+	return src(jsVendorList, {
+			allowEmpty: true,
+		})
+		.pipe(sourcemap.init())
+		.pipe(concat('core.min.js'))
+		.pipe(uglify())
+		.pipe(sourcemap.write('.'))
+		.pipe(dest('./_dist/js'))
 };
 
 module.exports = {

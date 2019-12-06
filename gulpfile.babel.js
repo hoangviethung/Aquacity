@@ -7,7 +7,8 @@ import {
 	server
 } from "./.tasks/server";
 import {
-	jsTask
+	jsTask,
+	jsTask2
 } from "./.tasks/script";
 import {
 	pugTask
@@ -40,6 +41,7 @@ exports.default = series(
 	cssCore,
 	cssTask,
 	jsTask,
+	jsTask2,
 	pugTask,
 	server,
 )

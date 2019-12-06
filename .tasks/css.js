@@ -3,7 +3,6 @@ import {
 	dest,
 } from 'gulp';
 import sass from 'gulp-sass';
-import Fibers from "fibers";
 import cleanCSS from 'gulp-clean-css';
 import rename from 'gulp-rename';
 import postcss from 'gulp-postcss';
@@ -14,9 +13,7 @@ import cssSort from 'css-declaration-sorter';
 const cssTask = () => {
 	return src(['src/css/**.scss'])
 		.pipe(sourcemap.init())
-		.pipe(sass({
-			fibers: Fibers
-		}).on('error', sass.logError))
+		.pipe(sass.sync().on('error', sass.logError))
 		.pipe(postcss([
 			autoprefixer({
 				cascade: false,

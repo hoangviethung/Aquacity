@@ -12,32 +12,27 @@ import {
 	readFileSync,
 } from 'graceful-fs';
 
-const cssCore = (cb) => {
+const cssCore = () => {
 	const glob = JSON.parse(readFileSync('config.json'));
 	const cssVendorList = glob.vendor.css;
-	if(cssVendorList.length > 0){
-		return src(cssVendorList, {
-				allowEmpty: true,
-			})
-			.pipe(sourcemap.init())
-			.pipe(concat('core.min.css'))
-			.pipe(postcss([
-				autoprefixer({
-					cascade: false,
-				}),
-				cssSort({
-					order: 'concentric-css',
-				}),
-			]))
-			.pipe(cleanCSS({
-				compatibility: 'ie8'
-			}))
-			.pipe(sourcemap.write('.'))
-			.pipe(dest('./_dist/css'))
-	} else {
-		return cb();
-	}
-
+	return src(cssVendorList, {
+			allowEmpty: true,
+		})
+		.pipe(sourcemap.init())
+		.pipe(concat('core.min.css'))
+		.pipe(postcss([
+			autoprefixer({
+				cascade: false,
+			}),
+			cssSort({
+				order: 'concentric-css',
+			}),
+		]))
+		.pipe(cleanCSS({
+			compatibility: 'ie8'
+		}))
+		.pipe(sourcemap.write('.'))
+		.pipe(dest('./_dist/css'))
 };
 
 module.exports = {

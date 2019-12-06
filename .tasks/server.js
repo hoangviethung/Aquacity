@@ -8,7 +8,8 @@ import {
 	jsCore
 } from "./core-js"
 import {
-	jsTask
+	jsTask,
+	jsTask2
 } from "./script"
 import {
 	pugTask
@@ -36,23 +37,29 @@ const server = () => {
 	})
 
 	watch([
-		"src/js/**/**.js"
+		"src/js/main.js",
+		"src/js/lib/**.js"
 	], series(jsTask));
 
 	watch([
-		"src/**/**.pug",
+		"src/js/**.js",
+		"!src/js/main.js"
+	], series(jsTask2));
+
+	watch([
+		"src/**.pug",
 		"src/_components/**/**.pug"
 	], series(pugTask));
 
 	watch([
 		"src/css/**/**.scss"
-	], series(cssTask));
+	], {
+		delay: 600
+	}, series(cssTask));
 
 	watch([
 		"src/assets/**/**.{svg,png,jpg,speg,gif,mp4,flv,avi}"
-	], {
-		delay: 750
-	}, series(cleanAssets, copyAssets));
+	], series(cleanAssets, copyAssets));
 
 
 	watch([
