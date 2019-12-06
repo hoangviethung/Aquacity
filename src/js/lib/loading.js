@@ -10,12 +10,12 @@ const Loading = () => {
 		document.querySelector('body').classList.add('show-page');
 	}
 
-	const turnOffLoadingScreen = () => {
+	const turnOffLoadingScreen = callback => {
 		loading.style.opacity = '0';
 		setTimeout(function() {
 			loading.style.display = 'none';
 			loading.parentNode.removeChild(loading);
-			return showPage();
+			return callback();
 		}, 800)
 	};
 
@@ -23,7 +23,7 @@ const Loading = () => {
 		let n = 100 / imagesLength * (counter += 1);
 		if (progress.style.width = `${n}`, progressStat.innerHTML = `${n}`, counter === imagesLength) {
 			setTimeout(() => {
-				return turnOffLoadingScreen();
+				return turnOffLoadingScreen(showPage);
 			}, 2400);
 		}
 	};

@@ -1,9 +1,12 @@
-import Tab from './lib/tab';
-import FullPage from "./lib/fullpage";
-import ImageMapCanvas from "./lib/ImageMapCanvas";
 import Swiper from "../../bower_components/swiper/package/js/swiper.esm.browser.bundle";
-import Loading from "./lib/loading";
-
+import {
+	gsap
+} from "../../bower_components/gsap/esm/index.js";
+import Header from "./lib/Header";
+import Tab from './lib/Tab';
+import Loading from "./lib/Loading";
+import FullPage from "./lib/Fullpage";
+import ImageMapCanvas from "./lib/ImageMapCanvas";
 
 const getSVGImage = () => {
 	return Array.prototype.map.call(document.querySelectorAll('.svg-image'), item => {
@@ -21,10 +24,10 @@ const getSVGImage = () => {
 }
 
 const fullpage = () => {
-	// const device = navigator.platform.includes('Win32') || navigator.platform.includes('MacIntel');
-	if (window.innerWidth >= 1025) {
-		if (document.getElementById('fullpage')) {
-			const fullpage = new FullPage('#fullpage', {
+	if (document.getElementById('fullpage')) {
+		let fullpage
+		if (window.innerWidth >= 1025) {
+			fullpage = new FullPage('#fullpage', {
 				section: '.section',
 				titles: true,
 				on: {
@@ -32,6 +35,13 @@ const fullpage = () => {
 						getSVGImage();
 					},
 					afterRunEffect: function() {
+						const currentIndex = Number(document.querySelector('#fullpage [fp-active="1"]').getAttribute('fp-index'));
+						Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
+							ele.classList.remove('active');
+						})
+						Array.from(document.querySelectorAll('.header-nav-wrapper nav a'))[currentIndex].classList.add('active');
+
+
 						if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
 							document.querySelector('header .header-nav-icon').classList.remove('active');
 							document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
@@ -56,8 +66,9 @@ const fullpage = () => {
 						fullpage.runEffect(currentSection, contactSection, 'up');
 					}
 				})
-			}
+			};
 		}
+		Header(gsap, fullpage);
 	}
 }
 
@@ -137,23 +148,6 @@ const changeMapByTime = () => {
 	}
 }
 
-const areaRipple = () => {
-	$('.area-4 .img').ripples({
-		resolution: 350,
-		perturbance: 0.01,
-		interactive: false,
-	});
-	setInterval(function() {
-		var $el = $('.area-4 .img');
-		var x = Math.random() * $el.outerWidth();
-		var y = Math.random() * $el.outerHeight();
-		var dropRadius = 20;
-		var strength = 0.04 + Math.random() * 0.04;
-
-		$el.ripples("drop", x, y, dropRadius, strength);
-	}, 1000);
-}
-
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -164,12 +158,15 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('body').classList.add(className);
 	Promise.all(getSVGImage()).then(() => {
 		fullpage();
-		Loading();
+		// Loading();
 		sectionVitriTab();
 		activeFrame2Section4();
 		sliderSection7();
 		imageMapCanvas();
 		changeMapByTime();
-		areaRipple();
 	})
 });
+
+export {
+	fullpage
+}

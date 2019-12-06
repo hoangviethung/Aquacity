@@ -6,9 +6,6 @@ export default class Tab {
 		if (this.selector) {
 			this.navigationItems = Array.from(this.selector.querySelectorAll("[toggle-for]"));
 			this.contentList = Array.from(this.selector.querySelectorAll("[tab-id]"));
-			// this.navigationList = this.selector.querySelector(obj.navigationList);
-			// this.breakpoint = obj.responsive.breakpoint;
-			// this.isResponsive = obj.responsive.isResponsive;
 			this.init();
 		}
 	}

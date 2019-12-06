@@ -11,15 +11,14 @@ html(lang="en")
 		link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&display=swap&subset=vietnamese")
 		link(rel="stylesheet", href="./css/core.min.css")
 		link(rel="stylesheet", href="./css/main.min.css")
-	body
-		#fb-root
-		#loading
-			.logo-loader
-				img.svg-image(data-src="./assets/logo.svg", alt="")
-			.progstat-wrapper.d-none Loading:
-				span#progstat 0
-				| %
-			#progress
+	body.show-page
+		//- #loading
+		//- 	.logo-loader
+		//- 		img.svg-image(data-src="./assets/logo.svg", alt="")
+		//- 	.progstat-wrapper.d-none Loading:
+		//- 		span#progstat 0
+		//- 		| %
+		//- 	#progress
 		//- main content
 		block header
 			include _header.pug

@@ -1,12 +1,15 @@
 .area-4 {
-	.title {
+	.section-widget {
 		position: absolute;
 		top: 200px;
 		right: 0;
+		z-index: 2;
+	}
+
+	.title {
 		background-color: #0d4432;
 		padding-top: 10px;
 		padding-bottom: 10px;
-		z-index: 2;
 
 		p:not(.title-text) {
 			color: white;

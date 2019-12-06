@@ -2,7 +2,7 @@ import {
 	gsap
 } from "../../../bower_components/gsap/esm/index.js";
 
-module.exports = class FullPage {
+export default class FullPage {
 	canBeScrolled = true;
 	titles = false;
 	titlesArray = [];
@@ -139,6 +139,7 @@ module.exports = class FullPage {
 						onComplete: function() {
 							mask.removeAttribute('style');
 							mask.classList.remove('sliding');
+							this.canBeScrolled = true;
 						}
 					})
 
@@ -170,6 +171,7 @@ module.exports = class FullPage {
 						onComplete: function() {
 							mask.classList.remove('sliding');
 							mask.removeAttribute('style');
+							this.canBeScrolled = true;
 						}
 					})
 

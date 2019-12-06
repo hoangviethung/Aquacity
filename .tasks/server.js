@@ -46,9 +46,7 @@ const server = () => {
 
 	watch([
 		"src/css/**/**.scss"
-	], {
-		delay: 750
-	}, series(cssTask));
+	], series(cssTask));
 
 	watch([
 		"src/assets/**/**.{svg,png,jpg,speg,gif,mp4,flv,avi}"
@@ -61,9 +59,7 @@ const server = () => {
 		"vendors/**/**.css",
 		"vendors/**/**.js",
 		"config.json"
-	], {
-		delay: 750
-	}, parallel(jsCore, cssCore));
+	], parallel(jsCore, cssCore));
 
 	watch([
 		"_dist"

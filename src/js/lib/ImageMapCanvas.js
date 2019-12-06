@@ -1,5 +1,34 @@
 export default class ImageMapCanvas {
 
+	constructor(selector) {
+		// initialize value
+		this.selector = document.querySelector(selector);
+		if (this.selector) {
+			this.map = this.selector.querySelector('map');
+			this.canvas = this.selector.querySelector('canvas');
+			this.canvasContext = this.canvas.getContext("2d");
+			this.mapImage = this.selector.querySelector('img');
+			this.imageUrl = this.mapImage.getAttribute('src');
+		}
+
+		// Start plugins
+		if (this.canvas) {
+			this.init();
+		}
+	}
+
+	init() {
+		imageMapResize();
+		this.canvas.style.backgroundImage = `url('${this.imageUrl}')`;
+		this.canvas.classList.add('background-added');
+		this.setSizeImageMapCanvas();
+		window.addEventListener('resize', () => {
+			this.clearImageMap();
+			this.setSizeImageMapCanvas();
+		})
+		this.registerEvents();
+	}
+
 	clearImageMap = () => {
 		this.canvasContext.clearRect(0, 0, this.canvas.width, this.canvas.height);
 	}
@@ -113,35 +142,6 @@ export default class ImageMapCanvas {
 					infoMarker.classList.remove('active');
 				})
 			})
-		}
-	}
-
-	init() {
-		imageMapResize();
-		this.canvas.style.backgroundImage = `url('${this.imageUrl}')`;
-		this.canvas.classList.add('background-added');
-		this.setSizeImageMapCanvas();
-		window.addEventListener('resize', () => {
-			this.clearImageMap();
-			this.setSizeImageMapCanvas();
-		})
-		this.registerEvents();
-	}
-
-	constructor(selector) {
-		// initialize value
-		this.selector = document.querySelector(selector);
-		if (this.selector) {
-			this.map = this.selector.querySelector('map');
-			this.canvas = this.selector.querySelector('canvas');
-			this.canvasContext = this.canvas.getContext("2d");
-			this.mapImage = this.selector.querySelector('img');
-			this.imageUrl = this.mapImage.getAttribute('src');
-		}
-
-		// Start plugins
-		if (this.canvas) {
-			this.init();
 		}
 	}
 }

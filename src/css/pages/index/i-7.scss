@@ -2,6 +2,7 @@
 	background: #ffffff;
 	display: flex;
 	align-items: center;
+	overflow: hidden;
 
 	.title-block {
 		display: flex;
@@ -16,7 +17,6 @@
 				transition: all .5s linear;
 				opacity: 0;
 				transform: translateY(20px);
-
 			}
 		}
 	}
@@ -263,6 +263,14 @@
 	}
 
 	@media (max-width: 1024px) {
+		.content {
+			&:before {
+				top: -10px;
+				left: -10px;
+				right: -10px;
+				bottom: -10px;
+			}
+		}
 
 		.title-block {
 			.main-title {
