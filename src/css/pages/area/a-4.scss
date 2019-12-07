@@ -17,6 +17,11 @@
 			span {
 				display: block;
 			}
+
+			@media (max-width: 1024px) {
+				font-size: 30px;
+				font-weight: 700;
+			}
 		}
 
 		.title-text {
@@ -35,6 +40,10 @@
 			&.grad {
 				-webkit-text-fill-color: transparent;
 				-webkit-background-clip: text;
+			}
+
+			@media (max-width: 1024px) {
+				font-size: 60px;
 			}
 		}
 
@@ -138,7 +147,8 @@
 			font-size: 18px;
 			z-index: 2;
 		}
-		.img{
+
+		.img {
 			flex: 0 0 100%;
 			max-width: 100%;
 		}
