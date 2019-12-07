@@ -3,4 +3,200 @@
 		p.title-text.grad Mặt bằng
 		p.title-text.grad Tổng thể
 	.content
-		img(src="./assets/area/a_3.png", alt="")
+		.imgMapCanvas.desktop
+			.map-canvas
+				map#area_3(name="#area_3")
+					area(shape='poly', coords='696, 197, 851, 209, 862, 284, 869, 290, 873, 298, 871, 301, 1015, 315, 1159, 346, 1185, 359, 1204, 378, 1154, 398, 1136, 390, 1066, 372, 1070, 411, 1056, 413, 884, 397, 696, 380, 703, 281' data-fancybox="area_3_1" data-src="#popup-fronts" style="cursor: pointer")
+					area(shape='poly', coords='638, 147, 683, 143, 692, 283, 687, 380, 634, 374, 644, 280' data-fancybox="area_3_2" data-src="#popup-fronts" style="cursor: pointer")
+					area(shape='poly', coords='538, 154, 630, 148, 634, 279, 624, 373, 522, 363, 537, 276' data-fancybox="area_3_3" data-src="#popup-fronts" style="cursor: pointer")
+					area(shape='poly', coords='480, 158, 529, 154, 526, 281, 511, 364, 456, 360, 472, 279' data-fancybox="area_3_4" data-src="#popup-fronts" style="cursor: pointer")
+					area(shape='poly', coords='323, 169, 469, 157, 459, 282, 440, 360, 286, 347, 309, 269' data-fancybox="area_3_5" data-src="#popup-fronts" style="cursor: pointer")
+				canvas
+			.map-image
+				img(src="./assets/area/a_3.png", alt="" usemap="#area_3")
+		.img.mobile
+			img(src="./assets/area/a_3.png", alt="")
+	.container.mobile
+		.row.fronts-list
+			.col-6.col-md-4.item
+				a(data-fancybox="area_3_1_1" data-src="#popup-fronts") 
+					h3 Townhouse
+					p 6 x 20 (m)
+			.col-6.col-md-4.item
+				a(data-fancybox="area_3_1_2" data-src="#popup-fronts") 
+					h3 Townhouse
+					p 6 x 25 (m)
+			.col-6.col-md-4.item
+				a(data-fancybox="area_3_1_3" data-src="#popup-fronts") 
+					h3 Shophouse
+					p 6 x 25 (m)
+			.col-6.col-md-4.item
+				a(data-fancybox="area_3_1_4" data-src="#popup-fronts") 
+					h3 Semidetached Villa
+					p 10 x 22 (m)
+			.col-6.col-md-4.item
+				a(data-fancybox="area_3_1_5" data-src="#popup-fronts") 
+					h3 Semidetached Villa
+					p 10 x 24 (m)
+	.d-none
+		#popup-fronts.popup-fronts
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row.tab-container
+						.col-lg-auto.list-items
+							.item(toggle-for="front_1")
+								h3 Townhouse
+								p 6 x 20 (m)
+							.item(toggle-for="front_2")
+								h3 Townhouse
+								p 6 x 25 (m)
+							.item(toggle-for="front_3")
+								h3 Shophouse
+								p 6 x 25 (m)
+							.item(toggle-for="front_4")
+								h3 Semidetached Villa
+								p 10 x 22 (m)
+							.item(toggle-for="front_5")
+								h3 Semidetached Villa
+								p 10 x 24 (m)
+						.col-lg
+							-for(let i=1;i<6;i++)
+								.tab-content(tab-id="front_"+i)
+									.content-wrapper
+										.img
+											img(src="./assets/area/a_4_"+i+".jpg", alt="")
+										.info
+											-if(i==1)
+												h2 Townhouse
+												p 6 x 25 (m)
+												.description
+													p Diện tích khu đất: 150 m2
+													p Tổng diện tích sàn xây dựng (GFA): 237.4 m2
+													p 
+														i (*) Không bao gồm ban công, sân thượng
+												a.btn.btn-viewmore(href="#" data-fancybox="area_d_"+i, data-src="#area_d_"+i) Chi tiết
+											-if(i==2)
+												h2 Townhouse
+												p 6 x 20 (m)
+												.description
+													p Diện tích khu đất: 120 m2
+													p Tổng diện tích sàn xây dựng (GFA): 237.4 m2
+													p (*) Không bao gồm ban công, sân thượng
+												a.btn.btn-viewmore(href="#" data-fancybox="area_d_"+i, data-src="#area_d_"+i)  Chi tiết
+											-if(i==3)
+												h2 Shophouse
+												p 6 x 25 (m)
+												.description
+													p Diện tích khu đất: 150 m2
+													p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+													p (*) Không bao gồm ban công, sân thượng
+												a.btn.btn-viewmore(href="#" data-fancybox="area_d_"+i, data-src="#area_d_"+i)  Chi tiết
+											-if(i==4)
+												h2 Semidetached Villa
+												p 10 x 22 (m)
+												.description
+													p Diện tích khu đất: 220 m2
+													p Tổng diện tích sàn xây dựng (GFA): 279 m2
+													p (*) Không bao gồm ban công, sân thượng
+												a.btn.btn-viewmore(href="#" data-fancybox="area_d_"+i, data-src="#area_d_"+i)  Chi tiết
+											-if(i==5)
+												h2 Semidetached Villa
+												p 10 x 24 (m)
+												.description
+													p Diện tích khu đất: 240 m2
+													p Tổng diện tích sàn xây dựng (GFA): 279 m2
+													p (*) Không bao gồm ban công, sân thượng
+												a.btn.btn-viewmore(href="#" data-fancybox="area_d_"+i, data-src="#area_d_"+i)  Chi tiết
+		#area_d_1.popup-fronts.area_d
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content.row
+					.col-lg-6
+						.img
+							img(src="./assets/area/a_4_1.jpg", alt="")
+						h2 Townhouse
+						p 6 x 25 (m)
+						.description
+							p Diện tích khu đất: 150 m2
+							p Tổng diện tích sàn xây dựng (GFA): 237.4 m2
+							p 
+								i (*) Không bao gồm ban công, sân thượng
+					.col-lg-6
+						img(src="./assets/area/a_3_d_1.png", alt="")
+		#area_d_2.popup-fronts.area_d
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content.row
+					.col-lg-6
+						.img
+							img(src="./assets/area/a_4_2.jpg", alt="")
+						h2 Townhouse
+						p 6 x 20 (m)
+						.description
+							p Diện tích khu đất: 120 m2
+							p Tổng diện tích sàn xây dựng (GFA): 237.4 m2
+							p 
+								i (*) Không bao gồm ban công, sân thượng
+					.col-lg-6
+						img(src="./assets/area/a_3_d_2.png", alt="")
+		#area_d_3.popup-fronts.area_d
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content.row
+					.col-lg-6
+						.img
+							img(src="./assets/area/a_4_3.jpg", alt="")
+						h2 Shophouse
+						p 6 x 25 (m)
+						.description
+							p Diện tích khu đất: 150 m2
+							p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+							p 
+								i (*) Không bao gồm ban công, sân thượng
+					.col-lg-6
+						img(src="./assets/area/a_3_d_3.png", alt="")
+		#area_d_4.popup-fronts.area_d
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content.row
+					.col-lg-6
+						.img
+							img(src="./assets/area/a_4_4.jpg", alt="")
+						h2 Semidetached Villa
+						p 10 x 22 (m)
+						.description
+							p Diện tích khu đất: 220 m2
+							p Tổng diện tích sàn xây dựng (GFA): 279 m2
+							p 
+								i (*) Không bao gồm ban công, sân thượng
+					.col-lg-6
+						img(src="./assets/area/a_3_d_4.png", alt="")
+		#area_d_5.popup-fronts.area_d
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content.row
+					.col-lg-6
+						.img
+							img(src="./assets/area/a_4_5.jpg", alt="")
+						h2 Semidetached Villa
+						p 10 x 24 (m)
+						.description
+							p Diện tích khu đất: 240 m2
+							p Tổng diện tích sàn xây dựng (GFA): 279 m2
+							p 
+								i (*) Không bao gồm ban công, sân thượng
+					.col-lg-6
+						img(src="./assets/area/a_3_d_5.png", alt="")

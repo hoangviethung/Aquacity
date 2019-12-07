@@ -92,6 +92,6 @@ export default class Tab {
 	init() {
 		this.runTabWhenClicked();
 		this.activeFirstTab();
-		this.runResponsive();
+		this.runResponsive();	
 	}
 }

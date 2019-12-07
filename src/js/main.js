@@ -24,8 +24,8 @@ const getSVGImage = () => {
 }
 
 const fullpage = () => {
+	let fullpage
 	if (document.getElementById('fullpage')) {
-		let fullpage
 		if (window.innerWidth >= 1025) {
 			fullpage = new FullPage('#fullpage', {
 				section: '.section',
@@ -47,8 +47,7 @@ const fullpage = () => {
 						}
 						localStorage.removeItem('isScroll');
 						localStorage.removeItem('nextIndex');
-
-						customFancybox(fullpage);
+						customFancybox(fullpage)
 					}
 				}
 			});
@@ -97,7 +96,9 @@ const fullpage = () => {
 }
 
 const sectionVitriTab = () => {
-	return new Tab('#sec-3 .tab-container');
+	return new Tab('#sec-3 .tab-container', {
+		isResponsive: false,
+	});
 }
 
 const activeFrame2Section4 = () => {
@@ -156,6 +157,7 @@ const imageMapCanvas = () => {
 
 	// Custom Canvas
 	const imageMap_3 = new ImageMapCanvas('.area-2 .imgMapCanvas');
+	const imageMap_4 = new ImageMapCanvas('.area-3 .imgMapCanvas');
 }
 
 const changeMapByTime = () => {
@@ -173,16 +175,30 @@ const changeMapByTime = () => {
 }
 
 const customFancybox = param => {
-	param.canBeScrolled = false;
 	$('[data-fancybox]').fancybox({
 		hash: false,
 		closeExisting: true,
 		parentEl: 'main',
 		touch: false,
+		smallBtn: "auto",
+		btnTpl: {
+			close: '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' + '<svg xmlns="http://www.w3.org/2000/svg" width="55.37" height="56.06" viewBox="0 0 55.37 56.06"><defs><style>.cls-1 {fill: #4c8343;stroke: #4c8343;stroke-width: 3px;fill-rule: evenodd;}</style></defs><path class="cls-1" d="M3764.5,4309.98l5.25,5.25-46.52,46.52-5.25-5.25Z" transform="translate(-3716.16 -4308.47)"/><path id="Shape_774_copy" data-name="Shape 774 copy" class="cls-1" d="M3770.02,4357.71l-5.31,5.31-47.06-47.07,5.3-5.3Z" transform="translate(-3716.16 -4308.47)"/></svg>' + "</button>",
+		},
+		beforeLoad: function() {
+			if (param) {
+				param.canBeScrolled = false;
+			}
+		},
 		afterClose: function() {
-			param.canBeScrolled = true;
+			if (param) {
+				param.canBeScrolled = true;
+			}
 		}
 	})
+}
+
+const Area4TabFronts = () => {
+	return new Tab('#popup-fronts .tab-container')
 }
 
 // ==> Call functions here
@@ -196,10 +212,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	Promise.all(getSVGImage()).then(() => {
 		fullpage();
 		sectionVitriTab();
+		Area4TabFronts();
 		activeFrame2Section4();
 		sliderSection7();
 		imageMapCanvas();
 		changeMapByTime();
+		customFancybox();
 		Loading();
 	})
 });

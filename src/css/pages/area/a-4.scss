@@ -1,23 +1,4 @@
 .area-4 {
-	.section-widget {
-		position: absolute;
-		top: 200px;
-		right: 0;
-		z-index: 2;
-	}
-
-	.btn-viewmore {
-		background: #003b28;
-		height: 50px;
-		border-radius: 25px;
-		text-transform: uppercase;
-		color: white;
-		font-size: 30px;
-		padding: 0 50px;
-		margin-top: 40px;
-		position: absolute;
-		right: 160px;
-	}
 
 	.title {
 		background-color: #0d4432;
@@ -57,26 +38,47 @@
 			}
 		}
 
-		&:before {
-			position: absolute;
-			content: '';
-			top: -10px;
-			bottom: -10px;
-			left: 10px;
-			border: 4px solid #d4b76f;
-			border-right: 0;
-			right: 0;
+		@media (min-width: 1025px) {
+			&:before {
+				position: absolute;
+				content: '';
+				top: -10px;
+				bottom: -10px;
+				left: 10px;
+				border: 4px solid #d4b76f;
+				border-right: 0;
+				right: 0;
+			}
 		}
+
+		@media (max-width: 1024px) {
+			background: transparent;
+
+			p:not(.title-text) {
+				padding: 0 0;
+				text-align: center;
+				color: #0d4432;
+			}
+		}
+	}
+
+	.row {
+		height: 100%;
 	}
 
 	.img {
 		background-image: url('../assets/area/a_4.png');
 		background-repeat: no-repeat;
 		background-size: cover;
+		flex: 0 0 60%;
+		max-width: 60%;
 
 		img {
 			opacity: 0;
 			visibility: hidden;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 	}
 
@@ -88,6 +90,90 @@
 			cursor: context-menu;
 		}
 	}
+
+	.btn-viewmore {
+		background: #003b28;
+		color: white;
+		text-transform: uppercase;
+	}
+
+	@media (min-width: 1025px) {
+		.section-widget {
+			position: absolute;
+			top: 200px;
+			right: 0;
+			z-index: 2;
+		}
+
+		.btn-viewmore {
+			height: 50px;
+			border-radius: 25px;
+			font-size: 30px;
+			padding: 0 50px;
+			margin-top: 40px;
+			position: absolute;
+			right: 160px;
+		}
+	}
+
+	@media (max-width: 1024px) {
+		padding: 30px 0 0 0;
+		position: relative;
+
+		.title {
+			.title-text.grad {
+				margin-top: 10px;
+				padding: 0;
+				text-align: center;
+			}
+		}
+
+		.btn-viewmore {
+			position: absolute;
+			bottom: 60px;
+			left: 50%;
+			transform: translateX(-50%);
+			height: 40px;
+			padding: 0 30px;
+			font-size: 18px;
+			z-index: 2;
+		}
+		.img{
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+
+		.number {
+			text-align: center;
+			height: 100%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			display: none;
+
+			span {
+				font-size: 210px;
+			}
+		}
+	}
+
+	@media (max-width: 576px) {
+
+		.title {
+
+			p:not(.title-text) {
+				font-size: 22px;
+
+				span {
+					display: block;
+				}
+			}
+
+			.title-text.grad {
+				font-size: 32px;
+			}
+		}
+	}
 }
 
 .fancybox-slide--html {
@@ -97,4 +183,100 @@
 .popup-area-4 {
 	width: 100%;
 	height: 100%;
+	padding: 0 0 40px 0;
+	background-color: #f8f5ee;
+
+	&::-webkit-scrollbar {
+		background: #cfcfcf;
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #003b28;
+	}
+
+	.fancybox-close-small {
+		right: 15px;
+		padding: 0;
+		border: 0;
+
+		svg {
+			path {
+				stroke-width: 1;
+				stroke: #4c8343;
+			}
+		}
+	}
+
+	.logo {
+		position: absolute;
+		height: 70px;
+		top: 15px;
+
+		img {
+			height: 100%;
+		}
+	}
+
+	.container {
+		padding-top: 160px;
+
+		.col-sm-6 {
+			margin-bottom: 40px;
+			position: relative;
+
+			@media (min-width: 1025px) {
+				.text {
+					position: absolute;
+					bottom: 50px;
+					background: #003b28;
+					padding: 15px 70px 15px 20px;
+
+					&:before {
+						content: '';
+						position: absolute;
+						top: -9px;
+						right: 5px;
+						bottom: -9px;
+						left: 0;
+						border: 4px solid #d4b76f;
+						border-left: 0;
+					}
+
+					h3 {
+						font-size: 28px;
+						color: white;
+						font-weight: 400;
+					}
+				}
+			}
+
+			@media (max-width: 1024px) {
+				margin-bottom: 0;
+				margin-top: 15px;
+
+				.text {
+					padding: 10px;
+					background: #003b28;
+
+					h3 {
+						font-size: 20px;
+						color: white;
+					}
+				}
+			}
+		}
+
+		@media (max-width: 1024px) {
+			padding-top: 80px;
+		}
+	}
+
+	.content {
+		padding: 0 75px;
+
+		@media (max-width: 1024px) {
+			padding: 0 0;
+		}
+	}
 }
