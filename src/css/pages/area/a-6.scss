@@ -4,6 +4,31 @@
 	background-repeat: no-repeat;
 	background-position: 100% 100%;
 
+	.item {
+		h3 {
+			font-size: 32px;
+		}
+
+		hr {
+			width: 160px;
+			margin-right: 0;
+			height: 4px;
+			display: block;
+			margin-left: auto;
+			background-size: 100%;
+			background-repeat: no-repeat;
+			background-position: center;
+			background-image: url('../assets/bg_btn_discover.png');
+			border: 0;
+		}
+
+		@media (min-width: 1025px) {
+			+.item {
+				margin-top: 40px;
+			}
+		}
+	}
+
 	@media (min-width: 1025px) {
 		background-size: 170px;
 
@@ -70,34 +95,11 @@
 			bottom: 100px;
 			right: 45px;
 			text-align: right;
-
-			.item {
-				h3 {
-					font-size: 32px;
-				}
-
-				hr {
-					width: 160px;
-					margin-right: 0;
-					height: 4px;
-					display: block;
-					margin-left: auto;
-					background-size: 100%;
-					background-repeat: no-repeat;
-					background-position: center;
-					background-image: url('../assets/bg_btn_discover.png');
-					border: 0;
-				}
-
-				+.item {
-					margin-top: 40px;
-				}
-			}
 		}
 	}
 
 	@media (max-width: 1024px) {
-		background-image: none;
+		background-image: url('../assets/area/a_6.jpg');
 
 		.number {
 			display: none;
@@ -108,15 +110,67 @@
 		}
 
 		.content {
-			// background-image: url('../assets/area/a_6.jpg');
-			background-image: white;
+			background-color: rgba(255, 255, 255, .8);
 			background-repeat: no-repeat;
 			background-position: 100% 100%;
-			height: 450px;
+			height: 280px;
+			padding-top: 30px;
 		}
-		.title{
+
+		.title {
 			text-align: center;
+			margin-bottom: 20px;
+
+			p,
+			h2 {
+				font-size: 30px;
+				color: #003b28;
+				text-transform: uppercase;
+
+				br {
+					display: none;
+				}
+			}
+		}
+
+		.items {
+			display: flex;
+
+			.item {
+				flex: 0 0 50%;
+				max-width: 50%;
+				text-align: center;
+
+				hr {
+					margin: 10px auto;
+				}
+
+				h3 {
+					font-size: 26px;
+					color: #0d4432;
+				}
+
+				p {
+					font-size: 18px;
+				}
+			}
 		}
 	}
 
+	@media (max-width: 576px) {
+		.title {
+
+			p,
+			h2 {
+				font-size: 22px;
+			}
+		}
+		.items{
+			.item{
+				h3 {
+					font-size: 20px;
+				}
+			}
+		}
+	}
 }
