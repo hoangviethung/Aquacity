@@ -123,24 +123,35 @@
 	}
 
 	@media (max-width: 1024.98px) {
+		padding: 30px 0;
+
 		.content {
 			padding: 0 10px;
 
 			.title {
-				text-align: center;
+				text-align   : center;
+				margin-bottom: 10px;
 
 				p {
 					background    : #f8f5ee;
 					color         : #4c8343;
-					font-size     : 35px;
+					font-size     : 30px;
 					text-transform: uppercase;
 				}
 
 				h2 {
 					color         : #4c8343;
-					font-size     : 40px;
+					font-size     : 30px;
 					font-weight   : 700;
 					text-transform: uppercase
+				}
+
+				@media (max-width: 575.98px) {
+
+					h2,
+					p {
+						font-size: 22px;
+					}
 				}
 			}
 
@@ -149,6 +160,14 @@
 					h3 {
 						font-size     : 18px;
 						text-transform: uppercase;
+
+						br {
+							display: none;
+						}
+
+						@media (max-width: 767.98px) {
+							font-size: 14px;
+						}
 					}
 
 					hr {
@@ -161,8 +180,18 @@
 						background-position: center;
 						background-image   : url('../assets/bg_btn_discover.png');
 						border             : 0;
+						margin-left        : 0;
 					}
 				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.content {
+
+			.item {
+				margin-bottom: 15px;
 			}
 		}
 	}
