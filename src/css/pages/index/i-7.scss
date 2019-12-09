@@ -3,6 +3,10 @@
 	display: flex;
 	align-items: center;
 	overflow: hidden;
+	background-image: url('../assets/index/i_7_bg.jpg');
+	background-position: top;
+	background-size: 100%;
+	background-repeat: no-repeat;
 
 	.title-block {
 		display: flex;
@@ -25,18 +29,18 @@
 		width: 100%;
 		position: relative;
 
-		&:before {
-			content: '';
-			background-image: url('../assets/index/i_7_bg.png');
-			background-position: top;
-			background-size: 100%;
-			background-repeat: no-repeat;
-			position: absolute;
-			top: -100px;
-			left: -100px;
-			right: -100px;
-			bottom: -100px;
-		}
+		// &:before {
+		// 	content: '';
+		// 	background-image: url('../assets/index/i_7_bg.png');
+		// 	background-position: top;
+		// 	background-size: 100%;
+		// 	background-repeat: no-repeat;
+		// 	position: absolute;
+		// 	top: -100px;
+		// 	left: -100px;
+		// 	right: -100px;
+		// 	bottom: -100px;
+		// }
 
 		@media (min-width: 1025px) {
 			border: 5px solid map-get($mau, main-2);
