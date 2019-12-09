@@ -54,6 +54,8 @@ const fullpage = () => {
 
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
 				const callback = () => {
+					localStorage.removeItem('isScroll');
+					localStorage.removeItem('nextIndex');
 					const currentIndex = Number(document.querySelector('#fullpage [fp-index="0"]').getAttribute('fp-index'));
 					Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
 						ele.classList.remove('active');
@@ -64,18 +66,16 @@ const fullpage = () => {
 						document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
 						document.querySelector('.section .frame-2').classList.remove('active');
 					}
-					localStorage.removeItem('isScroll');
-					localStorage.removeItem('nextIndex');
 				}
 
 				if (localStorage.getItem('isScroll')) {
-					console.log(localStorage.getItem('nextIndex'));
-					
 					if (localStorage.getItem('nextIndex') != 0) {
 						const targetIndex = localStorage.getItem('nextIndex');
 						const targetSection = document.querySelector(`.fp-section[fp-index="${targetIndex}"]`);
 						const currentSection = document.querySelector(`.fp-section[fp-index="0"]`);
 						fullpage.runEffect(currentSection, targetSection, 'down', callback);
+						localStorage.removeItem('isScroll');
+						localStorage.removeItem('nextIndex');
 					}
 				}
 
