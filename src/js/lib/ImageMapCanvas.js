@@ -73,7 +73,10 @@ export default class ImageMapCanvas {
 					// set style
 					this.canvasContext.strokeStyle = '#e8de8b';
 					this.canvasContext.fillStyle = 'rgba(7, 65, 76,.25)';
-					this.canvasContext.lineWidth = 5;
+					this.canvasContext.lineWidth = 3;
+					// this.canvasContext.shadowColor = 'rgba(255,255,255,.75)'
+					// this.canvasContext.shadowOffsetY = 30;
+					// this.canvasContext.shadowOffsetX = 0;
 					this.drawPolygon(coords);
 				}
 				if (shape === 'circle') {

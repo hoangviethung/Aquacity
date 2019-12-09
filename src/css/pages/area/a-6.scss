@@ -6,11 +6,14 @@
 
 	.item {
 		h3 {
-			font-size: 32px;
+			font-size: 26px;
+
+			@media (min-width: 1660px) {
+				font-size: 32px;
+			}
 		}
 
 		hr {
-			width: 160px;
 			margin-right: 0;
 			height: 4px;
 			display: block;
@@ -20,9 +23,20 @@
 			background-position: center;
 			background-image: url('../assets/bg_btn_discover.png');
 			border: 0;
+			width: 120px;
+
+			@media (min-width: 1660px) {
+				width: 160px;
+			}
 		}
 
 		@media (min-width: 1025px) {
+			+.item {
+				margin-top: 20px;
+			}
+		}
+
+		@media (min-width: 1660px) {
 			+.item {
 				margin-top: 40px;
 			}
@@ -39,14 +53,38 @@
 			left: 160px;
 			right: 160px;
 			border: 5px solid map-get($mau, main-2);
+
+			&:before {
+				content: '';
+				height: 190px;
+				background: #f8f5ee;
+				right: -5px;
+				top: -5px;
+				width: 200px;
+				position: absolute;
+
+				@media (min-width: 1660px) {
+					width: 370px;
+					height: 350px;
+				}
+			}
 		}
 
 		.img {
 			height: 100%;
-			max-width: 60%;
+			max-width: 65%;
+			background-position: center;
+			background-size: cover;
+			background-repeat: no-repeat;
 
 			img {
+				opacity: 0;
 				height: 100%;
+				object-fit: cover;
+			}
+
+			@media (max-width: 1659.98px) {
+				max-width: 55%;
 			}
 		}
 
@@ -60,18 +98,25 @@
 
 			p {
 				padding-left: 30px;
-				font-size: 60px;
+				font-size: 35px;
 				text-transform: uppercase;
 				color: #4c8343;
-				background: #f8f5ee;
+
+				@media (min-width: 1660px) {
+					font-size: 60px;
+				}
 			}
 
 			h2 {
 				text-align: right;
-				font-size: 70px;
+				font-size: 45px;
 				font-weight: 700;
 				text-transform: uppercase;
 				color: #4c8343;
+
+				@media (min-width: 1660px) {
+					font-size: 70px;
+				}
 			}
 		}
 
@@ -81,20 +126,25 @@
 			position: absolute;
 			top: 0px;
 			right: -5px;
-			padding-right: 470px;
-			background: #f8f5ee;
+			padding-right: 300px;
 			font-size: 225px;
 
 			@media (min-width: 1660px) {
 				font-size: 350px;
+				padding-right: 470px;
 			}
 		}
 
 		.items {
 			position: absolute;
-			bottom: 100px;
-			right: 45px;
 			text-align: right;
+			bottom: 15px;
+			right: 15px;
+
+			@media (min-width: 1660px) {
+				bottom: 100px;
+				right: 45px;
+			}
 		}
 	}
 
@@ -165,8 +215,9 @@
 				font-size: 22px;
 			}
 		}
-		.items{
-			.item{
+
+		.items {
+			.item {
 				h3 {
 					font-size: 20px;
 				}

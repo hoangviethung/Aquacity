@@ -53,9 +53,8 @@ const fullpage = () => {
 			});
 
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
-
 				const callback = () => {
-					const currentIndex = Number(document.querySelector('#fullpage [fp-active="1"]').getAttribute('fp-index'));
+					const currentIndex = Number(document.querySelector('#fullpage [fp-index="0"]').getAttribute('fp-index'));
 					Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
 						ele.classList.remove('active');
 					})
@@ -68,11 +67,16 @@ const fullpage = () => {
 					localStorage.removeItem('isScroll');
 					localStorage.removeItem('nextIndex');
 				}
+
 				if (localStorage.getItem('isScroll')) {
-					const targetIndex = localStorage.getItem('nextIndex');
-					const targetSection = document.querySelector(`.fp-section[fp-index="${targetIndex}"]`);
-					const currentSection = document.querySelector(`.fp-section[fp-index="0"]`);
-					fullpage.runEffect(currentSection, targetSection, 'down', callback);
+					console.log(localStorage.getItem('nextIndex'));
+					
+					if (localStorage.getItem('nextIndex') != 0) {
+						const targetIndex = localStorage.getItem('nextIndex');
+						const targetSection = document.querySelector(`.fp-section[fp-index="${targetIndex}"]`);
+						const currentSection = document.querySelector(`.fp-section[fp-index="0"]`);
+						fullpage.runEffect(currentSection, targetSection, 'down', callback);
+					}
 				}
 
 				document.querySelector('#widget-left .subscribe').addEventListener('click', e => {
@@ -201,6 +205,45 @@ const Area4TabFronts = () => {
 	return new Tab('#popup-fronts .tab-container')
 }
 
+const ripple1 = () => {
+	try {
+		$('.area-4 .img').ripples({
+			resolution: 360,
+			perturbance: 0.01,
+			interactive: false
+		})
+	} catch (err) {}
+	setInterval(function() {
+		var $el = $('.area-4 .img');
+		var x = Math.random() * $el.outerWidth();
+		var y = Math.random() * $el.outerHeight();
+		var dropRadius = 30;
+		var strength = 0.04 + Math.random() * 0.04;
+		$el.ripples("drop", x, y, dropRadius, strength);
+	}, 2000);
+}
+
+const ripple2 = () => {
+	try {
+		$('.area-6 .img').ripples({
+			resolution: 360,
+			perturbance: 0.01,
+			interactive: false
+		})
+	} catch (error) {
+		console.log(error);
+
+	}
+	setInterval(function() {
+		var $el = $('.area-6 .img');
+		var x = Math.random() * $el.outerWidth();
+		var y = Math.random() * $el.outerHeight();
+		var dropRadius = 30;
+		var strength = 0.04 + Math.random() * 0.04;
+		$el.ripples("drop", x, y, dropRadius, strength);
+	}, 2000);
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -218,6 +261,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		imageMapCanvas();
 		changeMapByTime();
 		customFancybox();
+		ripple1();
+		ripple2();
 		Loading();
 	})
 });
