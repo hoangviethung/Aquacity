@@ -3,10 +3,6 @@
 	display: flex;
 	align-items: center;
 	overflow: hidden;
-	background-image: url('../assets/index/i_7_bg.jpg');
-	background-position: top;
-	background-size: 100%;
-	background-repeat: no-repeat;
 
 	.title-block {
 		display: flex;
@@ -28,6 +24,10 @@
 	.content {
 		width: 100%;
 		position: relative;
+		background-image: url('../assets/index/i_7_bg.jpg');
+		background-position: top;
+		background-size: 100%;
+		background-repeat: no-repeat;
 
 		// &:before {
 		// 	content: '';
