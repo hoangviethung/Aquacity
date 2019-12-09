@@ -161,10 +161,11 @@ main {
 			font-size: 20px;
 		}
 
-		span:not(:first-child) {
+		.hotline,
+		.brochure {
 			position: absolute;
 			left: 100%;
-			padding: 10px;
+			padding: 5px;
 			white-space: nowrap;
 			background: map-get($mau, main);
 			line-height: 1;
@@ -175,16 +176,44 @@ main {
 			transition: all .3s ease-in-out;
 			display: flex;
 			align-items: center;
-			height: 30px;
+			flex-wrap: wrap;
+			visibility: hidden;
+
+			a {
+				flex: 0 0 100%;
+				padding: 5px;
+				max-width: 100%;
+			}
 
 			&:before {
 				position: absolute;
 				top: 0;
 				right: 100%;
-				border-top: 15px solid transparent;
-				border-bottom: 15px solid transparent;
-				border-right: 12px solid #07414c;
 				content: '';
+			}
+		}
+
+		.brochure {
+			height: 28px;
+
+			&:before {
+				border-top: 14px solid transparent;
+				border-bottom: 14px solid transparent;
+				border-right: 12px solid map-get($mau, main);
+			}
+		}
+
+		.hotline {
+			height: 58px;
+
+			a {
+				color: #e8de8b;
+			}
+
+			&:before {
+				border-top: 29px solid transparent;
+				border-bottom: 29px solid transparent;
+				border-right: 12px solid map-get($mau, main);
 			}
 		}
 
@@ -199,10 +228,20 @@ main {
 				animation: wiggle .1s infinite alternate;
 			}
 
-			span:not(:first-child) {
-				color: white;
+			.hotline,
+			.brochure {
+				visibility: visible;
+				background: map-get($mau, main);
 				transform: translateX(0);
 				opacity: 1;
+				color: #e8de8b;
+
+				&:hover {
+					a {
+						background: map-get($mau, main);
+						color: #e8de8b;
+					}
+				}
 			}
 
 			&:before {

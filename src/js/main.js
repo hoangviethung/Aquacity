@@ -178,6 +178,13 @@ const changeMapByTime = () => {
 	}
 }
 
+const setLinkDownload = () => {
+	const className = document.getElementById('js-page-verify').getAttribute('class');
+	if (className.includes('stella-page')) {
+		document.querySelector('#widget-left .download').setAttribute('href', 'https://drive.google.com/file/d/1Wz2ra8qI1h5HWfWJsdLDC75YKsP72V9D/view')
+	}
+}
+
 const customFancybox = param => {
 	$('[data-fancybox]').fancybox({
 		hash: false,
@@ -253,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	const className = document.getElementById('js-page-verify').getAttribute('class');
 	document.querySelector('body').classList.add(className);
 	Promise.all(getSVGImage()).then(() => {
+		setLinkDownload();
 		fullpage();
 		sectionVitriTab();
 		Area4TabFronts();

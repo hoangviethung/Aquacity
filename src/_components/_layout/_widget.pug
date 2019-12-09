@@ -3,11 +3,13 @@
 		span.fas.fa-home
 	a.subscribe(href="index.html") 
 		span Nhận tin
-	a.item(href="#" download)
+	a.item.download(href="#" target="_blank")
 		span.mdi.mdi-download 
-		span Tải Brochure
-	a.item(href="tel:0943797979")
+		span.brochure Tải Brochure
+	span.item
 		span.mdi.mdi-phone-in-talk
-		span.hotline 0943 797 979
+		span.hotline
+			a(href="tel:0943797979") TP. Hồ Chí Minh: 0943 797 979
+			a(href="tel:0938550808") TP. Hà Nội: 0938 550 808
 	a.item(href="#")
 		span.mdi.mdi-arrow-up-bold
