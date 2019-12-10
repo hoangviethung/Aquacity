@@ -65,32 +65,62 @@ export default class ImageMapCanvas {
 	}
 
 	registerEvents() {
-		Array.from(this.map.querySelectorAll('area')).forEach(mapArea => {
-			mapArea.addEventListener('mouseover', () => {
-				let coords = mapArea.getAttribute('coords');
-				let shape = mapArea.getAttribute('shape');
-				if (shape === 'poly') {
-					// set style
-					this.canvasContext.strokeStyle = '#e8de8b';
-					this.canvasContext.fillStyle = 'rgba(7, 65, 76,.25)';
-					this.canvasContext.lineWidth = 3;
-					// this.canvasContext.shadowColor = 'rgba(255,255,255,.75)'
-					// this.canvasContext.shadowOffsetY = 30;
-					// this.canvasContext.shadowOffsetX = 0;
-					this.drawPolygon(coords);
+		if (this.selector === document.querySelector('.area-2 .imgMapCanvas') || this.selector === document.querySelector('.area-3 .imgMapCanvas')) {
+			Array.from(this.map.querySelectorAll('area')).forEach(areaItem => {
+				const effect = () => {
+					let time = new Date();
+					this.canvasContext.fillStyle = `rgba(7, 65, 76,${new Date().getMilliseconds() / 1750})`;
+					this.canvasContext.lineWidth = time.getMilliseconds() / 500;
+					this.canvasContext.strokeStyle = '#d4b76f';
+					let coords = areaItem.getAttribute('coords');
+					const coordsRef = coords.split(",");
+					const coordsRef2 = coordsRef.map(item => {
+						return Number(item) + 3;
+					})
+					this.canvasContext.globalCompositeOperation = 'destination-over';
+					this.canvasContext.beginPath();
+					this.canvasContext.clearRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
+					this.canvasContext.save();
+					this.canvasContext.beginPath();
+					this.canvasContext.moveTo(coordsRef2[0], coordsRef2[1]);
+					for (let i = 0; i < coordsRef2.length; i++) {
+						if (i % 2 == 0 && i > 1) {
+							this.canvasContext.lineTo(coordsRef2[i], coordsRef2[i + 1]);
+						}
+					}
+					this.canvasContext.closePath();
+					this.canvasContext.stroke();
+					this.canvasContext.fill();
+					this.canvasContext.restore();
+					window.requestAnimationFrame(effect);
 				}
-				if (shape === 'circle') {
-					// set style
-					this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
-					this.canvasContext.fillStyle = 'rgba(7, 65, 76, .35)';
-					this.canvasContext.lineWidth = 3;
-					this.drawCircle(coords);
-				}
-			});
-			mapArea.addEventListener('mouseout', () => {
-				this.clearImageMap();
+				window.requestAnimationFrame(effect);
 			})
-		})
+		} else {
+			Array.from(this.map.querySelectorAll('area')).forEach(mapArea => {
+				mapArea.addEventListener('mouseover', () => {
+					let coords = mapArea.getAttribute('coords');
+					let shape = mapArea.getAttribute('shape');
+					if (shape === 'poly') {
+						// set style
+						this.canvasContext.strokeStyle = '#e8de8b';
+						this.canvasContext.fillStyle = 'rgba(7, 65, 76,.25)';
+						this.canvasContext.lineWidth = 3;
+						this.drawPolygon(coords);
+					}
+					if (shape === 'circle') {
+						// set style
+						this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
+						this.canvasContext.fillStyle = 'rgba(7, 65, 76, .35)';
+						this.canvasContext.lineWidth = 3;
+						this.drawCircle(coords);
+					}
+				});
+				mapArea.addEventListener('mouseout', () => {
+					this.clearImageMap();
+				})
+			})
+		}
 	}
 
 	setSizeImageMapCanvas = () => {
