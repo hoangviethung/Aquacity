@@ -88,6 +88,8 @@
 		background-size: cover;
 		flex: 0 0 60%;
 		max-width: 60%;
+		position: relative;
+		height: 100%;
 
 		img {
 			opacity: 0;
@@ -95,6 +97,19 @@
 			width: 100%;
 			height: 100%;
 			object-fit: cover;
+		}
+
+		.btn-play {
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			transform: translate(-50%, -50%);
+
+			img {
+				opacity: 1;
+				visibility: visible;
+			}
+
 		}
 	}
 
@@ -131,8 +146,9 @@
 			right: 100px;
 		}
 	}
+
 	@media (min-width: 1660px) {
-		.btn-viewmore{
+		.btn-viewmore {
 			height: 50px;
 			border-radius: 25px;
 			font-size: 30px;
@@ -254,6 +270,11 @@
 			position: relative;
 
 			@media (min-width: 1025px) {
+				.img {
+					max-height: 350px;
+					overflow: hidden;
+				}
+
 				.text {
 					position: absolute;
 					bottom: 50px;
@@ -272,9 +293,17 @@
 					}
 
 					h3 {
-						font-size: 28px;
+						font-size: 21px;
 						color: white;
 						font-weight: 400;
+					}
+				}
+			}
+
+			@media (min-width: 1660px) {
+				.text {
+					h3 {
+						font-size: 24px;
 					}
 				}
 			}
@@ -295,13 +324,17 @@
 			}
 		}
 
+		@media (max-width: 1659.98px) {
+			padding-top: 120px;
+		}
+
 		@media (max-width: 1024px) {
 			padding-top: 80px;
 		}
 	}
 
 	.content {
-		padding: 0 75px;
+		padding: 0 135px;
 
 		@media (max-width: 1024px) {
 			padding: 0 0;

@@ -214,14 +214,14 @@ const Area4TabFronts = () => {
 
 const ripple1 = () => {
 	try {
-		$('.area-4 .img').ripples({
+		$('.area-4 .col-md-auto.img').ripples({
 			resolution: 360,
 			perturbance: 0.01,
 			interactive: false
 		})
 	} catch (err) {}
 	setInterval(function() {
-		var $el = $('.area-4 .img');
+		var $el = $('.area-4 .col-md-auto.img');
 		var x = Math.random() * $el.outerWidth();
 		var y = Math.random() * $el.outerHeight();
 		var dropRadius = 30;
@@ -251,98 +251,26 @@ const ripple2 = () => {
 	}, 2000);
 }
 
-const testEffectCanvas = () => {
-	imageMapResize();
-	let canvas = document.querySelector('.area-2 .imgMapCanvas .map-canvas canvas');
-	let map = document.querySelector('.area-2 .imgMapCanvas .map-canvas map');
-	let img = document.querySelector('.area-2 .imgMapCanvas .map-image img');
-	let canvasContext = canvas.getContext('2d');
-	canvas.setAttribute('width', canvas.clientWidth);
-	canvas.setAttribute('height', canvas.clientHeight);
-	canvas.setAttribute('style', `
-		background-image: url(${img.getAttribute('src')})
-	`)
-	const effect = () => {
-		let time = new Date();
-		let coords = map.querySelector('area').getAttribute('coords');
-		const coordsRef = coords.split(",");
-		// canvasContext.translate(0, 100);
-		canvasContext.globalCompositeOperation = 'destination-over';
-		canvasContext.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-		canvasContext.fillStyle = `rgba(7, 65, 76,${new Date().getMilliseconds() / 1750})`;
-		canvasContext.lineWidth = time.getMilliseconds() / 500;
-		canvasContext.strokeStyle = '#d4b76f';
-		// // canvasContext.translate(10, 10);
-		canvasContext.save();
-		canvasContext.beginPath();
-		canvasContext.moveTo(coordsRef[0], coordsRef[1]);
-		for (let i = 0; i < coordsRef.length; i++) {
-			if (i % 2 == 0 && i > 1) {
-				canvasContext.lineTo(coordsRef[i], (coordsRef[i + 1]));
-			}
-		}
-		canvasContext.closePath();
-		canvasContext.stroke();
-		canvasContext.fill();
-		canvasContext.restore();
-		window.requestAnimationFrame(effect);
-	}
-	window.requestAnimationFrame(effect);
-
-	window.addEventListener('resize', () => {
-		canvas.setAttribute('width', canvas.clientWidth);
-		canvas.setAttribute('height', canvas.clientHeight);
-		window.requestAnimationFrame(effect);
-	})
-
-}
-
-const testEffectCanvas2 = () => {
-	imageMapResize();
-	let canvas = document.querySelector('.area-3 .imgMapCanvas .map-canvas canvas');
-	let map = document.querySelector('.area-3 .imgMapCanvas .map-canvas map');
-	let img = document.querySelector('.area-3 .imgMapCanvas .map-image img');
-	let canvasContext = canvas.getContext('2d');
-	canvas.setAttribute('width', canvas.clientWidth);
-	canvas.setAttribute('height', canvas.clientHeight);
-	canvas.setAttribute('style', `
-		background-image: url(${img.getAttribute('src')})
-	`)
-	const effect = () => {
-		let time = new Date();
-		Array.from(map.querySelectorAll('area')).forEach(area => {
-			const coords = area.getAttribute('coords');
-			const coordsRef = coords.split(",");
-			// canvasContext.translate(0, 100);
-			canvasContext.globalCompositeOperation = 'destination-over';
-			canvasContext.clearRect(0, 0, canvas.clientWidth, canvas.clientHeight);
-			canvasContext.fillStyle = `rgba(7, 65, 76,${new Date().getMilliseconds() / 1500})`;
-			canvasContext.lineWidth = time.getMilliseconds() / 200;
-			canvasContext.strokeStyle = '#d4b76f';
-			// // canvasContext.translate(10, 10);
-			canvasContext.save();
-			canvasContext.beginPath();
-			canvasContext.moveTo(coordsRef[0], coordsRef[1]);
-			for (let i = 0; i < coordsRef.length; i++) {
-				if (i % 2 == 0 && i > 1) {
-					canvasContext.lineTo(coordsRef[i], (coordsRef[i + 1]));
+const sliderArea_1 = () => {
+	return new Swiper('.area-1 .swiper-container', {
+		slidesPerView: 1,
+		navigation: {
+			prevEl: '.area-1 .swiper-container .swiper-prev',
+			nextEl: '.area-1 .swiper-container .swiper-next'
+		},
+		on: {
+			slideChangeTransitionEnd: function() {
+				const video = document.querySelector('.area-1 .swiper-container .swiper-slide-active video');
+				if (video) {
+					console.log(1);
+					video.play();
+				} else {
+					const video2 = document.querySelector('.area-1 .swiper-container .swiper-slide video');
+					video2.pause();
 				}
 			}
-			canvasContext.closePath();
-			canvasContext.stroke();
-			canvasContext.fill();
-			canvasContext.restore();
-		})
-		window.requestAnimationFrame(effect);
-	}
-	window.requestAnimationFrame(effect);
-
-	window.addEventListener('resize', () => {
-		canvas.setAttribute('width', canvas.clientWidth);
-		canvas.setAttribute('height', canvas.clientHeight);
-		window.requestAnimationFrame(effect);
+		}
 	})
-
 }
 
 // ==> Call functions here
@@ -353,9 +281,11 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	const className = document.getElementById('js-page-verify').getAttribute('class');
 	document.querySelector('body').classList.add(className);
+
 	Promise.all(getSVGImage()).then(() => {
-		setLinkDownload();
 		fullpage();
+		sliderArea_1();
+		setLinkDownload();
 		sectionVitriTab();
 		Area4TabFronts();
 		activeFrame2Section4();
@@ -366,8 +296,6 @@ document.addEventListener('DOMContentLoaded', () => {
 		ripple1();
 		ripple2();
 		Loading();
-		// testEffectCanvas();
-		// testEffectCanvas2();
 	})
 });
 

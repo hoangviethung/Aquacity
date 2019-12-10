@@ -65,11 +65,11 @@ export default class ImageMapCanvas {
 	}
 
 	registerEvents() {
-		if (this.selector === document.querySelector('.area-2 .imgMapCanvas') || this.selector === document.querySelector('.area-3 .imgMapCanvas')) {
+		if (this.selector === document.querySelector('.area-2 .imgMapCanvas')) {
 			Array.from(this.map.querySelectorAll('area')).forEach(areaItem => {
 				const effect = () => {
 					let time = new Date();
-					this.canvasContext.fillStyle = `rgba(7, 65, 76,${new Date().getMilliseconds() / 1750})`;
+					this.canvasContext.fillStyle = `rgba(226, 209, 168,${new Date().getMilliseconds() / 1750})`;
 					this.canvasContext.lineWidth = time.getMilliseconds() / 500;
 					this.canvasContext.strokeStyle = '#d4b76f';
 					let coords = areaItem.getAttribute('coords');
@@ -78,8 +78,8 @@ export default class ImageMapCanvas {
 						return Number(item) + 3;
 					})
 					this.canvasContext.globalCompositeOperation = 'destination-over';
-					this.canvasContext.beginPath();
 					this.canvasContext.clearRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
+					this.canvasContext.beginPath();
 					this.canvasContext.save();
 					this.canvasContext.beginPath();
 					this.canvasContext.moveTo(coordsRef2[0], coordsRef2[1]);
@@ -96,6 +96,38 @@ export default class ImageMapCanvas {
 				}
 				window.requestAnimationFrame(effect);
 			})
+		} else if (this.selector === document.querySelector('.area-3 .imgMapCanvas')) {
+			const effect = () => {
+				this.canvasContext.clearRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
+				Array.from(this.map.querySelectorAll('area')).forEach(areaItem => {
+					let time = new Date();
+					this.canvasContext.lineWidth = 3;
+					this.canvasContext.strokeStyle = `rgba(7, 65, 76, 1)`;
+					this.canvasContext.fillStyle = `rgba(232, 222, 139, 0.15)`;
+					this.canvasContext.lineDashOffset = time.getMilliseconds() / 50;
+					this.canvasContext.setLineDash([15, 5]);
+					let coords = areaItem.getAttribute('coords');
+					const coordsRef = coords.split(",");
+					const coordsRef2 = coordsRef.map(item => {
+						return Number(item) + 3;
+					});
+					this.canvasContext.save();
+					this.canvasContext.beginPath();
+					this.canvasContext.moveTo(coordsRef2[0], coordsRef2[1]);
+					for (let i = 0; i < coordsRef2.length; i++) {
+						if (i % 2 == 0 && i > 1) {
+							this.canvasContext.lineTo(coordsRef2[i], coordsRef2[i + 1]);
+						}
+					}
+					this.canvasContext.closePath();
+					this.canvasContext.stroke();
+					this.canvasContext.fill();
+					this.canvasContext.restore();
+				})
+				window.requestAnimationFrame(effect);
+			}
+			window.requestAnimationFrame(effect);
+
 		} else {
 			Array.from(this.map.querySelectorAll('area')).forEach(mapArea => {
 				mapArea.addEventListener('mouseover', () => {

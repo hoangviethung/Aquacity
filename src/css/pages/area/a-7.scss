@@ -5,6 +5,22 @@
 		background-position: bottom;
 		background-image: url('../assets/area/a_7_bg.jpg');
 
+		.number {
+			line-height: 1;
+			color: #b3c4ab;
+			position: absolute;
+			top: -80px;
+			margin-left: -25px;
+			left: 50%;
+			transform: translateX(-50%);
+			font-size: 225px;
+			line-height: 1;
+
+			@media (min-width: 1660px) {
+				font-size: 350px;
+			}
+		}
+
 		.title {
 			position: absolute;
 			top: -30px;
@@ -51,6 +67,14 @@
 				.col-lg-6 {
 					padding: 0 25px;
 				}
+
+				@media (min-width: 1025px) {
+					max-height: 440px;
+				}
+
+				@media (min-width: 1660px) {
+					max-height: 675px;
+				}
 			}
 
 			.item {
@@ -92,7 +116,21 @@
 					overflow: hidden;
 
 					img {
+						object-fit: cover;
+						width: 100%;
 						transition: all .3s ease-in-out;
+					}
+
+					@media (min-width: 1025px) {
+						max-height: 230px;
+					}
+
+					@media (min-width: 1200px) {
+						max-height: 250px;
+					}
+
+					@media (min-width: 1660px) {
+						max-height: 400px;
 					}
 				}
 

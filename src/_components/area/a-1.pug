@@ -1,8 +1,19 @@
 .section.area-1.area
-	.img
-		img(src="./assets/area/a_1.jpg", alt="")
-	.content
-		.logo
-			img(src="./assets/logo_stella_2.png", alt="")
-		.text
-			img.svg-image(data-src='./assets/area/song_tron_binh_yen.svg')
+	.swiper-container
+		.swiper-prev
+			img(src="./assets/btn_toggle.png", alt="")
+		.swiper-next
+			img(src="./assets/btn_toggle.png", alt="")
+		.swiper-wrapper
+			.swiper-slide
+				.img
+					img(src="./assets/area/a_1.jpg", alt="")
+				.content
+					.logo
+						img(src="./assets/logo_stella_2.png", alt="")
+					.text
+						img.svg-image(data-src='./assets/area/song_tron_binh_yen.svg')
+			.swiper-slide
+				.video
+					video
+						source(src="./assets/videos/stella_video.mp4")

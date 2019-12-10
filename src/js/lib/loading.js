@@ -9,15 +9,15 @@ const Loading = () => {
 	const showPage = () => {
 		document.querySelector('body').classList.add('show-page');
 
-		// if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
-		// 	const isScroll = localStorage.getItem('isScroll');
-		// 	const nextIndex = localStorage.getItem('nextIndex');
-		// 	const currentIndex = 1;
-		// 	console.log(isScroll, nextIndex, currentIndex);
-		// 	localStorage.removeItem('isScroll');
-		// 	localStorage.removeItem('nextIndex');
-		// 	console.log(localStorage.getItem('isScroll'), localStorage.getItem('nextIndex'), currentIndex);
-		// }
+		// 	// if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
+		// 	// 	const isScroll = localStorage.getItem('isScroll');
+		// 	// 	const nextIndex = localStorage.getItem('nextIndex');
+		// 	// 	const currentIndex = 1;
+		// 	// 	console.log(isScroll, nextIndex, currentIndex);
+		// 	// 	localStorage.removeItem('isScroll');
+		// 	// 	localStorage.removeItem('nextIndex');
+		// 	// 	console.log(localStorage.getItem('isScroll'), localStorage.getItem('nextIndex'), currentIndex);
+		// 	// }
 	}
 
 	const turnOffLoadingScreen = callback => {
