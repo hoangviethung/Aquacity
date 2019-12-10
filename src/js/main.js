@@ -186,12 +186,9 @@ const setLinkDownload = () => {
 }
 
 const customFancybox = param => {
-	$('[data-fancybox]').fancybox({
+	$('[data-fancybox]').not('.popup-fronts .btn-viewmore').not('.area-3 area').fancybox({
 		hash: false,
 		closeExisting: true,
-		parentEl: 'main',
-		touch: false,
-		smallBtn: "auto",
 		btnTpl: {
 			close: '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' + '<svg xmlns="http://www.w3.org/2000/svg" width="55.37" height="56.06" viewBox="0 0 55.37 56.06"><defs><style>.cls-1 {fill: #4c8343;stroke: #4c8343;stroke-width: 3px;fill-rule: evenodd;}</style></defs><path class="cls-1" d="M3764.5,4309.98l5.25,5.25-46.52,46.52-5.25-5.25Z" transform="translate(-3716.16 -4308.47)"/><path id="Shape_774_copy" data-name="Shape 774 copy" class="cls-1" d="M3770.02,4357.71l-5.31,5.31-47.06-47.07,5.3-5.3Z" transform="translate(-3716.16 -4308.47)"/></svg>' + "</button>",
 		},
@@ -205,6 +202,74 @@ const customFancybox = param => {
 				param.canBeScrolled = true;
 			}
 		}
+	})
+
+	// .fancybox({
+	// 	animationDuration: 800,
+	// 	animationEffect: 'zoom-in-out',
+	// 	beforeShow: function() {
+	// 		console.log($(this));
+	// 	}
+	// })
+	$('.popup-fronts .btn-viewmore').on('click', function() {
+		const index = Number($(this).attr('index'));
+		const src = $(this).attr('data-src');
+		$.fancybox.open({
+			src: src,
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExiting: true,
+				animationDuration: 800,
+				parentEl: 'main',
+				smallBtn: "auto",
+				touch: false,
+				animationEffect: 'zoom-in-out',
+				beforeLoad: function() {
+					if (param) {
+						param.canBeScrolled = false;
+					}
+				},
+				afterLoad: function(instance, current) {
+					$('.popup-fronts .list-items .item').eq(index).trigger('click')
+				},
+				afterClose: function() {
+					if (param) {
+						param.canBeScrolled = true;
+					}
+				}
+			}
+		})
+	})
+	$('.area-3 area').on('click', function() {
+		const index = Number($(this).attr('index'));
+		const src = $(this).attr('data-src');
+		$.fancybox.open({
+			src: src,
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExiting: true,
+				animationDuration: 800,
+				parentEl: 'main',
+				smallBtn: "auto",
+				touch: false,
+				animationEffect: 'zoom-in-out',
+				beforeLoad: function() {
+					if (param) {
+						param.canBeScrolled = false;
+					}
+				},
+				afterLoad: function(instance, current) {
+					$('.popup-fronts .list-items .item').eq(index).trigger('click')
+				},
+				afterClose: function() {
+					if (param) {
+						param.canBeScrolled = true;
+					}
+				}
+			}
+		})
 	})
 }
 
@@ -262,7 +327,6 @@ const sliderArea_1 = () => {
 			slideChangeTransitionEnd: function() {
 				const video = document.querySelector('.area-1 .swiper-container .swiper-slide-active video');
 				if (video) {
-					console.log(1);
 					video.play();
 				} else {
 					const video2 = document.querySelector('.area-1 .swiper-container .swiper-slide video');
@@ -292,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		sliderSection7();
 		imageMapCanvas();
 		changeMapByTime();
-		customFancybox();
+		// customFancybox();
 		ripple1();
 		ripple2();
 		Loading();
