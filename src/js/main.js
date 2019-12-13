@@ -1,4 +1,3 @@
-import Swiper from "../../bower_components/swiper/package/js/swiper.esm.browser.bundle";
 import {
 	gsap
 } from "../../bower_components/gsap/esm/index.js";

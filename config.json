@@ -10,10 +10,11 @@
 			"bower_components/font-awesome/webfonts/**"
 		],
 		"js": [
+			"bower_components/swiper/package/js/swiper.js",
+			"bower_components/image-map-resizer/js/imageMapResizer.js",
 			"bower_components/jquery/dist/jquery.js",
 			"node_modules/jquery.ripples/dist/jquery.ripples.js",
-			"bower_components/fancybox/dist/jquery.fancybox.js",
-			"bower_components/image-map-resizer/js/imageMapResizer.js"
+			"bower_components/fancybox/dist/jquery.fancybox.js"
 		],
 		"css": [
 			"bower_components/swiper/package/css/swiper.css",
