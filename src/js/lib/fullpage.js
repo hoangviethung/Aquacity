@@ -1,6 +1,7 @@
 import {
 	gsap
 } from "../../../bower_components/gsap/esm/index.js";
+import U from "./utilities";
 
 export default class FullPage {
 	canBeScrolled = true;
@@ -15,9 +16,8 @@ export default class FullPage {
 		},
 	}
 
-	generateFullpageComponent(callback) {
-
-		const sectionList = Array.from(this.selector.querySelectorAll(this.section));
+	generateFullpageHTML() {
+		const sectionList = U.qAll(this.selector, this.section);
 		this.navigator = document.createElement('div');
 		this.navigator.classList.add('fp-navigation');
 		this.navigator.id = 'fp-navigation';
@@ -41,159 +41,114 @@ export default class FullPage {
 						this.titlesArray.push('');
 					}
 				}
-				Array.from(this.navigator.querySelectorAll('.fp-nav-item'))[0].classList.add('active');
+				U.qAll(this.navigator, '.fp-nav-item')[0].classList.add('active');
 			})
 		}
-
-
 		this.selector.classList.add('fp-container');
 		this.selector.innerHTML = `<div class="fp-wrapper">${this.selector.innerHTML}</div>`;
-
-
-		this.mask = document.createElement('div');
-		this.mask.id = 'fp-mask';
-		this.mask.classList.add('fp-mask');
-
-
 		this.selector.appendChild(this.navigator);
-		this.selector.appendChild(this.mask);
-
-		if (callback) {
-			callback();
-		}
 	}
 
 	run() {
 		document.addEventListener('wheel', e => {
-			const loading = document.querySelector('#loading');
+			const loading = U.q('#loading');
+
 			if (!loading) {
+
 				let scrollDirection;
+
 				if (this.canBeScrolled) {
 					this.canBeScrolled = false;
+
 					if (e.deltaY > 0) {
 						scrollDirection = 'down';
 					} else {
 						scrollDirection = 'up';
 					}
+
 					this.getScrollState(scrollDirection);
+
 					setTimeout(() => {
 						this.canBeScrolled = true;
-					}, 1750);
+					}, 2000);
 				}
 			}
 		});
-		this.navigate();
 	}
 
 	getScrollState(direction) {
-		let prevSection,
-			nextSection,
-			currentSection = this.selector.querySelector('[fp-active="1"]');
+		let nextSection, currentSection = U.q(this.selector, '[fp-active="1"]');
+
 		if (direction === 'down') {
 			nextSection = currentSection.nextElementSibling;
-			if (nextSection) {
-				this.runEffect(currentSection, nextSection, direction, this.on.afterRunEffect);
-			}
+		} else {
+			nextSection = currentSection.previousElementSibling;
 		}
-		if (direction === 'up') {
-			prevSection = currentSection.previousElementSibling;
-			if (prevSection) {
-				this.runEffect(currentSection, prevSection, direction, this.on.afterRunEffect);
-			}
+
+		if (nextSection) {
+			this.runEffect(currentSection, nextSection, direction, this.on.afterRunEffect);
 		}
 	}
 
 	runEffect(currentSection, nextSection, direction, callback) {
-		const fp = this;
-		const mask = this.mask;
-
 		const currentIndex = Number(currentSection.getAttribute('fp-index'));
 		const nextIndex = Number(nextSection.getAttribute('fp-index'));
-		const fullpageNavItems = Array.from(this.navigator.querySelectorAll('.fp-nav-item'));
-		fullpageNavItems[currentIndex].classList.remove('active');
-		fullpageNavItems[nextIndex].classList.add('active');
+		const navItems = U.qAll(this.navigator, '.fp-nav-item');
+		navItems[currentIndex].classList.remove('active');
+		navItems[nextIndex].classList.add('active');
 
-		// Run animation when change section
-		mask.classList.add('sliding');
+		const onAnimateCompleted = (currentSection, nextSection, cb) => {
+			currentSection.classList.remove('active');
+			currentSection.setAttribute('fp-active', -1);
+			nextSection.classList.add('active');
+			nextSection.setAttribute('fp-active', 1)
+			nextSection.classList.remove('sliding');
+			nextSection.removeAttribute('style');
+			this.currentIndex = Number(nextSection.getAttribute('fp-index'));
+			const sectionLength = U.qAll(this.selector, this.section).length;
+			if (this.currentIndex === sectionLength - 1) {
+				U.gId('next-section').style.opacity = '0'
+			} else {
+				U.gId('next-section').style.opacity = '1'
+			}
+
+			if (cb) {
+				cb();
+			}
+		}
 
 		if (direction === 'down') {
-			mask.style.top = '100%';
-			gsap.fromTo(mask, {
+			nextSection.classList.add('sliding');
+			gsap.fromTo(nextSection, {
 				top: '100%',
 			}, {
 				top: '0%',
-				duration: .9,
-				onComplete: function(e) {
-					nextSection.classList.add('active');
-					nextSection.setAttribute('fp-active', 1);
-					currentSection.classList.remove('active');
-					currentSection.setAttribute('fp-active', -1);
-					fp.currentIndex = Number(nextSection.getAttribute('fp-index'));
-					gsap.fromTo(mask, {
-						opacity: 1,
-					}, {
-						opacity: 0,
-						ease: 'none',
-						delay: 0.1,
-						duration: .3,
-						onComplete: function() {
-							mask.removeAttribute('style');
-							mask.classList.remove('sliding');
-							this.canBeScrolled = true;
-						}
-					})
-
-					if (callback) {
-						callback();
-					}
-				}
+				duration: 0.8,
+				onComplete: onAnimateCompleted,
+				onCompleteParams: [currentSection, nextSection, callback],
 			})
 		} else {
-			mask.style.bottom = '100%';
-			gsap.fromTo(mask, {
+			nextSection.classList.add('sliding');
+			gsap.fromTo(nextSection, {
 				bottom: '100%',
 			}, {
 				bottom: '0%',
-				duration: .9,
-				onComplete: function(e) {
-					nextSection.classList.add('active');
-					nextSection.setAttribute('fp-active', 1);
-					currentSection.classList.remove('active');
-					currentSection.setAttribute('fp-active', -1);
-					fp.currentIndex = Number(nextSection.getAttribute('fp-index'));
-					gsap.fromTo(mask, {
-						opacity: 1,
-					}, {
-						opacity: 0,
-						ease: 'none',
-						delay: 0.1,
-						duration: .3,
-						onComplete: function() {
-							mask.classList.remove('sliding');
-							mask.removeAttribute('style');
-							this.canBeScrolled = true;
-						}
-					})
-
-					if (callback) {
-						callback();
-					}
-				}
+				duration: 0.8,
+				onComplete: onAnimateCompleted,
+				onCompleteParams: [currentSection, nextSection],
 			})
 		}
 	}
 
 	navigate() {
-		Array.from(this.navigator.querySelectorAll('.fp-nav-item a')).forEach((item, index) => {
+		U.qAll(this.navigator, '.fp-nav-item a').forEach((item, index) => {
 			item.addEventListener('click', e => {
 				e.preventDefault();
-				const sectionList = Array.from(this.selector.querySelectorAll(this.section));
-
+				const sectionList = U.qAll(this.selector, this.section);
 				if (this.canBeScrolled) {
 					this.canBeScrolled = false;
 					const nextSection = sectionList[index];
 					const currentSection = sectionList[this.currentIndex];
-
 					let scrollDirection;
 					if (index > this.currentIndex) {
 						scrollDirection = 'down';
@@ -215,10 +170,26 @@ export default class FullPage {
 
 	setActiveNavigation(href) {
 		const hrefValue = `#${href}`
-		Array.from(this.navigator.querySelectorAll(`.item`)).forEach(item => {
+
+		U.qAll(this.navigator, '.item').forEach(item => {
 			item.classList.remove('active');
 		})
-		this.navigator.querySelector(`.item a[href='${hrefValue}']`).parentElement.classList.add('active')
+		U.qAll(this.navigator, `.item a[href='${hrefValue}']`).parentElement.classList.add('active')
+	}
+
+	mouseScrollDown() {
+		U.gId('next-section').addEventListener('click', e => {
+			if (this.canBeScrolled) {
+				this.canBeScrolled = false;
+				const currentSection = U.q(this.selector, '[fp-active="1"]');
+				const nextSection = currentSection.nextElementSibling;
+				const _this = this;
+				this.runEffect(currentSection, nextSection, 'down')
+				setTimeout(() => {
+					this.canBeScrolled = true;
+				}, 2000);
+			}
+		})
 	}
 
 	constructor(selector, opts) {
@@ -229,8 +200,10 @@ export default class FullPage {
 		this.on.init = opts.on.init;
 
 		if (this.selector) {
-			this.generateFullpageComponent(this.on.init);
+			this.generateFullpageHTML(this.on.init);
+			this.navigate();
 			this.run();
+			this.mouseScrollDown();
 		}
 	}
 }
