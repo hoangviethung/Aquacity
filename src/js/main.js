@@ -322,6 +322,11 @@ const sliderArea_1 = () => {
 			prevEl: '.area-1 .swiper-container .swiper-prev',
 			nextEl: '.area-1 .swiper-container .swiper-next'
 		},
+		pagination: {
+			el: '.area-1 .swiper-container .swiper-pagination',
+			clickable: true,
+			type: 'bullets'
+		},
 		on: {
 			slideChangeTransitionEnd: function() {
 				const video = document.querySelector('.area-1 .swiper-container .swiper-slide-active video');
@@ -344,22 +349,22 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	const className = document.getElementById('js-page-verify').getAttribute('class');
 	document.querySelector('body').classList.add(className);
-
-	Promise.all(getSVGImage()).then(() => {
-		fullpage();
-		sliderArea_1();
-		setLinkDownload();
-		sectionVitriTab();
-		Area4TabFronts();
-		activeFrame2Section4();
-		sliderSection7();
-		imageMapCanvas();
-		changeMapByTime();
-		// customFancybox();
+	fullpage();
+	sliderArea_1();
+	setLinkDownload();
+	sectionVitriTab();
+	Area4TabFronts();
+	activeFrame2Section4();
+	sliderSection7();
+	imageMapCanvas();
+	changeMapByTime();
+	// customFancybox();
+	if (window.innerWidth > 1025) {
 		ripple1();
 		ripple2();
-		Loading();
-	})
+	}
+	Loading();
+	getSVGImage();
 });
 
 export {

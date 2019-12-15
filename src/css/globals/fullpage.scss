@@ -126,7 +126,7 @@
 			position: absolute;
 			height: 1500px;
 			right: 0;
-			width: 180px;
+			width: 110px;
 			background-color: transparent;
 			transform: translateY(-50%);
 			top: 50%;
@@ -191,6 +191,10 @@
 
 @media (max-width: 1024px) {
 	.fp-navigation {
+		display: none;
+	}
+
+	#next-section {
 		display: none;
 	}
 }
