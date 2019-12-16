@@ -218,9 +218,8 @@ const customFancybox = param => {
 			type: 'inline',
 			opts: {
 				hash: false,
-				closeExiting: true,
+				closeExisting: true,
 				animationDuration: 800,
-				parentEl: 'main',
 				smallBtn: "auto",
 				touch: false,
 				animationEffect: 'zoom-in-out',
@@ -248,9 +247,8 @@ const customFancybox = param => {
 			type: 'inline',
 			opts: {
 				hash: false,
-				closeExiting: true,
+				closeExisting: true,
 				animationDuration: 800,
-				parentEl: 'main',
 				smallBtn: "auto",
 				touch: false,
 				animationEffect: 'zoom-in-out',
@@ -259,7 +257,7 @@ const customFancybox = param => {
 						param.canBeScrolled = false;
 					}
 				},
-				afterLoad: function(instance, current) {
+				beforeShow: function(instance, current) {
 					$('.popup-fronts .list-items .item').eq(index).trigger('click')
 				},
 				afterClose: function() {
