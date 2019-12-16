@@ -203,13 +203,6 @@ const customFancybox = param => {
 		}
 	})
 
-	// .fancybox({
-	// 	animationDuration: 800,
-	// 	animationEffect: 'zoom-in-out',
-	// 	beforeShow: function() {
-	// 		console.log($(this));
-	// 	}
-	// })
 	$('.popup-fronts .btn-viewmore').on('click', function() {
 		const index = Number($(this).attr('index'));
 		const src = $(this).attr('data-src');
@@ -218,9 +211,11 @@ const customFancybox = param => {
 			type: 'inline',
 			opts: {
 				hash: false,
-				closeExiting: true,
+				closeExisting: true,
 				animationDuration: 800,
-				parentEl: 'main',
+				thumbs: {
+					autoStart: false
+				},
 				smallBtn: "auto",
 				touch: false,
 				animationEffect: 'zoom-in-out',
@@ -244,13 +239,12 @@ const customFancybox = param => {
 		const index = Number($(this).attr('index'));
 		const src = $(this).attr('data-src');
 		$.fancybox.open({
-			src: src,
+			src: '#popup-fronts',
 			type: 'inline',
 			opts: {
 				hash: false,
-				closeExiting: true,
+				closeExisting: true,
 				animationDuration: 800,
-				parentEl: 'main',
 				smallBtn: "auto",
 				touch: false,
 				animationEffect: 'zoom-in-out',
@@ -259,7 +253,7 @@ const customFancybox = param => {
 						param.canBeScrolled = false;
 					}
 				},
-				afterLoad: function(instance, current) {
+				beforeShow: function(instance, current) {
 					$('.popup-fronts .list-items .item').eq(index).trigger('click')
 				},
 				afterClose: function() {

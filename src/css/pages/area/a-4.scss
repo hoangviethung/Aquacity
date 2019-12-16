@@ -104,6 +104,12 @@
 			left: 50%;
 			top: 50%;
 			transform: translate(-50%, -50%);
+			width: 150px;
+			height: 150px;
+			background-image: url('../assets/btn_play.png');
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: 100%;
 
 			img {
 				opacity: 1;
