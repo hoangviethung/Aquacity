@@ -14,7 +14,9 @@ const getSVGImage = () => {
 			const request = new XMLHttpRequest();
 			request.open('GET', imgUrl)
 			request.onload = data => {
-				item.parentElement.innerHTML = data.srcElement.response;
+				if (item && item.parentElement) {
+					item.parentElement.innerHTML = data.srcElement.response;
+				}
 				resolve();
 			}
 			request.send();
@@ -31,6 +33,7 @@ const fullpage = () => {
 				titles: true,
 				on: {
 					init: function() {
+						customFancybox(fullpage)
 						getSVGImage();
 					},
 					afterRunEffect: function() {
@@ -46,7 +49,6 @@ const fullpage = () => {
 						}
 						localStorage.removeItem('isScroll');
 						localStorage.removeItem('nextIndex');
-						customFancybox(fullpage)
 					}
 				}
 			});
@@ -185,65 +187,10 @@ const setLinkDownload = () => {
 }
 
 const customFancybox = param => {
-	$('[data-fancybox]').not('.popup-fronts .btn-viewmore').not('.area-3 area').fancybox({
-		hash: false,
-		closeExisting: true,
-		btnTpl: {
-			close: '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' + '<svg xmlns="http://www.w3.org/2000/svg" width="55.37" height="56.06" viewBox="0 0 55.37 56.06"><defs><style>.cls-1 {fill: #4c8343;stroke: #4c8343;stroke-width: 3px;fill-rule: evenodd;}</style></defs><path class="cls-1" d="M3764.5,4309.98l5.25,5.25-46.52,46.52-5.25-5.25Z" transform="translate(-3716.16 -4308.47)"/><path id="Shape_774_copy" data-name="Shape 774 copy" class="cls-1" d="M3770.02,4357.71l-5.31,5.31-47.06-47.07,5.3-5.3Z" transform="translate(-3716.16 -4308.47)"/></svg>' + "</button>",
-		},
-		beforeLoad: function() {
-			if (param) {
-				param.canBeScrolled = false;
-			}
-		},
-		afterClose: function() {
-			if (param) {
-				param.canBeScrolled = true;
-			}
-		}
-	})
-
-	// .fancybox({
-	// 	animationDuration: 800,
-	// 	animationEffect: 'zoom-in-out',
-	// 	beforeShow: function() {
-	// 		console.log($(this));
-	// 	}
-	// })
-	$('.popup-fronts .btn-viewmore').on('click', function() {
+	$('.area-3 area, .fronts-list .item a').on('click', function() {
 		const index = Number($(this).attr('index'));
-		const src = $(this).attr('data-src');
 		$.fancybox.open({
-			src: src,
-			type: 'inline',
-			opts: {
-				hash: false,
-				closeExisting: true,
-				animationDuration: 800,
-				smallBtn: "auto",
-				touch: false,
-				animationEffect: 'zoom-in-out',
-				beforeLoad: function() {
-					if (param) {
-						param.canBeScrolled = false;
-					}
-				},
-				afterLoad: function(instance, current) {
-					$('.popup-fronts .list-items .item').eq(index).trigger('click')
-				},
-				afterClose: function() {
-					if (param) {
-						param.canBeScrolled = true;
-					}
-				}
-			}
-		})
-	})
-	$('.area-3 area').on('click', function() {
-		const index = Number($(this).attr('index'));
-		const src = $(this).attr('data-src');
-		$.fancybox.open({
-			src: src,
+			src: '#popup-fronts',
 			type: 'inline',
 			opts: {
 				hash: false,
@@ -259,6 +206,32 @@ const customFancybox = param => {
 				},
 				beforeShow: function(instance, current) {
 					$('.popup-fronts .list-items .item').eq(index).trigger('click')
+				},
+				afterClose: function() {
+					if (param) {
+						param.canBeScrolled = true;
+					}
+				}
+			}
+		})
+	})
+
+	$('.popup-fronts .btn-viewmore').on('click', function() {
+		const src = $(this).attr('data-src');
+		$.fancybox.open({
+			src: src,
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+				animationDuration: 800,
+				smallBtn: "auto",
+				touch: false,
+				animationEffect: 'zoom-in-out',
+				beforeLoad: function() {
+					if (param) {
+						param.canBeScrolled = false;
+					}
 				},
 				afterClose: function() {
 					if (param) {
@@ -356,8 +329,10 @@ document.addEventListener('DOMContentLoaded', () => {
 	sliderSection7();
 	imageMapCanvas();
 	changeMapByTime();
-	// customFancybox();
-	if (window.innerWidth > 1025) {
+	if (window.innerWidth < 1025) {
+		customFancybox();
+	}
+	if (window.innerWidth >= 1025) {
 		ripple1();
 		ripple2();
 	}

@@ -200,7 +200,8 @@ export default class FullPage {
 		this.on.init = opts.on.init;
 
 		if (this.selector) {
-			this.generateFullpageHTML(this.on.init);
+			this.generateFullpageHTML();
+			this.on.init();
 			this.navigate();
 			this.run();
 			this.mouseScrollDown();
