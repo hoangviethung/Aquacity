@@ -1,25 +1,25 @@
 .villas-4 {
-	display: flex;
-	align-items: center;
+	display         : flex;
+	align-items     : center;
 	background-color: white;
 
 	.content {
-		width: 100%;
+		width    : 100%;
 		max-width: 1435px;
-		margin: 0 auto;
+		margin   : 0 auto;
 	}
 
 	.col-left {
-		flex: 0 0 920px;
+		flex     : 0 0 920px;
 		max-width: 920px;
-		position: relative;
-		padding: 0 10px;
+		position : relative;
+		padding  : 0 10px;
 
 		.title {
 			position: absolute;
-			padding: 40px 50px;
-			bottom: 0;
-			left: 0;
+			padding : 40px 50px;
+			bottom  : 0;
+			left    : 0;
 
 			img {
 				max-width: 450px;
@@ -32,25 +32,26 @@
 	}
 
 	.col-right {
-		flex: 0 0 535px;
+		flex     : 0 0 535px;
 		max-width: 535px;
-		padding: 0 10px;
+		padding  : 0 10px;
 
 		.title {
-			background-image: url('../assets/villas/v_4_bg.png');
+			background-image   : url('../assets/villas/v_4_bg.png');
 			background-position: center;
-			background-size: 100% 100%;
-			background-repeat: no-repeat;
-			margin-bottom: 20px;
-			padding: 60px 45px;
+			background-size    : 100% 100%;
+			background-repeat  : no-repeat;
+			margin-bottom      : 20px;
+			padding            : 60px 45px;
 
 			p {
-				font-size: 28px;
-				color: white;
+				font-size         : 28px;
+				color             : white;
 				-webkit-box-orient: vertical;
 				-webkit-line-clamp: 5;
-				text-overflow: ellipsis;
-				display: -webkit-box;
+				text-overflow     : ellipsis;
+				display           : -webkit-box;
+				overflow          : hidden;
 			}
 		}
 	}
@@ -60,7 +61,7 @@
 
 		.img-wrapper {
 			overflow: hidden;
-			height: 100%;
+			height  : 100%;
 		}
 
 		img {
@@ -87,7 +88,7 @@
 		}
 
 		.col-left {
-			flex: 0 0 720px;
+			flex     : 0 0 720px;
 			max-width: 720px;
 
 			.title {
@@ -98,7 +99,7 @@
 		}
 
 		.col-right {
-			flex: 0 0 375px;
+			flex     : 0 0 375px;
 			max-width: 375px;
 
 			.title {
@@ -118,7 +119,7 @@
 		}
 
 		.col-left {
-			flex: 0 0 100%;
+			flex     : 0 0 100%;
 			max-width: 605px;
 
 			.title {
@@ -129,7 +130,7 @@
 		}
 
 		.col-right {
-			flex: 0 0 100%;
+			flex     : 0 0 100%;
 			max-width: 325px;
 
 			.title {
@@ -137,6 +138,66 @@
 
 				p {
 					font-size: 22px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		.col-left {
+			max-width: 100%;
+		}
+
+		.col-right {
+			display  : flex;
+			flex-wrap: wrap;
+			max-width: 100%;
+
+			.title {
+				margin-bottom: 0;
+			}
+
+			.img {
+				box-shadow: none;
+			}
+
+			.title,
+			.img {
+				flex     : 0 0 50%;
+				max-width: 50%;
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.col-left {
+			.title {
+				padding  : 0;
+				top      : 50%;
+				bottom   : unset;
+				left     : 50%;
+				transform: translate(-50%, -50%);
+				z-index  : 2;
+			}
+
+			&:after {
+				content   : '';
+				position  : absolute;
+				top       : 0;
+				left      : 0;
+				width     : 100%;
+				height    : 100%;
+				background: rgba(7, 65, 76, .6);
+				z-index   : 1;
+			}
+		}
+
+		.col-right {
+			.title {
+				p {
+					font-size         : 14px;
+					-webkit-line-clamp: 4;
+					max-height        : 84px;
 				}
 			}
 		}

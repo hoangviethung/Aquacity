@@ -26,6 +26,8 @@
 			display        : flex;
 			justify-content: center;
 			margin-bottom  : 15px;
+			flex           : 0 0 100%;
+			max-width      : 100%;
 
 			p {
 				font-size     : 32px;
