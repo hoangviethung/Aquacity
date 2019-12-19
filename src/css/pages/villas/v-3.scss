@@ -1,19 +1,83 @@
 .villas-3 {
-	background-color: white;
-	background-image: url(../assets/villas/v_3_bg.jpg);
+	background-color     : white;
+	background-image     : url(../assets/villas/v_3_bg.jpg);
 	background-position-x: 100%;
 	background-position-y: 0%;
-	background-repeat: no-repeat;
-	background-size: 295px;
-	padding-right: 295px;
-	padding-top: 155px;
-	padding-bottom: 50px;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+	background-repeat    : no-repeat;
+	background-size      : 295px;
+	padding-right        : 295px;
+	padding-top          : 155px;
+	padding-bottom       : 50px;
+	display              : flex;
+	justify-content      : center;
+	align-items          : center;
 
 	.content {
 		max-width: 870px;
-		padding: 0 50px;
+		padding  : 0 50px;
+	}
+
+	@media (max-width: 1024.98px) {
+		padding   : 30px 0;
+		background: none;
+		flex-wrap : wrap;
+
+		.title {
+			display        : flex;
+			justify-content: center;
+			margin-bottom  : 15px;
+
+			p {
+				font-size     : 32px;
+				text-transform: uppercase;
+				color         : #07414c;
+				margin        : 0 2px;
+				font-weight   : 700;
+
+				@media (max-width: 576px) {
+					font-size: 24px;
+				}
+			}
+		}
+
+		.content {
+			max-width: 70%;
+		}
+
+		.fronts-list {
+			margin    : 0 -5px;
+			margin-top: 15px;
+
+			.item {
+				margin-top: 10px;
+				padding   : 0 5px;
+
+				a {
+					font-size : 16px;
+					padding   : 10px;
+					background: #07414c;
+					display   : block;
+
+					h3,
+					p {
+						color: white;
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		.content {
+			max-width: 100%;
+		}
+
+		.fronts-list {
+			.item {
+				a {
+					font-size: 14px;
+				}
+			}
+		}
 	}
 }
