@@ -1,6 +1,6 @@
 .villas-4 {
-	display         : flex;
-	align-items     : center;
+	display: flex;
+	align-items: center;
 	background-color: white;
 
 	.content {
@@ -11,16 +11,16 @@
 	}
 
 	.col-left {
-		flex     : 0 0 920px;
+		flex: 0 0 920px;
 		max-width: 920px;
-		position : relative;
-		padding  : 0 10px;
+		position: relative;
+		padding: 0 10px;
 
 		.title {
 			position: absolute;
-			padding : 40px 50px;
-			bottom  : 0;
-			left    : 0;
+			padding: 40px 50px;
+			bottom: 0;
+			left: 0;
 
 			img {
 				max-width: 450px;
@@ -33,26 +33,26 @@
 	}
 
 	.col-right {
-		flex     : 0 0 535px;
+		flex: 0 0 535px;
 		max-width: 535px;
-		padding  : 0 10px;
+		padding: 0 10px;
 
 		.title {
-			background-image   : url('../assets/villas/v_4_bg.png');
+			background-image: url('../assets/villas/v_4_bg.png');
 			background-position: center;
-			background-size    : 100% 100%;
-			background-repeat  : no-repeat;
-			margin-bottom      : 20px;
-			padding            : 60px 45px;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			margin-bottom: 20px;
+			padding: 60px 45px;
 
 			p {
-				font-size         : 28px;
-				color             : white;
+				font-size: 28px;
+				color: white;
 				-webkit-box-orient: vertical;
 				-webkit-line-clamp: 5;
-				text-overflow     : ellipsis;
-				display           : -webkit-box;
-				overflow          : hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				overflow: hidden;
 			}
 		}
 	}
@@ -62,7 +62,7 @@
 
 		.img-wrapper {
 			overflow: hidden;
-			height  : 100%;
+			height: 100%;
 		}
 
 		img {
@@ -90,7 +90,7 @@
 		}
 
 		.col-left {
-			flex     : 0 0 720px;
+			flex: 0 0 720px;
 			max-width: 720px;
 
 			.title {
@@ -101,7 +101,7 @@
 		}
 
 		.col-right {
-			flex     : 0 0 375px;
+			flex: 0 0 375px;
 			max-width: 375px;
 
 			.title {
@@ -121,7 +121,7 @@
 		}
 
 		.col-left {
-			flex     : 0 0 100%;
+			flex: 0 0 100%;
 			max-width: 605px;
 
 			.title {
@@ -132,7 +132,7 @@
 		}
 
 		.col-right {
-			flex     : 0 0 100%;
+			flex: 0 0 100%;
 			max-width: 325px;
 
 			.title {
