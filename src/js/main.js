@@ -95,6 +95,20 @@ const fullpage = () => {
 						fullpage.runEffect(currentSection, contactSection, 'up');
 					}
 				})
+				document.querySelector('#widget-left .go-first').addEventListener('click', e => {
+					e.preventDefault();
+					const currentSection = document.querySelector('.fp-section[fp-active="1"]');
+					const currentPosition = currentSection.getAttribute('fp-index');
+					const contactSection = document.querySelector('.fp-section[fp-index="0"]');
+					const contactPosition = contactSection.getAttribute('fp-index');
+
+					if (currentPosition < contactPosition) {
+						fullpage.runEffect(currentSection, contactSection, 'down');
+					}
+					if (currentPosition > contactPosition) {
+						fullpage.runEffect(currentSection, contactSection, 'up');
+					}
+				})
 			};
 		}
 		Header(gsap, fullpage);
