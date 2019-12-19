@@ -1,0 +1,103 @@
+.villas-5 {
+	padding: 110px 28px 110px 28px;
+	display: flex;
+	align-items: center;
+	background-color: white;
+
+	.content {
+		border: 3px solid map-get($mau, main-2);
+		padding: 30px 125px;
+	}
+
+	.text {
+		background-image: url(../assets/villas/v_5_bg.jpg);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: 25px 40px;
+
+		h3 {
+			margin-bottom: 8px;
+		}
+
+		p {
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			font-size: 22px;
+			color: white;
+			margin-bottom: 8px;
+		}
+
+		.btn-discover {
+			padding: 5px 20px;
+		}
+	}
+
+	.col-left {
+		.img {
+			margin-left: -155px;
+		}
+	}
+
+	.col-right {
+		display: flex;
+		flex-direction: column-reverse;
+
+		.img {
+			margin-right: -155px;
+		}
+	}
+
+	@media (max-width: 1439.98px) {
+		.content {
+			padding: 20px 90px;
+		}
+
+		.text {
+			p {
+				font-size: 20px;
+			}
+		}
+
+		.col-left {
+			.img {
+				margin-left: -120px;
+			}
+		}
+	
+		.col-right {
+	
+			.img {
+				margin-right: -120px;
+			}
+		}
+	}
+
+	@media (max-width: 1199.98px) {
+		.content {
+			padding: 15px 60px;
+		}
+
+		.text {
+			p {
+				font-size: 18px;
+			}
+		}
+
+		.col-left {
+			.img {
+				margin-left: -90px;
+			}
+		}
+	
+		.col-right {
+	
+			.img {
+				margin-right: -90px;
+			}
+		}
+	}
+}

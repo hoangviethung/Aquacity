@@ -163,6 +163,9 @@ const imageMapCanvas = () => {
 	// Custom Canvas
 	const imageMap_3 = new ImageMapCanvas('.area-2 .imgMapCanvas');
 	const imageMap_4 = new ImageMapCanvas('.area-3 .imgMapCanvas');
+
+	const imageMap_5 = new ImageMapCanvas('.villas-2 .imgMapCanvas');
+	const imageMap_6 = new ImageMapCanvas('.villas-3 .imgMapCanvas');
 }
 
 const changeMapByTime = () => {
@@ -312,6 +315,71 @@ const sliderArea_1 = () => {
 	})
 }
 
+const villasSlider1 = () => {
+	const slider1 = new Swiper('.villas-6 .title-slider .swiper-container', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		speed: 1200,
+		loop: true,
+		navigation: {
+			prevEl: '.villas-6 .title-slider .swiper-prev',
+			nextEl: '.villas-6 .title-slider .swiper-next'
+		}
+	});
+	const slider2 = new Swiper('.villas-6 .info-slider .swiper-container', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		speed: 1700,
+		loop: true,
+		navigation: {
+			prevEl: '.villas-6 .info-slider .swiper-prev',
+			nextEl: '.villas-6 .info-slider .swiper-next'
+		}
+	})
+}
+
+const villasSlider2 = () => {
+	const slider1 = new Swiper('.villas-7 .title-slider .swiper-container', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		speed: 1200,
+		loop: true,
+		navigation: {
+			prevEl: '.villas-7 .title-slider .swiper-prev',
+			nextEl: '.villas-7 .title-slider .swiper-next'
+		}
+	});
+	const slider2 = new Swiper('.villas-7 .info-slider .swiper-container', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		speed: 1700,
+		loop: true,
+		navigation: {
+			prevEl: '.villas-7 .info-slider .swiper-prev',
+			nextEl: '.villas-7 .info-slider .swiper-next'
+		}
+	})
+}
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -329,6 +397,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	sliderSection7();
 	imageMapCanvas();
 	changeMapByTime();
+	villasSlider1();
+	villasSlider2();
 	if (window.innerWidth < 1025) {
 		customFancybox();
 	}

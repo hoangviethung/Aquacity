@@ -65,7 +65,7 @@ export default class ImageMapCanvas {
 	}
 
 	registerEvents() {
-		if (this.selector === document.querySelector('.area-2 .imgMapCanvas')) {
+		if (this.selector === document.querySelector('.area-2 .imgMapCanvas') || this.selector === document.querySelector('.villas-2 .imgMapCanvas')) {
 			Array.from(this.map.querySelectorAll('area')).forEach(areaItem => {
 				const effect = () => {
 					let time = new Date();

@@ -1,0 +1,153 @@
+.villas-7 {
+	padding: 110px 28px 30px 28px;
+	display: flex;
+	align-items: center;
+	background-color: white;
+	background-image: url(../assets/villas/v_8_bg.jpg);
+	background-repeat: no-repeat;
+	background-position: 0 0%;
+	background-size: 70% 100%;
+
+	.row {
+		margin: 0 -15px;
+	}
+
+	.content {
+		flex: 0 0 100%;
+		max-width: 1350px;
+		margin: 0 auto;
+		border: 3px solid map-get($mau, main-2);
+		position: relative;
+		padding-bottom: 30px;
+	}
+
+	.col-left {
+		flex: 0 0 45%;
+		max-width: 45%;
+		padding: 0 15px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+
+		.swiper-prev {
+			background-image: url('../assets/btn-left.png');
+			left: 0;
+		}
+
+		.swiper-next {
+			background-image: url('../assets/btn-right.png');
+			left: 50px;
+		}
+	}
+
+	.col-right {
+		flex: 0 0 55%;
+		max-width: 55%;
+		padding: 0 15px;
+		display: flex;
+		flex-direction: column-reverse;
+
+		.swiper-prev {
+			background-image: url('../assets/btn-left.png');
+			right: 50px;
+		}
+
+		.swiper-next {
+			background-image: url('../assets/btn-right.png');
+			right: 0;
+		}
+	}
+
+	.title {
+		h2 {
+			font-size: 70px;
+			text-transform: uppercase;
+			color: white;
+			text-align: right;
+			line-height: 1.2;
+		}
+	}
+
+	.swiper-prev,
+	.swiper-next {
+		position: absolute;
+		bottom: 0;
+		background-repeat: no-repeat;
+		background-position: center;
+		width: 50px;
+		height: 50px;
+		z-index: 2;
+		cursor: pointer;
+	}
+
+	.title-slider {
+		margin-left: -55px;
+		margin-bottom: -55px;
+		position: relative;
+		box-shadow: 0 0 12px rgba(black, .55);
+	}
+
+	.info-slider {
+		margin-right: -90px;
+		position: relative;
+		margin-top: -55px;
+		box-shadow: 0 0 12px rgba(black, .55);
+
+		img {
+			width: 100%;
+		}
+	}
+
+	.text {
+		padding: 20px 50px;
+		background-image: url(../assets/villas/v_6_bg_2.jpg);
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+		margin-top: 30px;
+
+		p {
+			font-size: 28px;
+			-webkit-line-clamp: 4;
+			-webkit-box-orient: vertical;
+			overflow: hidden;
+			display: -webkit-box;
+			text-overflow: ellipsis;
+			color: white;
+		}
+	}
+
+	@media (max-width: 1439.98px) {
+		.content {
+			max-width: 1010px;
+		}
+
+		.title {
+			h2 {
+				font-size: 55px;
+			}
+		}
+
+		.text {
+			p {
+				font-size: 25px;
+			}
+		}
+
+		.info-slider {
+			margin-right: -35px;
+			margin-top: -30px;
+		}
+
+		.title-slider {
+			margin-left: -35px;
+			margin-bottom: -60px;
+		}
+	}
+
+	@media (max-width: 1199.98px) {
+		.content {
+			max-width: 930px;
+		}
+	}
+}

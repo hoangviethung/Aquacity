@@ -1,0 +1,19 @@
+.villas-3 {
+	background-color: white;
+	background-image: url(../assets/villas/v_3_bg.jpg);
+	background-position-x: 100%;
+	background-position-y: 0%;
+	background-repeat: no-repeat;
+	background-size: 295px;
+	padding-right: 295px;
+	padding-top: 155px;
+	padding-bottom: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	.content {
+		max-width: 870px;
+		padding: 0 50px;
+	}
+}
