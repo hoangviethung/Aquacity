@@ -406,7 +406,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		ripple1();
 		ripple2();
 	}
-	Loading();
+	// Loading();
+	
+	document.querySelector('body').classList.add('show-page');
 	getSVGImage();
 });
 
