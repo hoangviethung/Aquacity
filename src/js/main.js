@@ -33,8 +33,6 @@ const fullpage = () => {
 				titles: true,
 				on: {
 					init: function() {
-						customFancybox(fullpage);
-						customFancybox2(fullpage);
 						getSVGImage();
 					},
 					afterRunEffect: function() {
@@ -53,7 +51,9 @@ const fullpage = () => {
 					}
 				}
 			});
-
+			
+			customFancybox(fullpage);
+			customFancybox2(fullpage);
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
 				const callback = () => {
 					localStorage.removeItem('isScroll');
@@ -302,7 +302,27 @@ const customFancybox2 = param => {
 			}
 		})
 	})
+	
+	$('.villas-5 .btn-discover').fancybox({
+		hash: false,
+		closeExisting: true,
+		animationDuration: 800,
+		smallBtn: "auto",
+		touch: false,
+		animationEffect: 'zoom-in-out',
+		beforeLoad: function() {
+			if (param) {
+				param.canBeScrolled = false;
+			}
+		},
+		afterClose: function() {
+			if (param) {
+				param.canBeScrolled = true;
+			}
+		}
+	})
 }
+
 const Area4TabFronts = () => {
 	const tab1 = new Tab('#popup-fronts .tab-container');
 	const tab2 = new Tab('#popup-villas3 .tab-container');
@@ -462,9 +482,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		ripple1();
 		ripple2();
 	}
-	// Loading();
+	Loading();
 
-	document.querySelector('body').classList.add('show-page');
+	// document.querySelector('body').classList.add('show-page');
 	getSVGImage();
 });
 

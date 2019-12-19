@@ -208,10 +208,18 @@
 
 			.text {
 				padding: 15px 20px;
+				order: 2;
+				margin-top: 0;
 
 				p {
 					font-size: 16px;
+					-webkit-line-clamp: unset;
 				}
+			}
+
+			.info-slider {
+				margin-top: 20px;
+				order: 1;
 			}
 		}
 

@@ -10,6 +10,11 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
+		<div id="loading">
+			<div class="logo-loader"><img class="svg-image" data-src="./assets/logo.svg" alt=""></div>
+			<div class="progstat-wrapper d-none">Loading:<span id="progstat">0</span>%</div>
+			<div id="progress"></div>
+		</div>
 		<header>
 			<div class="container">
 				<div class="row no-gutters">
@@ -501,16 +506,66 @@
 							<div class="col-lg-6 col-left">
 								<div class="text">
 									<h3> <img src="./assets/villas/v_5_logo_1.png" alt=""></h3>
-									<p>Kết nối xuyên suốt không gian khách và bếp cùng khu vườn và hồ bơi riêng biệt, Garden Villas lưu giữ ký ức vui vẻ với những người láng giềng thượng lưu.</p><a class="btn-discover btn" href="#" data-fancybox="villas_5_1">Tìm hiểu ngay</a>
+									<p>Kết nối xuyên suốt không gian khách và bếp cùng khu vườn và hồ bơi riêng biệt, Garden Villas lưu giữ ký ức vui vẻ với những người láng giềng thượng lưu.</p><a class="btn-discover btn" href="#" data-fancybox="villas_5_1" data-src="#villas5_1">Tìm hiểu ngay</a>
 								</div>
 								<div class="img"><img src="./assets/villas/v_5_1.jpg" alt=""></div>
 							</div>
 							<div class="col-lg-6 col-right">
 								<div class="text">
 									<h3> <img src="./assets/villas/v_5_logo_2.png" alt=""></h3>
-									<p>Kết nối xuyên suốt không gian khách và bếp cùng khu vườn và hồ bơi riêng biệt, Garden Villas lưu giữ ký ức vui vẻ với những người láng giềng thượng lưu.</p><a class="btn-discover btn" href="#" data-fancybox="villas_5_2">Tìm hiểu ngay</a>
+									<p>Được tô điểm bởi những kiến trúc sư hàng đầu, Classic Villas là tác phẩm nghệ thuật để bạn tự hào và là tổ ấm hạnh phúc thăng hoa.</p><a class="btn-discover btn" href="#" data-fancybox="villas_5_2" data-src="#villas5_2">Tìm hiểu ngay</a>
 								</div>
 								<div class="img"><img src="./assets/villas/v_5_2.jpg" alt=""></div>
+							</div>
+						</div>
+					</div>
+					<div class="d-none">
+						<div class="villas5_1 popup_villas_5" id="villas5_1">
+							<div class="container">
+								<div class="logo"><a href="/" title="title"><img src="./assets/logo.png" alt=""></a></div>
+								<div class="content"><span class="line-top"></span><span class="line-left"></span><span class="line-bottom"></span>
+									<div class="row">
+										<div class="col-lg-5 col-img">
+											<div class="title">
+												<h2>Garden Villas</h2>
+											</div>
+											<div class="text">
+												<p>Thiết kế biệt thự duy nhất không những mang đến cho gia chủ một diện tích mảng xanh sinh thái bao quanh, mà còn vô cùng ấn tượng với ban công tầm nhìn thư thái, gần gũi với thiên nhiên, hoàn toàn tách biệt khỏi phố thị nhộn nhịp, đáp ứng chuẩn sống "Xanh" thời thượng, dồi dào vượng khí.</p>
+											</div>
+											<div class="img-list">
+												<div class="img"><img src="./assets/villas/v_5_p2_1.jpg" alt=""></div>
+												<div class="img"><img src="./assets/villas/v_5_p2_2.jpg" alt=""></div>
+											</div>
+										</div>
+										<div class="col-lg-7">
+											<div class="img"><img src="./assets/villas/v_5_p2_3.jpg" alt=""></div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="villas5_2 popup_villas_5" id="villas5_2">
+							<div class="container">
+								<div class="logo"><a href="/" title="title"><img src="./assets/logo.png" alt=""></a></div>
+								<div class="content"><span class="line-top"></span><span class="line-left"></span><span class="line-bottom"></span>
+									<div class="row">
+										<div class="col-lg-5 col-img">
+											<div class="title">
+												<h2>Classic Villas</h2>
+											</div>
+											<div class="text">
+												<p>Mỗi căn biệt thự Classic Villa đều là một kiệt tác được kết tinh bởi phong cách tinh tế và sang trọng, tự nhiên và kiêu hãnh, vượt mọi giá trị kiến trúc thông thường để tôn lên phong cách độc tôn mang đậm dấu ấn riêng, duy nhất của từng chủ nhân tinh tú.</p>
+											</div>
+											<div class="img-list">
+												<div class="img"><img src="./assets/villas/v_5_p1_1.jpg" alt=""></div>
+												<div class="img"><img src="./assets/villas/v_5_p1_2.jpg" alt=""></div>
+											</div>
+										</div>
+										<div class="col-lg-7">
+											<div class="img"><img src="./assets/villas/v_5_p1_3.jpg" alt=""></div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -595,7 +650,7 @@
 							</div>
 							<div class="col-right">
 								<div class="title">
-									<h2>Sống trọn<br>Bình yên</h2>
+									<h2> <span>Sống trọn </span><br><span>Bình yên </span></h2>
 								</div>
 								<div class="text">
 									<p>Mọi hoạt động của cả nhà thật thư thái, như một kỳ nghỉ tuyệt hảo chỉ có tại The Grand Villas, trái tim của Aqua City</p>
