@@ -96,7 +96,7 @@ export default class ImageMapCanvas {
 				}
 				window.requestAnimationFrame(effect);
 			})
-		} else if (this.selector === document.querySelector('.area-3 .imgMapCanvas')) {
+		} else if (this.selector === document.querySelector('.area-3 .imgMapCanvas') || this.selector === document.querySelector('.villas-3 .imgMapCanvas')) {
 			const effect = () => {
 				this.canvasContext.clearRect(0, 0, this.canvas.clientWidth, this.canvas.clientHeight);
 				Array.from(this.map.querySelectorAll('area')).forEach(areaItem => {
