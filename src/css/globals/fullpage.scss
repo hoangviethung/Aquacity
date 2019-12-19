@@ -20,11 +20,11 @@
 
 			&.sliding {
 				opacity: 1;
-				z-index: 2;
+				z-index: 3;
 			}
 
 			&.active {
-				// z-index: 2;
+				z-index: 2;
 				opacity: 1;
 			}
 		}

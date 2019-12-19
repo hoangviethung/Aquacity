@@ -118,22 +118,26 @@ export default class FullPage {
 		}
 
 		if (direction === 'down') {
-			nextSection.classList.add('sliding');
 			gsap.fromTo(nextSection, {
 				top: '100%',
 			}, {
 				top: '0%',
 				duration: 0.8,
+				onStart: function () {
+					nextSection.classList.add('sliding');
+				},
 				onComplete: onAnimateCompleted,
 				onCompleteParams: [currentSection, nextSection, callback],
 			})
 		} else {
-			nextSection.classList.add('sliding');
 			gsap.fromTo(nextSection, {
 				bottom: '100%',
 			}, {
 				bottom: '0%',
 				duration: 0.8,
+				onStart: function () {
+					nextSection.classList.add('sliding');
+				},
 				onComplete: onAnimateCompleted,
 				onCompleteParams: [currentSection, nextSection],
 			})
