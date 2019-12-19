@@ -1,0 +1,14 @@
+.villas-2 {
+	background-color: white;
+	display: flex;
+	align-items: center;
+
+	.imgMapCanvas {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+
+	@media (max-width: 1024px) {
+		display: none;
+	}
+}

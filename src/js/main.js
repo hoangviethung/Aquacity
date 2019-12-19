@@ -33,7 +33,8 @@ const fullpage = () => {
 				titles: true,
 				on: {
 					init: function() {
-						customFancybox(fullpage)
+						customFancybox(fullpage);
+						customFancybox2(fullpage);
 						getSVGImage();
 					},
 					afterRunEffect: function() {
@@ -190,7 +191,7 @@ const setLinkDownload = () => {
 }
 
 const customFancybox = param => {
-	$('.area-3 area, .fronts-list .item a').on('click', function() {
+	$('.area-3 area, .area-3 .fronts-list .item a').on('click', function() {
 		const index = Number($(this).attr('index'));
 		$.fancybox.open({
 			src: '#popup-fronts',
@@ -246,8 +247,65 @@ const customFancybox = param => {
 	})
 }
 
+const customFancybox2 = param => {
+	$('.villas-3 area, .villas-3 .fronts-list .item a').on('click', function() {
+		const index = Number($(this).attr('index'));
+		$.fancybox.open({
+			src: '#popup-villas3',
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+				animationDuration: 800,
+				smallBtn: "auto",
+				touch: false,
+				animationEffect: 'zoom-in-out',
+				beforeLoad: function() {
+					if (param) {
+						param.canBeScrolled = false;
+					}
+				},
+				beforeShow: function(instance, current) {
+					$('.villas-3 .list-items .item').eq(index).trigger('click')
+				},
+				afterClose: function() {
+					if (param) {
+						param.canBeScrolled = true;
+					}
+				}
+			}
+		})
+	})
+
+	$('.villas-3 .btn-viewmore').on('click', function() {
+		const src = $(this).attr('data-src');
+		$.fancybox.open({
+			src: src,
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+				animationDuration: 800,
+				smallBtn: "auto",
+				touch: false,
+				animationEffect: 'zoom-in-out',
+				beforeLoad: function() {
+					if (param) {
+						param.canBeScrolled = false;
+					}
+				},
+				afterClose: function() {
+					if (param) {
+						param.canBeScrolled = true;
+					}
+				}
+			}
+		})
+	})
+}
 const Area4TabFronts = () => {
-	return new Tab('#popup-fronts .tab-container')
+	const tab1 = new Tab('#popup-fronts .tab-container');
+	const tab2 = new Tab('#popup-villas3 .tab-container');
 }
 
 const ripple1 = () => {
@@ -257,15 +315,15 @@ const ripple1 = () => {
 			perturbance: 0.01,
 			interactive: false
 		})
+		setInterval(function() {
+			var $el = $('.area-4 .col-md-auto.img');
+			var x = Math.random() * $el.outerWidth();
+			var y = Math.random() * $el.outerHeight();
+			var dropRadius = 30;
+			var strength = 0.04 + Math.random() * 0.04;
+			$el.ripples("drop", x, y, dropRadius, strength);
+		}, 2000);
 	} catch (err) {}
-	setInterval(function() {
-		var $el = $('.area-4 .col-md-auto.img');
-		var x = Math.random() * $el.outerWidth();
-		var y = Math.random() * $el.outerHeight();
-		var dropRadius = 30;
-		var strength = 0.04 + Math.random() * 0.04;
-		$el.ripples("drop", x, y, dropRadius, strength);
-	}, 2000);
 }
 
 const ripple2 = () => {
@@ -275,18 +333,15 @@ const ripple2 = () => {
 			perturbance: 0.01,
 			interactive: false
 		})
-	} catch (error) {
-		console.log(error);
-
-	}
-	setInterval(function() {
-		var $el = $('.area-6 .img');
-		var x = Math.random() * $el.outerWidth();
-		var y = Math.random() * $el.outerHeight();
-		var dropRadius = 30;
-		var strength = 0.04 + Math.random() * 0.04;
-		$el.ripples("drop", x, y, dropRadius, strength);
-	}, 2000);
+		setInterval(function() {
+			var $el = $('.area-6 .img');
+			var x = Math.random() * $el.outerWidth();
+			var y = Math.random() * $el.outerHeight();
+			var dropRadius = 30;
+			var strength = 0.04 + Math.random() * 0.04;
+			$el.ripples("drop", x, y, dropRadius, strength);
+		}, 2000);
+	} catch (error) {}
 }
 
 const sliderArea_1 = () => {
@@ -401,13 +456,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	villasSlider2();
 	if (window.innerWidth < 1025) {
 		customFancybox();
+		customFancybox2();
 	}
 	if (window.innerWidth >= 1025) {
 		ripple1();
 		ripple2();
 	}
 	// Loading();
-	
+
 	document.querySelector('body').classList.add('show-page');
 	getSVGImage();
 });

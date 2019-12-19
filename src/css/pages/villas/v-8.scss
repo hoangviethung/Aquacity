@@ -132,4 +132,22 @@
 			}
 		}
 	}
+
+	@media (max-width: 1024px) {
+		padding: 0 0 30px 0;
+
+		.content {
+			padding: 0 10px;
+			border: 0;
+
+			.line-left,
+			.line-right {
+				display: none;
+			}
+		}
+
+		.text {
+			padding: 10px 20px;
+		}
+	}
 }
