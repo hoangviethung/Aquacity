@@ -207,7 +207,7 @@
 	>.container {
 		padding-top: 160px;
 
-		@media (max-width: 1659.98px) and (min-width: 1025px) {
+		@media (max-width: 1609.98px) and (min-width: 1025px) {
 			max-width: 100%;
 			padding: 110px 50px 0 50px;
 			display: flex;
@@ -223,7 +223,7 @@
 		flex: 0 0 320px;
 		max-width: 320px;
 
-		@media (max-width: 1659.98px) {
+		@media (max-width: 1609.98px) {
 			max-width: 220px;
 			flex: 0 0 220px;
 		}
@@ -299,7 +299,7 @@
 			align-items: center;
 			display: flex;
 
-			@media (max-width: 1659.98px) {
+			@media (max-width: 1609.98px) {
 				flex-wrap: wrap;
 			}
 

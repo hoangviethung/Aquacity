@@ -26,7 +26,7 @@
 				padding-left: 60px;
 			}
 
-			@media (min-width: 1660px) {
+			@media (min-width: 1610px) {
 				padding-left: 70px;
 			}
 		}
@@ -54,7 +54,7 @@
 				background-image: url('../assets/bg_btn_discover.png');
 				width: 130px;
 
-				@media (min-width: 1660px) {
+				@media (min-width: 1610px) {
 					width: 160px;
 				}
 			}
@@ -62,12 +62,12 @@
 			+.item {
 				margin-left: 20px;
 
-				@media (min-width: 1660px) {
+				@media (min-width: 1610px) {
 					margin-left: 40px;
 				}
 			}
 
-			@media (min-width: 1660px) {
+			@media (min-width: 1610px) {
 				h3 {
 					font-size: 36px;
 				}
@@ -100,7 +100,7 @@
 					max-width: 30px;
 				}
 
-				@media (min-width: 1660px) {
+				@media (min-width: 1610px) {
 					max-width: 45px;
 				}
 			}
@@ -140,7 +140,7 @@
 				-webkit-background-clip: text;
 			}
 
-			@media (max-width: 1659.98px) {
+			@media (max-width: 1609.98px) {
 				margin-bottom: 30px;
 				font-size: 45px;
 			}
@@ -168,7 +168,7 @@
 						width: 125px;
 					}
 
-					@media (min-width: 1660px) {
+					@media (min-width: 1610px) {
 						width: 190px;
 					}
 				}
@@ -182,7 +182,7 @@
 					}
 				}
 
-				@media (min-width: 1660px) {
+				@media (min-width: 1610px) {
 					font-size: 28px;
 
 					+.item {
@@ -191,7 +191,7 @@
 				}
 			}
 
-			@media (min-width: 1660px) {
+			@media (min-width: 1610px) {
 				left: 50%;
 			}
 		}
