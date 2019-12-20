@@ -51,7 +51,7 @@ const fullpage = () => {
 					}
 				}
 			});
-			
+
 			customFancybox(fullpage);
 			customFancybox2(fullpage);
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
@@ -316,7 +316,7 @@ const customFancybox2 = param => {
 			}
 		})
 	})
-	
+
 	$('.villas-5 .btn-discover').fancybox({
 		hash: false,
 		closeExisting: true,
@@ -469,6 +469,51 @@ const villasSlider2 = () => {
 		}
 	})
 }
+
+const galleryImage = () => {
+	const image = new Swiper('.section-gallery-image .swiper-container', {
+		slidesPerView: 1,
+		loop: true,
+		spaceBetween: 70,
+		loopAdditionalSlides: 2,
+		centeredSlides: true,
+		autoplay: {
+			delay: 3400,
+			disableOnInteraction: false,
+		},
+		speed: 1100,
+		observeParents: true,
+		observer: true,
+		navigation: {
+			prevEl: '.section-gallery-image .image-slider .swiper-prev',
+			nextEl: '.section-gallery-image .image-slider .swiper-next',
+		},
+	});
+	const video = new Swiper('.section-gallery-video .swiper-container', {
+		slidesPerView: 1,
+		loop: true,
+		spaceBetween: 70,
+		loopAdditionalSlides: 2,
+		centeredSlides: true,
+		autoplay: {
+			delay: 3400,
+			disableOnInteraction: false,
+		},
+		speed: 1100,
+		observeParents: true,
+		observer: true,
+		navigation: {
+			prevEl: '.section-gallery-video .video-slider .swiper-prev',
+			nextEl: '.section-gallery-video .video-slider .swiper-next',
+		},
+	});
+
+	$('.section-gallery-video .video-slider .video-item[data-href]').fancybox({
+		closeExisting: true,
+		hash: false,
+	})
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -488,6 +533,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	changeMapByTime();
 	villasSlider1();
 	villasSlider2();
+	galleryImage();
 	if (window.innerWidth < 1025) {
 		customFancybox();
 		customFancybox2();
