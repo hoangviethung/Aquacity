@@ -1,0 +1,190 @@
+.villas-4 {
+	display: flex;
+	align-items: center;
+	background-color: white;
+
+	.content {
+		width: 100%;
+		max-width: 1455px;
+		margin: 0 auto;
+		padding: 0 10px;
+	}
+
+	.col-left {
+		flex: 0 0 920px;
+		max-width: 920px;
+		position: relative;
+		padding: 0 10px;
+
+		.title {
+			position: absolute;
+			padding: 40px 50px;
+			bottom: 0;
+			left: 0;
+
+			img {
+				max-width: 450px;
+			}
+		}
+
+		.img {
+			height: 100%;
+		}
+	}
+
+	.col-right {
+		flex: 0 0 535px;
+		max-width: 535px;
+		padding: 0 10px;
+
+		.title {
+			background-image: url('../assets/villas/v_4_bg.png');
+			background-position: center;
+			background-size: 100% 100%;
+			background-repeat: no-repeat;
+			margin-bottom: 20px;
+			padding: 60px 45px;
+
+			p {
+				font-size: 28px;
+				color: white;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 5;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				overflow: hidden;
+			}
+		}
+	}
+
+	.img {
+		box-shadow: 0 0 12px rgba(0, 0, 0, .55);
+
+		.img-wrapper {
+			overflow: hidden;
+			height: 100%;
+		}
+
+		img {
+			width: 100%;
+			transition: all .4s ease-in-out;
+		}
+	}
+
+	.col-left,
+	.col-right {
+		@media (min-width: 1025px) {
+			&:hover {
+				.img {
+					img {
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1609.98px) {
+		.content {
+			max-width: 1095px;
+		}
+
+		.col-left {
+			flex: 0 0 720px;
+			max-width: 720px;
+
+			.title {
+				img {
+					max-width: 375px;
+				}
+			}
+		}
+
+		.col-right {
+			flex: 0 0 375px;
+			max-width: 375px;
+
+			.title {
+				padding: 30px 20px;
+
+				p {
+					font-size: 25px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1199.98px) {
+
+		.content {
+			max-width: 930px;
+		}
+
+		.col-left {
+			flex: 0 0 100%;
+			max-width: 605px;
+
+			.title {
+				img {
+					max-width: 300px;
+				}
+			}
+		}
+
+		.col-right {
+			flex: 0 0 100%;
+			max-width: 325px;
+
+			.title {
+				padding: 15px;
+
+				p {
+					font-size: 22px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		.col-left {
+			flex: 0 0 100%;
+			max-width: 100%;
+
+			.img {
+				background-color: map-get($mau, main);
+
+				img {
+					opacity: .3;
+				}
+			}
+
+			.title {
+				height: 100%;
+				left: 10px;
+				right: 10px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+		}
+
+		.col-right {
+			flex: 0 0 100%;
+			max-width: 100%;
+			position: relative;
+
+			.title {
+				padding: 10px;
+				margin-bottom: 0;
+				position: absolute;
+				bottom: 0;
+				left: 10px;
+				right: 10px;
+
+				p {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,289 @@
+.section.villas-section.villas-3
+	.title
+		p.title-text.grad Mặt bằng
+		p.title-text.grad Tổng thể
+	.content
+		.imgMapCanvas
+			.map-canvas
+				map(name="villas_3", id="villas_3")
+					area(data-src="#popup-villas3" index="0" style="cursor: pointer" shape='poly', coords='454, 600, 562, 508, 619, 449, 691, 353, 744, 245, 760, 164, 831, 187, 818, 261, 779, 360, 716, 463, 641, 551, 526, 656', title='1')
+					area(data-src="#popup-villas3" index="1" style="cursor: pointer" shape='poly', coords='409, 71, 497, 76, 577, 173, 605, 188, 718, 224, 696, 277, 527, 221, 508, 209', title='2')
+					area(data-src="#popup-villas3" index="2" style="cursor: pointer" shape='poly', coords='293, 62, 380, 67, 478, 213, 505, 232, 689, 294, 652, 352, 413, 264, 397, 246', title='3')
+					area(data-src="#popup-villas3" index="3" style="cursor: pointer" shape='poly', coords='181, 61, 263, 60, 374, 259, 403, 284, 639, 370, 592, 429, 306, 319, 283, 288', title='4')
+					area(data-src="#popup-villas3" index="4" style="cursor: pointer" shape='poly', coords='290, 425, 350, 363, 573, 450, 507, 514', title='5')
+					area(data-src="#popup-villas3" index="5" style="cursor: pointer" shape='poly', coords='328, 506, 362, 482, 482, 535, 429, 577', title='6')
+					area(data-src="#popup-villas3" index="6" style="cursor: pointer" shape='poly', coords='160, 198, 198, 296, 248, 284, 206, 188', title='7')
+					area(data-src="#popup-villas3" index="7" style="cursor: pointer" shape='poly', coords='73, 80, 105, 174, 195, 160, 153, 66', title='8')
+					area(data-src="#popup-villas3" index="8" style="cursor: pointer" shape='poly', coords='101, 30, 115, 61, 208, 46, 612, 74, 613, 35, 204, 14', title='9')
+				canvas
+			.map-image
+				img(src="./assets/villas/v_3.png", usemap="#villas_3")
+	.container.mobile
+		.row.fronts-list
+			.col-6.col-md-4.item
+				a(data-src="#popup-villas3" index=0) 
+					h3 The Grand Villas
+					p GV-T2 | (Style 1)
+			.col-6.col-md-4.item
+				a(data-src="#popup-villas3" index=1) 
+					h3 The Grand Vilas
+					p GV-T2 | (Style 2)
+			.col-6.col-md-4.item
+				a(data-src="#popup-villas3" index=2) 
+					h3 The Grand Villas
+					p GV-T2 | (Style 3)
+			.col-6.col-md-4.item
+				a(data-src="#popup-villas3" index=3) 
+					h3 The Grand Villas
+					p GV-T2 | (Style 4)
+			.col-6.col-md-4.item
+				a(data-src="#popup-villas3" index=4) 
+					h3 The Grand Villas
+					p GV-T2 | (Style 5)
+			.col-6.col-md-4.item
+				a(data-src="#popup-villas3" index=5) 
+					h3 The Grand Villas
+					p GV-T5 | (Style 1)
+			.col-6.col-md-4.item
+				a(data-src="#popup-villas3" index=6) 
+					h3 The Grand Villas
+					p GV-T5 | (Style 2)
+			.col-6.col-md-4.item
+				a(data-src="#popup-villas3" index=7) 
+					h3 The Grand Villas
+					p GV-T5 | (Style 3)
+			.col-6.col-md-4.item
+				a(data-src="#popup-villas3" index=8) 
+					h3 The Grand Villas
+					p GV-T5 | (Style 4)
+	.d-none
+		#popup-villas3.popup-villas3
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row.tab-container
+						.col-lg-auto.list-items
+							.item(toggle-for="popup-villas3_1")
+								h3 The Grand Villas
+								p GV-T2 | (Style 1)
+							.item(toggle-for="popup-villas3_2")
+								h3 The Grand Vilas
+								p GV-T2 | (Style 2)
+							.item(toggle-for="popup-villas3_3")
+								h3 The Grand Vilas
+								p GV-T2 | (Style 3)
+							.item(toggle-for="popup-villas3_4")
+								h3 The Grand Vilas
+								p GV-T2 | (Style 4)
+							.item(toggle-for="popup-villas3_5")
+								h3 The Grand Vilas
+								p GV-T2 | (Style 5)
+							.item(toggle-for="popup-villas3_6")
+								h3 The Grand Villas
+								p GV-T5 | (Style 1)
+							.item(toggle-for="popup-villas3_7")
+								h3 The Grand Vilas
+								p GV-T5 | (Style 2)
+							.item(toggle-for="popup-villas3_8")
+								h3 The Grand Vilas
+								p GV-T5 | (Style 3)
+							.item(toggle-for="popup-villas3_9")
+								h3 The Grand Vilas
+								p GV-T5 | (Style 4)
+						.col-lg
+							-for(let i=1;i<10;i++)
+								.tab-content(tab-id="popup-villas3_"+i)
+									.content-wrapper
+										.img
+											img(src="./assets/villas/v_3_1.jpg", alt="")
+										.info
+											h2 The Grand Vilas
+											p GV-T5 | (Style 4)
+											.description
+												p Diện tích khu đất: 300 m2
+												p Tổng diện tích sàn xây dựng (GFA): 339.5 m2
+												p 
+													i (*) Không bao gồm ban công, sân thượng
+											a.btn.btn-viewmore(href="javascript:void(0)", data-src="#area_villas_"+i) Chi tiết
+		#area_villas_1.popup-villas3.area_villas
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row
+						.col-lg-6
+							.text-wrapper
+								.img
+									img(src="./assets/villas/v_3_1.jpg", alt="")
+								h2 The Grand Villas
+								p GV-T2 | (Style 1)
+								.description
+									p Diện tích khu đất: 150 m2
+									p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+									p 
+										i (*) Không bao gồm ban công, sân thượng
+						.col-lg-auto
+							img(src="./assets/villas/v_3_d.png", alt="")
+		#area_villas_2.popup-villas3.area_villas
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row
+						.col-lg-6
+							.text-wrapper
+								.img
+									img(src="./assets/villas/v_3_1.jpg", alt="")
+								h2 The Grand Villas
+								p GV-T2 | (Style 1)
+								.description
+									p Diện tích khu đất: 150 m2
+									p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+									p 
+										i (*) Không bao gồm ban công, sân thượng
+						.col-lg-auto
+							img(src="./assets/villas/v_3_d.png", alt="")
+		#area_villas_3.popup-villas3.area_villas
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row
+						.col-lg-6
+							.text-wrapper
+								.img
+									img(src="./assets/villas/v_3_1.jpg", alt="")
+								h2 The Grand Villas
+								p GV-T2 | (Style 1)
+								.description
+									p Diện tích khu đất: 150 m2
+									p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+									p 
+										i (*) Không bao gồm ban công, sân thượng
+						.col-lg-auto
+							img(src="./assets/villas/v_3_d.png", alt="")
+		#area_villas_4.popup-villas3.area_villas
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row
+						.col-lg-6
+							.text-wrapper
+								.img
+									img(src="./assets/villas/v_3_1.jpg", alt="")
+								h2 The Grand Villas
+								p GV-T2 | (Style 1)
+								.description
+									p Diện tích khu đất: 150 m2
+									p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+									p 
+										i (*) Không bao gồm ban công, sân thượng
+						.col-lg-auto
+							img(src="./assets/villas/v_3_d.png", alt="")
+		#area_villas_5.popup-villas3.area_villas
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row
+						.col-lg-6
+							.text-wrapper
+								.img
+									img(src="./assets/villas/v_3_1.jpg", alt="")
+								h2 The Grand Villas
+								p GV-T2 | (Style 1)
+								.description
+									p Diện tích khu đất: 150 m2
+									p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+									p 
+										i (*) Không bao gồm ban công, sân thượng
+						.col-lg-auto
+							img(src="./assets/villas/v_3_d.png", alt="")
+		#area_villas_6.popup-villas3.area_villas
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row
+						.col-lg-6
+							.text-wrapper
+								.img
+									img(src="./assets/villas/v_3_1.jpg", alt="")
+								h2 The Grand Villas
+								p GV-T2 | (Style 1)
+								.description
+									p Diện tích khu đất: 150 m2
+									p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+									p 
+										i (*) Không bao gồm ban công, sân thượng
+						.col-lg-auto
+							img(src="./assets/villas/v_3_d.png", alt="")
+		#area_villas_7.popup-villas3.area_villas
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row
+						.col-lg-6
+							.text-wrapper
+								.img
+									img(src="./assets/villas/v_3_1.jpg", alt="")
+								h2 The Grand Villas
+								p GV-T2 | (Style 1)
+								.description
+									p Diện tích khu đất: 150 m2
+									p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+									p 
+										i (*) Không bao gồm ban công, sân thượng
+						.col-lg-auto
+							img(src="./assets/villas/v_3_d.png", alt="")
+		#area_villas_8.popup-villas3.area_villas
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row
+						.col-lg-6
+							.text-wrapper
+								.img
+									img(src="./assets/villas/v_3_1.jpg", alt="")
+								h2 The Grand Villas
+								p GV-T2 | (Style 1)
+								.description
+									p Diện tích khu đất: 150 m2
+									p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+									p 
+										i (*) Không bao gồm ban công, sân thượng
+						.col-lg-auto
+							img(src="./assets/villas/v_3_d.png", alt="")
+		#area_villas_9.popup-villas3.area_villas
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.content
+					.row
+						.col-lg-6
+							.text-wrapper
+								.img
+									img(src="./assets/villas/v_3_1.jpg", alt="")
+								h2 The Grand Villas
+								p GV-T2 | (Style 1)
+								.description
+									p Diện tích khu đất: 150 m2
+									p Tổng diện tích sàn xây dựng (GFA): 336.5 m2
+									p 
+										i (*) Không bao gồm ban công, sân thượng
+						.col-lg-auto
+							img(src="./assets/villas/v_3_d.png", alt="")

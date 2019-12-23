@@ -11,6 +11,7 @@
 		],
 		"js": [
 			"bower_components/jquery/dist/jquery.js",
+			"bower_components/lazysizes/lazysizes.js",
 			"node_modules/jquery.ripples/dist/jquery.ripples.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js",
 			"bower_components/swiper/package/js/swiper.js",

@@ -72,6 +72,10 @@
 			&.swiper-button-disabled {
 				display: none;
 			}
+
+			@media (max-width: 1024px) {
+				display: none;
+			}
 		}
 
 		.swiper-prev {
@@ -98,7 +102,7 @@
 		}
 	}
 
-	@media (max-width: 1659.98px) {
+	@media (max-width: 1609.98px) {
 		.content {
 			.logo {
 				img {
@@ -120,6 +124,21 @@
 
 			.text {
 				margin-top: 20px;
+			}
+		}
+
+		.swiper-container {
+			.swiper-pagination {
+				.swiper-pagination-bullet {
+					border-radius: 4px;
+					height: 8px;
+					transition: all .4s ease-in-out;
+				}
+
+				.swiper-pagination-bullet-active {
+					width: 30px;
+					background-color: map-get($mau, main);
+				}
 			}
 		}
 	}

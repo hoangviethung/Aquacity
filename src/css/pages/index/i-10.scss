@@ -1,13 +1,15 @@
-
 #sec-10 {
+	background-color: white;
+
 	>.img {
 		height: 100%;
 	}
 
 	.content {
-		.row{
+		.row {
 			align-items: center;
 		}
+
 		h3 {
 			text-transform: uppercase;
 			text-align: center;
@@ -16,7 +18,7 @@
 			margin-bottom: 12px;
 			font-size: 20px;
 
-			@media (min-width: 1660px) {
+			@media (min-width: 1610px) {
 				font-size: 24px;
 			}
 		}
@@ -25,7 +27,7 @@
 			text-align: center;
 			color: white;
 
-			@media (min-width: 1660px) {
+			@media (min-width: 1610px) {
 				font-size: 18px;
 			}
 		}
@@ -38,7 +40,7 @@
 			font-size: 26px;
 			text-align: center;
 
-			@media (min-width: 1660px) {
+			@media (min-width: 1610px) {
 				font-size: 36px;
 			}
 
@@ -54,7 +56,7 @@
 			img {
 				max-width: 250px;
 
-				@media (min-width: 1660px) {
+				@media (min-width: 1610px) {
 					max-width: 100%;
 				}
 			}
@@ -80,7 +82,7 @@
 				font-size: 15px;
 				color: #ffffff;
 
-				@media (min-width: 1660px) {
+				@media (min-width: 1610px) {
 					font-size: 22px;
 				}
 			}

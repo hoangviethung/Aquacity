@@ -14,7 +14,9 @@ const getSVGImage = () => {
 			const request = new XMLHttpRequest();
 			request.open('GET', imgUrl)
 			request.onload = data => {
-				item.parentElement.innerHTML = data.srcElement.response;
+				if (item && item.parentElement) {
+					item.parentElement.innerHTML = data.srcElement.response;
+				}
 				resolve();
 			}
 			request.send();
@@ -46,11 +48,12 @@ const fullpage = () => {
 						}
 						localStorage.removeItem('isScroll');
 						localStorage.removeItem('nextIndex');
-						customFancybox(fullpage)
 					}
 				}
 			});
 
+			customFancybox(fullpage);
+			customFancybox2(fullpage);
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
 				const callback = () => {
 					localStorage.removeItem('isScroll');
@@ -83,6 +86,20 @@ const fullpage = () => {
 					const currentSection = document.querySelector('.fp-section[fp-active="1"]');
 					const currentPosition = currentSection.getAttribute('fp-index');
 					const contactSection = document.querySelector('.fp-section[fp-index="8"]');
+					const contactPosition = contactSection.getAttribute('fp-index');
+
+					if (currentPosition < contactPosition) {
+						fullpage.runEffect(currentSection, contactSection, 'down');
+					}
+					if (currentPosition > contactPosition) {
+						fullpage.runEffect(currentSection, contactSection, 'up');
+					}
+				})
+				document.querySelector('#widget-left .go-first').addEventListener('click', e => {
+					e.preventDefault();
+					const currentSection = document.querySelector('.fp-section[fp-active="1"]');
+					const currentPosition = currentSection.getAttribute('fp-index');
+					const contactSection = document.querySelector('.fp-section[fp-index="0"]');
 					const contactPosition = contactSection.getAttribute('fp-index');
 
 					if (currentPosition < contactPosition) {
@@ -161,6 +178,9 @@ const imageMapCanvas = () => {
 	// Custom Canvas
 	const imageMap_3 = new ImageMapCanvas('.area-2 .imgMapCanvas');
 	const imageMap_4 = new ImageMapCanvas('.area-3 .imgMapCanvas');
+
+	const imageMap_5 = new ImageMapCanvas('.villas-2 .imgMapCanvas');
+	const imageMap_6 = new ImageMapCanvas('.villas-3 .imgMapCanvas');
 }
 
 const changeMapByTime = () => {
@@ -185,26 +205,36 @@ const setLinkDownload = () => {
 }
 
 const customFancybox = param => {
-	$('[data-fancybox]').not('.popup-fronts .btn-viewmore').not('.area-3 area').fancybox({
-		hash: false,
-		closeExisting: true,
-		btnTpl: {
-			close: '<button data-fancybox-close class="fancybox-button fancybox-button--close" title="{{CLOSE}}">' + '<svg xmlns="http://www.w3.org/2000/svg" width="55.37" height="56.06" viewBox="0 0 55.37 56.06"><defs><style>.cls-1 {fill: #4c8343;stroke: #4c8343;stroke-width: 3px;fill-rule: evenodd;}</style></defs><path class="cls-1" d="M3764.5,4309.98l5.25,5.25-46.52,46.52-5.25-5.25Z" transform="translate(-3716.16 -4308.47)"/><path id="Shape_774_copy" data-name="Shape 774 copy" class="cls-1" d="M3770.02,4357.71l-5.31,5.31-47.06-47.07,5.3-5.3Z" transform="translate(-3716.16 -4308.47)"/></svg>' + "</button>",
-		},
-		beforeLoad: function() {
-			if (param) {
-				param.canBeScrolled = false;
+	$('.area-3 area, .area-3 .fronts-list .item a').on('click', function() {
+		const index = Number($(this).attr('index'));
+		$.fancybox.open({
+			src: '#popup-fronts',
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+				animationDuration: 800,
+				smallBtn: "auto",
+				touch: false,
+				animationEffect: 'zoom-in-out',
+				beforeLoad: function() {
+					if (param) {
+						param.canBeScrolled = false;
+					}
+				},
+				beforeShow: function(instance, current) {
+					$('.popup-fronts .list-items .item').eq(index).trigger('click')
+				},
+				afterClose: function() {
+					if (param) {
+						param.canBeScrolled = true;
+					}
+				}
 			}
-		},
-		afterClose: function() {
-			if (param) {
-				param.canBeScrolled = true;
-			}
-		}
+		})
 	})
 
 	$('.popup-fronts .btn-viewmore').on('click', function() {
-		const index = Number($(this).attr('index'));
 		const src = $(this).attr('data-src');
 		$.fancybox.open({
 			src: src,
@@ -224,8 +254,36 @@ const customFancybox = param => {
 						param.canBeScrolled = false;
 					}
 				},
-				afterLoad: function(instance, current) {
-					$('.popup-fronts .list-items .item').eq(index).trigger('click')
+				afterClose: function() {
+					if (param) {
+						param.canBeScrolled = true;
+					}
+				}
+			}
+		})
+	})
+}
+
+const customFancybox2 = param => {
+	$('.villas-3 area, .villas-3 .fronts-list .item a').on('click', function() {
+		const index = Number($(this).attr('index'));
+		$.fancybox.open({
+			src: '#popup-villas3',
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+				animationDuration: 800,
+				smallBtn: "auto",
+				touch: false,
+				animationEffect: 'zoom-in-out',
+				beforeLoad: function() {
+					if (param) {
+						param.canBeScrolled = false;
+					}
+				},
+				beforeShow: function(instance, current) {
+					$('.villas-3 .list-items .item').eq(index).trigger('click')
 				},
 				afterClose: function() {
 					if (param) {
@@ -235,8 +293,8 @@ const customFancybox = param => {
 			}
 		})
 	})
-	$('.area-3 area').on('click', function() {
-		const index = Number($(this).attr('index'));
+
+	$('.villas-3 .btn-viewmore').on('click', function() {
 		const src = $(this).attr('data-src');
 		$.fancybox.open({
 			src: '#popup-fronts',
@@ -264,10 +322,30 @@ const customFancybox = param => {
 			}
 		})
 	})
+
+	$('.villas-5 .btn-discover').fancybox({
+		hash: false,
+		closeExisting: true,
+		animationDuration: 800,
+		smallBtn: "auto",
+		touch: false,
+		animationEffect: 'zoom-in-out',
+		beforeLoad: function() {
+			if (param) {
+				param.canBeScrolled = false;
+			}
+		},
+		afterClose: function() {
+			if (param) {
+				param.canBeScrolled = true;
+			}
+		}
+	})
 }
 
 const Area4TabFronts = () => {
-	return new Tab('#popup-fronts .tab-container')
+	const tab1 = new Tab('#popup-fronts .tab-container');
+	const tab2 = new Tab('#popup-villas3 .tab-container');
 }
 
 const ripple1 = () => {
@@ -277,15 +355,15 @@ const ripple1 = () => {
 			perturbance: 0.01,
 			interactive: false
 		})
+		setInterval(function() {
+			var $el = $('.area-4 .col-md-auto.img');
+			var x = Math.random() * $el.outerWidth();
+			var y = Math.random() * $el.outerHeight();
+			var dropRadius = 30;
+			var strength = 0.04 + Math.random() * 0.04;
+			$el.ripples("drop", x, y, dropRadius, strength);
+		}, 2000);
 	} catch (err) {}
-	setInterval(function() {
-		var $el = $('.area-4 .col-md-auto.img');
-		var x = Math.random() * $el.outerWidth();
-		var y = Math.random() * $el.outerHeight();
-		var dropRadius = 30;
-		var strength = 0.04 + Math.random() * 0.04;
-		$el.ripples("drop", x, y, dropRadius, strength);
-	}, 2000);
 }
 
 const ripple2 = () => {
@@ -295,18 +373,15 @@ const ripple2 = () => {
 			perturbance: 0.01,
 			interactive: false
 		})
-	} catch (error) {
-		console.log(error);
-
-	}
-	setInterval(function() {
-		var $el = $('.area-6 .img');
-		var x = Math.random() * $el.outerWidth();
-		var y = Math.random() * $el.outerHeight();
-		var dropRadius = 30;
-		var strength = 0.04 + Math.random() * 0.04;
-		$el.ripples("drop", x, y, dropRadius, strength);
-	}, 2000);
+		setInterval(function() {
+			var $el = $('.area-6 .img');
+			var x = Math.random() * $el.outerWidth();
+			var y = Math.random() * $el.outerHeight();
+			var dropRadius = 30;
+			var strength = 0.04 + Math.random() * 0.04;
+			$el.ripples("drop", x, y, dropRadius, strength);
+		}, 2000);
+	} catch (error) {}
 }
 
 const sliderArea_1 = () => {
@@ -315,6 +390,11 @@ const sliderArea_1 = () => {
 		navigation: {
 			prevEl: '.area-1 .swiper-container .swiper-prev',
 			nextEl: '.area-1 .swiper-container .swiper-next'
+		},
+		pagination: {
+			el: '.area-1 .swiper-container .swiper-pagination',
+			clickable: true,
+			type: 'bullets'
 		},
 		on: {
 			slideChangeTransitionEnd: function() {
@@ -330,6 +410,116 @@ const sliderArea_1 = () => {
 	})
 }
 
+const villasSlider1 = () => {
+	const slider1 = new Swiper('.villas-6 .title-slider .swiper-container', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		speed: 1200,
+		loop: true,
+		navigation: {
+			prevEl: '.villas-6 .title-slider .swiper-prev',
+			nextEl: '.villas-6 .title-slider .swiper-next'
+		}
+	});
+	const slider2 = new Swiper('.villas-6 .info-slider .swiper-container', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		speed: 1700,
+		loop: true,
+		navigation: {
+			prevEl: '.villas-6 .info-slider .swiper-prev',
+			nextEl: '.villas-6 .info-slider .swiper-next'
+		}
+	})
+}
+
+const villasSlider2 = () => {
+	const slider1 = new Swiper('.villas-7 .title-slider .swiper-container', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 3000,
+			disableOnInteraction: false,
+		},
+		speed: 1200,
+		loop: true,
+		navigation: {
+			prevEl: '.villas-7 .title-slider .swiper-prev',
+			nextEl: '.villas-7 .title-slider .swiper-next'
+		}
+	});
+	const slider2 = new Swiper('.villas-7 .info-slider .swiper-container', {
+		observer: true,
+		observeParents: true,
+		slidesPerView: 1,
+		autoplay: {
+			delay: 2500,
+			disableOnInteraction: false,
+		},
+		speed: 1700,
+		loop: true,
+		navigation: {
+			prevEl: '.villas-7 .info-slider .swiper-prev',
+			nextEl: '.villas-7 .info-slider .swiper-next'
+		}
+	})
+}
+
+const galleryImage = () => {
+	const image = new Swiper('.section-gallery-image .swiper-container', {
+		slidesPerView: 1,
+		loop: true,
+		spaceBetween: 70,
+		loopAdditionalSlides: 2,
+		centeredSlides: true,
+		autoplay: {
+			delay: 3400,
+			disableOnInteraction: false,
+		},
+		speed: 1100,
+		observeParents: true,
+		observer: true,
+		navigation: {
+			prevEl: '.section-gallery-image .image-slider .swiper-prev',
+			nextEl: '.section-gallery-image .image-slider .swiper-next',
+		},
+	});
+	const video = new Swiper('.section-gallery-video .swiper-container', {
+		slidesPerView: 1,
+		loop: true,
+		spaceBetween: 70,
+		loopAdditionalSlides: 2,
+		centeredSlides: true,
+		autoplay: {
+			delay: 3400,
+			disableOnInteraction: false,
+		},
+		speed: 1100,
+		observeParents: true,
+		observer: true,
+		navigation: {
+			prevEl: '.section-gallery-video .video-slider .swiper-prev',
+			nextEl: '.section-gallery-video .video-slider .swiper-next',
+		},
+	});
+
+	$('.section-gallery-video .video-slider .video-item[data-href]').fancybox({
+		closeExisting: true,
+		hash: false,
+	})
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -338,22 +528,30 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	const className = document.getElementById('js-page-verify').getAttribute('class');
 	document.querySelector('body').classList.add(className);
-
-	Promise.all(getSVGImage()).then(() => {
-		fullpage();
-		sliderArea_1();
-		setLinkDownload();
-		sectionVitriTab();
-		Area4TabFronts();
-		activeFrame2Section4();
-		sliderSection7();
-		imageMapCanvas();
-		changeMapByTime();
-		// customFancybox();
+	fullpage();
+	sliderArea_1();
+	setLinkDownload();
+	sectionVitriTab();
+	Area4TabFronts();
+	activeFrame2Section4();
+	sliderSection7();
+	imageMapCanvas();
+	changeMapByTime();
+	villasSlider1();
+	villasSlider2();
+	galleryImage();
+	if (window.innerWidth < 1025) {
+		customFancybox();
+		customFancybox2();
+	}
+	if (window.innerWidth >= 1025) {
 		ripple1();
 		ripple2();
-		Loading();
-	})
+	}
+	Loading();
+
+	// document.querySelector('body').classList.add('show-page');
+	getSVGImage();
 });
 
 export {

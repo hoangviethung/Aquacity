@@ -4,6 +4,12 @@
 	display: none !important;
 }
 
+.clearfix:after {
+	clear: both;
+	display: table;
+	content: '';
+}
+
 .ofcv {
 	width: 100%;
 	height: 100%;

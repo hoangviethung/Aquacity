@@ -1,0 +1,94 @@
+.utilities-7 {
+	.item {
+		position: relative;
+		height: 100%;
+	}
+
+	.img {
+		height: 100%;
+
+		img {
+			object-fit: cover;
+			height: 100%;
+			width: 100%;
+		}
+	}
+
+	.text {
+		position: absolute;
+		bottom: 50px;
+		left: 200px;
+		display: flex;
+		color: white;
+		align-items: center;
+		width: 450px;
+		flex-wrap: wrap;
+
+		br,
+		.number {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+
+		.number {
+			font-size: 132px;
+			line-height: 1;
+			font-weight: 700;
+			padding-right: 10px;
+		}
+
+		.description {
+			font-size: 32px;
+			text-transform: uppercase;
+			font-weight: 700;
+
+			span {
+				display: block;
+			}
+		}
+
+		@media (max-width: 1439.98px) {
+			.number {
+				font-size: 100px;
+			}
+
+			.description {
+				font-size: 24px;
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		.text {
+			position: static;
+			width: 100%;
+			padding: 10px;
+			background-color: map-get($mau, main);
+			color: white;	
+
+			.number {
+				font-size: 50px;
+				line-height: 1.5;
+				flex: 0 0 auto;
+				width: auto;
+				max-width: 100%;
+
+				@media (max-width: 576px) {
+					font-size: 30px;
+				}
+			}
+			br{
+				display: none;
+			}
+
+			.description {
+				font-size: 20px;
+				align-items: center;
+
+				@media (max-width: 576px) {
+					font-size: 16px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,151 @@
+.news-items {
+	display: flex;
+	justify-content: center;
+
+	.news-item {
+		@media (min-width: 1025px) {
+			flex: 0 0 275px;
+			max-width: 275px;
+			margin: 0 10px;
+			transition: all .5s linear;
+			opacity: 0;
+			transform: translateY(20px);
+
+			&:nth-child(1) {
+				transition-delay: .2s;
+			}
+
+			&:nth-child(2) {
+				transition-delay: .35s;
+			}
+
+			&:nth-child(3) {
+				transition-delay: .5s;
+			}
+		}
+
+		@media (min-width: 1610px) {
+			flex: 0 0 350px;
+			max-width: 350px;
+			margin: 0 35px;
+		}
+
+		.img {
+			box-shadow: 0px 2px 12px rgba(0, 0, 0, 0.3);
+			overflow: hidden;
+
+			img {
+				width: 100%;
+				transition: all .3s ease-in-out;
+			}
+		}
+
+		.text {
+			padding-top: 20px;
+
+			h3 {
+				font-size: 18px;
+				color: map-get($mau, main);
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-box-orient: vertical;
+				-webkit-line-clamp: 2;
+				height: 54px;
+			}
+		}
+
+		.button-wrapper {
+			padding-top: 20px;
+			text-align: center;
+		}
+
+		&:hover {
+			.img {
+				img {
+					transform: scale(1.1);
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 1024px) {
+	.news-items {
+		flex-wrap: wrap;
+
+		.news-item {
+			flex: 0 0 100%;
+			max-width: 100%;
+
+			a {
+				display: block;
+
+				&:after {
+					clear: both;
+					display: table;
+					content: ''
+				}
+			}
+
+			.img {
+				width: 40%;
+				float: left;
+
+				img {
+					width: 100%;
+				}
+			}
+
+			.text {
+				float: right;
+				width: 60%;
+				padding-left: 20px;
+
+				h3 {
+					font-size: 16px;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					display: -webkit-box;
+					-webkit-box-orient: vertical;
+					-webkit-line-clamp: 3;
+					height: 72px;
+				}
+			}
+
+			.button-wrapper {
+				float: left;
+				width: 60%;
+				padding-left: 20px;
+			}
+
+			+.news-item {
+				margin-top: 20px;
+			}
+		}
+	}
+}
+
+@media (max-width: 576px) {
+	.news-items {
+		.news-item {
+			.img {
+				width: 50%;
+			}
+
+			.text {
+				padding-top: 0;
+				width: 50%
+			}
+
+			.button-wrapper {
+				width: 50%;
+				padding-top: 10px;
+
+				.btn-readmore {
+					width: 150px;
+				}
+			}
+		}
+	}
+}

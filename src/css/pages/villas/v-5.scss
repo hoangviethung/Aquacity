@@ -1,0 +1,468 @@
+.villas-5 {
+	padding: 110px 100px 55px 100px;
+	display: flex;
+	align-items: center;
+	background-color: white;
+
+	img {
+		width: 100%;
+	}
+
+	h3 {
+		img {
+			width: auto;
+			max-height: 70px;
+
+			@media (max-width: 1439.98px) {
+				max-height: 60px;
+			}
+
+			@media (max-width: 1199.98px) {
+				max-height: 50px;
+			}
+		}
+	}
+
+	.content {
+		border: 3px solid map-get($mau, main-2);
+		padding: 30px 125px;
+	}
+
+	.text {
+		background-image: url(../assets/villas/v_5_bg.jpg);
+		background-position: center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		padding: 25px 40px;
+
+		h3 {
+			margin-bottom: 8px;
+		}
+
+		p {
+			-webkit-box-orient: vertical;
+			-webkit-line-clamp: 3;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			display: -webkit-box;
+			font-size: 22px;
+			color: white;
+			margin-bottom: 8px;
+		}
+
+		.btn-discover {
+			padding: 5px 20px;
+		}
+	}
+
+	.col-left {
+		.img {
+			margin-left: -155px;
+		}
+	}
+
+	.col-right {
+		display: flex;
+		flex-direction: column-reverse;
+
+		.img {
+			margin-right: -155px;
+		}
+	}
+
+	.col-left,
+	.col-right {
+		.img {
+			overflow: hidden;
+
+			img {
+				transition: all .4s ease-in-out;
+			}
+		}
+
+		@media (min-width: 1025px) {
+			&:hover {
+				.img {
+					img {
+						transform: scale(1.1);
+					}
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1439.98px) {
+		.content {
+			padding: 20px 90px;
+		}
+
+		.text {
+			p {
+				font-size: 20px;
+			}
+		}
+
+		.col-left {
+			.img {
+				margin-left: -120px;
+			}
+		}
+
+		.col-right {
+
+			.img {
+				margin-right: -120px;
+			}
+		}
+	}
+
+	@media (max-width: 1199.98px) {
+		.content {
+			padding: 15px 60px;
+		}
+
+		.text {
+			p {
+				font-size: 18px;
+			}
+		}
+
+		.col-left {
+			.img {
+				margin-left: -90px;
+			}
+		}
+
+		.col-right {
+
+			.img {
+				margin-right: -90px;
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		padding: 30px 0;
+
+		.content {
+			padding: 0 10px;
+			border: 0;
+		}
+
+		.text {
+			padding: 15px;
+
+			h3 {
+				img {
+					max-height: 40px;
+				}
+			}
+
+			p {
+				font-size: 16px;
+			}
+		}
+
+		.col-left {
+			margin-bottom: 20px;
+			display: flex;
+
+			.text {
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+
+			.img {
+				flex: 0 0 50%;
+				max-width: 50%;
+				margin-left: 0;
+
+				img {
+					object-fit: cover;
+					height: 100%;
+					width: 100%;
+				}
+			}
+		}
+
+		.col-right {
+			flex-direction: row-reverse;
+
+			.text {
+				flex: 0 0 50%;
+				max-width: 50%;
+			}
+
+			.img {
+				margin-right: 0;
+				flex: 0 0 50%;
+				max-width: 50%;
+
+				img {
+					object-fit: cover;
+					height: 100%;
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 576px) {
+
+		.col-right,
+		.col-left {
+			flex-wrap: wrap;
+
+			.text,
+			.img {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
+	}
+}
+
+.popup_villas_5 {
+	width: 100%;
+	height: 100%;
+	padding: 0 0 40px 0;
+	background-color: white;
+
+	.fancybox-close-small {
+		right: 15px;
+		padding: 0;
+		border: 0;
+
+		svg {
+			path {
+				stroke-width: 1;
+				stroke: map-get($mau, main);
+			}
+		}
+
+		@media (max-width: 1024px) {
+			top: 15px;
+		}
+	}
+
+	.logo {
+		position: absolute;
+		height: 70px;
+		top: 15px;
+
+		img {
+			height: 100%;
+		}
+
+		@media (max-width: 1024px) {
+			height: 50px;
+		}
+	}
+
+	>.container {
+		padding-top: 170px;
+
+		@media (max-width: 1609.98px) and (min-width: 1025px) {
+			max-width: 100%;
+			padding: 160px 50px 0 50px;
+			display: flex;
+			align-items: center;
+		}
+
+		@media (max-width: 1024px) {
+			padding-top: 80px;
+		}
+	}
+
+	.title {
+		margin-top: -60px;
+
+		h2 {
+			font-size: 70px;
+			text-transform: uppercase;
+			font-weight: 500;
+
+			@media (max-width: 1439.98px) {
+				font-size: 50px;
+			}
+
+			@media (max-width: 1199.98px) {
+				font-size: 35px;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			margin-top: 0;
+		}
+	}
+
+	.text {
+		p {
+			font-size: 22px;
+			line-height: 1.3;
+
+			@media (max-width: 1439.98px) {
+				font-size: 20px;
+			}
+
+			@media (max-width: 1199.98px) {
+				font-size: 18px;
+			}
+
+			@media (max-width: 1024px) {
+				font-size: 16px;
+			}
+		}
+	}
+
+	.col-img {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.img-list {
+		align-self: flex-end;
+		text-align: right;
+		margin-top: 20px;
+		padding-left: 20px;
+
+		.img {
+			+.img {
+				margin-top: 20px;
+			}
+		}
+
+		@media (max-width: 1439.98px) {
+			display: flex;
+
+			.img {
+				+.img {
+					margin-top: 0;
+					margin-left: 10px;
+				}
+			}
+		}
+
+		@media (max-width: 1024px) {
+			padding-left: 0;
+			margin-bottom: 10px;
+			margin-top: 10px;
+			margin: 0 -5px;
+			align-self: initial;
+
+			.img {
+				flex: 0 0 50%;
+				max-width: 50%;
+				padding: 0 5px;
+
+				img {
+					margin: 0;
+					width: 100%;
+				}
+
+				+.img {
+					margin-left: 0;
+				}
+			}
+		}
+	}
+
+	.col-lg-7 {
+		.img {
+			margin-right: -70px;
+
+			@media (max-width: 1439.98px) {
+				margin-right: -20px;
+			}
+
+			@media (max-width: 1024px) {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.content {
+		position: relative;
+
+		.line-top {
+			width: 2000px;
+			position: absolute;
+			top: -40px;
+			left: 40%;
+			height: 3px;
+			background-color: map-get($mau, main-2);
+		}
+
+		.line-left {
+			height: 60%;
+			position: absolute;
+			bottom: 50px;
+			left: 0%;
+			width: 3px;
+			background-color: map-get($mau, main-2);
+
+			@media (max-width: 1439.98px) {
+				height: 54%;
+			}
+
+			@media (max-width: 1199.98px) {
+				height: 45%;
+			}
+		}
+
+		.line-bottom {
+			width: 2000px;
+			position: absolute;
+			bottom: 50px;
+			left: 0;
+			height: 3px;
+			background-color: map-get($mau, main-2);
+			z-index: 2;
+		}
+
+		@media (max-width: 1024px) {
+
+			.line-top,
+			.line-left,
+			.line-bottom {
+				display: none;
+			}
+		}
+	}
+}
+
+.villas5_2 {
+	background-image: url('../assets/villas/v_5_bg_2.png');
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.title,
+	.text {
+
+		h2,
+		p {
+			color: white;
+		}
+	}
+}
+
+.villas5_1 {
+
+	.title,
+	.text {
+
+		p {
+			color: #262626;
+		}
+
+		h2 {
+			background-image: url('../assets/villas/v_4_bg.png');
+			background-repeat: no-repeat;
+			background-size: 100% 100%;
+			background-position: center;
+			-webkit-text-fill-color: transparent;
+			-webkit-background-clip: text;
+		}
+	}
+}

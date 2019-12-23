@@ -3,10 +3,6 @@
 	align-items: center;
 
 	.imgMapCanvas {
-		opacity: 0;
-		transition: all .3s ease-out;
-		transition-delay: .3s;
-
 		canvas {
 			background-size: 100%;
 			background-position: center;
@@ -14,9 +10,17 @@
 		}
 	}
 
-	&.active {
+	@media (min-width: 1025px) {
 		.imgMapCanvas {
-			opacity: 1;
+			opacity: 0;
+			transition: all .3s ease-out;
+			transition-delay: .3s;
+		}
+
+		&.active {
+			.imgMapCanvas {
+				opacity: 1;
+			}
 		}
 	}
 }
