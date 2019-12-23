@@ -1,5 +1,6 @@
 .section-gallery-image {
 	padding: 130px 50px 50px 50px;
+	background-color: white;
 	min-height: 100vh;
 	background-image: url('../assets/gallery/g_bg_1.png');
 	background-size: 100%;
@@ -9,7 +10,7 @@
 
 	.content {
 		padding: 0 10px;
-		max-width: 1470px;
+		max-width: 960px;
 		width: 100%;
 		margin: 0 auto;
 		position: relative;
@@ -24,6 +25,14 @@
 			top: 0;
 			border: 2px solid map-get($mau, main-2);
 			pointer-events: none;
+		}
+
+		@media (min-width: 1440px) {
+			max-width: 1100px;
+		}
+
+		@media (min-width: 1610px) {
+			max-width: 1470px;
 		}
 	}
 

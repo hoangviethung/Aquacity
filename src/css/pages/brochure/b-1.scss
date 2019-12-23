@@ -2,6 +2,7 @@
 	position: relative;
 	background-image: url('../assets/brochure/b_bg_3.png');
 	background-repeat: no-repeat;
+	background-color: white;
 	background-position: 0 -75px;
 	background-size: contain;
 	min-height: 100vh;
@@ -76,7 +77,11 @@
 		}
 
 		@media (min-width: 1025px) {
-			padding: 200px 30px 30px;
+			padding: 110px 30px 30px;
+		}
+
+		@media (min-width: 1440px) {
+			padding: 130px 30px 30px;
 		}
 
 		@media (min-width: 1610px) {
