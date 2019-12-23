@@ -58,7 +58,7 @@ const server = () => {
 	}, series(cssTask));
 
 	watch([
-		"src/assets/**/**.{svg,png,jpg,speg,gif,mp4,flv,avi}"
+		"src/assets/**/**.{svg,png,jpg,speg,gif,mp4,flv,avi,pdf}"
 	], series(cleanAssets, copyAssets));
 
 
