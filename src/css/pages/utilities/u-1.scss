@@ -1,5 +1,6 @@
-.villas-1 {
+.utilities-1 {
 	background-color: white;
+
 	.section-wrapper {
 		height: 100%;
 		position: relative;
@@ -22,7 +23,7 @@
 	}
 
 	.text {
-		max-width: 550px;
+		max-width: 650px;
 		width: 100%;
 
 		p:nth-child(1) {
@@ -35,14 +36,9 @@
 	}
 
 	h1 {
-		background-image: url(../assets/bg_btn_discover.png);
-		background-repeat: no-repeat;
-		background-size: 100% 100%;
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		font-size: 70px;
 		text-transform: uppercase;
 		font-weight: 700;
+		margin-bottom: 15px;
 	}
 
 	p {
@@ -90,12 +86,24 @@
 				}
 			}
 		}
+
+		h1 {
+			margin-bottom: 10px;
+
+			img {
+				max-height: 70px;
+			}
+		}
 	}
 
 	@media (max-width: 767.98px) {
 		.section-wrapper {
 			h1 {
 				font-size: 32px;
+
+				img {
+					max-height: 45px;
+				}
 			}
 
 			p {

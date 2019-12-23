@@ -1,0 +1,234 @@
+.utilities-4 {
+	background-color: white;
+	padding-top: 130px;
+
+	.row {
+		height: 100%;
+	}
+
+	.main-title {
+		margin-bottom: 40px;
+	}
+
+	.col-value {
+		.text {
+			display: flex;
+			color: white;
+			align-items: center;
+			width: 380px;
+
+			.number {
+				font-size: 132px;
+				line-height: 1;
+				font-weight: 700;
+				padding-right: 10px;
+			}
+
+			.description {
+				font-size: 32px;
+				text-transform: uppercase;
+				font-weight: 700;
+
+				span {
+					display: block;
+				}
+			}
+
+			@media (max-width: 1439.98px) {
+				width: 300px;
+
+				.number {
+					font-size: 100px;
+				}
+
+				.description {
+					font-size: 24px;
+				}
+			}
+		}
+
+		&:nth-child(1) {
+			float: right;
+			max-width: 50%;
+			width: 100%;
+			padding: 0 50px;
+
+			.img {
+				text-align: center;
+				height: 100%;
+
+				img {
+					max-width: 400px;
+				}
+			}
+
+			.text {
+				color: map-get($mau, main);
+			}
+		}
+
+		&:nth-child(2) {
+			float: left;
+			max-width: 50%;
+			width: 100%;
+			padding: 0 10px;
+
+			.item {
+				position: relative;
+			}
+
+			.text {
+				position: absolute;
+				bottom: 20px;
+				right: 20px;
+			}
+
+			.img {
+				height: 320px;
+
+				img {
+					object-fit: cover;
+					height: 100%;
+					width: 100%;
+				}
+
+				@media (max-width: 1439.98px) {
+					height: 200px
+				}
+			}
+		}
+
+		&:nth-child(3) {
+			margin-top: 20px;
+			float: left;
+			max-width: 50%;
+			width: 100%;
+			padding: 0 10px;
+
+			.item {
+				position: relative;
+			}
+
+			.text {
+				position: absolute;
+				top: 20px;
+				right: 20px;
+			}
+
+			.img {
+				height: 320px;
+
+				img {
+					object-fit: cover;
+					height: 100%;
+					width: 100%;
+				}
+
+				@media (max-width: 1439.98px) {
+					height: 200px
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		padding-top: 30px;
+
+		.main-title {
+			margin-bottom: 15px;
+		}
+
+		.value-list {
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+		.col-value {
+
+			&:nth-child(1),
+			&:nth-child(2),
+			&:nth-child(3) {
+				flex: 0 0 100%;
+				max-width: 100%;
+				clear: both;
+				padding: 0 10px;
+				margin-bottom: 20px;
+				margin-top: 0;
+
+				.img {
+					height: auto;
+				}
+
+				.text {
+					position: static;
+					width: 100%;
+					max-width: 100%;
+					color: white;
+					padding: 10px;
+					background-color: map-get($mau, main);
+
+					.number {
+						font-size: 20px;
+						line-height: 1.5;
+
+						@media (max-width: 576px) {
+							font-size: 16px;
+						}
+					}
+
+					.description {
+						font-size: 20px;
+						display: flex;
+						align-items: center;
+
+						span:nth-child(2) {
+							margin-left: 5px;
+						}
+
+						@media (max-width: 576px) {
+							font-size: 16px;
+						}
+					}
+				}
+			}
+
+			&:nth-child(1) {
+				order: 3;
+
+				.item {
+					display: flex;
+					align-items: center;
+					flex-wrap: wrap;
+
+					.img,
+					.text {
+						flex: 0 0 50%;
+						max-width: 50%;
+
+						img {
+							max-width: 100%;
+						}
+					}
+
+					@media (max-width: 768px) {
+
+						.img,
+						.text {
+							flex: 0 0 100%;
+							max-width: 100%;
+						}
+					}
+				}
+			}
+
+			&:nth-child(2) {
+				order: 1;
+			}
+
+			&:nth-child(3) {
+				order: 2;
+				flex: 0 0 100%;
+			}
+		}
+	}
+}

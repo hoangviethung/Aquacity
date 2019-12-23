@@ -105,6 +105,19 @@
 			bottom: 50px;
 			position: absolute;
 			left: 105px;
+
+			h2,
+			h3 {
+				pointer-events: none;
+			}
+		}
+
+		.btn-wrapper {
+			margin-top: 15px;
+			.btn-discover {
+				padding: 0 40px;
+				height: 45px;
+			}
 		}
 
 		.content {
@@ -113,7 +126,6 @@
 			bottom: 0;
 			left: 0;
 			width: 100%;
-			pointer-events: none;
 		}
 
 		&.active {
