@@ -83,6 +83,8 @@
 			}
 
 			.info {
+				background: linear-gradient(0deg, rgba(7, 65, 76, 0.8) 50%, rgba(7, 65, 76, 0.4) 75%, rgba(7, 65, 76, 0) 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#07414c", endColorstr="#07414c", GradientType=1);
 
 				h3 {
 					font-size: 50px;
