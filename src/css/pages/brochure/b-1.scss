@@ -97,7 +97,7 @@
 			flex: 0 0 420px;
 			max-width: 420px;
 
-			@media (max-width: 1439.98px) {
+			@media (max-width: 1440px) {
 				padding: 0 30px;
 
 			}
@@ -138,7 +138,7 @@
 				text-transform: uppercase;
 				color: map-get($mau, main);
 
-				@media (max-width: 1439.98px) {
+				@media (max-width: 1440px) {
 					font-size: 24px;
 				}
 
