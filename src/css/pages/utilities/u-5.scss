@@ -1,18 +1,17 @@
 .utilities-5 {
-	display: flex;
-	align-items: flex-end;
 	background-color: white;
 
 	.utilities-list {
 		margin: 0 -10px;
 		height: 100%;
+		display: flex;
+		flex-wrap: wrap;
 	}
 
 	.col-utilities {
 		padding: 0 10px;
 		max-width: 50%;
-		width: 100%;
-		float: left;
+		flex: 0 0 50%;
 		height: 100%;
 
 		.item {
