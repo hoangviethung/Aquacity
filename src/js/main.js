@@ -54,6 +54,25 @@ const fullpage = () => {
 
 			customFancybox(fullpage);
 			customFancybox2(fullpage);
+
+			document.querySelector('#widget-left .go-first').addEventListener('click', e => {
+				e.preventDefault();
+
+				if (document.getElementById('fullpage')) {
+					const currentSection = document.querySelector('.fp-section[fp-active="1"]');
+					const currentPosition = currentSection.getAttribute('fp-index');
+					const contactSection = document.querySelector('.fp-section[fp-index="0"]');
+					const contactPosition = contactSection.getAttribute('fp-index');
+
+					if (currentPosition < contactPosition) {
+						fullpage.runEffect(currentSection, contactSection, 'down');
+					}
+					if (currentPosition > contactPosition) {
+						fullpage.runEffect(currentSection, contactSection, 'up');
+					}
+				}
+			})
+
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
 				const callback = () => {
 					localStorage.removeItem('isScroll');
@@ -81,26 +100,11 @@ const fullpage = () => {
 					}
 				}
 
-
 				document.querySelector('#widget-left .subscribe').addEventListener('click', e => {
 					e.preventDefault();
 					const currentSection = document.querySelector('.fp-section[fp-active="1"]');
 					const currentPosition = currentSection.getAttribute('fp-index');
 					const contactSection = document.querySelector('.fp-section[fp-index="8"]');
-					const contactPosition = contactSection.getAttribute('fp-index');
-
-					if (currentPosition < contactPosition) {
-						fullpage.runEffect(currentSection, contactSection, 'down');
-					}
-					if (currentPosition > contactPosition) {
-						fullpage.runEffect(currentSection, contactSection, 'up');
-					}
-				})
-				document.querySelector('#widget-left .go-first').addEventListener('click', e => {
-					e.preventDefault();
-					const currentSection = document.querySelector('.fp-section[fp-active="1"]');
-					const currentPosition = currentSection.getAttribute('fp-index');
-					const contactSection = document.querySelector('.fp-section[fp-index="0"]');
 					const contactPosition = contactSection.getAttribute('fp-index');
 
 					if (currentPosition < contactPosition) {
@@ -130,7 +134,7 @@ const fullpage = () => {
 					}
 				}
 
-				
+
 				if (localStorage.getItem('isScroll') && Number(localStorage.getItem('nextIndex')) <= Array.from(document.querySelectorAll('#fullpage .section')).length) {
 					if (localStorage.getItem('nextIndex') != 0) {
 						const targetIndex = localStorage.getItem('nextIndex');
@@ -144,6 +148,9 @@ const fullpage = () => {
 			}
 		}
 		Header(gsap, fullpage);
+	} else {
+
+		Header(gsap);
 	}
 }
 
@@ -556,7 +563,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	document.querySelector('body').classList.add(className);
 	fullpage();
 	sliderArea_1();
-	setLinkDownload();
+	// setLinkDownload();
 	sectionVitriTab();
 	Area4TabFronts();
 	activeFrame2Section4();

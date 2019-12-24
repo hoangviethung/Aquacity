@@ -6,7 +6,9 @@ module.exports = (gsap, fp) => {
 	const checkScreenSize = window.innerWidth > 1024;
 	menuIconDesktop.addEventListener('click', () => {
 		if (checkScreenSize) {
-			fp.canBeScrolled = false;
+			if (fp) {
+				fp.canBeScrolled = false;
+			}
 		}
 		menuIconDesktop.classList.add('active');
 		setTimeout(() => {
@@ -23,7 +25,9 @@ module.exports = (gsap, fp) => {
 	})
 	menuClose.addEventListener('click', () => {
 		if (checkScreenSize) {
-			fp.canBeScrolled = false;
+			if (fp) {
+				fp.canBeScrolled = false;
+			}
 		}
 		menuWrapper.classList.remove('active');
 		setTimeout(() => {
@@ -37,7 +41,9 @@ module.exports = (gsap, fp) => {
 					menuIconDesktop.classList.remove('active');
 					document.querySelector('main').removeAttribute('style');
 					if (checkScreenSize) {
-						fp.canBeScrolled = true;
+						if (fp) {
+							fp.canBeScrolled = true;
+						}
 					}
 				}
 			})
@@ -57,11 +63,15 @@ module.exports = (gsap, fp) => {
 					let scrollDirection;
 					if (currentIndex < nextIndex) {
 						scrollDirection = 'down';
-						fp.canBeScrolled = true;
+						if (fp) {
+							fp.canBeScrolled = true;
+						}
 					}
 					if (currentIndex > nextIndex) {
 						scrollDirection = 'up';
-						fp.canBeScrolled = true;
+						if (fp) {
+							fp.canBeScrolled = true;
+						}
 					}
 					if (fp.canBeScrolled) {
 						menuWrapper.classList.remove('active');
