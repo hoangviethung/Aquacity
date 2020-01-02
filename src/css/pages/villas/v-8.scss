@@ -6,7 +6,7 @@
 
 	.content {
 		flex: 0 0 100%;
-		max-width: 1550px;
+		max-width: 1010px;
 		margin: 0 auto;
 		padding: 45px 0;
 		border-top: 3px solid map-get($mau, main-2);
@@ -52,7 +52,7 @@
 			flex: 0 0 auto;
 			width: auto;
 			max-width: 100%;
-			font-size: 70px;
+			font-size: 50px;
 			color: map-get($mau, main);
 			text-transform: uppercase;
 			line-height: 1.2;
