@@ -222,6 +222,17 @@
 	.list-items {
 		flex: 0 0 320px;
 		max-width: 320px;
+		max-height: 500px;
+		overflow: auto;
+
+		&::-webkit-scrollbar {
+			background: #cfcfcf;
+			width: 5px;
+		}
+
+		&::-webkit-scrollbar-thumb {
+			background: #003b28;
+		}
 
 		@media (max-width: 1609.98px) {
 			max-width: 220px;
