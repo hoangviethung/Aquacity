@@ -117,15 +117,15 @@ module.exports = (gsap, fp) => {
 		})
 	})
 
-	const galleryViewMoreBtn = document.querySelector('.index-page #sec-7 .btn-viewmore');
+	// const galleryViewMoreBtn = document.querySelector('.index-page #sec-7 .btn-viewmore');
 
-	if (galleryViewMoreBtn) {
-		galleryViewMoreBtn.addEventListener('click', (e) => {
-			e.preventDefault();
-			// localStorage.setItem('isScroll', true)
-			// localStorage.setItem('nextIndex', 1)
-			const href = galleryViewMoreBtn.getAttribute('href');
-			window.location.assign(href);
-		})
-	}
+	// if (galleryViewMoreBtn) {
+	// 	galleryViewMoreBtn.addEventListener('click', (e) => {
+	// 		e.preventDefault();
+	// 		localStorage.setItem('isScroll', true)
+	// 		localStorage.setItem('nextIndex', 1)
+	// 		const href = galleryViewMoreBtn.getAttribute('href');
+	// 		window.location.assign(href);
+	// 	})
+	// }
 }
