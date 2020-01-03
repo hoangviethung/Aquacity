@@ -122,8 +122,8 @@ module.exports = (gsap, fp) => {
 	if (galleryViewMoreBtn) {
 		galleryViewMoreBtn.addEventListener('click', (e) => {
 			e.preventDefault();
-			localStorage.setItem('isScroll', true)
-			localStorage.setItem('nextIndex', 1)
+			// localStorage.setItem('isScroll', true)
+			// localStorage.setItem('nextIndex', 1)
 			const href = galleryViewMoreBtn.getAttribute('href');
 			window.location.assign(href);
 		})
