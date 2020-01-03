@@ -3,9 +3,12 @@
 	background-image: url('../assets/brochure/b_bg_3.png');
 	background-repeat: no-repeat;
 	background-color: white;
-	background-position: 0 -75px;
+	background-position: 0 0;
 	background-size: contain;
-	min-height: 100vh;
+
+	@media (min-width: 1025px) {
+		min-height: 100vh;
+	}
 
 	&:before {
 		position: absolute;
@@ -70,7 +73,7 @@
 		width: 100%;
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 50px 20px 30px;
+		padding: 50px 10px 30px;
 
 		@media (min-width: 768px) {
 			padding-top: 120px;
@@ -85,7 +88,66 @@
 		}
 
 		@media (min-width: 1610px) {
-			padding: 235px 25px 50px;
+			padding: 190px 25px 50px;
+		}
+	}
+
+	.brochure-slider {
+		max-width: 850px;
+		width: 100%;
+		margin: 0 auto;
+		position: relative;
+
+		.swiper-prev,
+		.swiper-next {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 2;
+			cursor: pointer;
+		}
+
+		.swiper-prev {
+			left: -75px;
+
+			img {
+				transform: rotateY(180deg);
+			}
+		}
+
+		.swiper-next {
+			right: -75px;
+		}
+
+		@media (max-width: 1440px) {
+			.swiper-prev {
+				left: -50px;
+			}
+
+			.swiper-next {
+				right: -50px;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			.swiper-prev {
+				left: 20px;
+				top: 40%;
+			}
+
+			.swiper-next {
+				right: 20px;
+				top: 40%;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			max-width: 450px;
+
+			.swiper-prev,
+			.swiper-next {
+				width: 20px;
+			}
 		}
 	}
 

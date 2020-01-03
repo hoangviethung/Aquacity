@@ -553,6 +553,25 @@ const galleryImage = () => {
 	})
 }
 
+const brochureSlider = () => {
+	return new Swiper('.section-brochure-list .swiper-container', {
+		slidesPerView: 1,
+		spaceBetween: 90,
+		speed: 1000,
+		loop: true,
+		breakpoints: {
+			1025: {
+				slidesPerView: 2,
+			},
+		},
+		navigation: {
+			prevEl: ".section-brochure-list .swiper-prev",
+			nextEl: ".section-brochure-list .swiper-next"
+		}
+
+	})
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -573,6 +592,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	villasSlider1();
 	villasSlider2();
 	galleryImage();
+	brochureSlider();
 	if (window.innerWidth < 1025) {
 		customFancybox();
 		customFancybox2();
