@@ -335,9 +335,7 @@ main {
 }
 
 #form-register-now {
-	background-color: rgba(map-get($mau, main), .5);
-	height: 100%;
-	width: 100%;
+	background-color: rgba(map-get($mau, main), .9);
 
 	.fancybox-button svg path {
 		fill: white;
@@ -545,5 +543,12 @@ main {
 	&.fancybox-content {
 		display: inline-flex !important;
 		align-items: center;
+		justify-content: center;
+	}
+
+	@media (max-width: 1024px) {
+		background-color: rgba(map-get($mau, main), .5);
+		height: 100%;
+		width: 100%;
 	}
 }
