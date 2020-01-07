@@ -56,6 +56,7 @@
 		.form-group {
 			display: flex;
 			margin-bottom: 10px;
+			flex-wrap: wrap;
 
 			@media (min-width: 1025px) {
 				margin-bottom: 15px;
@@ -70,11 +71,13 @@
 		input[type='text'] {
 			border: 1px solid map-get($mau, main-2);
 			background: rgba(black, .3);
-			width: 100%;
 			color: white;
 			font-size: 22px;
 			padding: 8px 15px;
 			font-weight: 300;
+			-ms-flex: 0 0 100%;
+			flex: 0 0 100%;
+			max-width: 100%;
 
 			&::placeholder {
 				color: white;
