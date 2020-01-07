@@ -8,7 +8,7 @@
 				area(shape='poly', coords='398, 420, 380, 438, 390, 460, 381, 487, 354, 516, 288, 566, 238, 609, 177, 674, 167, 672, 152, 678, 162, 686, 148, 694, 134, 691, 124, 698, 122, 703, 110, 714, 110, 721, 125, 733, 208, 757, 247, 762, 278, 763, 314, 760, 365, 770, 389, 777, 418, 776, 441, 773, 484, 760, 574, 720, 595, 719, 638, 708, 708, 686, 726, 678, 750, 672, 800, 673, 824, 668, 593, 435, 555, 441, 508, 451, 481, 437')
 			canvas
 		.map-image
-			img(src="./assets/index/i_2.jpg", usemap="#imageMap")
+			img.lazyload(src="./assets/index/i_2.jpg", usemap="#imageMap")
 	.content
 		.container
 			.text
@@ -17,4 +17,4 @@
 					| Thông minh tại đồng nai
 				a.btn.btn-discover(href='utilities.html') Khám phá ngay
 	.cloud.desktop
-		img.ofcv(src="./assets/index/cloud.png", alt="")
+		img.lazyload.ofcv(data-src="./assets/index/cloud.png", alt="")

@@ -4,7 +4,7 @@
 			h2.main-title.center Sinh thái
 	.frame-1
 		.img
-			img.ofcv.mobile(src="./assets/index/i_4_1.jpg", alt="")
+			img.lazyload.ofcv.mobile(data-src="./assets/index/i_4_1.jpg", alt="")
 			video.desktop(autoplay loop muted playsinline)
 				source(src="./assets/videos/i_4.mp4")
 		.content
@@ -36,10 +36,10 @@
 				.mobile
 					a.btn.btn-discover(data-fancybox="sec-4" data-src="#frame-2") Xem thêm
 		.button-toggle.desktop
-			img(src="./assets/btn_toggle.png", alt="")
+			img.lazyload(data-src="./assets/btn_toggle.png", alt="")
 	.frame-2#frame-2
 		.img
-			img.ofcv(src="./assets/index/i_4_2.jpg", alt="")
+			img.ofcv.lazyload(data-src="./assets/index/i_4_2.jpg", alt="")
 		.text
 			h2.sub-title.grad Thông minh
 			.item

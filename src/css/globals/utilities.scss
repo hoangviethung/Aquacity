@@ -313,3 +313,237 @@ main {
 		display: none;
 	}
 }
+
+.btn-register-now {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	height: 45px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+
+.index-page {
+	@media (max-width: 1024px) {
+		main {
+			padding-bottom: 45px;
+		}
+	}
+}
+
+#form-register-now {
+	background-color: rgba(map-get($mau, main), .5);
+	height: 100%;
+	width: 100%;
+
+	.fancybox-button svg path {
+		fill: white;
+	}
+
+	form {
+		width: 100%;
+		max-width: 650px;
+
+		@media (min-width: 1610px) {
+			max-width: 850px;
+		}
+
+		>p {
+			text-align: center;
+			color: white;
+
+			@media (min-width: 1025px) {
+				font-size: 16px;
+				margin-bottom: 15px;
+			}
+
+			@media (min-width: 1610px) {
+				font-size: 22px;
+				margin-bottom: 30px;
+			}
+		}
+
+		.form-group {
+			display: flex;
+			margin-bottom: 10px;
+
+			@media (min-width: 1025px) {
+				margin-bottom: 15px;
+			}
+
+			@media (min-width: 1610px) {
+				margin-bottom: 30px;
+			}
+		}
+
+		textarea,
+		input[type='text'] {
+			border: 1px solid map-get($mau, main-2);
+			background: rgba(black, .3);
+			width: 100%;
+			color: white;
+			font-size: 22px;
+			padding: 8px 15px;
+			font-weight: 300;
+
+			&::placeholder {
+				color: white;
+				font-size: 22px;
+			}
+
+			&:focus {
+				// border: 1px solid map-get($mau, main);
+				box-shadow: 0 0 5px rgba(map-get($mau, main-2), .5);
+			}
+		}
+
+		textarea {
+			height: 130px;
+			resize: none;
+		}
+
+		input[type='text'] {
+			@media (min-width: 1025px) {
+				height: 40px;
+			}
+
+			@media (min-width: 1610px) {
+				height: 45px;
+			}
+		}
+
+		.form-checks {
+			display: flex;
+			justify-content: center;
+
+			.form-check {
+				padding: 0 30px;
+
+				label {
+					font-weight: 700;
+					color: white;
+					text-transform: uppercase;
+					position: relative;
+					cursor: pointer;
+					font-size: 26px;
+					padding-left: 25px;
+
+					&:before {
+						content: '';
+						position: absolute;
+						left: 0;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 20px;
+						height: 20px;
+						border-radius: 50%;
+						border: 2px solid map-get($mau, main-2);
+					}
+
+					&:after {
+						content: '';
+						position: absolute;
+						left: 5px;
+						top: 50%;
+						transform: translateY(-50%);
+						width: 10px;
+						height: 10px;
+						border-radius: 50%;
+						background: map-get($mau, main-2);
+						display: none;
+					}
+
+					@media (min-width: 1610px) {
+						font-size: 32px;
+						padding-left: 30px;
+
+						&:before {
+							width: 25px;
+							height: 25px;
+						}
+
+						&:after {
+							width: 15px;
+							height: 15px;
+						}
+					}
+				}
+
+				input[type='radio'] {
+					display: none;
+
+					&:checked~label:after {
+						display: block;
+					}
+				}
+			}
+		}
+
+		.form-button {
+			text-align: center;
+			margin-top: 30px;
+
+			.btn-discover {
+				width: 100%;
+				max-width: 320px;
+				height: 50px;
+				border-radius: 30px;
+			}
+		}
+	}
+
+	@media (max-width: 1024px) {
+		padding: 44px 15px;
+
+		form {
+			margin: 0 auto;
+			padding: 0 10px;
+
+			>.row {
+				padding: 15px 0 10px 0;
+			}
+
+			>p {
+				font-size: 14px;
+			}
+
+			input[type='text'],
+			textarea {
+				font-size: 15px;
+
+				&::placeholder {
+					font-size: 15px;
+				}
+			}
+
+			input[type='text'] {
+				height: 35px;
+			}
+
+			.form-checks {
+				flex-wrap: wrap;
+				width: 100%;
+				max-width: 225px;
+				margin: 0 auto;
+
+				.form-check {
+					flex: 0 0 100%;
+					max-width: 100%;
+					margin-top: 10px;
+
+					label {
+						font-size: 15px;
+					}
+				}
+			}
+		}
+	}
+
+	&.fancybox-content {
+		display: inline-flex !important;
+		align-items: center;
+	}
+}

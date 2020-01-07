@@ -49,11 +49,11 @@
 			.utilities-list.row
 				.col-12
 					.img
-						img(src="./assets/index/i_5.jpg", alt="")
+						img.lazyload(data-src="./assets/index/i_5.jpg", alt="")
 				-for(let i =1; i<13; i++)
 					.col-6.col-sm-4
 						a(href="./assets/utilities/"+i+".jpg" data-fancybox="utilities_"+i)
 							.img
-								img(src="./assets/utilities/"+i+".jpg", alt="")
+								img.lazyload(data-src="./assets/utilities/"+i+".jpg", alt="")
 							.text
 								h3= titlePosition[i-1]

@@ -5,7 +5,7 @@
 		.title-block
 			h2.title đăng ký nhận thông tin dự án
 			.tagline
-				img(src="./assets/tagline.png", alt="")
+				img.lazyload(data-src="./assets/tagline.png", alt="")
 		form
 			p Quý khách vui lòng để lại thông tin, chúng tôi sẽ liên hệ ngay
 			.row
@@ -17,8 +17,8 @@
 					input(type="text" name="Phone" placeholder="Điện thoại")
 				.col-sm-6.form-group
 					input(type="text" name="Email" placeholder="Email")
-				.col-12.form-group
-					textarea(name="content" placeholder="Nội dung")
+				//- .col-12.form-group
+				//- 	textarea(name="content" placeholder="Nội dung")
 			//- p Bạn quan tâm đến dự án nào?
 			//- .form-checks
 			//- 	.form-check

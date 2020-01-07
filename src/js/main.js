@@ -572,6 +572,39 @@ const brochureSlider = () => {
 	})
 }
 
+const generateFormLienHeTrangIndex = () => {
+	const checkIdDom = document.getElementById('js-page-verify');
+	if (checkIdDom) {
+		const checkIndexPage = Array.from(checkIdDom.classList);
+		if (checkIndexPage.includes('index-page')) {
+			const formIndex9 = document.querySelector('#sec-9 form').outerHTML;
+			document.querySelector('#form-register-now').innerHTML = formIndex9;
+		}
+	}
+	$('#btn-register-now .btn-register-now').on('click', (e) => {
+		console.log(1);
+
+		$.fancybox.open({
+			src: '#form-register-now',
+			type: 'inline',
+			opts: {
+				closeExisting: true,
+				hash: false
+			}
+		})
+	})
+	setTimeout(() => {
+		$.fancybox.open({
+			src: '#form-register-now',
+			type: 'inline',
+			opts: {
+				closeExisting: true,
+				hash: false
+			}
+		})
+	}, 62000);
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -593,6 +626,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	villasSlider2();
 	galleryImage();
 	brochureSlider();
+	generateFormLienHeTrangIndex();
 	if (window.innerWidth < 1025) {
 		customFancybox();
 		customFancybox2();
