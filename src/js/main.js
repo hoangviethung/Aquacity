@@ -593,16 +593,16 @@ const generateFormLienHeTrangIndex = () => {
 			}
 		})
 	})
-	setTimeout(() => {
-		$.fancybox.open({
-			src: '#form-register-now',
-			type: 'inline',
-			opts: {
-				closeExisting: true,
-				hash: false
-			}
-		})
-	}, 62000);
+	// setTimeout(() => {
+	// 	$.fancybox.open({
+	// 		src: '#form-register-now',
+	// 		type: 'inline',
+	// 		opts: {
+	// 			closeExisting: true,
+	// 			hash: false
+	// 		}
+	// 	})
+	// }, 62000);
 }
 
 // ==> Call functions here
