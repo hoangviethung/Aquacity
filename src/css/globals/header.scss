@@ -8,10 +8,14 @@ header {
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff", endColorstr="#ffffff", GradientType=1);
 
 	.row {
-		padding: 30px 0;
+		padding: 20px 0;
 		align-items: center;
 
-		@media (max-width: 1024px) {
+		@media (max-width: 1459.98px) {
+			padding: 15px 0;
+		}
+
+		@media (max-width: 1199.98px) {
 			padding: 10px 0;
 		}
 	}
