@@ -1,4 +1,125 @@
 @font-face {
+	font-family: 'Halo Handletter';
+	src: url('../fonts/HaloHandletter.eot');
+	src: local('Halo Handletter'),
+		url('../fonts/HaloHandletter.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/HaloHandletter.woff2') format('woff2'),
+		url('../fonts/HaloHandletter.woff') format('woff'),
+		url('../fonts/HaloHandletter.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'iCiel Domaine Display';
+	src: url('../fonts/iCielDomaineDisplay-Bold.eot');
+	src: local('iCiel Domaine Display Bold'), local('../fonts/iCielDomaineDisplay-Bold'),
+		url('../fonts/iCielDomaineDisplay-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iCielDomaineDisplay-Bold.woff2') format('woff2'),
+		url('../fonts/iCielDomaineDisplay-Bold.woff') format('woff'),
+		url('../fonts/iCielDomaineDisplay-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'iCiel Gotham';
+	src: url('../fonts/iCielGotham-Medium.eot');
+	src: local('iCiel Gotham Medium'), local('../fonts/iCielGotham-Medium'),
+		url('../fonts/iCielGotham-Medium.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iCielGotham-Medium.woff2') format('woff2'),
+		url('../fonts/iCielGotham-Medium.woff') format('woff'),
+		url('../fonts/iCielGotham-Medium.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'iCiel Panton';
+	src: url('../fonts/iCielPanton-Light.eot');
+	src: local('iCiel Panton Light'), local('../fonts/iCielPanton-Light'),
+		url('../fonts/iCielPanton-Light.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iCielPanton-Light.woff2') format('woff2'),
+		url('../fonts/iCielPanton-Light.woff') format('woff'),
+		url('../fonts/iCielPanton-Light.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'iCiel Gotham';
+	src: url('../fonts/iCielGotham-Book.eot');
+	src: local('iCiel Gotham Book'), local('../fonts/iCielGotham-Book'),
+		url('../fonts/iCielGotham-Book.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iCielGotham-Book.woff2') format('woff2'),
+		url('../fonts/iCielGotham-Book.woff') format('woff'),
+		url('../fonts/iCielGotham-Book.ttf') format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'iCiel Panton';
+	src: url('../fonts/iCielPanton-BlackItalic.eot');
+	src: local('iCiel Panton Black Italic'), local('../fonts/iCielPanton-BlackItalic'),
+		url('../fonts/iCielPanton-BlackItalic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iCielPanton-BlackItalic.woff2') format('woff2'),
+		url('../fonts/iCielPanton-BlackItalic.woff') format('woff'),
+		url('../fonts/iCielPanton-BlackItalic.ttf') format('truetype');
+	font-weight: 900;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'iCiel Panton';
+	src: url('../fonts/iCielPanton-Black.eot');
+	src: local('iCiel Panton Black'), local('../fonts/iCielPanton-Black'),
+		url('../fonts/iCielPanton-Black.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iCielPanton-Black.woff2') format('woff2'),
+		url('../fonts/iCielPanton-Black.woff') format('woff'),
+		url('../fonts/iCielPanton-Black.ttf') format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'iCiel Gotham';
+	src: url('../fonts/iCielGotham-Bold.eot');
+	src: local('iCiel Gotham Bold'), local('../fonts/iCielGotham-Bold'),
+		url('../fonts/iCielGotham-Bold.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iCielGotham-Bold.woff2') format('woff2'),
+		url('../fonts/iCielGotham-Bold.woff') format('woff'),
+		url('../fonts/iCielGotham-Bold.ttf') format('truetype');
+	font-weight: bold;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'iCiel Panton';
+	src: url('../fonts/iCielPanton-LightItalic.eot');
+	src: local('iCiel Panton Light Italic'), local('../fonts/iCielPanton-LightItalic'),
+		url('../fonts/iCielPanton-LightItalic.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iCielPanton-LightItalic.woff2') format('woff2'),
+		url('../fonts/iCielPanton-LightItalic.woff') format('woff'),
+		url('../fonts/iCielPanton-LightItalic.ttf') format('truetype');
+	font-weight: 300;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: 'iCiel Gotham';
+	src: url('../fonts/iCielGotham-Ultra.eot');
+	src: local('iCiel Gotham Ultra'), local('../fonts/iCielGotham-Ultra'),
+		url('../fonts/iCielGotham-Ultra.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/iCielGotham-Ultra.woff2') format('woff2'),
+		url('../fonts/iCielGotham-Ultra.woff') format('woff'),
+		url('../fonts/iCielGotham-Ultra.ttf') format('truetype');
+	font-weight: 500;
+	font-style: normal;
+}
+
+
+@font-face {
 	font-family: "Material Design Icons";
 	src: url("../fonts/materialdesignicons-webfont.eot?v=3.5.94");
 	src: url("../fonts/materialdesignicons-webfont.eot?#iefix&v=3.5.94") format("embedded-opentype"), url("../fonts/materialdesignicons-webfont.woff2?v=3.5.94") format("woff2"), url("../fonts/materialdesignicons-webfont.woff?v=3.5.94") format("woff"), url("../fonts/materialdesignicons-webfont.ttf?v=3.5.94") format("truetype"), url("../fonts/materialdesignicons-webfont.svg?v=3.5.94#materialdesigniconsregular") format("svg");

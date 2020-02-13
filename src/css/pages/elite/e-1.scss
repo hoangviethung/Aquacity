@@ -1,0 +1,39 @@
+.elite-1 {
+	.content {
+		position: relative;
+	}
+
+	.text {
+		position: absolute;
+		top: 200px;
+		right: 200px;
+		text-align: right;
+		max-width: 750px;
+		padding: 50px;
+		background-color: rgba(white, .65);
+
+		h2 {
+			font-family: 'Halo Handletter';
+			font-size: 90px;
+			color: map-get($mau, main);
+			font-weight: 300;
+		}
+
+		h3 {
+			color: map-get($mau, main);
+			font-size: 22px;
+			font-family: 'iCiel Panton';
+			font-style: italic;
+		}
+
+		p {
+			color: map-get($mau, main);
+			font-family: 'iCiel Panton';
+			font-size: 20px;
+
+			+h3 {
+				margin-top: 20px;
+			}
+		}
+	}
+}
