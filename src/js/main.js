@@ -608,11 +608,13 @@ const generateFormLienHeTrangIndex = () => {
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
-	if (window.innerWidth >= 1025) {
-		document.querySelector('body').setAttribute('style', `overflow: hidden`)
-	}
 	const className = document.getElementById('js-page-verify').getAttribute('class');
 	document.querySelector('body').classList.add(className);
+	if (window.innerWidth >= 1025) {
+		if (!document.querySelector('body').classList.contains('elite-page')) {
+			document.querySelector('body').setAttribute('style', `overflow: hidden`)
+		}
+	}
 	fullpage();
 	sliderArea_1();
 	// setLinkDownload();
