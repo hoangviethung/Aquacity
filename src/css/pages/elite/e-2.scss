@@ -1,0 +1,73 @@
+.elite-2 {
+	padding: 120px 100px;
+
+	.content {
+		position: relative;
+	}
+
+	.block-title {
+		color: #116464;
+
+		h2 {
+			font-size: 36px;
+			font-family: 'iCiel Domaine Display';
+		}
+
+		p {
+			font-family: 'iCiel Panton';
+			font-style: italic;
+			font-size: 25px;
+			color: #116464;
+		}
+
+		+.list {
+			margin-top: 50px;
+		}
+	}
+
+	.img {
+		max-width: 1000px;
+		margin-left: auto;
+	}
+
+	.text {
+		position: absolute;
+		top: 0;
+		left: 0;
+	}
+
+	.list {
+		list-style-type: none;
+		padding-left: 0;
+
+		li {
+			align-items: center;
+			display: flex;
+			font-family: 'iCiel Panton';
+
+			.time {
+				color: #3FB7CA;
+
+				h3 {
+					font-size: 40px;
+					font-weight: 900;
+					line-height: 1.1;
+				}
+
+				p {
+					font-size: 24px;
+					font-weight: 500;
+				}
+			}
+
+			.info {
+				font-size: 18px;
+				padding-left: 30px;
+			}
+
+			+li {
+				margin-top: 30px;
+			}
+		}
+	}
+}
