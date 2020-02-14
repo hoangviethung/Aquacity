@@ -4,12 +4,8 @@
 	}
 
 	.text {
-		position: absolute;
-		top: 200px;
-		right: 200px;
-		text-align: right;
-		max-width: 750px;
-		padding: 50px;
+		padding: 0 10px;
+		text-align: left;
 		background-color: rgba(white, .65);
 
 		h2 {
@@ -34,6 +30,43 @@
 			+h3 {
 				margin-top: 20px;
 			}
+		}
+
+		@media (max-width: 1199.98px) {
+			h2 {
+				font-size: 70px;
+			}
+
+			h3 {
+				font-size: 20px;
+			}
+
+			p {
+				font-size: 18px;
+			}
+		}
+
+		@media (max-width: 767.98px) {
+			h2 {
+				font-size: 50px;
+			}
+
+			h3 {
+				font-size: 18px;
+			}
+
+			p {
+				font-size: 16px;
+			}
+		}
+
+		@media (min-width: 1025px) {
+			position: absolute;
+			top: 200px;
+			right: 200px;
+			max-width: 750px;
+			text-align: right;
+			padding: 50px;
 		}
 	}
 }

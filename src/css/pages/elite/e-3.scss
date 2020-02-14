@@ -5,9 +5,15 @@
 
 	.img {
 		background-image: url('../assets/elite/e_3.jpg');
+		background-size: cover;
+		background-repeat: no-repeat;
 
 		img {
 			opacity: 0;
+		}
+
+		@media (max-width: 767.98px) {
+			min-height: 350px;
 		}
 	}
 
@@ -20,5 +26,17 @@
 		top: 100px;
 		right: 100px;
 		z-index: 2;
+
+		@media (max-width: 1024.98px) {
+			background-color: #3eb7ca;
+			position: static;
+			padding: 40px 0;
+
+			img {
+				max-width: 700px;
+				display: block;
+				margin: 0 auto;
+			}
+		}
 	}
 }
