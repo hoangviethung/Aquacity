@@ -1,0 +1,24 @@
+.elite-3 {
+	img {
+		width: 100%;
+	}
+
+	.img {
+		background-image: url('../assets/elite/e_3.jpg');
+
+		img {
+			opacity: 0;
+		}
+	}
+
+	.content {
+		position: relative;
+	}
+
+	.top {
+		position: absolute;
+		top: 100px;
+		right: 100px;
+		z-index: 2;
+	}
+}
