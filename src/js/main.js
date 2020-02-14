@@ -637,7 +637,8 @@ document.addEventListener('DOMContentLoaded', () => {
 		ripple1();
 		ripple2();
 	}
-	Loading();
+	document.querySelector('body').classList.add('show-page');
+	// Loading();
 
 	// document.querySelector('body').classList.add('show-page');
 	getSVGImage();
