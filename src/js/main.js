@@ -654,7 +654,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (window.innerWidth >= 1025) {
 		ripple1();
 		ripple2();
-		ripple3();
+		// ripple3();
 	}
 	document.querySelector('body').classList.add('show-page');
 	// Loading();
