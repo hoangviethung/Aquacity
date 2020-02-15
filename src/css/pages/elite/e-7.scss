@@ -7,4 +7,12 @@
 		display: block;
 		margin: 0 auto;
 	}
+
+	.col-lg-6 {
+		@media (max-width: 1024.98px) {
+			+.col-lg-6 {
+				margin-top: 40px;
+			}
+		}
+	}
 }
