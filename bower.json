@@ -24,6 +24,8 @@
     "mdi": "^4.6.95",
     "linearicons": "^1.0.2",
     "gsap": "^3.0.2",
-    "image-map-resizer": "^1.0.10"
+    "image-map-resizer": "^1.0.10",
+    "wow": "wow.js#^1.1.2",
+    "animate.css": "^3.7.2"
   }
 }

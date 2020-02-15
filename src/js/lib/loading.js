@@ -1,4 +1,4 @@
-const Loading = () => {
+const Loading = callback => {
 	let loading = document.getElementById('loading');
 	let progress = document.getElementById('progress');
 	let progressStat = document.getElementById('progstat');
@@ -20,7 +20,7 @@ const Loading = () => {
 		// 	// }
 	}
 
-	const turnOffLoadingScreen = callback => {
+	const turnOffLoadingScreen = () => {
 		loading.style.opacity = '0';
 		setTimeout(function() {
 			loading.style.display = 'none';

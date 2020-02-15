@@ -15,11 +15,13 @@
 			"node_modules/jquery.ripples/dist/jquery.ripples.js",
 			"bower_components/fancybox/dist/jquery.fancybox.js",
 			"bower_components/swiper/package/js/swiper.js",
+			"bower_components/wow/dist/wow.js",
 			"bower_components/image-map-resizer/js/imageMapResizer.js"
 		],
 		"css": [
 			"bower_components/swiper/package/css/swiper.css",
-			"bower_components/fancybox/dist/jquery.fancybox.css"
+			"bower_components/fancybox/dist/jquery.fancybox.css",
+			"bower_components/animate.css/animate.css"
 		]
 	}
 }

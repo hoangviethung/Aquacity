@@ -384,7 +384,7 @@ const Area4TabFronts = () => {
 const ripple1 = () => {
 	try {
 		$('.area-4 .col-md-auto.img').ripples({
-			resolution: 360,
+			resolution: 256,
 			perturbance: 0.01,
 			interactive: false
 		})
@@ -395,14 +395,14 @@ const ripple1 = () => {
 			var dropRadius = 30;
 			var strength = 0.04 + Math.random() * 0.04;
 			$el.ripples("drop", x, y, dropRadius, strength);
-		}, 2000);
+		}, 3000);
 	} catch (err) {}
 }
 
 const ripple2 = () => {
 	try {
 		$('.area-6 .img').ripples({
-			resolution: 360,
+			resolution: 256,
 			perturbance: 0.01,
 			interactive: false
 		})
@@ -413,7 +413,7 @@ const ripple2 = () => {
 			var dropRadius = 30;
 			var strength = 0.04 + Math.random() * 0.04;
 			$el.ripples("drop", x, y, dropRadius, strength);
-		}, 2000);
+		}, 3000);
 	} catch (error) {}
 }
 
@@ -421,18 +421,18 @@ const ripple3 = () => {
 	try {
 		$('.elite-3 .img').ripples({
 			resolution: 256,
-			dropRadius: 20,
-			perturbance: 0.03,
+			perturbance: 0.01,
+			interactive: false
 		})
-		// setInterval(function() {
-		// 	var $el = $('.elite-3 .img');
-		// 	var x = Math.random() * $el.outerWidth();
-		// 	var y = Math.random() * $el.outerHeight();
-		// 	var dropRadius = 30;
-		// 	var strength = 0.04 + Math.random() * 0.04;
-		// 	$el.ripples("drop", x, y, dropRadius, strength);
-		// }, 2000);
-	} catch (error) {}
+		setInterval(function() {
+			var $el = $('.elite-3 .img');
+			var x = Math.random() * $el.outerWidth();
+			var y = Math.random() * $el.outerHeight();
+			var dropRadius = 30;
+			var strength = 0.04 + Math.random() * 0.04;
+			$el.ripples("drop", x, y, dropRadius, strength);
+		}, 3000);
+	} catch (err) {}
 }
 
 const sliderArea_1 = () => {
@@ -654,10 +654,14 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (window.innerWidth >= 1025) {
 		ripple1();
 		ripple2();
-		// ripple3();
+		ripple3();
 	}
 	document.querySelector('body').classList.add('show-page');
-	// Loading();
+	Loading(() => {
+		new WOW({
+			offset: 150,
+		}).init();
+	});
 
 	// document.querySelector('body').classList.add('show-page');
 	getSVGImage();

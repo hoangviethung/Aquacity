@@ -4,7 +4,15 @@
 @import "e-4.scss";
 @import "e-5.scss";
 @import "e-6.scss";
+@import "e-7.scss";
 
+.wow {
+	visibility: hidden;
+}
+
+div[class*="elite-"] {
+	overflow: hidden;
+}
 
 .elite-title {
 	color: white;
