@@ -19,28 +19,61 @@
 
 		.img {
 			margin-top: 50px;
+			border-radius: 50px 0 50px 0;
+			overflow: hidden;
 		}
 	}
 
 	.block-top-right {
 		.elite-title {
 			position: absolute;
-			bottom: 0;
+			top: 50%;
 			right: 0;
 			padding-bottom: 50px;
-			text-align: right;
+			padding-right: 15px;
+		}
+
+		@media (max-width: 1599.98px) {
+			.elite-title {
+				top: 40%;
+			}
+		}
+
+		@media (max-width: 1439.98px) {
+			.elite-title {
+				padding-right: 0;
+			}
+		}
+
+		@media (max-width: 1199.98px) and (min-width: 1025px) {
+			.elite-title {
+				top: unset;
+				right: unset;
+				bottom: 0;
+				left: 10px;
+
+				br {
+					display: none;
+				}
+			}
 		}
 
 		@media (max-width: 1024.98px) {
 			margin-top: 25px;
 
 			.img {
-				max-width: 550px;
+				max-width: 75%;
 				width: 100%;
 			}
 
 			.elite-title {
-				right: 10px;
+				left: 60%;
+				top: 60%;
+				right: unset;
+
+				br {
+					display: none;
+				}
 			}
 		}
 
