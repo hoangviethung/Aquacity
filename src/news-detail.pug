@@ -1,0 +1,11 @@
+extends _components/_layout/_layout.pug
+
+block var
+	- let title = 'Tin tức chi tiết';
+	- let bodyClass = 'news-detail-page';
+
+block banner,breadcrumb
+block main
+	include _components/_layout/_widget
+	include _components/news/n-2
+block scripts
