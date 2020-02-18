@@ -137,4 +137,14 @@
 	.block-bottom-left {
 		margin-bottom: 25px;
 	}
+
+	.elite-text {
+		ul {
+			padding-left: 20px;
+		}
+
+		@media (max-width: 1024.98px) {
+			margin-top: 20px;
+		}
+	}
 }
