@@ -417,24 +417,6 @@ const ripple2 = () => {
 	} catch (error) {}
 }
 
-const ripple3 = () => {
-	try {
-		$('.elite-3 .img').ripples({
-			resolution: 256,
-			perturbance: 0.01,
-			interactive: false
-		})
-		setInterval(function() {
-			var $el = $('.elite-3 .img');
-			var x = Math.random() * $el.outerWidth();
-			var y = Math.random() * $el.outerHeight();
-			var dropRadius = 30;
-			var strength = 0.04 + Math.random() * 0.04;
-			$el.ripples("drop", x, y, dropRadius, strength);
-		}, 3000);
-	} catch (err) {}
-}
-
 const sliderArea_1 = () => {
 	return new Swiper('.area-1 .swiper-container', {
 		slidesPerView: 1,
@@ -654,7 +636,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (window.innerWidth >= 1025) {
 		ripple1();
 		ripple2();
-		ripple3();
 	}
 	document.querySelector('body').classList.add('show-page');
 	Loading(() => {

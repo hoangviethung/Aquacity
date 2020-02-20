@@ -71,9 +71,15 @@
 
 		.title {
 			position: absolute;
-			bottom: 15px;
-			left: 15px;
+			bottom: 0;
+			left: 0;
+			padding: 10px;
 			color: white;
+
+			@media (max-width: 767.98px) {
+				right: 0;
+				background-color: rgba(map-get($mau, main), .45);
+			}
 		}
 
 		@media (max-width: 1024.98px) {

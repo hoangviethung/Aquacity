@@ -4,7 +4,7 @@
 	padding: 120px 0;
 
 	.block-top {
-		.col-lg-auto {
+		.col-md {
 			@media (max-width: 1024.98px) {
 				text-align: center;
 			}
@@ -99,7 +99,17 @@
 			@media (max-width: 1199.98px) {
 				display: block;
 				height: 260px;
-				width: 365px;
+				width: auto;
+				display: inline-block;
+
+				+.img {
+					margin-top: 15px;
+				}
+			}
+
+			@media (max-width: 1024.98px) {
+				display: block;
+				width: auto;
 
 				+.img {
 					margin-top: 15px;
@@ -107,14 +117,9 @@
 				}
 			}
 
-			@media (max-width: 1024.98px) {
+			@media (max-width: 767.98px) {
 				display: inline-block;
-				width: auto;
-
-				+.img {
-					margin-top: 0;
-					padding-left: 15px;
-				}
+				padding: 0 10px;
 			}
 		}
 	}
@@ -160,6 +165,10 @@
 
 			@media (max-width: 767.98px) {
 				margin-top: 15px;
+				-ms-flex: 0 0 100%;
+				-webkit-box-flex: 0;
+				flex: 0 0 100%;
+				max-width: 100%;
 			}
 		}
 
@@ -171,10 +180,21 @@
 
 			.title {
 				position: absolute;
-				bottom: 15px;
-				right: 15px;
+				padding-bottom: 10px;
+				padding-right: 10px;
+				bottom: 0;
+				right: 0;
 				white-space: nowrap;
 				color: white;
+				font-family: 'iCiel Panton';
+
+				@media (max-width: 767.98px) {
+					left: 0;
+					padding: 7px;
+					font-size: 14px;
+					text-align: right;
+					background-color: rgba(map-get($mau, main), .45);
+				}
 			}
 
 			@media (max-width: 1439.98px) {
@@ -215,7 +235,7 @@
 
 			@media (max-width: 767.98px) {
 				max-width: 350px;
-				margin: 0 auto;
+				margin: 10px auto 0 auto;
 			}
 		}
 	}
