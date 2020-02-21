@@ -36,6 +36,8 @@ const fullpage = () => {
 						getSVGImage();
 					},
 					afterRunEffect: function() {
+						console.log(this);
+						
 						const currentIndex = Number(document.querySelector('#fullpage [fp-active="1"]').getAttribute('fp-index'));
 						Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
 							ele.classList.remove('active');

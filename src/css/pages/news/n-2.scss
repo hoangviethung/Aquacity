@@ -1,6 +1,10 @@
 body.news-detail-page {
 	overflow: visible !important;
 
+	#sec-9 {
+		position: relative;
+	}
+
 	header {
 		background: white;
 		box-shadow: 0 0 8px rgba(black, .15);
@@ -116,7 +120,8 @@ body.news-detail-page {
 				margin-top: 20px;
 			}
 		}
-		.button-wrapper{
+
+		.button-wrapper {
 			display: flex;
 			justify-content: center;
 			margin-top: 35px;
