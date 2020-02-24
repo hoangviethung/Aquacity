@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Danh mục tin tức</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;display=swap&amp;subset=vietnamese">
+		<link rel="stylesheet" href="./css/core.min.css">
+		<link rel="stylesheet" href="./css/main.min.css">
+	</head>
+	<body>
+		<div id="loading">
+			<div class="logo-loader"><img class="svg-image" data-src="./assets/logo.svg" alt=""></div>
+			<div class="progstat-wrapper d-none">Loading:<span id="progstat">0</span>%</div>
+			<div id="progress"></div>
+		</div>
+		<header>
+			<div class="container">
+				<div class="row no-gutters">
+					<div class="logo"><a href="/"><img src="./assets/logo.png" alt=""></a></div>
+					<div class="header-nav-icon"><span class="menu-toggle"><span>M</span><span>e</span><span>n</span><span>u</span></span></div>
+				</div>
+			</div>
+			<div class="header-nav-wrapper">
+				<div class="header-nav-close"><span></span><span></span></div>
+				<nav><a class="active" href="/" fp-target="0">Trang chủ</a><a href="/" fp-target="1">Mặt bằng</a><a href="/" fp-target="2">Vị trí</a><a href="/" fp-target="3">Sinh thái</a><a href="/" fp-target="4">Tiện ích</a><a href="/" fp-target="5">Phân khu</a><a href="/" fp-target="6">Thư viện</a><a href="/" fp-target="7">Tin tức</a><a href="/" fp-target="8">Liên hệ</a><a href="/" fp-target="9">Thông tin chung</a></nav>
+			</div>
+		</header>
+		<main>
+			<div id="widget-left"><a class="item" href="/"><span class="fas fa-home"></span></a><a class="subscribe" href="/"> <span>Nhận tin</span></a><a class="item download" href="gallery.html"><span class="mdi mdi-download"> </span><span class="brochure">Brochure</span></a><span class="item"><span class="mdi mdi-phone-in-talk"></span><span class="hotline"><a href="tel:0943797979">TP. Hồ Chí Minh: 0943 797 979</a><a href="tel:0938550808">Hà Nội: 0938 550 808</a></span></span><a class="item go-first" href="#"><span class="mdi mdi-arrow-up-bold"></span></a></div>
+			<div class="section news-related">
+				<div class="img"><img class="ofcv" src="./assets/index/i_8.jpg" alt=""></div>
+				<div class="content">
+					<div class="container">
+						<div class="title-block">
+							<h2 class="main-title center">Danh mục tin tức</h2>
+						</div>
+						<div class="news-items">
+							<div class="swiper-prev desktop"><img class="lazyload" data-src="./assets/btn_toggle.png" alt=""></div>
+							<div class="swiper-next desktop"><img class="lazyload" data-src="./assets/btn_toggle.png" alt=""></div>
+							<div class="news-item"><a target="_blank" href="https://vnexpress.net/kinh-doanh/hoi-thao-ve-do-thi-sinh-thai-thong-minh-tai-novaland-expo-2019-4018347.html?fbclid=IwAR3N_z7yTqOQBwpBUOAjLQ3aICeIXB45gf9jUEZZ_LkozFlejyF-73up_hY">
+									<div class="img"><img class="lazyload" data-src="./assets/index/i_8_1.jpg" alt=""></div>
+									<div class="text">
+										<h3>Hội thảo về đô thị sinh thái thông minh tại Novaland Expo 2019</h3>
+									</div>
+									<div class="button-wrapper"><span class="btn btn-readmore">Xem thêm</span></div></a></div>
+							<div class="news-item"><a target="_blank" href="https://dep.com.vn/xanh-hoa-cuoc-song-lieu-thuoc-tinh-than-cho-the-he-dep/">
+									<div class="img"><img class="lazyload" data-src="./assets/index/i_8_3.jpg" alt=""></div>
+									<div class="text">
+										<h3>"Xanh" hóa cuộc sống - Liều thuốc tinh thần cho thế hệ đẹp</h3>
+									</div>
+									<div class="button-wrapper"><span class="btn btn-readmore">Xem thêm</span></div></a></div>
+							<div class="news-item"><a target="_blank" href="http://cafef.vn/chia-tay-tuyen-quoc-gia-anh-duc-tiep-tuc-hanh-trinh-cho-nhung-dam-me-sau-san-co-2019112717161544.chn">
+									<div class="img"><img class="lazyload" data-src="./assets/index/i_8_2.jpg" alt=""></div>
+									<div class="text">
+										<h3>Chia tay tuyển quốc gia, Anh Đức tiếp tục hành trình cho những đam mê sau sân cỏ</h3>
+									</div>
+									<div class="button-wrapper"><span class="btn btn-readmore">Xem thêm</span></div></a></div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="news-related-page" id="js-page-verify" hidden></div>
+		</main>
+		<script type="text/javascript" src="./js/core.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.1/dist/jquery.validate.min.js"></script>
+		<script type="text/javascript" src="./js/main.min.js"></script>
+	</body>
+</html>

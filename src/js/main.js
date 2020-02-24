@@ -37,7 +37,7 @@ const fullpage = () => {
 					},
 					afterRunEffect: function() {
 						console.log(this);
-						
+
 						const currentIndex = Number(document.querySelector('#fullpage [fp-active="1"]').getAttribute('fp-index'));
 						Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
 							ele.classList.remove('active');
@@ -607,6 +607,44 @@ const generateFormLienHeTrangIndex = () => {
 	// }, 62000);
 }
 
+
+const newsRelatedSlider = () => {
+
+	if (window.innerWidth > 1024) {
+		const swiperContainer = document.createElement('div');
+		const swiperWrapper = document.createElement('div');
+		swiperContainer.classList.add('swiper-container');
+		swiperWrapper.classList.add('swiper-wrapper');
+
+		const newsItems = Array.from(document.querySelectorAll('.news-related .news-item'));
+		const newsItemsWrapper = document.querySelector('.news-related .news-items');
+		newsItems.forEach(item => {
+			const swiperSlide = document.createElement('div');
+			swiperSlide.classList.add('swiper-slide');
+			swiperSlide.append(item);
+			swiperWrapper.appendChild(swiperSlide);
+		})
+		swiperContainer.appendChild(swiperWrapper);
+		if (newsItemsWrapper) {
+			newsItemsWrapper.appendChild(swiperContainer);
+		}
+	}
+	return new Swiper('.news-related .swiper-container', {
+		slidesPerView: 2,
+		loop: true,
+		spaceBetween: 30,
+		navigation: {
+			prevEl: '.news-related .swiper-prev',
+			nextEl: '.news-related .swiper-next'
+		},
+		breakpoints: {
+			1200: {
+				slidesPerView: 3
+			},
+		}
+	})
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -631,6 +669,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	galleryImage();
 	brochureSlider();
 	generateFormLienHeTrangIndex();
+	newsRelatedSlider();
 	if (window.innerWidth < 1025) {
 		customFancybox();
 		customFancybox2();
