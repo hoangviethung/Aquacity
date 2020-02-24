@@ -630,16 +630,16 @@ const newsRelatedSlider = () => {
 		}
 	}
 	return new Swiper('.news-related .swiper-container', {
-		slidesPerView: 2,
+		slidesPerView: 4,
 		loop: true,
-		spaceBetween: 30,
+		spaceBetween: 15,
 		navigation: {
 			prevEl: '.news-related .swiper-prev',
 			nextEl: '.news-related .swiper-next'
 		},
 		breakpoints: {
 			1200: {
-				slidesPerView: 3
+				spaceBetween: 25
 			},
 		}
 	})
