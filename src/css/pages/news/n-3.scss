@@ -64,8 +64,26 @@
 	}
 
 	.news-items {
-		position: relative;
-		margin  : 0 auto;
+		position  : relative;
+		margin    : 0 auto;
+		transition: .3s all ease;
+
+		&.fixed {
+			position      : fixed;
+			width         : 100%;
+			left          : 0;
+			top           : 109px;
+			background    : #ffffff;
+			z-index       : 50;
+			padding-top   : 25px;
+			padding-bottom: 25px;
+			box-shadow    : 0 3px 6px rgba($color: #000000, $alpha: .16);
+
+			.news-item {
+				margin-top: 0;
+			}
+		}
+
 
 		.swiper-slide {
 			display        : flex;
@@ -75,10 +93,12 @@
 		.news-item {
 			-ms-flex        : 0 0 100%;
 			-webkit-box-flex: 0;
-			flex            : 0 0 100%;
-			max-width       : 100%;
+			flex            : 0 0 25%;
+			max-width       : 25%;
 			opacity         : 1;
 			transform       : translateY(0);
+			padding         : 0 5px;
+			text-align      : center;
 
 			.text {
 
@@ -90,20 +110,13 @@
 		}
 
 		@media (max-width: 1024.98px) {
-			margin: 0 -5px;
+			&.fixed {
+				top: 59px;
+			}
 
 			.news-item {
-				padding         : 0 5px;
-				-ms-flex        : 0 0 100%;
-				-webkit-box-flex: 0;
-				flex            : 0 0 50%;
-				max-width       : 50%;
-				margin-top      : 25px;
-
-				a {
-					display  : flex;
-					flex-wrap: wrap;
-				}
+				padding   : 0 5px;
+				margin-top: 25px;
 
 				.img,
 				.button-wrapper {
@@ -128,29 +141,6 @@
 					margin-left: auto;
 				}
 			}
-		}
-
-		@media (max-width: 575.98px) {
-			.news-item {
-				-ms-flex        : 0 0 100%;
-				-webkit-box-flex: 0;
-				flex            : 0 0 100%;
-				max-width       : 100%;
-			}
-		}
-
-
-		@media (min-width: 1025px) {
-			max-width: 970px;
-			padding  : 0 40px;
-		}
-
-		@media (min-width: 1200px) {
-			max-width: 1000px;
-		}
-
-		@media (min-width: 1440px) {
-			max-width: 1200px;
 		}
 	}
 
@@ -187,8 +177,29 @@
 		}
 
 		.title-block {
+			margin-bottom: 0;
+
+			h2 {
+				margin-bottom: 0;
+			}
+
 			.main-title {
 				color: map-get($mau, main);
+			}
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		padding: 15px 0;
+
+		.news-items {
+			.news-item {
+				>a {
+					font-size    : 14px;
+					width        : auto;
+					padding      : 0 10px;
+					border-radius: 25px;
+				}
 			}
 		}
 	}
