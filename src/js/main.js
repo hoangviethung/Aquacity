@@ -3,7 +3,7 @@ import {
 } from "../../bower_components/gsap/esm/index.js";
 import Header from "./lib/Header";
 import Tab from './lib/Tab';
-import Loading from "./lib/Loading";
+import Loading from "./lib/loading";
 import FullPage from "./lib/Fullpage";
 import ImageMapCanvas from "./lib/ImageMapCanvas";
 
@@ -570,9 +570,10 @@ const generateFormLienHeTrangIndex = () => {
 	const checkIdDom = document.getElementById('js-page-verify');
 	if (checkIdDom) {
 		const checkIndexPage = Array.from(checkIdDom.classList);
-		if (checkIndexPage.includes('index-page')) {
+		if (checkIndexPage.includes('index-page') || checkIndexPage.includes('elite-page')) {
 			const formIndex9 = document.querySelector('#sec-9 form').outerHTML;
 			document.querySelector('#form-register-now').innerHTML = formIndex9;
+			document.querySelector('#sec-9').outerHTML = '';
 		}
 	}
 	$('#btn-register-now .btn-register-now').on('click', (e) => {
