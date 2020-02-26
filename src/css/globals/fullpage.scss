@@ -43,9 +43,9 @@
 		background: rgba(map-get($mau, main), .5);
 		border-top-left-radius: 10px;
 		border-bottom-left-radius: 10px;
-		opacity: 0;
-		transform: translateX(100%) translateY(-50%);
-		transition: all .4s ease-in-out;
+		// opacity: 0;
+		// transform: translateX(100%) translateY(-50%);
+		// transition: all .4s ease-in-out;
 
 		.fp-nav-item {
 			margin: 5px 0;
@@ -158,6 +158,7 @@
 	}
 
 	#next-section {
+		display: none;
 		position: fixed;
 		left: 50%;
 		transform: translateX(-50%);
