@@ -24,20 +24,18 @@ const getSVGImage = () => {
 	})
 }
 
-const fullpage = () => {
-	let fullpage
+var fullpage;
+const fullpageInit = () => {
 	if (document.getElementById('fullpage')) {
 		if (window.innerWidth >= 1025) {
 			fullpage = new FullPage('#fullpage', {
 				section: '.section',
 				titles: true,
 				on: {
-					init: function() {
+					init: function(e) {
 						getSVGImage();
 					},
 					afterRunEffect: function() {
-						console.log(this);
-
 						const currentIndex = Number(document.querySelector('#fullpage [fp-active="1"]').getAttribute('fp-index'));
 						Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
 							ele.classList.remove('active');
@@ -53,10 +51,8 @@ const fullpage = () => {
 					}
 				}
 			});
-
 			customFancybox(fullpage);
 			customFancybox2(fullpage);
-
 			document.querySelector('#widget-left .go-first').addEventListener('click', e => {
 				e.preventDefault();
 
@@ -74,7 +70,6 @@ const fullpage = () => {
 					}
 				}
 			})
-
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
 				const callback = () => {
 					localStorage.removeItem('isScroll');
@@ -117,8 +112,6 @@ const fullpage = () => {
 					}
 				})
 			};
-
-
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'gallery-page') {
 
 				const callback = () => {
@@ -151,7 +144,6 @@ const fullpage = () => {
 		}
 		Header(gsap, fullpage);
 	} else {
-
 		Header(gsap);
 	}
 }
@@ -655,7 +647,7 @@ document.addEventListener('DOMContentLoaded', () => {
 			document.querySelector('body').setAttribute('style', `overflow: hidden`)
 		}
 	}
-	fullpage();
+	fullpageInit();
 	sliderArea_1();
 	// setLinkDownload();
 	sectionVitriTab();

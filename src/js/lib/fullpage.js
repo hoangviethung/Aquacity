@@ -7,6 +7,7 @@ export default class FullPage {
 	canBeScrolled = true;
 	titles = false;
 	titlesArray = [];
+	hashArray = [];
 	on = {
 		init: function() {
 			console.log(1);
@@ -35,14 +36,14 @@ export default class FullPage {
 				if (this.titles) {
 					if (item.getAttribute('fp-title')) {
 						this.titlesArray.push(item.getAttribute('fp-title'));
-						this.navigator.insertAdjacentHTML('beforeend', `<div class="fp-nav-item"><a fp-target="${index}"><span>${index+1}</span><span class="title">${item.getAttribute('fp-title')}</span></a></div>`);
+						this.hashArray.push(U.alias(item.getAttribute('fp-title')));
+						this.navigator.insertAdjacentHTML('beforeend', `<div class="fp-nav-item"><a fp-target="${index}" fp-hash="${U.alias(item.getAttribute('fp-title'))}"><span>${index+1}</span><span class="title">${item.getAttribute('fp-title')}</span></a></div>`);
 					} else {
-						this.navigator.insertAdjacentHTML('beforeend', `<div class="fp-nav-item"><a fp-target="${index}"><span>${index+1}</span></a></div>`);
-						this.titlesArray.push('');
+						this.navigator.insertAdjacentHTML('beforeend', `<div class="fp-nav-item"><a fp-target="${index}" fp-hash="${U.alias(item.getAttribute('fp-title'))}"><span>${index+1}</span></a></div>`);
 					}
 				}
-				U.qAll(this.navigator, '.fp-nav-item')[0].classList.add('active');
 			})
+			U.qAll(this.navigator, '.fp-nav-item')[0].classList.add('active');
 		}
 		this.selector.classList.add('fp-container');
 		this.selector.innerHTML = `<div class="fp-wrapper">${this.selector.innerHTML}</div>`;
@@ -96,6 +97,9 @@ export default class FullPage {
 		const navItems = U.qAll(this.navigator, '.fp-nav-item');
 		navItems[currentIndex].classList.remove('active');
 		navItems[nextIndex].classList.add('active');
+		const hashUrl = navItems[nextIndex].querySelector('a').getAttribute('fp-hash');
+		window.location.hash = hashUrl;
+
 
 		const onAnimateCompleted = (currentSection, nextSection, cb) => {
 			currentSection.classList.remove('active');
@@ -123,7 +127,7 @@ export default class FullPage {
 			}, {
 				top: '0%',
 				duration: 0.8,
-				onStart: function () {
+				onStart: function() {
 					nextSection.classList.add('sliding');
 				},
 				onComplete: onAnimateCompleted,
@@ -135,7 +139,7 @@ export default class FullPage {
 			}, {
 				bottom: '0%',
 				duration: 0.8,
-				onStart: function () {
+				onStart: function() {
 					nextSection.classList.add('sliding');
 				},
 				onComplete: onAnimateCompleted,
@@ -187,7 +191,6 @@ export default class FullPage {
 				this.canBeScrolled = false;
 				const currentSection = U.q(this.selector, '[fp-active="1"]');
 				const nextSection = currentSection.nextElementSibling;
-				const _this = this;
 				this.runEffect(currentSection, nextSection, 'down')
 				setTimeout(() => {
 					this.canBeScrolled = true;
@@ -207,6 +210,13 @@ export default class FullPage {
 			this.generateFullpageHTML();
 			this.on.init();
 			this.navigate();
+			let hashUrl = window.location.hash;
+			if (hashUrl.length > 0) {
+				document.querySelector(`[fp-hash="${hashUrl.split('#')[1]}"]`).click();
+			} else {
+				let hashUrl = U.qAll(this.navigator, '.fp-nav-item')[0].querySelector('a').getAttribute('fp-hash');
+				window.location.hash = hashUrl;
+			}
 			this.run();
 			this.mouseScrollDown();
 		}
