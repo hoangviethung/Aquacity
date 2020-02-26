@@ -3,7 +3,7 @@ import {
 } from "../../bower_components/gsap/esm/index.js";
 import Header from "./lib/Header";
 import Tab from './lib/Tab';
-import Loading from "./lib/Loading";
+import Loading from "./lib/loading";
 import FullPage from "./lib/Fullpage";
 import ImageMapCanvas from "./lib/ImageMapCanvas";
 
