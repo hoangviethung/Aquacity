@@ -685,11 +685,11 @@ document.addEventListener('DOMContentLoaded', () => {
 		ripple2();
 	}
 	document.querySelector('body').classList.add('show-page');
-	// Loading(() => {
-	// 	new WOW({
-	// 		offset: 150,
-	// 	}).init();
-	// });
+	Loading(() => {
+		new WOW({
+			offset: 150,
+		}).init();
+	});
 
 	// document.querySelector('body').classList.add('show-page');
 	getSVGImage();
