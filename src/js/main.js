@@ -683,7 +683,10 @@ document.addEventListener('DOMContentLoaded', () => {
 		ripple1();
 		ripple2();
 	}
-	document.querySelector('body').classList.add('show-page');
+	document.querySelector('body').classList
+	if (!Array.from(document.querySelector('body').classList).includes('index-page')) {
+		document.querySelector('body').classList.add('show-page');
+	}
 	Loading(() => {
 		new WOW({
 			offset: 150,

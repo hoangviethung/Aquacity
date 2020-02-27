@@ -8,27 +8,17 @@ const Loading = callback => {
 
 	const showPage = () => {
 		document.querySelector('body').classList.add('show-page');
-
-		// 	// if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
-		// 	// 	const isScroll = localStorage.getItem('isScroll');
-		// 	// 	const nextIndex = localStorage.getItem('nextIndex');
-		// 	// 	const currentIndex = 1;
-		// 	// 	console.log(isScroll, nextIndex, currentIndex);
-		// 	// 	localStorage.removeItem('isScroll');
-		// 	// 	localStorage.removeItem('nextIndex');
-		// 	// 	console.log(localStorage.getItem('isScroll'), localStorage.getItem('nextIndex'), currentIndex);
-		// 	// }
 	}
 
-	const turnOffLoadingScreen = () => {
-		loading.style.opacity = '0';
-		setTimeout(function() {
-			if (loading) {
+	const turnOffLoadingScreen = (cb) => {
+		if (loading) {
+			loading.style.opacity = '0';
+			setTimeout(function() {
 				loading.style.display = 'none';
 				loading.parentNode.removeChild(loading);
-				return callback();
-			}
-		}, 800)
+				return cb();
+			}, 800)
+		}
 	};
 
 	const progressing = () => {
