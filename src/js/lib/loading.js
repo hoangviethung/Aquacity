@@ -11,14 +11,12 @@ const Loading = callback => {
 	}
 
 	const turnOffLoadingScreen = (cb) => {
-		if (loading) {
-			loading.style.opacity = '0';
-			setTimeout(function() {
-				loading.style.display = 'none';
-				loading.parentNode.removeChild(loading);
-				return cb();
-			}, 800)
-		}
+		loading.style.opacity = '0';
+		setTimeout(function() {
+			loading.style.display = 'none';
+			loading.parentNode.removeChild(loading);
+			return cb();
+		}, 800)
 	};
 
 	const progressing = () => {
@@ -30,14 +28,16 @@ const Loading = callback => {
 		}
 	};
 
-	if (imagesLength === 0) {
-		return turnOffLoadingScreen();
-	} else {
-		for (let i = 0; i < imagesLength; i++) {
-			let img = new Image;
-			img.onload = progressing;
-			img.onerror = progressing;
-			img.src = images[i].src
+	if (loading) {
+		if (imagesLength === 0) {
+			return turnOffLoadingScreen();
+		} else {
+			for (let i = 0; i < imagesLength; i++) {
+				let img = new Image;
+				img.onload = progressing;
+				img.onerror = progressing;
+				img.src = images[i].src
+			}
 		}
 	}
 };
