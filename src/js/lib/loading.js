@@ -23,9 +23,11 @@ const Loading = callback => {
 	const turnOffLoadingScreen = () => {
 		loading.style.opacity = '0';
 		setTimeout(function() {
-			loading.style.display = 'none';
-			loading.parentNode.removeChild(loading);
-			return callback();
+			if (loading) {
+				loading.style.display = 'none';
+				loading.parentNode.removeChild(loading);
+				return callback();
+			}
 		}, 800)
 	};
 

@@ -1,6 +1,5 @@
 #sec-9 {
 	background-color: white;
-	position: relative;
 
 	>.img {
 		height: 100%;
@@ -255,4 +254,8 @@
 			}
 		}
 	}
+}
+
+body:not(.index-page) {
+	position: relative;
 }
