@@ -154,6 +154,7 @@ export default class FullPage {
 				e.preventDefault();
 				const sectionList = U.qAll(this.selector, this.section);
 				if (this.canBeScrolled) {
+					
 					this.canBeScrolled = false;
 					const nextSection = sectionList[index];
 					const currentSection = sectionList[this.currentIndex];
