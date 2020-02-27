@@ -684,14 +684,17 @@ document.addEventListener('DOMContentLoaded', () => {
 		ripple2();
 	}
 	document.querySelector('body').classList
-	if (!Array.from(document.querySelector('body').classList).includes('index-page')) {
-		document.querySelector('body').classList.add('show-page');
-	}
 	Loading(() => {
 		new WOW({
 			offset: 150,
 		}).init();
 	});
+	if (!Array.from(document.querySelector('body').classList).includes('index-page')) {
+		document.querySelector('body').classList.add('show-page');
+		new WOW({
+			offset: 150,
+		}).init();
+	}
 
 	// document.querySelector('body').classList.add('show-page');
 	getSVGImage();
