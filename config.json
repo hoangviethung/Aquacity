@@ -16,12 +16,14 @@
 			"bower_components/fancybox/dist/jquery.fancybox.js",
 			"bower_components/swiper/package/js/swiper.js",
 			"bower_components/wow/dist/wow.js",
-			"bower_components/image-map-resizer/js/imageMapResizer.js"
+			"bower_components/image-map-resizer/js/imageMapResizer.js",
+			"bower_components/plyr/dist/plyr.js"
 		],
 		"css": [
 			"bower_components/swiper/package/css/swiper.css",
 			"bower_components/fancybox/dist/jquery.fancybox.css",
-			"bower_components/animate.css/animate.css"
+			"bower_components/animate.css/animate.css",
+			"bower_components/plyr/dist/plyr.css"
 		]
 	}
 }

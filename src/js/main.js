@@ -696,6 +696,12 @@ document.addEventListener('DOMContentLoaded', () => {
 		}).init();
 	}
 
+	if (document.getElementById('player')) {
+		const player = new Plyr('#player', {
+			hideControls: false,
+		});
+	}
+
 	// document.querySelector('body').classList.add('show-page');
 	getSVGImage();
 });
