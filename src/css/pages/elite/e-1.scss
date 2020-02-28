@@ -13,7 +13,6 @@
 		background-color: rgba(white, .65);
 
 		h2 {
-			font-family: 'Halo Handletter';
 			font-size: 75px;
 			color: map-get($mau, main);
 			font-weight: 300;
@@ -22,13 +21,11 @@
 		h3 {
 			color: map-get($mau, main);
 			font-size: 20px;
-			font-family: 'iCiel Panton';
 			font-style: italic;
 		}
 
 		p {
 			color: map-get($mau, main);
-			font-family: 'iCiel Panton';
 			font-size: 18px;
 
 			+h3 {
