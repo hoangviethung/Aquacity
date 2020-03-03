@@ -4,6 +4,14 @@ block var
 	- let title = 'Trang chủ';
 	- let bodyClass = 'index-page';
 	- let titlePosition = ['Đường dạo ven sông', 'Bến du thuyền','Công viên xanh','Vườn ươm cây','Bến thuyền Kayak','Clubhouse & hồ bơi', 'Aqua central mall','Game center','Khu vui chơi trẻ em','Trường học các cấp','Aqua sport complex','Phòng khám đa khoa quốc tế'];
+block loading
+	#loading
+		.logo-loader
+			img.svg-image(data-src="./assets/logo.svg", alt="")
+		.progstat-wrapper.d-none Loading:
+			span#progstat 0
+			| %
+		#progress
 block banner,breadcrumb
 block main
 	include _components/_layout/_widget

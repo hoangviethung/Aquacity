@@ -12,13 +12,7 @@ html(lang="en")
 		link(rel="stylesheet", href="./css/core.min.css")
 		link(rel="stylesheet", href="./css/main.min.css")
 	body
-		#loading
-			.logo-loader
-				img.svg-image(data-src="./assets/logo.svg", alt="")
-			.progstat-wrapper.d-none Loading:
-				span#progstat 0
-				| %
-			#progress
+		block loading
 		//- main content
 		block header
 			include _header.pug
