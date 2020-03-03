@@ -1,0 +1,419 @@
+﻿@model MainProject.Service.Model.News.NewsViewModel
+
+<div id="fullpage">
+    <div class="section area-1 area">
+        <div class="swiper-container">
+            <div class="swiper-prev"><img src="/Content/resources/assets/btn_toggle.png" alt=""></div>
+            <div class="swiper-next"><img src="/Content/resources/assets/btn_toggle.png" alt=""></div>
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="img"><img src="/Content/resources/assets/area/a_1.jpg" alt=""></div>
+                    <div class="content">
+                        <div class="logo"><img src="/Content/resources/assets/logo_stella_2.png" alt=""></div>
+                        <div class="text"><img class="svg-image" data-src="/Content/resources/assets/area/song_tron_binh_yen.svg"></div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="video">
+                        <video>
+                            <source src="/Content/resources/assets/videos/stella_video.mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination mobile"></div>
+        </div>
+    </div>
+    <div class="section area-2 area">
+        <div class="imgMapCanvas">
+            <div class="map-canvas">
+                <map name="mapEffect" id="mapEffect"><area shape="poly" coords="349, 380, 372, 391, 383, 405, 387, 419, 380, 438, 365, 463, 347, 481, 324, 497, 288, 523, 265, 543, 244, 561, 227, 580, 203, 605, 189, 618, 168, 637, 161, 633, 150, 638, 156, 643, 139, 655, 133, 652, 125, 654, 122, 661, 106, 672, 106, 681, 109, 685, 143, 702, 178, 711, 210, 719, 236, 722, 272, 723, 313, 721, 355, 730, 394, 738, 419, 738, 453, 730, 481, 720, 517, 703, 554, 686, 576, 680, 598, 678, 618, 673, 648, 664, 695, 649, 720, 641, 747, 635, 781, 634, 813, 631, 590, 394, 581, 392, 508, 410, 498, 404, 473, 395, 419, 382, 369, 373, 356, 372" /></map>
+                <canvas></canvas>
+            </div>
+            <div class="map-image"><img src="/Content/resources/assets/area/a_2.jpg" usemap="#mapEffect"></div>
+        </div>
+    </div>
+    <div class="section area-3 area">
+        <div class="title">
+            <p class="title-text grad">Mặt bằng</p>
+            <p class="title-text grad">Tổng thể</p>
+        </div>
+        <div class="content">
+            <div class="imgMapCanvas desktop">
+                <div class="map-canvas">
+                    <map id="area_3" name="#area_3">
+                        <area shape="poly" coords="696, 197, 851, 209, 862, 284, 869, 290, 873, 298, 871, 301, 1015, 315, 1159, 346, 1185, 359, 1204, 378, 1154, 398, 1136, 390, 1066, 372, 1070, 411, 1056, 413, 884, 397, 696, 380, 703, 281" index="0" data-src="#popup-fronts" style="cursor: pointer">
+                        <area shape="poly" coords="638, 147, 683, 143, 692, 283, 687, 380, 634, 374, 644, 280" index="1" data-src="#popup-fronts" style="cursor: pointer">
+                        <area shape="poly" coords="538, 154, 630, 148, 634, 279, 624, 373, 522, 363, 537, 276" index="2" data-src="#popup-fronts" style="cursor: pointer">
+                        <area shape="poly" coords="480, 158, 529, 154, 526, 281, 511, 364, 456, 360, 472, 279" index="3" data-src="#popup-fronts" style="cursor: pointer">
+                        <area shape="poly" coords="323, 169, 469, 157, 459, 282, 440, 360, 286, 347, 309, 269" index="4" data-src="#popup-fronts" style="cursor: pointer">
+                    </map>
+                    <canvas></canvas>
+                </div>
+                <div class="map-image"><img src="/Content/resources/assets/area/a_3.png" alt="" usemap="#area_3"></div>
+            </div>
+            <div class="img mobile"><img src="/Content/resources/assets/area/a_3.png" alt=""></div>
+        </div>
+        <div class="container mobile">
+            <div class="row fronts-list">
+                <div class="col-6 col-md-4 item">
+                    <a data-src="#popup-fronts" index="0">
+                        <h3>Townhouse</h3>
+                        <p>6 x 20 (m)</p>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 item">
+                    <a data-src="#popup-fronts" index="1">
+                        <h3>Townhouse</h3>
+                        <p>6 x 25 (m)</p>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 item">
+                    <a data-src="#popup-fronts" index="2">
+                        <h3>Shophouse</h3>
+                        <p>6 x 25 (m)</p>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 item">
+                    <a data-src="#popup-fronts" index="3">
+                        <h3>Semidetached Villa</h3>
+                        <p>10 x 22 (m)</p>
+                    </a>
+                </div>
+                <div class="col-6 col-md-4 item">
+                    <a data-src="#popup-fronts" index="4">
+                        <h3>Semidetached Villa</h3>
+                        <p>10 x 24 (m)</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="d-none">
+            <div class="popup-fronts" id="popup-fronts">
+                <div class="container">
+                    <div class="logo"><a href="/" title="title"><img src="/Content/resources/assets/logo.png" alt=""></a></div>
+                    <div class="content">
+                        <div class="row tab-container">
+                            <div class="col-lg-auto list-items">
+                                <div class="item" toggle-for="front_1">
+                                    <h3>Townhouse</h3>
+                                    <p>6 x 20 (m)</p>
+                                </div>
+                                <div class="item" toggle-for="front_2">
+                                    <h3>Townhouse</h3>
+                                    <p>6 x 25 (m)</p>
+                                </div>
+                                <div class="item" toggle-for="front_3">
+                                    <h3>Shophouse</h3>
+                                    <p>6 x 25 (m)</p>
+                                </div>
+                                <div class="item" toggle-for="front_4">
+                                    <h3>Semidetached Villa</h3>
+                                    <p>10 x 22 (m)</p>
+                                </div>
+                                <div class="item" toggle-for="front_5">
+                                    <h3>Semidetached Villa</h3>
+                                    <p>10 x 24 (m)</p>
+                                </div>
+                            </div>
+                            <div class="col-lg">
+                                <div class="tab-content" tab-id="front_1">
+                                    <div class="content-wrapper">
+                                        <div class="img"><img src="/Content/resources/assets/area/a_4_1.jpg" alt=""></div>
+                                        <div class="info">
+                                            <h2>Townhouse</h2>
+                                            <p>6 x 25 (m)</p>
+                                            <div class="description">
+                                                <p>Diện tích khu đất: 150 m2</p>
+                                                <p>Tổng diện tích sàn xây dựng (GFA): 237.4 m2</p>
+                                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                                            </div><a class="btn btn-viewmore" href="javascript:void(0)" data-src="#area_d_1">Chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-content" tab-id="front_2">
+                                    <div class="content-wrapper">
+                                        <div class="img"><img src="/Content/resources/assets/area/a_4_2.jpg" alt=""></div>
+                                        <div class="info">
+                                            <h2>Townhouse</h2>
+                                            <p>6 x 20 (m)</p>
+                                            <div class="description">
+                                                <p>Diện tích khu đất: 120 m2</p>
+                                                <p>Tổng diện tích sàn xây dựng (GFA): 237.4 m2</p>
+                                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                                            </div><a class="btn btn-viewmore" href="javascript:void(0)" data-src="#area_d_2"> Chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-content" tab-id="front_3">
+                                    <div class="content-wrapper">
+                                        <div class="img"><img src="/Content/resources/assets/area/a_4_3.jpg" alt=""></div>
+                                        <div class="info">
+                                            <h2>Shophouse</h2>
+                                            <p>6 x 25 (m)</p>
+                                            <div class="description">
+                                                <p>Diện tích khu đất: 150 m2</p>
+                                                <p>Tổng diện tích sàn xây dựng (GFA): 336.5 m2</p>
+                                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                                            </div><a class="btn btn-viewmore" href="javascript:void(0)" data-src="#area_d_3"> Chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-content" tab-id="front_4">
+                                    <div class="content-wrapper">
+                                        <div class="img"><img src="/Content/resources/assets/area/a_4_4.jpg" alt=""></div>
+                                        <div class="info">
+                                            <h2>Semidetached Villa</h2>
+                                            <p>10 x 22 (m)</p>
+                                            <div class="description">
+                                                <p>Diện tích khu đất: 220 m2</p>
+                                                <p>Tổng diện tích sàn xây dựng (GFA): 279 m2</p>
+                                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                                            </div><a class="btn btn-viewmore" href="javascript:void(0)" data-src="#area_d_4"> Chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-content" tab-id="front_5">
+                                    <div class="content-wrapper">
+                                        <div class="img"><img src="/Content/resources/assets/area/a_4_5.jpg" alt=""></div>
+                                        <div class="info">
+                                            <h2>Semidetached Villa</h2>
+                                            <p>10 x 24 (m)</p>
+                                            <div class="description">
+                                                <p>Diện tích khu đất: 240 m2</p>
+                                                <p>Tổng diện tích sàn xây dựng (GFA): 279 m2</p>
+                                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                                            </div><a class="btn btn-viewmore" href="javascript:void(0)" data-src="#area_d_5"> Chi tiết</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-fronts area_d" id="area_d_1">
+                <div class="container">
+                    <div class="logo"><a href="/" title="title"><img src="/Content/resources/assets/logo.png" alt=""></a></div>
+                    <div class="content row">
+                        <div class="col-lg-6">
+                            <div class="img"><img src="/Content/resources/assets/area/a_4_1.jpg" alt=""></div>
+                            <h2>Townhouse</h2>
+                            <p>6 x 25 (m)</p>
+                            <div class="description">
+                                <p>Diện tích khu đất: 150 m2</p>
+                                <p>Tổng diện tích sàn xây dựng (GFA): 237.4 m2</p>
+                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6"><img src="/Content/resources/assets/area/a_3_d_1.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-fronts area_d" id="area_d_2">
+                <div class="container">
+                    <div class="logo"><a href="/" title="title"><img src="/Content/resources/assets/logo.png" alt=""></a></div>
+                    <div class="content row">
+                        <div class="col-lg-6">
+                            <div class="img"><img src="/Content/resources/assets/area/a_4_2.jpg" alt=""></div>
+                            <h2>Townhouse</h2>
+                            <p>6 x 20 (m)</p>
+                            <div class="description">
+                                <p>Diện tích khu đất: 120 m2</p>
+                                <p>Tổng diện tích sàn xây dựng (GFA): 237.4 m2</p>
+                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6"><img src="/Content/resources/assets/area/a_3_d_2.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-fronts area_d" id="area_d_3">
+                <div class="container">
+                    <div class="logo"><a href="/" title="title"><img src="/Content/resources/assets/logo.png" alt=""></a></div>
+                    <div class="content row">
+                        <div class="col-lg-6">
+                            <div class="img"><img src="/Content/resources/assets/area/a_4_3.jpg" alt=""></div>
+                            <h2>Shophouse</h2>
+                            <p>6 x 25 (m)</p>
+                            <div class="description">
+                                <p>Diện tích khu đất: 150 m2</p>
+                                <p>Tổng diện tích sàn xây dựng (GFA): 336.5 m2</p>
+                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6"><img src="/Content/resources/assets/area/a_3_d_3.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-fronts area_d" id="area_d_4">
+                <div class="container">
+                    <div class="logo"><a href="/" title="title"><img src="/Content/resources/assets/logo.png" alt=""></a></div>
+                    <div class="content row">
+                        <div class="col-lg-6">
+                            <div class="img"><img src="/Content/resources/assets/area/a_4_4.jpg" alt=""></div>
+                            <h2>Semidetached Villa</h2>
+                            <p>10 x 22 (m)</p>
+                            <div class="description">
+                                <p>Diện tích khu đất: 220 m2</p>
+                                <p>Tổng diện tích sàn xây dựng (GFA): 279 m2</p>
+                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6"><img src="/Content/resources/assets/area/a_3_d_4.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+            <div class="popup-fronts area_d" id="area_d_5">
+                <div class="container">
+                    <div class="logo"><a href="/" title="title"><img src="/Content/resources/assets/logo.png" alt=""></a></div>
+                    <div class="content row">
+                        <div class="col-lg-6">
+                            <div class="img"><img src="/Content/resources/assets/area/a_4_5.jpg" alt=""></div>
+                            <h2>Semidetached Villa</h2>
+                            <p>10 x 24 (m)</p>
+                            <div class="description">
+                                <p>Diện tích khu đất: 240 m2</p>
+                                <p>Tổng diện tích sàn xây dựng (GFA): 279 m2</p>
+                                <p> <i>(*) Không bao gồm ban công, sân thượng</i></p>
+                            </div>
+                        </div>
+                        <div class="col-lg-6"><img src="/Content/resources/assets/area/a_3_d_5.png" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section area-4 area">
+        <div class="section-widget">
+            <div class="title">
+                <p><span>Trải nghiệm</span><span>Nhịp Sống Sôi Động Đậm Chất Ý tại</span></p>
+                <p class="title-text grad">Aqua Marina</p>
+            </div><a class="btn btn-viewmore" href="#" data-fancybox data-src="#popup-area-4">Tìm hiểu thêm</a>
+        </div>
+        <div class="row no-gutters">
+            <div class="col-md-auto img"><img src="/Content/resources/assets/area/a_4.png" alt=""><a class="btn-play" href="/Content/resources/assets/videos/a_4.mp4" data-fancybox="video_4"></a></div>
+            <div class="col-md">
+                <div class="number"><span>1</span></div>
+            </div>
+        </div>
+        <div class="d-none">
+            <div class="popup-area-4" id="popup-area-4">
+                <div class="container">
+                    <div class="logo"><a href="/" title="title"><img src="/Content/resources/assets/logo.png" alt=""></a></div>
+                    <div class="content">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="img"><img src="/Content/resources/assets/area/a_4_1.jpg" alt=""></div>
+                                <div class="text">
+                                    <h3>Nhà hàng Marina</h3>
+                                    <h3>Phố cà phê</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="img"><img src="/Content/resources/assets/area/a_4_2.jpg" alt=""></div>
+                                <div class="text">
+                                    <h3>Phố mua sắm</h3>
+                                    <h3>Phố thời trang</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="img"><img src="/Content/resources/assets/area/a_4_3.jpg" alt=""></div>
+                                <div class="text">
+                                    <h3>Quảng trường <br>mặt trời</h3>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="img"><img src="/Content/resources/assets/area/a_4_4.jpg" alt=""></div>
+                                <div class="text">
+                                    <h3>Vòng xoay mặt trời</h3>
+                                    <h3>Đường dạo bên sông</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section area area-5">
+        <div class="container">
+            <div class="content">
+                <div class="row">
+                    <div class="col-sm-6 item">
+                        <div class="info">
+                            <div class="number">2</div>
+                            <div class="text">
+                                <h3>AQUA<br>SPORT COMPLEX</h3>
+                                <p>Sống Khỏe Tràn Năng Lượng</p>
+                            </div>
+                        </div>
+                        <div class="img"><img src="/Content/resources/assets/area/a_5_1.jpg" alt=""></div>
+                    </div>
+                    <div class="col-sm-6 item">
+                        <div class="info">
+                            <div class="number">3</div>
+                            <div class="text">
+                                <h3>AQUA<br>CENTRAL MALL</h3>
+                                <p>Tiện nghi cho cuộc sống đầy đủ</p>
+                            </div>
+                        </div>
+                        <div class="img"><img src="/Content/resources/assets/area/a_5_2.jpg" alt=""></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section area area-6" fp-title="Sinh Thái">
+        <div class="img" style="background-image: url(/Content/resources/assets/area/a_6.jpg)"><img src="/Content/resources/assets/area/a_6.jpg" alt=""></div>
+        <div class="content">
+            <div class="number">4</div>
+            <div class="title">
+                <p>Nơi giao hòa</p>
+                <h2>Giữa thiên nhiên <br>và con người</h2>
+            </div>
+            <div class="items">
+                <div class="item">
+                    <h3>10.000 - 12.000 m<sup>2</sup></h3>
+                    <hr class="tagline">
+                    <p>vườn ươm	</p>
+                </div>
+                <div class="item">
+                    <h3>70%</h3>
+                    <hr class="tagline">
+                    <p>diện tích dành cho <br>mảng xanh và tiện ích chung</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section area area-7" fp-title="An ninh">
+        <div class="content">
+            <div class="title">
+                <p>Một chạm</p>
+                <h2>Đến ngàn tiện ích</h2>
+            </div><span class="number desktop">5</span>
+            <div class="row">
+                <div class="col-md-6 item">
+                    <div class="info">
+                        <div class="text">
+                            <h3>Trụ sạc <br>thông minh</h3>
+                            <hr class="tagline">
+                        </div>
+                    </div>
+                    <div class="img"><img src="/Content/resources/assets/area/a_7_1.jpg" alt=""></div>
+                </div>
+                <div class="col-md-6 item">
+                    <div class="info">
+                        <div class="text">
+                            <h3>Camera <br>Giám sát 24/24</h3>
+                            <hr class="tagline">
+                        </div>
+                    </div>
+                    <div class="img"><img src="/Content/resources/assets/area/a_7_2.jpg" alt=""></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="next-section"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 140" version="1.1" x="0px" y="0px"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path class="mouse-next-section" d="M50,94.5787804 L64.7927304,79.7860499 C65.573779,79.0050013 66.840109,79.0050013 67.6211576,79.7860499 C68.4022061,80.5670985 68.4022061,81.8334285 67.6211576,82.614477 L51.4142136,98.8214211 C51.0236893,99.2119453 50.5118446,99.4072075 50,99.4072075 C49.4881554,99.4072075 48.9763107,99.2119453 48.5857864,98.8214211 L32.3312722,82.566907 C31.5502236,81.7858584 31.5502236,80.5195284 32.3312722,79.7384798 C33.1123208,78.9574313 34.3786508,78.9574313 35.1596993,79.7384798 L50,94.5787804 Z" /><path class="mouse-next-section delay-1" d="M50,94.5787804 L64.7927304,79.7860499 C65.573779,79.0050013 66.840109,79.0050013 67.6211576,79.7860499 C68.4022061,80.5670985 68.4022061,81.8334285 67.6211576,82.614477 L51.4142136,98.8214211 C51.0236893,99.2119453 50.5118446,99.4072075 50,99.4072075 C49.4881554,99.4072075 48.9763107,99.2119453 48.5857864,98.8214211 L32.3312722,82.566907 C31.5502236,81.7858584 31.5502236,80.5195284 32.3312722,79.7384798 C33.1123208,78.9574313 34.3786508,78.9574313 35.1596993,79.7384798 L50,94.5787804 Z" /></g></g></svg></div>
+<div class="stella-page" id="js-page-verify" hidden></div>

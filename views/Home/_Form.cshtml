@@ -1,0 +1,31 @@
+﻿@model MainProject.Service.Model.Contact.ContactManageModel
+
+@using (Ajax.BeginForm("Submit", "Contact", new AjaxOptions() { HttpMethod = "POST", OnBegin = "onBegin", OnSuccess = "onSuccess" }))
+{
+    <p>Quý khách vui lòng để lại thông tin, chúng tôi sẽ liên hệ ngay</p>
+    <div class="row">
+        @Html.ValidationSummary(true)
+        <div class="col-sm-6 form-group">
+            @Html.TextBoxFor(x => x.Name, new { @placeholder = "Họ tên (*)" })
+            @Html.ValidationMessageFor(x => x.Name)
+        </div>
+        <div class="col-sm-6 form-group">
+            @Html.TextBoxFor(x => x.Phone, new { @placeholder = "Điện thoại (*)" })
+            @Html.ValidationMessageFor(x => x.Phone)
+        </div>
+        <div class="col-sm-6 form-group">
+            @Html.TextBoxFor(x => x.Email, new { @placeholder = "Email (*)" })
+            @Html.ValidationMessageFor(x => x.Email)
+        </div>
+        <div class="col-sm-6 form-group">
+            @Html.TextBoxFor(x => x.Address, new { @placeholder = "Địa chỉ" })
+            @Html.ValidationMessageFor(x => x.Address)
+        </div>
+        @*<div class="col-12 form-group">
+            @Html.TextAreaFor(x => x.Content, new { @placeholder = "Nội dung" })
+        </div>*@
+    </div>
+    <div class="form-button">
+        <button class="btn btn-discover" type="submit">Đăng ký ngay</button>
+    </div>
+}

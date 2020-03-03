@@ -1,0 +1,39 @@
+﻿@using MainProject.Framework.Models
+@model MainProject.Service.Model.News.NewsViewModel
+
+<section class="section-news-list">
+    <div class="content">
+        <div class="title-block">
+            <h2 class="main-title center">@Model.Category.Title</h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model.Articles)
+            {
+                <div class="col-lg-4 col-sm-6">
+                    <div class="news-item">
+                        <a target="_blank" href="@item.GetUrl()">
+                            <div class="img">
+                                <div class="img-wrapper"><img class="lazyload" data-src="@item.ImageDefault" alt="@item.Title"></div>
+                            </div>
+                            <div class="text">
+                                <h3>@item.Title</h3>
+                            </div>
+                            <div class="button-wrapper"><span class="btn btn-readmore">Xem thêm</span></div>
+                        </a>
+                    </div>
+                </div>
+            }
+        </div>
+        <div class="row">
+            <div class="col-12 pagination">
+                @Html.RenderPaging(Model.PagingModel, new PagingStyleModel()
+                {
+                    CurrentItemStyle = "class='pagination-item active'",
+                    DivContainerStyle = "class='pagination-list'",
+                    ItemStyle = "class='pagination-item'"
+                })
+            </div>
+        </div>
+    </div>
+</section>
+<div class="news-page" id="js-page-verify" hidden></div>

@@ -1,0 +1,111 @@
+﻿@model MainProject.Service.Model.Gallery.GalleryViewModel
+
+<div id="fullpage">
+    <section class="section section-brochure-list">
+        <div class="bg-image"><img src="/Content/resources/assets/brochure/b_bg_3.png" alt=""></div>
+        <div class="content">
+            <div class="title-block">
+                <h2 class="main-title center">Tải về</h2>
+            </div>
+            <div class="brochure-slider">
+                <div class="swiper-prev"><img src="/Content/resources/assets/btn_toggle.png"></div>
+                <div class="swiper-next"><img src="/Content/resources/assets/btn_toggle.png"></div>
+                <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model.Brochures)
+                        {
+                            <div class="swiper-slide">
+                                <div class="item">
+                                    <div class="img">
+                                        <div class="img-wrapper"><img src="@item.ResourcePath" alt="@item.Name"></div>
+                                    </div>
+                                    <div class="info">
+                                        <h3> <span>Brochure</span><br><span>@item.Name</span></h3>
+                                    </div>
+                                    <div class="btn-wrapper"><a class="btn btn-readmore" href="@item.FilePath" target="_blank">Tải về</a></div>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-gallery-image">
+        <div class="content">
+            <div class="title-block">
+                <h2 class="main-title center">Hình ảnh</h2>
+            </div>
+            <div class="image-slider">
+                <div class="swiper-prev"><img src="/Content/resources/assets/btn_toggle.png"></div>
+                <div class="swiper-next"><img src="/Content/resources/assets/btn_toggle.png"></div>
+                <div class="swiper-container desktop">
+
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model.Albums)
+                        {
+                            <div class="swiper-slide image-item">
+                                <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
+                                <div class="info">
+                                    <h3>@item.Name</h3>
+                                </div>
+                            </div>
+                        }
+                    </div>
+                </div>
+
+                <div class="mobile image-list">
+                    @foreach (var item in Model.Albums)
+                    {
+
+                        <a class="image-item" href="@item.ResourcePath" data-fancybox="gal_1">
+                            <div class="img"><img src="@item.ResourcePath" alt=""></div>
+                            <div class="info">
+                                <h3>@item.Name</h3>
+                            </div>
+                        </a>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-gallery-video">
+        <div class="content">
+            <div class="title-block">
+                <h2 class="main-title center">Video</h2>
+            </div>
+            <div class="video-slider">
+                <div class="swiper-prev"><img src="/Content/resources/assets/btn_toggle.png"></div>
+                <div class="swiper-next"><img src="/Content/resources/assets/btn_toggle.png"></div>
+                <div class="swiper-container desktop">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model.Videos)
+                        {
+                            <div class="swiper-slide video-item" data-fancybox href="https://www.youtube.com/watch?v=@item.FilePath">
+                                <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
+                                <div class="info">
+                                    <h3>@item.Name</h3>
+                                </div>
+                                <div class="btn-play"></div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="mobile video-list">
+                    @foreach (var item in Model.Videos)
+                    {
+                        <div class="video-item" href="https://www.youtube.com/watch?v=@item.FilePath" data-fancybox="v_5">
+                            <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
+                            <div class="info">
+                                <h3>@item.Name</h3>
+                            </div>
+                            <div class="btn-play"></div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div id="next-section"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 140" version="1.1" x="0px" y="0px"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path class="mouse-next-section" d="M50,94.5787804 L64.7927304,79.7860499 C65.573779,79.0050013 66.840109,79.0050013 67.6211576,79.7860499 C68.4022061,80.5670985 68.4022061,81.8334285 67.6211576,82.614477 L51.4142136,98.8214211 C51.0236893,99.2119453 50.5118446,99.4072075 50,99.4072075 C49.4881554,99.4072075 48.9763107,99.2119453 48.5857864,98.8214211 L32.3312722,82.566907 C31.5502236,81.7858584 31.5502236,80.5195284 32.3312722,79.7384798 C33.1123208,78.9574313 34.3786508,78.9574313 35.1596993,79.7384798 L50,94.5787804 Z" /><path class="mouse-next-section delay-1" d="M50,94.5787804 L64.7927304,79.7860499 C65.573779,79.0050013 66.840109,79.0050013 67.6211576,79.7860499 C68.4022061,80.5670985 68.4022061,81.8334285 67.6211576,82.614477 L51.4142136,98.8214211 C51.0236893,99.2119453 50.5118446,99.4072075 50,99.4072075 C49.4881554,99.4072075 48.9763107,99.2119453 48.5857864,98.8214211 L32.3312722,82.566907 C31.5502236,81.7858584 31.5502236,80.5195284 32.3312722,79.7384798 C33.1123208,78.9574313 34.3786508,78.9574313 35.1596993,79.7384798 L50,94.5787804 Z" /></g></g></svg></div>
+<div class="gallery-page" id="js-page-verify" hidden></div>

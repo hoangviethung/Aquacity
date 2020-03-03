@@ -1,0 +1,61 @@
+﻿@model MainProject.Service.Model.News.NewsViewModel
+
+<div class="section news-related">
+    <div class="content">
+        <div class="container">
+            <div class="title-block">
+                <h2 class="main-title center">Danh mục tin tức</h2>
+            </div>
+            <div class="news-items">
+                <div class="container">
+                    <div class="row">
+                        @foreach (var item in Model.Categories)
+                        {
+                            <div class="news-item">
+                                <a class="btn btn-readmore" target="_blank" href="@item.GetPrefixUrl()">@item.Title</a>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="news-detail">
+    <div class="container">
+        <div class="row">
+            @if (Model.Articles.Count > 0)
+            {
+                <div class="col-lg-8">
+                    <h1>@Model.Articles[0].Title</h1>
+                    <time>@Model.Articles[0].Order.ToString("dd-MM-yyyy")</time>
+                    <div class="content">
+                        @Html.Raw(Model.Articles[0].Body)
+                    </div>
+                </div>
+            }
+            <div class="col-lg"></div>
+            <div class="col-lg-3 news-others">
+                <h2>Tin tức liên quan</h2>
+                <div class="list-news row">
+                    @foreach (var item in Model.Articles.Skip(1))
+                    {
+                        <div class="col-lg-12 col-md-4 col-sm-6">
+                            <div class="news-item">
+                                <a target="_blank" href="@item.GetUrl()">
+                                    <div class="img">
+                                        <div class="img-wrapper"><img src="@item.ImageDefault" alt=""></div>
+                                    </div>
+                                    <div class="text">
+                                        <h3>@item.Title</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="news-related-page" id="js-page-verify" hidden></div>

@@ -132,10 +132,10 @@ export default class ImageMapCanvas {
 			Array.from(this.map.querySelectorAll('area')).forEach(mapArea => {
 				mapArea.addEventListener('mouseover', () => {
 
-					let shape = mapArea.getAttribute('shape');
+					const shape = mapArea.getAttribute('shape');
 					const alt = mapArea.getAttribute('alt');
+					const coords = mapArea.getAttribute('coords');
 					if (shape === 'poly') {
-						let coords = mapArea.getAttribute('coords');
 						// set style
 						this.canvasContext.strokeStyle = '#e8de8b';
 						this.canvasContext.fillStyle = 'rgba(7, 65, 76,.25)';
@@ -145,7 +145,7 @@ export default class ImageMapCanvas {
 					if (shape === 'circle') {
 						Array.from(document.querySelectorAll(`area[alt="${alt}"]`)).forEach(item => {
 							// set style
-							let coords = item.getAttribute('coords');
+							const coords = item.getAttribute('coords');
 							this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
 							this.canvasContext.fillStyle = 'rgba(7, 65, 76, .35)';
 							this.canvasContext.lineWidth = 3;

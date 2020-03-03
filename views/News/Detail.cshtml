@@ -1,0 +1,38 @@
+﻿@model MainProject.Service.Model.News.NewsDetailViewModel
+
+<div class="news-detail">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <h1>@Model.Article.Title</h1>
+                <time>@Model.Article.Order.ToString("dd-MM-yyyy")</time>
+                <div class="content">
+                    @Html.Raw(Model.Article.Body)
+                </div>
+            </div>
+            <div class="col-lg"></div>
+            <div class="col-lg-3 news-others">
+                <h2>Bài viết mới nhất</h2>
+                <div class="list-news row">
+                    @foreach (var item in Model.Articles)
+                    {
+                        <div class="col-lg-12 col-md-4 col-sm-6">
+                            <div class="news-item">
+                                <a target="_blank" href="@item.GetUrl()">
+                                    <div class="img">
+                                        <div class="img-wrapper"><img src="@item.ImageDefault" alt=""></div>
+                                    </div>
+                                    <div class="text">
+                                        <h3>@item.Title</h3>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    }
+                </div>
+                <div class="button-wrapper"><a class="btn btn-readmore" href="@Model.Article.Category.GetPrefixUrl()">Xem thêm</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="news-detail-page" id="js-page-verify" hidden></div>
