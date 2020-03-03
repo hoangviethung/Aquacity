@@ -42,9 +42,15 @@ const fullpageInit = () => {
 						})
 						Array.from(document.querySelectorAll('.header-nav-wrapper nav a'))[currentIndex].classList.add('active');
 						if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
-							document.querySelector('header .header-nav-icon').classList.remove('active');
-							document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
-							document.querySelector('.section .frame-2').classList.remove('active');
+							if (document.querySelector('header .header-nav-icon')) {
+								document.querySelector('header .header-nav-icon').classList.remove('active');
+							}
+							if (document.querySelector('.section .frame-1 .button-toggle')) {
+								document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
+							}
+							if(document.querySelector('.section .frame-2')){
+								document.querySelector('.section .frame-2').classList.remove('active');
+							}
 						}
 						localStorage.removeItem('isScroll');
 						localStorage.removeItem('nextIndex');
