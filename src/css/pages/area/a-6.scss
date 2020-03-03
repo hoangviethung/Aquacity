@@ -48,10 +48,10 @@
 
 		.content {
 			position: absolute;
-			top: 160px;
-			bottom: 130px;
-			left: 160px;
-			right: 160px;
+			top: 110px;
+			bottom: 50px;
+			left: 110px;
+			right: 110px;
 			border: 5px solid map-get($mau, main-2);
 
 			&:before {
@@ -138,11 +138,11 @@
 		.items {
 			position: absolute;
 			text-align: right;
-			bottom: 15px;
+			top: 180px;
 			right: 15px;
 
 			@media (min-width: 1610px) {
-				bottom: 100px;
+				top: 275px;
 				right: 45px;
 			}
 		}

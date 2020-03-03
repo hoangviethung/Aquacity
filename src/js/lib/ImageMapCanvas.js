@@ -131,9 +131,11 @@ export default class ImageMapCanvas {
 		} else {
 			Array.from(this.map.querySelectorAll('area')).forEach(mapArea => {
 				mapArea.addEventListener('mouseover', () => {
-					let coords = mapArea.getAttribute('coords');
+
 					let shape = mapArea.getAttribute('shape');
+					const alt = mapArea.getAttribute('alt');
 					if (shape === 'poly') {
+						let coords = mapArea.getAttribute('coords');
 						// set style
 						this.canvasContext.strokeStyle = '#e8de8b';
 						this.canvasContext.fillStyle = 'rgba(7, 65, 76,.25)';
@@ -141,11 +143,14 @@ export default class ImageMapCanvas {
 						this.drawPolygon(coords);
 					}
 					if (shape === 'circle') {
-						// set style
-						this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
-						this.canvasContext.fillStyle = 'rgba(7, 65, 76, .35)';
-						this.canvasContext.lineWidth = 3;
-						this.drawCircle(coords);
+						Array.from(document.querySelectorAll(`area[alt="${alt}"]`)).forEach(item => {
+							// set style
+							let coords = item.getAttribute('coords');
+							this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
+							this.canvasContext.fillStyle = 'rgba(7, 65, 76, .35)';
+							this.canvasContext.lineWidth = 3;
+							this.drawCircle(coords);
+						})
 					}
 				});
 				mapArea.addEventListener('mouseout', () => {
@@ -164,43 +169,51 @@ export default class ImageMapCanvas {
 
 	customLabel() {
 		if (this.selector) {
-			Array.from(this.map.querySelectorAll('area')).forEach(area => {
-				let infoMarker;
-				area.addEventListener('click', e => {
-					e.preventDefault();
-				})
-				area.addEventListener('mouseenter', e => {
-					infoMarker = document.createElement('div');
-					infoMarker.classList.add('info-marker');
-					infoMarker.innerHTML = `<div class="img"><img src="${area.getAttribute('href')}" /></div><div class="text">${area.getAttribute('title')}</div>`;
-					const offsetTop = this.canvas.getBoundingClientRect().top;
-					const coordsRef = area.getAttribute('coords').split(',');
-					const size = Number(coordsRef[2]);
-					const top = Number(coordsRef[1]);
-					const left = Number(coordsRef[0]);
-					if (left - (size * 0.95) + 50 <= Number(window.innerWidth - 450 - 60)) {
-						infoMarker.setAttribute('style', `
-							margin-left: 25px;
-							transform-origin: 0 0;
-							top: ${top - size + this.selector.offsetTop}px;
-							left: ${left}px;
-						`);
-					} else {
-						infoMarker.setAttribute('style', `
-							margin-right: 25px;
-							transform-origin: 100% 0;
-							top: ${top - size + this.selector.offsetTop}px;
-							right: ${this.canvas.clientWidth - left}px;
-						`);
-					}
-					document.querySelector('body').parentNode.append(infoMarker);
-					setTimeout(() => {
-						infoMarker.classList.add('active');
-					}, 150);
+			const areas = Array.from(this.map.querySelectorAll('area'));
+			areas.forEach(area => {
+				area.addEventListener('mouseover', e => {
+					document.querySelector(`[data-utilities-target="${e.target.alt}"]`).classList.add('active')
+
+					// Array.from(document.querySelectorAll()).forEach(item => {
+					// 	item.addEventListener('click', () => {
+
+					// 	})
+					// 	const mouseEnter = new Event('click')
+					// 	item.dispatchEvent(mouseEnter);
+					// })
+					// infoMarker = document.createElement('div');
+					// infoMarker.classList.add('info-marker');
+					// infoMarker.innerHTML =
+					// 	// <div class="img">
+					// 	// 	<img src="${area.getAttribute('href')}" />
+					// 	// </div>
+					// 	`<div class="text">${area.getAttribute('title')}</div>`;
+					// const coordsRef = area.getAttribute('coords').split(',');
+					// const size = Number(coordsRef[2]);
+					// const top = Number(coordsRef[1]);
+					// const left = Number(coordsRef[0]);
+					// if (left - (size * 0.95) + 50 <= Number(window.innerWidth - 450 - 60)) {
+					// 	infoMarker.setAttribute('style', `
+					// 		margin-left: 25px;
+					// 		transform-origin: 0 0;
+					// 		top: ${top - size + this.selector.offsetTop}px;
+					// 		left: ${left}px;
+					// 	`);
+					// } else {
+					// 	infoMarker.setAttribute('style', `
+					// 		margin-right: 25px;
+					// 		transform-origin: 100% 0;
+					// 		top: ${top - size + this.selector.offsetTop}px;
+					// 		right: ${this.canvas.clientWidth - left}px;
+					// 	`);
+					// }
+					// document.querySelector('body').parentNode.append(infoMarker);
+					// setTimeout(() => {
+					// 	infoMarker.classList.add('active');
+					// }, 150);
 				});
-				area.addEventListener('mouseout', e => {
-					infoMarker.parentNode.removeChild(infoMarker);
-					infoMarker.classList.remove('active');
+				area.addEventListener('mouseleave', e => {
+					document.querySelector(`[data-utilities-target="${e.target.alt}"]`).classList.remove('active')
 				})
 			})
 		}

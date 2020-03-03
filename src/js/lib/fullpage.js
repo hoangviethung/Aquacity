@@ -10,7 +10,6 @@ export default class FullPage {
 	hashArray = [];
 	on = {
 		init: function() {
-			console.log(1);
 		},
 		afterRunEffect: function() {
 			return;
@@ -98,7 +97,9 @@ export default class FullPage {
 		navItems[currentIndex].classList.remove('active');
 		navItems[nextIndex].classList.add('active');
 		const hashUrl = navItems[nextIndex].querySelector('a').getAttribute('fp-hash');
-		window.location.hash = hashUrl;
+		if (hashUrl != 'undefined') {
+			window.location.hash = hashUrl;
+		}
 
 
 		const onAnimateCompleted = (currentSection, nextSection, cb) => {
@@ -154,7 +155,7 @@ export default class FullPage {
 				e.preventDefault();
 				const sectionList = U.qAll(this.selector, this.section);
 				if (this.canBeScrolled) {
-					
+
 					this.canBeScrolled = false;
 					const nextSection = sectionList[index];
 					const currentSection = sectionList[this.currentIndex];
@@ -216,7 +217,9 @@ export default class FullPage {
 				document.querySelector(`[fp-hash="${hashUrl.split('#')[1]}"]`).click();
 			} else {
 				let hashUrl = U.qAll(this.navigator, '.fp-nav-item')[0].querySelector('a').getAttribute('fp-hash');
-				window.location.hash = hashUrl;
+				if (hashUrl != 'undefined') {
+					window.location.hash = hashUrl;
+				}
 			}
 			this.run();
 			this.mouseScrollDown();

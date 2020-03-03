@@ -155,12 +155,16 @@ const sectionVitriTab = () => {
 }
 
 const activeFrame2Section4 = () => {
-	const btnToggle = document.querySelector('#sec-4 .frame-1 .button-toggle');
-	if (btnToggle) {
-		btnToggle.addEventListener('click', () => {
-			btnToggle.classList.toggle('active');
-			document.querySelector('#sec-4 .frame-2').classList.toggle('active');
-			document.querySelector('header .header-nav-icon').classList.toggle('active');
+	const btnToggle1 = document.querySelector('#sec-4 .frame-1 .button-toggle');
+	if (btnToggle1) {
+		btnToggle1.addEventListener('click', () => {
+			document.querySelector('#sec-4 .frame-2').classList.add('active');
+		})
+	}
+	const btnToggle2 = document.querySelector('#sec-4 .frame-2 .button-toggle');
+	if (btnToggle2) {
+		btnToggle2.addEventListener('click', () => {
+			document.querySelector('#sec-4 .frame-2').classList.remove('active');
 		})
 	}
 }
@@ -681,7 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	if (window.innerWidth >= 1025) {
 		ripple1();
-		ripple2();
+		// ripple2();
 	}
 	document.querySelector('body').classList
 	Loading(() => {

@@ -122,22 +122,6 @@
 			}
 		}
 
-		&:before {
-			content: '';
-			position: absolute;
-			height: 1500px;
-			right: 0;
-			width: 110px;
-			background-color: transparent;
-			transform: translateY(-50%);
-			top: 50%;
-		}
-
-		&:hover {
-			opacity: 1;
-			transform: translateX(0) translateY(-50%);
-		}
-
 		@media (min-width: 1610px) {
 			padding: 8px;
 		}
