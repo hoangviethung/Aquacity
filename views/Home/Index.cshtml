@@ -1,592 +1,523 @@
 ﻿@model MainProject.Service.Model.Home.HomeViewModel
 
 <div id="loading">
-    <div class="logo-loader"><img class="svg-image" data-src="/Content/resources/assets/logo.svg" alt=""></div>
-    <div class="progstat-wrapper d-none">Loading:<span id="progstat">0</span>%</div>
-    <div id="progress"></div>
+	<div class="logo-loader"><img class="svg-image" data-src="/Content/resources/assets/logo.svg" alt=""></div>
+	<div class="progstat-wrapper d-none">Loading:<span id="progstat">0</span>%</div>
+	<div id="progress"></div>
 </div>
 <div id="fullpage">
-    <div class="section" id="sec-1" fp-title="Trang chủ">
-        <div class="video">
-            <video class="ofcv" muted autoplay loop playsinline>
-                <source src="/Content/resources/assets/videos/banner.mp4" type="">
-            </video>
-        </div>
-    </div>
-    <div class="section" id="sec-2" fp-title="Mặt bằng">
-        <div class="imgMapCanvas">
-            <div class="map-canvas">
-                <map name="imageMap" id="imageMap">
-                    <area shape="poly" coords="1106, 443, 1086, 491, 1052, 519, 1048, 532, 1047, 561, 1033, 583, 1005, 605, 1000, 621, 1008, 635, 1080, 698, 1104, 712, 1170, 730, 1210, 749, 1246, 776, 1297, 800, 1340, 811, 1375, 814, 1425, 812, 1453, 806, 1485, 791, 1534, 793, 1537, 633, 1503, 477">
-                    <area shape="poly" coords="709, 475, 855, 442, 911, 435, 1052, 438, 1052, 465, 1039, 493, 1000, 520, 994, 539, 985, 552, 988, 564, 968, 585, 943, 596, 916, 600, 892, 609, 824, 597">
-                    <area shape="poly" coords="595, 361, 596, 330, 726, 319, 734, 346, 769, 374, 815, 360, 837, 363, 899, 364, 915, 369, 942, 387, 992, 394, 1016, 406, 1037, 421, 1062, 429, 1106, 426, 1055, 398, 1028, 394, 978, 378, 968, 362, 981, 352, 1044, 349, 1213, 309, 1245, 303, 1298, 279, 1303, 266, 1322, 255, 1342, 252, 1365, 238, 1402, 241, 1477, 380, 1504, 475, 1104, 438, 1046, 434, 911, 431, 852, 439, 705, 472">
-                    <area shape="poly" coords="508, 381, 491, 372, 457, 361, 409, 350, 389, 348, 378, 351, 376, 359, 387, 375, 391, 390, 386, 409, 363, 439, 251, 528, 223, 556, 198, 586, 174, 606, 167, 600, 153, 608, 161, 615, 148, 622, 138, 620, 128, 624, 124, 630, 124, 636, 114, 640, 107, 650, 120, 660, 145, 670, 215, 688, 258, 693, 297, 692, 316, 690, 383, 704, 404, 706, 439, 704, 478, 691, 571, 649, 592, 649, 614, 644, 666, 629, 714, 613, 746, 603, 791, 604, 823, 598, 593, 362">
-                </map>
-                <canvas></canvas>
-            </div>
-            <div class="map-image"><img src="/Content/resources/assets/index/i_2.jpg" usemap="#imageMap"></div>
-        </div>
-        <div class="content">
-            <div class="container">
-                <div class="text">
-                    <h2>Đô thị <b>sinh thái thông minh</b><br>phía Đông TP.HCM</h2><a class="btn btn-discover d-none" href="@Model.OverView">Khám phá ngay</a>
-                </div>
-            </div>
-        </div>
-        <div class="cloud desktop"><img class="lazyload" data-src="/Content/resources/assets/index/cloud.png" alt=""></div>
-    </div>
-    <div class="section" id="sec-3" fp-title="Vị trí">
-        <div class="container mobile">
-            <div class="title-block">
-                <h2 class="main-title center">Vị trí</h2>
-            </div>
-        </div>
-        <div class="frame-1">
-            <div class="video">
-                <video playsinline id="player">
-                    <source src="/Content/resources/assets/videos/vitri.mp4">
-                </video>
-            </div>
-        </div>
-    </div>
-    <div class="section" id="sec-4" fp-title="Sinh thái">
-        <div class="container mobile">
-            <div class="title-block">
-                <h2 class="main-title center">Sinh thái</h2>
-            </div>
-        </div>
-        <div class="frame-1">
-            <div class="img">
-                <img class="lazyload ofcv mobile" data-src="/Content/resources/assets/index/i_4_1.jpg" alt="">
-                <video class="desktop" autoplay loop muted>
-                    <source src="/Content/resources/assets/videos/i_4.mp4">
-                </video>
-            </div>
-            <div class="content">
-                <div class="container">
-                    <div class="text">
-                        <div class="item">
-                            <h3>32KM</h3>
-                            <hr class="goldline">
-                            <p>Đường sông</p>
-                        </div>
-                        <div class="item">
-                            <h3>385HA</h3>
-                            <hr class="goldline">
-                            <p>Diện tích </p>
-                            <p>mặt nước</p>
-                        </div>
-                        <div class="item">
-                            <h3>10.000 - 12.000m<sup>2</sup></h3>
-                            <hr class="goldline">
-                            <p>Vườn Cây cổ thụ</p>
-                        </div>
-                        <div class="item">
-                            <h3>70%</h3>
-                            <hr class="goldline">
-                            <p>diện tích dành cho</p>
-                            <p>mảng xanh và tiện ích chung </p>
-                        </div>
-                        <div class="item">
-                            <h3>20</h3>
-                            <hr class="goldline">
-                            <p>Công viên</p>
-                            <p>chủ đề</p>
-                        </div>
-                        <div class="item">
-                            <h3>385HA</h3>
-                            <hr class="goldline">
-                            <p>Diện tích </p>
-                            <p>mặt nước</p>
-                        </div>
-                        <div class="item">
-                            <h3>10.000 - 12.000m<sup>2</sup></h3>
-                            <hr class="goldline">
-                            <p>Vườn Cây cổ thụ</p>
-                        </div>
-                        <div class="item">
-                            <h3>385HA</h3>
-                            <hr class="goldline">
-                            <p>Diện tích </p>
-                            <p>mặt nước</p>
-                        </div>
-                        <div class="item">
-                            <h3>20</h3>
-                            <hr class="goldline">
-                            <p>Công viên</p>
-                            <p>chủ đề</p>
-                        </div>
-                        <div class="item">
-                            <h3>385HA</h3>
-                            <hr class="goldline">
-                            <p>Diện tích </p>
-                            <p>mặt nước</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="mobile"><a class="btn btn-discover" data-fancybox="sec-4" data-src="#frame-2">Xem thêm</a></div>
-            </div>
-        </div>
-        <div class="button-toggle desktop"><img class="lazyload" data-src="/Content/resources/assets/btn_toggle.png" alt=""></div>
-    </div>
-    <div class="frame-2" id="frame-2">
-        <div class="img"><img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_4_2.jpg" alt=""></div>
-        <div class="text">
-            <h2 class="sub-title grad">Thông minh</h2>
-            <div class="item">
-                <p>Vận hành cuộc sống một</p>
-                <p>cách <b>thông minh </b>qua</p>
-                <p> <b>ứng dụng </b>điện thoại</p>
-                <hr>
-            </div>
-            <div class="item">
-                <p>Hệ thống nước uống</p>
-                <p> <b>tinh khiết </b>cộng đồng</p>
-                <hr>
-            </div>
-            <div class="item">
-                <p>Hệ thống chiếu sáng</p>
-                <p> <b>tự động </b>bằng <b>năng</b></p>
-                <p><b>lượng mặt trời</b></p>
-                <hr>
-            </div>
-        </div>
-    </div>
+	<div class="section" id="sec-1" fp-title="Trang chủ">
+		<div class="video">
+			<video class="ofcv" muted autoplay loop playsinline>
+				<source src="/Content/resources/assets/videos/banner.mp4" type="">
+			</video>
+		</div>
+	</div>
+	<div class="section" id="sec-2" fp-title="Mặt bằng">
+		<div class="imgMapCanvas">
+			<div class="map-canvas"><map name="imageMap" id="imageMap">
+					<area shape="poly" coords="1435, 569, 1097, 538, 1070, 597, 1044, 615, 1038, 636, 1038, 651, 1026, 682, 1002, 697, 992, 712, 1000, 740, 1078, 801, 1099, 814, 1153, 826, 1195, 847, 1267, 889, 1299, 903, 1342, 913, 1399, 916, 1436, 912, 1469, 896, 1486, 888, 1512, 889, 1513, 769, 1486, 598, 1463, 580" href="/Content/resources/assets/the-suite.pdf">
+					<area shape="poly" coords="1378, 333, 1333, 345, 1307, 352, 1288, 374, 1237, 393, 1119, 427, 970, 450, 961, 461, 972, 476, 1003, 490, 1043, 499, 1077, 512, 1100, 526, 1031, 518, 1014, 504, 984, 498, 936, 482, 898, 460, 838, 458, 800, 452, 770, 443, 754, 432, 748, 413, 752, 378, 744, 359, 724, 341, 678, 321, 642, 318, 621, 322, 611, 332, 614, 346, 630, 396, 608, 413, 578, 418, 576, 445, 694, 569, 795, 542, 875, 531, 961, 528, 1038, 529, 1434, 567, 1454, 564, 1471, 556, 1477, 546, 1472, 522, 1472, 500" href="the-elite">
+					<area shape="poly" coords="695, 571, 794, 543, 874, 533, 962, 528, 1037, 529, 1043, 543, 1039, 573, 1019, 600, 986, 629, 989, 640, 978, 642, 979, 661, 967, 677, 937, 696, 907, 699, 885, 709, 832, 704, 812, 696" href="the-grand-villas">
+					<area shape="poly" coords="813, 696, 575, 449, 523, 428, 238, 377, 171, 378, 146, 387, 147, 401, 166, 410, 336, 449, 354, 454, 369, 466, 374, 489, 367, 506, 330, 547, 282, 582, 226, 629, 155, 704, 150, 700, 136, 707, 137, 714, 118, 718, 107, 724, 91, 742, 96, 756, 128, 770, 186, 786, 240, 792, 269, 793, 293, 789, 374, 804, 407, 807, 443, 799, 472, 789, 544, 753, 590, 746, 741, 702" href="the-stella"></map>
+				<canvas></canvas>
+			</div>
+			<div class="map-image"><img class="lazyload" src="/Content/resources/assets/index/i_2.jpg" usemap="#imageMap"></div>
+		</div>
+		<div class="content">
+			<div class="container">
+				<div class="text">
+					<h2>Đô thị <b>sinh thái thông minh</b><br>phía Đông TP.HCM</h2><a class="btn btn-discover d-none" href="@Model.OverView">Khám phá ngay</a>
+				</div>
+			</div>
+		</div>
+		<div class="cloud desktop"><img class="lazyload" data-src="/Content/resources/assets/index/cloud.png" alt=""></div>
+	</div>
+	<div class="section" id="sec-3" fp-title="Vị trí">
+		<div class="container mobile">
+			<div class="title-block">
+				<h2 class="main-title center">Vị trí</h2>
+			</div>
+		</div>
+		<div class="frame-1">
+			<div class="video">
+				<video playsinline id="player">
+					<source src="/Content/resources/assets/videos/vitri.mp4">
+				</video>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="sec-4" fp-title="Sinh thái">
+		<div class="container mobile">
+			<div class="title-block">
+				<h2 class="main-title center">Sinh thái</h2>
+			</div>
+		</div>
+		<div class="frame-1">
+			<div class="img"><img class="lazyload ofcv mobile" data-src="/Content/resources/assets/index/i_4_1.jpg" alt="">
+				<video class="desktop" autoplay loop muted playsinline>
+					<source src="/Content/resources/assets/videos/i_4.mp4">
+				</video>
+			</div>
+			<div class="content">
+				<div class="container">
+					<div class="text">
+						<div class="item">
+							<h3>32KM</h3>
+							<hr class="goldline">
+							<p>Đường sông</p>
+						</div>
+						<div class="item">
+							<h3>385HA</h3>
+							<hr class="goldline">
+							<p>Diện tích </p>
+							<p>mặt nước</p>
+						</div>
+						<div class="item">
+							<h3>10.000 - 12.000m<sup>2</sup></h3>
+							<hr class="goldline">
+							<p>Vườn Cây cổ thụ</p>
+						</div>
+						<div class="item">
+							<h3>70%</h3>
+							<hr class="goldline">
+							<p>diện tích dành cho</p>
+							<p>mảng xanh và tiện ích chung </p>
+						</div>
+						<div class="item">
+							<h3>20</h3>
+							<hr class="goldline">
+							<p>Công viên</p>
+							<p>chủ đề</p>
+						</div>
+						<div class="item">
+							<h3>385HA</h3>
+							<hr class="goldline">
+							<p>Diện tích </p>
+							<p>mặt nước</p>
+						</div>
+						<div class="item">
+							<h3>10.000 - 12.000m<sup>2</sup></h3>
+							<hr class="goldline">
+							<p>Vườn Cây cổ thụ</p>
+						</div>
+						<div class="item">
+							<h3>385HA</h3>
+							<hr class="goldline">
+							<p>Diện tích </p>
+							<p>mặt nước</p>
+						</div>
+						<div class="item">
+							<h3>20</h3>
+							<hr class="goldline">
+							<p>Công viên</p>
+							<p>chủ đề</p>
+						</div>
+						<div class="item">
+							<h3>385HA</h3>
+							<hr class="goldline">
+							<p>Diện tích </p>
+							<p>mặt nước</p>
+						</div>
+					</div>
+					<div class="mobile"><a class="btn btn-discover" data-fancybox="sec-4" data-src="#frame-2">Xem thêm</a></div>
+				</div>
+			</div>
+			<div class="button-toggle desktop"><img class="lazyload" data-src="/Content/Resources/assets/btn_toggle.png" alt=""></div>
+		</div>
+		<div class="frame-2" id="frame-2">
+			<div class="img"><img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_4_2.jpg" alt=""></div>
+			<div class="text">
+				<h2 class="sub-title grad">Thông minh</h2>
+				<div class="item">
+					<p>Vận hành cuộc sống một</p>
+					<p>cách <b>thông minh </b>qua</p>
+					<p> <b>ứng dụng </b>điện thoại</p>
+					<hr>
+				</div>
+				<div class="item">
+					<p>Hệ thống nước uống</p>
+					<p> <b>tinh khiết </b>cộng đồng</p>
+					<hr>
+				</div>
+				<div class="item">
+					<p>Hệ thống chiếu sáng</p>
+					<p> <b>tự động </b>bằng <b>năng</b></p>
+					<p><b>lượng mặt trời</b></p>
+					<hr>
+				</div>
+			</div>
+			<div class="button-toggle desktop"><img class="lazyload" data-src="/Content/Resources/assets/btn_toggle.png" alt=""></div>
+		</div>
+	</div>
+
+	<div class="section" id="sec-5" fp-title="Tiện ích">
+		<div class="imgMapCanvas desktop">
+			<div class="map-canvas">
+				<map name="imageMap2" id="imageMap2"><area shape="circle" coords="724, 537, 18" alt="12" />
+					<area shape="circle" coords="1199, 452, 18" alt="11" />
+					<area shape="circle" coords="342, 527, 18" alt="10" />
+					<area shape="circle" coords="772, 404, 18" alt="10" />
+					<area shape="circle" coords="748, 580, 18" alt="10" />
+					<area shape="circle" coords="1082, 628, 18" alt="10" />
+					<area shape="circle" coords="1360, 657, 18" alt="10" />
+					<area shape="circle" coords="1232, 385, 18" alt="10" />
+					<area shape="circle" coords="1130, 598, 18" alt="9" />
+					<area shape="circle" coords="1270, 620, 18" alt="9" />
+					<area shape="circle" coords="1380, 502, 18" alt="8" />
+					<area shape="circle" coords="1431, 526, 18" alt="7" />
+					<area shape="circle" coords="339, 634, 18" alt="6" />
+					<area shape="circle" coords="400, 459, 18" alt="6" />
+					<area shape="circle" coords="608, 355, 18" alt="6" />
+					<area shape="circle" coords="840, 522, 18" alt="6" />
+					<area shape="circle" coords="1204, 343, 18" alt="6" />
+					<area shape="circle" coords="1220, 758, 18" alt="6" />
+					<area shape="circle" coords="566, 356, 18" alt="5" />
+					<area shape="circle" coords="1142, 357, 18" alt="5" />
+					<area shape="circle" coords="1241, 797, 18" alt="5" />
+					<area shape="circle" coords="1520, 780, 18" alt="4" />
+					<area shape="circle" coords="1137, 460, 18" alt="4" />
+					<area shape="circle" coords="951, 437, 18" alt="3" />
+					<area shape="circle" coords="475, 407, 18" alt="3" />
+					<area shape="circle" coords="543, 608, 18" alt="3" />
+					<area shape="circle" coords="193, 705, 18" alt="3" />
+					<area shape="circle" coords="298, 670, 18" alt="3" />
+					<area shape="circle" coords="1704, 536, 18" alt="2" />
+					<area shape="circle" coords="1100, 445, 18" alt="1" />
+					<area shape="circle" coords="1412, 848, 18" alt="1" />
+					<area shape="circle" coords="362, 727, 18" alt="1" />
+				</map>
+				<canvas></canvas>
+			</div>
+			<div class="map-image"><img src="/Content/resources/assets/index/i_5.jpg" usemap="#imageMap2"></div>
+		</div>
+		<div class="content">
+			<div class="container utilities-title">
+				<div class="title-block">
+					<h2>Tiện ích đa dạng</h2>
+				</div>
+				<div class="utilities-list desktop">
+					<div class="row">
+						<div class="col-6"><a href="/Content/resources/assets/utilities/1.jpg" data-fancybox="utilities_1">
+								<div class="text" data-utilities-target="1">
+									<h3>1 - Đường dạo ven sông</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/2.jpg" data-fancybox="utilities_2">
+								<div class="text" data-utilities-target="2">
+									<h3>2 - Bến du thuyền</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/3.jpg" data-fancybox="utilities_3">
+								<div class="text" data-utilities-target="3">
+									<h3>3 - Công viên xanh</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/4.jpg" data-fancybox="utilities_4">
+								<div class="text" data-utilities-target="4">
+									<h3>4 - Vườn ươm cây</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/5.jpg" data-fancybox="utilities_5">
+								<div class="text" data-utilities-target="5">
+									<h3>5 - Bến thuyền Kayak</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/6.jpg" data-fancybox="utilities_6">
+								<div class="text" data-utilities-target="6">
+									<h3>6 - Clubhouse &amp; hồ bơi</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/7.jpg" data-fancybox="utilities_7">
+								<div class="text" data-utilities-target="7">
+									<h3>7 - Aqua central mall</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/8.jpg" data-fancybox="utilities_8">
+								<div class="text" data-utilities-target="8">
+									<h3>8 - Game center</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/9.jpg" data-fancybox="utilities_9">
+								<div class="text" data-utilities-target="9">
+									<h3>9 - Khu vui chơi trẻ em</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/10.jpg" data-fancybox="utilities_10">
+								<div class="text" data-utilities-target="10">
+									<h3>10 - Trường học các cấp</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/11.jpg" data-fancybox="utilities_11">
+								<div class="text" data-utilities-target="11">
+									<h3>11 - Aqua sport complex</h3>
+								</div></a></div>
+						<div class="col-6"><a href="/Content/resources/assets/utilities/12.jpg" data-fancybox="utilities_12">
+								<div class="text" data-utilities-target="12">
+									<h3>12 - Phòng khám đa khoa quốc tế</h3>
+								</div></a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="content mobile">
+			<div class="container">
+				<div class="utilities-list row">
+					<div class="col-12 desktop">
+						<div class="img"><img class="lazyload" data-src="/Content/resources/assets/index/i_5.jpg" alt=""></div>
+					</div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/1.jpg" data-fancybox="utilities_1">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/1.jpg" alt=""></div>
+							<div class="text">
+								<h3>Đường dạo ven sông</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/2.jpg" data-fancybox="utilities_2">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/2.jpg" alt=""></div>
+							<div class="text">
+								<h3>Bến du thuyền</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/3.jpg" data-fancybox="utilities_3">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/3.jpg" alt=""></div>
+							<div class="text">
+								<h3>Công viên xanh</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/4.jpg" data-fancybox="utilities_4">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/4.jpg" alt=""></div>
+							<div class="text">
+								<h3>Vườn ươm cây</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/5.jpg" data-fancybox="utilities_5">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/5.jpg" alt=""></div>
+							<div class="text">
+								<h3>Bến thuyền Kayak</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/6.jpg" data-fancybox="utilities_6">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/6.jpg" alt=""></div>
+							<div class="text">
+								<h3>Clubhouse &amp; hồ bơi</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/7.jpg" data-fancybox="utilities_7">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/7.jpg" alt=""></div>
+							<div class="text">
+								<h3>Aqua central mall</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/8.jpg" data-fancybox="utilities_8">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/8.jpg" alt=""></div>
+							<div class="text">
+								<h3>Game center</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/9.jpg" data-fancybox="utilities_9">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/9.jpg" alt=""></div>
+							<div class="text">
+								<h3>Khu vui chơi trẻ em</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/10.jpg" data-fancybox="utilities_10">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/10.jpg" alt=""></div>
+							<div class="text">
+								<h3>Trường học các cấp</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/11.jpg" data-fancybox="utilities_11">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/11.jpg" alt=""></div>
+							<div class="text">
+								<h3>Aqua sport complex</h3>
+							</div></a></div>
+					<div class="col-6 col-sm-4"><a href="/Content/resources/assets/utilities/12.jpg" data-fancybox="utilities_12">
+							<div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/12.jpg" alt=""></div>
+							<div class="text">
+								<h3>Phòng khám đa khoa quốc tế</h3>
+							</div></a></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="section" id="sec-6" fp-title="Phân khu">
+		<div class="container">
+			<div class="row no-gutters">
+				@if (Model.TheElite != null)
+				{
+				<div class="col-sm-6">
+					<a class="item" href="@Model.TheElite.GetPrefixUrl()">
+						<div class="img">
+							<img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_6_4.jpg" alt="">
+						</div>
+						<div class="content">
+							<h2>The Elite</h2>
+							<div class="description-box">
+								<p>Tinh Hoa </p>
+								<p>Trong Từng Nhịp Sống</p>
+							</div><span class="btn btn-discover">Khám phá ngay</span>
+						</div>
+					</a>
+				</div>
+				}
+				@if (Model.TheStella != null)
+				{
+				<div class="col-sm-6">
+					<a class="item" href="@Model.TheStella.GetPrefixUrl()">
+						<div class="img"><img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_6_1.jpg" alt=""></div>
+						<div class="content">
+							<h2> <img class="lazyload" data-src="/Content/resources/assets/logo_stella.png" alt=""></h2>
+							<div class="description-box">
+								<p>Sống trọn</p>
+								<p>Bình yên</p>
+							</div><span class="btn btn-discover">Khám phá ngay</span>
+						</div>
+					</a>
+				</div>
+				}
+				@if (Model.TheGrandVillas != null)
+				{
+				<div class="col-sm-6">
+					<a class="item" href="@Model.TheGrandVillas.GetPrefixUrl()">
+						<div class="img"><img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_6_2.jpg" alt=""></div>
+						<div class="content">
+							<h2>The Grand Villas</h2>
+							<div class="description-box">
+								<p>biệt thự đơn lập</p>
+								<p>Xứng tầm đẳng cấp</p>
+							</div><span class="btn btn-discover">Khám phá ngay</span>
+						</div>
+					</a>
+				</div>
+				}
+				<div class="col-sm-6">
+					<a class="item" href="/Content/resources/assets/the-suite.pdf" target="_blank">
+						<div class="img"><img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_6_3.jpg" alt=""></div>
+						<div class="content">
+							<h2>The Suite</h2>
+							<div class="description-box">
+								<p>Sống xanh</p>
+								<p>Thời hiện đại</p>
+							</div><span class="btn btn-discover">Khám phá ngay</span>
+						</div>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="section" id="sec-7" fp-title="Thư viện">
+		<div class="content">
+			<div class="title-block">
+				<h2 class="main-title center">Thư viện</h2>
+			</div>
+			<div class="video-block">
+				<a href="https://www.youtube.com/watch?v=ImXDAdzNX0I" data-fancybox="video">
+					<img src="/Content/resources/assets/index/i_7_1.jpg" alt="">
+					<div class="icon-play"><img class="lazyload" data-src="/Content/resources/assets/btn_play.png" alt=""></div>
+				</a>
+			</div>
+			<div class="video-items">
+				<div class="swiper-prev"><img class="lazyload" data-src="/Content/resources/assets/btn_toggle.png" alt=""></div>
+				<div class="swiper-next"><img class="lazyload" data-src="/Content/resources/assets/btn_toggle.png" alt=""></div>
+				<div class="swiper-container">
+					<div class="swiper-wrapper">
+						@foreach (var item in Model.Videos)
+						{
+						<div class="swiper-slide">
+							<div class="item">
+								<a href="javascript:void(0)" data-href="https://www.youtube.com/watch?v=@item.FilePath">
+									<div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
+									<div class="text">
+										<h3>@item.Name</h3>
+									</div>
+								</a>
+							</div>
+						</div>
+						}
+					</div>
+				</div>
+			</div>
+			<div class="button-wrapper"><a class="btn btn-viewmore" href="@ViewBag.Gallery" title="title">Xem thêm</a></div>
+		</div>
+	</div>
+	<div class="section" id="sec-8" fp-title="Tin tức">
+		<div class="img"><img class="ofcv" src="/Content/resources/assets/index/i_8.jpg" alt=""></div>
+		<div class="content">
+			<div class="container">
+				<div class="title-block">
+					<h2 class="main-title center">Tin tức nổi bật</h2>
+				</div>
+				<div class="news-items">
+					@foreach (var item in Model.Articles)
+					{
+					<div class="news-item">
+						<a target="_blank" href="@item.ExternalUrl">
+							<div class="img"><img class="lazyload" data-src="@item.ImageDefault" alt="@item.Title"></div>
+							<div class="text">
+								<h3>@item.Title</h3>
+							</div>
+							<div class="button-wrapper"><span class="btn btn-readmore">Xem thêm</span></div>
+						</a>
+					</div>
+					}
+				</div>
+				<div class="button-wrapper"><a class="btn btn-viewmore" href="@Model.News" title="title">Xem thêm tin tức</a></div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="sec-9" fp-title="Liên hệ">
+		<div class="img"><img class="ofcv" src="/Content/resources/assets/index/i_9.jpg" alt=""></div>
+		<div class="content">
+			<div class="title-block">
+				<h2 class="title">đăng ký nhận thông tin dự án</h2>
+				<div class="tagline"><img class="lazyload" data-src="/Content/resources/assets/tagline.png" alt=""></div>
+			</div>
+			@Html.Partial("_Form", new MainProject.Service.Model.Contact.ContactManageModel())
+		</div>
+	</div>
+	<div class="section" id="sec-10" fp-title="Thông tin chung">
+		<div class="img"><img class="ofcv" src="/Content/resources/assets/index/i_9.jpg" alt=""></div>
+		<div class="content">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-4">
+						<div class="item">
+							<h3>Nhà phát triển dự án</h3><img class="lazyload" data-src="/Content/resources/assets/logo_novaland.png" alt="">
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="item">
+							<h3>Địa chỉ dự án</h3>
+							<h4 class="txt-grad">Tp. Biên Hòa, Đồng Nai</h4>
+						</div>
+						<div class="item">
+							<h3>Hotline</h3>
+							<div class="hl-item">
+								<p>Tp. Hồ Chí Minh</p>
+								<h4 class="txt-grad">0943 79 79 79</h4>
+							</div>
+							<div class="hl-item">
+								<p>Hà Nội</p>
+								<h4 class="txt-grad">0938 550 808</h4>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="item">
+							<h3>Sàn giao dịch dự án</h3>
+							<div class="pj-item">
+								<p>KHU NHÀ MẪU NOVALAND</p><span>26 Mai Chí Thọ, P. Bình Khánh, Q.2, TP. HCM</span>
+							</div>
+							<div class="pj-item">
+								<p>SÀN GIAO DỊCH HÀM NGHI</p><span>181 Hàm Nghi, P. Nguyễn Thái Bình, Q.1, TP. HCM</span>
+							</div>
+							<div class="pj-item">
+								<p>SÀN GIAO DỊCH CÁCH MẠNG THÁNG 8</p><span>125 CMT8, Q.1, TP. HCM</span>
+							</div>
+							<div class="pj-item">
+								<p>TRUNG TÂM GIAO DỊCH BẤT ĐỘNG SẢN TẠI AQUA CITY</p><span>BIÊN HÒA, ĐỒNG NAI</span>
+							</div>
+							<div class="pj-item">
+								<p>TRUNG TÂM BẤT ĐỘNG SẢN NOVALAND HÀ NỘI</p><span>63-65 Ngô Thì Nhậm, Q.Hai Bà Trưng, Hà Nội</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
-<div class="section" id="sec-5" fp-title="Tiện ích">
-    <div class="imgMapCanvas desktop">
-        <div class="map-canvas">
-            <map name="imageMap2" id="imageMap2">
-                <area shape="circle" alt="1" title="Đường dạo ven sông" coords="1412, 675, 18" target="">
-                <area shape="circle" alt="1" title="Đường dạo ven sông" coords="1113, 288, 18" target="">
-                <area shape="circle" alt="1" title="Đường dạo ven sông" coords="405, 560, 18" target="">
-                <area shape="circle" alt="2" title="Bến du thuyền" coords="1691, 377, 18" target="">
-                <area shape="circle" alt="3" title="Công viên xanh" coords="514, 252, 18" target="">
-                <area shape="circle" alt="3" title="Công viên xanh" coords="343, 506, 18" target="">
-                <area shape="circle" alt="3" title="Công viên xanh" coords="578, 446, 18" target="">
-                <area shape="circle" alt="3" title="Công viên xanh" coords="242, 538, 18" target="">
-                <area shape="circle" alt="3" title="Công viên xanh" coords="969, 281, 18" target="">
-                <area shape="circle" alt="4" title="Vườn ươm cây" coords="1516, 610, 18" target="">
-                <area shape="circle" alt="4" title="Vườn ươm cây" coords="1148, 303, 18" target="">
-                <area shape="circle" alt="5" title="Bến thuyền Kayak" coords="1247, 628, 18" target="">
-                <area shape="circle" alt="5" title="Bến thuyền Kayak" coords="1152, 205, 18" target="">
-                <area shape="circle" alt="5" title="Bến thuyền Kayak" coords="600, 203, 18" target="">
-                <area shape="circle" alt="6" title="Clubhouse &amp; hồ bơi" coords="1227, 590, 18" target="">
-                <area shape="circle" alt="6" title="Clubhouse &amp; hồ bơi" coords="1211, 191, 18" target="">
-                <area shape="circle" alt="6" title="Clubhouse &amp; hồ bơi" coords="862, 364, 18" target="">
-                <area shape="circle" alt="6" title="Clubhouse &amp; hồ bơi" coords="382, 471, 18" target="">
-                <area shape="circle" alt="6" title="Clubhouse &amp; hồ bơi" coords="443, 303, 18" target="">
-                <area shape="circle" alt="6" title="Clubhouse &amp; hồ bơi" coords="641, 203, 18" target="">
-                <area shape="circle" alt="7" title="Aqua central mall" coords="1428, 368, 18" target="">
-                <area shape="circle" alt="8" title="Game center" coords="1385, 347, 18" target="">
-                <area shape="circle" alt="9" title="Khu vui chơi trẻ em" coords="1142, 435, 18" target="">
-                <area shape="circle" alt="9" title="Khu vui chơi trẻ em" coords="1274, 455, 18" target="">
-                <area shape="circle" alt="10" title="Trường học các cấp" coords="1239, 231, 18" target="">
-                <area shape="circle" alt="10" title="Trường học các cấp" coords="1362, 492, 18" target="">
-                <area shape="circle" alt="10" title="Trường học các cấp" coords="1095, 466, 18" target="">
-                <area shape="circle" alt="10" title="Trường học các cấp" coords="797, 251, 18" target="">
-                <area shape="circle" alt="10" title="Trường học các cấp" coords="775, 420, 18" target="">
-                <area shape="circle" alt="10" title="Trường học các cấp" coords="387, 368, 18" target="">
-                <area shape="circle" alt="11" title="Aqua sport complex" coords="1206, 296 , 18" target="">
-                <area shape="circle" alt="12" title="Phòng khám đa khoa quốc tế" coords="751, 379, 18" target="">
-            </map>
-            </map>
-            <canvas></canvas>
-        </div>
-        <div class="map-image"><img src="/Content/resources/assets/index/i_5.jpg" usemap="#imageMap2"></div>
-    </div>
-    <div class="content">
-        <div class="container utilities-title">
-            <div class="title-block">
-                <h2>Tiện ích đa dạng</h2>
-            </div>
-            <div class="utilities-list desktop">
-                <div class="row">
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/1.jpg" data-fancybox="utilities_1">
-                            <div class="text" data-utilities-target="1">
-                                <h3>1 - Đường dạo ven sông</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/2.jpg" data-fancybox="utilities_2">
-                            <div class="text" data-utilities-target="2">
-                                <h3>2 - Bến du thuyền</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/3.jpg" data-fancybox="utilities_3">
-                            <div class="text" data-utilities-target="3">
-                                <h3>3 - Công viên xanh</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/4.jpg" data-fancybox="utilities_4">
-                            <div class="text" data-utilities-target="4">
-                                <h3>4 - Vườn ươm cây</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/5.jpg" data-fancybox="utilities_5">
-                            <div class="text" data-utilities-target="5">
-                                <h3>5 - Bến thuyền Kayak</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/6.jpg" data-fancybox="utilities_6">
-                            <div class="text" data-utilities-target="6">
-                                <h3>6 - Clubhouse &amp; hồ bơi</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/7.jpg" data-fancybox="utilities_7">
-                            <div class="text" data-utilities-target="7">
-                                <h3>7 - Aqua central mall</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/8.jpg" data-fancybox="utilities_8">
-                            <div class="text" data-utilities-target="8">
-                                <h3>8 - Game center</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/9.jpg" data-fancybox="utilities_9">
-                            <div class="text" data-utilities-target="9">
-                                <h3>9 - Khu vui chơi trẻ em</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/10.jpg" data-fancybox="utilities_10">
-                            <div class="text" data-utilities-target="10">
-                                <h3>10 - Trường học các cấp</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/11.jpg" data-fancybox="utilities_11">
-                            <div class="text" data-utilities-target="11">
-                                <h3>11 - Aqua sport complex</h3>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-6">
-                        <a href="/Content/resources/assets/utilities/12.jpg" data-fancybox="utilities_12">
-                            <div class="text" data-utilities-target="12">
-                                <h3>12 - Phòng khám đa khoa quốc tế</h3>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="btn-wrapper"><a class="btn btn-discover" href="#">Tìm hiểu thêm</a></div>
-        </div>
-    </div>
-    <div class="content mobile">
-        <div class="container">
-            <div class="utilities-list row">
-                <div class="col-12 desktop">
-                    <div class="img"><img class="lazyload" data-src="/Content/resources/assets/index/i_5.jpg" alt=""></div>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/1.jpg" data-fancybox="utilities_1">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/1.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Đường dạo ven sông</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/2.jpg" data-fancybox="utilities_2">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/2.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Bến du thuyền</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/3.jpg" data-fancybox="utilities_3">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/3.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Công viên xanh</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/4.jpg" data-fancybox="utilities_4">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/4.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Vườn ươm cây</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/5.jpg" data-fancybox="utilities_5">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/5.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Bến thuyền Kayak</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/6.jpg" data-fancybox="utilities_6">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/6.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Clubhouse &amp; hồ bơi</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/7.jpg" data-fancybox="utilities_7">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/7.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Aqua central mall</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/8.jpg" data-fancybox="utilities_8">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/8.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Game center</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/9.jpg" data-fancybox="utilities_9">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/9.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Khu vui chơi trẻ em</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/10.jpg" data-fancybox="utilities_10">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/10.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Trường học các cấp</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/11.jpg" data-fancybox="utilities_11">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/11.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Aqua sport complex</h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-6 col-sm-4">
-                    <a href="/Content/resources/assets/utilities/12.jpg" data-fancybox="utilities_12">
-                        <div class="img"><img class="lazyload" data-src="/Content/resources/assets/utilities/12.jpg" alt=""></div>
-                        <div class="text">
-                            <h3>Phòng khám đa khoa quốc tế</h3>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section" id="sec-6" fp-title="Phân khu">
-    <div class="container">
-        <div class="row no-gutters">
-            @if (Model.TheElite != null)
-            {
-                <div class="col-sm-6">
-                    <a class="item" href="@Model.TheElite.GetPrefixUrl()">
-                        <div class="img"><img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_6_4.jpg" alt=""></div>
-                        <div class="content">
-                            <h2>The Elite</h2>
-                            <div class="description-box">
-                                <p>Tinh Hoa </p>
-                                <p>Trong Từng Nhịp Sống</p>
-                            </div><span class="btn btn-discover">Khám phá ngay</span>
-                        </div>
-                    </a>
-                </div>
-            }
-            @if (Model.TheStella != null)
-            {
-                <div class="col-sm-6">
-                    <a class="item" href="@Model.TheStella.GetPrefixUrl()">
-                        <div class="img"><img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_6_1.jpg" alt=""></div>
-                        <div class="content">
-                            <h2> <img class="lazyload" data-src="/Content/resources/assets/logo_stella.png" alt=""></h2>
-                            <div class="description-box">
-                                <p>Sống trọn</p>
-                                <p>Bình yên</p>
-                            </div><span class="btn btn-discover">Khám phá ngay</span>
-                        </div>
-                    </a>
-                </div>
-            }
-            @if (Model.TheGrandVillas != null)
-            {
-                <div class="col-sm-6">
-                    <a class="item" href="@Model.TheGrandVillas.GetPrefixUrl()">
-                        <div class="img"><img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_6_2.jpg" alt=""></div>
-                        <div class="content">
-                            <h2>The Grand Villas</h2>
-                            <div class="description-box">
-                                <p>biệt thự đơn lập</p>
-                                <p>Xứng tầm đẳng cấp</p>
-                            </div><span class="btn btn-discover">Khám phá ngay</span>
-                        </div>
-                    </a>
-                </div>
-            }
-            <div class="col-sm-6">
-                <a class="item" href="/Content/resources/assets/the-suite.pdf" target="_blank">
-                    <div class="img"><img class="ofcv lazyload" data-src="/Content/resources/assets/index/i_6_3.jpg" alt=""></div>
-                    <div class="content">
-                        <h2>The Suite</h2>
-                        <div class="description-box">
-                            <p>Sống xanh</p>
-                            <p>Thời hiện đại</p>
-                        </div><span class="btn btn-discover">Khám phá ngay</span>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="section" id="sec-7" fp-title="Thư viện">
-    <div class="content">
-        <div class="title-block">
-            <h2 class="main-title center">Thư viện</h2>
-        </div>
-        <div class="video-block">
-            <a href="https://www.youtube.com/watch?v=ImXDAdzNX0I" data-fancybox="video">
-                <img src="/Content/resources/assets/index/i_7_1.jpg" alt="">
-                <div class="icon-play"><img class="lazyload" data-src="/Content/resources/assets/btn_play.png" alt=""></div>
-            </a>
-        </div>
-        <div class="video-items">
-            <div class="swiper-prev"><img class="lazyload" data-src="/Content/resources/assets/btn_toggle.png" alt=""></div>
-            <div class="swiper-next"><img class="lazyload" data-src="/Content/resources/assets/btn_toggle.png" alt=""></div>
-            <div class="swiper-container">
-                <div class="swiper-wrapper">
-                    @foreach (var item in Model.Videos)
-                    {
-                        <div class="swiper-slide">
-                            <div class="item">
-                                <a href="javascript:void(0)" data-href="https://www.youtube.com/watch?v=@item.FilePath">
-                                    <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
-                                    <div class="text">
-                                        <h3>@item.Name</h3>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    }
-                </div>
-            </div>
-        </div>
-        <div class="button-wrapper"><a class="btn btn-viewmore" href="@ViewBag.Gallery" title="title">Xem thêm</a></div>
-    </div>
-</div>
-<div class="section" id="sec-8" fp-title="Tin tức">
-    <div class="img"><img class="ofcv" src="/Content/resources/assets/index/i_8.jpg" alt=""></div>
-    <div class="content">
-        <div class="container">
-            <div class="title-block">
-                <h2 class="main-title center">Tin tức nổi bật</h2>
-            </div>
-            <div class="news-items">
-                @foreach (var item in Model.Articles)
-                {
-                    <div class="news-item">
-                        <a target="_blank" href="@item.ExternalUrl">
-                            <div class="img"><img class="lazyload" data-src="@item.ImageDefault" alt="@item.Title"></div>
-                            <div class="text">
-                                <h3>@item.Title</h3>
-                            </div>
-                            <div class="button-wrapper"><span class="btn btn-readmore">Xem thêm</span></div>
-                        </a>
-                    </div>
-                }
-            </div>
-            <div class="button-wrapper"><a class="btn btn-viewmore" href="@Model.News" title="title">Xem thêm tin tức</a></div>
-        </div>
-    </div>
-</div>
-<div class="section" id="sec-9" fp-title="Liên hệ">
-    <div class="img"><img class="ofcv" src="/Content/resources/assets/index/i_9.jpg" alt=""></div>
-    <div class="content">
-        <div class="title-block">
-            <h2 class="title">đăng ký nhận thông tin dự án</h2>
-            <div class="tagline"><img class="lazyload" data-src="/Content/resources/assets/tagline.png" alt=""></div>
-        </div>
-        @Html.Partial("_Form", new MainProject.Service.Model.Contact.ContactManageModel())
-    </div>
-</div>
-<div class="section" id="sec-10" fp-title="Thông tin chung">
-    <div class="img"><img class="ofcv" src="/Content/resources/assets/index/i_9.jpg" alt=""></div>
-    <div class="content">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="item">
-                        <h3>Nhà phát triển dự án</h3><img class="lazyload" data-src="/Content/resources/assets/logo_novaland.png" alt="">
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <h3>Địa chỉ dự án</h3>
-                        <h4 class="txt-grad">Tp. Biên Hòa, Đồng Nai</h4>
-                    </div>
-                    <div class="item">
-                        <h3>Hotline</h3>
-                        <div class="hl-item">
-                            <p>Tp. Hồ Chí Minh</p>
-                            <h4 class="txt-grad">0943 79 79 79</h4>
-                        </div>
-                        <div class="hl-item">
-                            <p>Hà Nội</p>
-                            <h4 class="txt-grad">0938 550 808</h4>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="item">
-                        <h3>Sàn giao dịch dự án</h3>
-                        <div class="pj-item">
-                            <p>KHU NHÀ MẪU NOVALAND</p><span>26 Mai Chí Thọ, P. Bình Khánh, Q.2, TP. HCM</span>
-                        </div>
-                        <div class="pj-item">
-                            <p>SÀN GIAO DỊCH HÀM NGHI</p><span>181 Hàm Nghi, P. Nguyễn Thái Bình, Q.1, TP. HCM</span>
-                        </div>
-                        <div class="pj-item">
-                            <p>SÀN GIAO DỊCH CÁCH MẠNG THÁNG 8</p><span>125 CMT8, Q.1, TP. HCM</span>
-                        </div>
-                        <div class="pj-item">
-                            <p>TRUNG TÂM GIAO DỊCH BẤT ĐỘNG SẢN TẠI AQUA CITY</p><span>BIÊN HÒA, ĐỒNG NAI</span>
-                        </div>
-                        <div class="pj-item">
-                            <p>TRUNG TÂM BẤT ĐỘNG SẢN NOVALAND HÀ NỘI</p><span>63-65 Ngô Thì Nhậm, Q.Hai Bà Trưng, Hà Nội</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+
+
 <div id="next-section"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 140" version="1.1" x="0px" y="0px"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g fill="#000000"><path class="mouse-next-section" d="M50,94.5787804 L64.7927304,79.7860499 C65.573779,79.0050013 66.840109,79.0050013 67.6211576,79.7860499 C68.4022061,80.5670985 68.4022061,81.8334285 67.6211576,82.614477 L51.4142136,98.8214211 C51.0236893,99.2119453 50.5118446,99.4072075 50,99.4072075 C49.4881554,99.4072075 48.9763107,99.2119453 48.5857864,98.8214211 L32.3312722,82.566907 C31.5502236,81.7858584 31.5502236,80.5195284 32.3312722,79.7384798 C33.1123208,78.9574313 34.3786508,78.9574313 35.1596993,79.7384798 L50,94.5787804 Z" /><path class="mouse-next-section delay-1" d="M50,94.5787804 L64.7927304,79.7860499 C65.573779,79.0050013 66.840109,79.0050013 67.6211576,79.7860499 C68.4022061,80.5670985 68.4022061,81.8334285 67.6211576,82.614477 L51.4142136,98.8214211 C51.0236893,99.2119453 50.5118446,99.4072075 50,99.4072075 C49.4881554,99.4072075 48.9763107,99.2119453 48.5857864,98.8214211 L32.3312722,82.566907 C31.5502236,81.7858584 31.5502236,80.5195284 32.3312722,79.7384798 C33.1123208,78.9574313 34.3786508,78.9574313 35.1596993,79.7384798 L50,94.5787804 Z" /></g></g></svg></div>
 <div class="mobile" id="btn-register-now">
-    <div class="btn btn-register-now btn-discover">Đăng ký nhận thông tin</div>
+	<div class="btn btn-register-now btn-discover">Đăng ký nhận thông tin</div>
 </div>
 <div class="d-none">
-    <div id="form-register-now"></div>
+	<div id="form-register-now"></div>
 </div>
 <div class="index-page" id="js-page-verify" hidden></div>
