@@ -5,5 +5,12 @@
 	.frame-1
 		//- .container
 		.video
-			video(playsinline id="player")
-				source(src="./assets/videos/vitri.mp4")
+			//- video(playsinline id="player")
+			//- 	source(src="./assets/videos/vitri.mp4")
+			a(data-fancybox="vitri" href="#vitri_video")
+				img(src="./assets/index/vitri_thumbnail.png", alt="")
+				.btn-play
+					img(src="./assets/btn_play.png")
+			.d-none
+				video#vitri_video(controls loop playinsline)
+					source(src="./assets/videos/vitri.mp4")

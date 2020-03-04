@@ -38,16 +38,15 @@
 		.map-image
 			img(src="./assets/index/i_5.jpg", usemap="#imageMap2")
 	.content
-		.container.utilities-title
-			.title-block
-				h2 Tiện ích đa dạng
-			.utilities-list.desktop
-				.row
-					-for(let i =1; i<13; i++)
-						.col-6
-							a(href="./assets/utilities/"+i+".jpg" data-fancybox="utilities_"+i)
-								.text(data-utilities-target=i)
-									h3 #{i} - #{titlePosition[i-1]}
+		.title-block
+			h2 Tiện ích đa dạng
+		.utilities-list.desktop
+			.row
+				-for(let i =1; i<13; i++)
+					.col-6
+						a(href="./assets/utilities/"+i+".jpg")
+							.text(data-utilities-target=i)
+								h3 #{i} - #{titlePosition[i-1]}
 			//- .btn-wrapper
 			//- 	a.btn.btn-discover(href="#") Tìm hiểu thêm
 	.content.mobile

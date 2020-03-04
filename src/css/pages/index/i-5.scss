@@ -4,6 +4,7 @@
 
 	.title-block {
 		padding: 0 5px;
+
 		h2 {
 			text-transform: uppercase;
 			color: map-get($mau, main);
@@ -26,8 +27,14 @@
 
 				h3 {
 					font-weight: 400;
-					color: white;
+					padding-top: 10px;
+					color: map-get($mau, main);
 					font-size: 12px;
+
+					@media (min-width: 1025px) {
+						color: white;
+						padding-top: 0;
+					}
 
 					@media (min-width: 1440px) {
 						font-size: 15px;
@@ -92,15 +99,11 @@
 		align-items: flex-end;
 		display: flex;
 
-		.utilities-title {
-			margin-left: 120px;
-		}
-
 		.utilities-list {
 			display: inline-block;
 			padding: 5px;
-			width: 30%;
-			background-color: rgba(map-get($mau, main), .75);
+			width: 100%;
+			background-color: rgba(map-get($mau, main), .65);
 
 			.row {
 				margin: 0 -5px;
@@ -113,7 +116,7 @@
 
 		.title-block {
 			background-color: rgba(map-get($mau, main), .75);
-			width: 30%;
+			width: 100%;
 
 			h2 {
 				pointer-events: none;
@@ -139,11 +142,7 @@
 			z-index: 1001;
 			top: 85px;
 			left: 0;
-			width: 100%;
-
-			>.container {
-				margin-left: 0;
-			}
+			width: 30%;
 		}
 
 		&.active {

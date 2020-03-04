@@ -48,7 +48,7 @@ const fullpageInit = () => {
 							if (document.querySelector('.section .frame-1 .button-toggle')) {
 								document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
 							}
-							if(document.querySelector('.section .frame-2')){
+							if (document.querySelector('.section .frame-2')) {
 								document.querySelector('.section .frame-2').classList.remove('active');
 							}
 						}
@@ -658,6 +658,27 @@ function fixedNewsRelated() {
 	});
 }
 
+const PhanKhuSlider = () => {
+	return new Swiper('.area-content .swiper-container', {
+		slidesPerView: 1,
+		spaceBetween: 15,
+		loop: true,
+		observeParents: true,
+		observer: true,
+		speed: 1000,
+		navigation: {
+			prevEl: '.area-content .swiper-prev',
+			nextEl: '.area-content .swiper-next'
+		},
+		breakpoints: {
+			1025: {
+				slidesPerView: 1.2,
+				spaceBetween: 30,
+			}
+		}
+	})
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -681,6 +702,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	villasSlider2();
 	galleryImage();
 	brochureSlider();
+	PhanKhuSlider();
 	generateFormLienHeTrangIndex();
 	// newsRelatedSlider();
 	// JS HÙNG
