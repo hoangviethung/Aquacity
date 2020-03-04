@@ -8,16 +8,11 @@ const Loading = () => {
 		let imagesLength = images.length;
 		let counter = 0;
 
-		const showPage = () => {
-			document.querySelector('body').classList.add('show-page');
-		}
-
 		const turnOffLoadingScreen = () => {
 			loading.style.opacity = '0';
 			setTimeout(function() {
 				loading.style.display = 'none';
 				loading.parentNode.removeChild(loading);
-				showPage();
 				resolve();
 			}, 800)
 		};

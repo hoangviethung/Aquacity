@@ -742,6 +742,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		new WOW({
 			offset: 150,
 		}).init();
+		document.querySelector('body').classList.add('show-page');
 		popupFirstTime();
 	});
 	if (!Array.from(document.querySelector('body').classList).includes('index-page')) {
