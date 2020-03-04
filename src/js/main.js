@@ -658,17 +658,15 @@ const popupFirstTime = () => {
 					hash: false,
 					closeExisting: true,
 					afterShow: function(instance, current) {
-						// setTimeout(() => {
-						// 	$.fancybox.close();
-						// }, 8000);
+						setTimeout(() => {
+							$.fancybox.close();
+						}, 8000);
 					},
 				}
 			})
-
 			sessionStorage.setItem('popup', true)
 		}, 3000);
 	}
-
 }
 
 function fixedNewsRelated() {
@@ -729,7 +727,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	brochureSlider();
 	PhanKhuSlider();
 	generateFormLienHeTrangIndex();
-	popupFirstTime();
 	// newsRelatedSlider();
 	// JS HÙNG
 	fixedNewsRelated();
@@ -741,14 +738,15 @@ document.addEventListener('DOMContentLoaded', () => {
 		ripple1();
 		// ripple2();
 	}
-	document.querySelector('body').classList
-	Loading(() => {
+	Loading().then(() => {
 		new WOW({
 			offset: 150,
 		}).init();
+		popupFirstTime();
 	});
 	if (!Array.from(document.querySelector('body').classList).includes('index-page')) {
 		document.querySelector('body').classList.add('show-page');
+		popupFirstTime();
 		new WOW({
 			offset: 150,
 		}).init();

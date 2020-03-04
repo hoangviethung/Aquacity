@@ -12,7 +12,7 @@
                         @foreach (var item in Model.Categories)
                         {
                             <div class="news-item">
-                                <a class="btn btn-readmore" target="_blank" href="@item.GetPrefixUrl()">@item.Title</a>
+                                <a class="btn btn-readmore" href="@item.GetPrefixUrl()">@item.Title</a>
                             </div>
                         }
                     </div>
