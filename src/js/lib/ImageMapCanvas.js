@@ -157,6 +157,30 @@ export default class ImageMapCanvas {
 					this.clearImageMap();
 				})
 			})
+			Array.from(document.querySelectorAll('.utilities-list a')).forEach(item => {
+				item.addEventListener('click', e => {
+					e.preventDefault();
+				})
+			})
+			Array.from(document.querySelectorAll('[data-utilities-target]')).forEach(item => {
+				item.addEventListener('mouseover', () => {
+					const number = item.getAttribute('data-utilities-target');
+					item.classList.add('active')
+					Array.from(document.querySelectorAll(`area[alt="${number}"]`)).forEach(item => {
+						// set style
+						const coords = item.getAttribute('coords');
+						this.canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
+						this.canvasContext.fillStyle = 'rgba(7, 65, 76, .35)';
+						this.canvasContext.lineWidth = 3;
+						this.drawCircle(coords);
+					})
+				})
+
+				item.addEventListener('mouseout', () => {
+					item.classList.remove('active')
+					this.clearImageMap();
+				})
+			})
 		}
 	}
 
