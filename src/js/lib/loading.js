@@ -17,6 +17,7 @@ const Loading = () => {
 			setTimeout(function() {
 				loading.style.display = 'none';
 				loading.parentNode.removeChild(loading);
+				showPage();
 				resolve();
 			}, 800)
 		};
