@@ -1,5 +1,7 @@
 #sec-6 {
 	background: white;
+	display: flex;
+	align-items: center;
 
 	// .row {
 	// 	align-items: flex-end;
@@ -79,8 +81,8 @@
 	// 	}
 	// }
 	>.container {
-		height: 100%;
 	}
+
 
 	.area-content {
 		max-width: 950px;
@@ -90,7 +92,7 @@
 		display: flex;
 		align-items: center;
 		position: relative;
-		padding: 0 35px;
+		padding: 35px;
 
 		.swiper-prev,
 		.swiper-next {
@@ -133,7 +135,6 @@
 
 		@media (min-width: 1025px) {
 			max-width: 1050px;
-			border: 5px solid #b7883d;
 			padding: 0 30px;
 
 			.swiper-prev {

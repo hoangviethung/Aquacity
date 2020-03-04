@@ -1,32 +1,76 @@
 ﻿@model MainProject.Service.Model.Gallery.GalleryViewModel
 
 <div id="fullpage">
-    <section class="section section-brochure-list">
-        <div class="bg-image"><img src="/Content/resources/assets/brochure/b_bg_3.png" alt=""></div>
+    <section class="section section-gallery-video gallery-1" fp-title="Tổng quan dự án">
         <div class="content">
             <div class="title-block">
-                <h2 class="main-title center">Tải về</h2>
+                <h2 class="main-title center">Tổng quan dự án</h2>
             </div>
-            <div class="brochure-slider">
+            <div class="video-slider">
                 <div class="swiper-prev"><img src="/Content/resources/assets/btn_toggle.png"></div>
                 <div class="swiper-next"><img src="/Content/resources/assets/btn_toggle.png"></div>
-                <div class="swiper-container">
+                <div class="swiper-container desktop">
                     <div class="swiper-wrapper">
-                        @foreach (var item in Model.Brochures)
+                        @foreach (var item in Model.Videos1)
                         {
-                            <div class="swiper-slide">
-                                <div class="item">
-                                    <div class="img">
-                                        <div class="img-wrapper"><img src="@item.ResourcePath" alt="@item.Name"></div>
-                                    </div>
-                                    <div class="info">
-                                        <h3> <span>Brochure</span><br><span>@item.Name</span></h3>
-                                    </div>
-                                    <div class="btn-wrapper"><a class="btn btn-readmore" href="@item.FilePath" target="_blank">Tải về</a></div>
+                            <div class="swiper-slide video-item" data-fancybox href="https://www.youtube.com/watch?v=@item.FilePath">
+                                <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
+                                <div class="info">
+                                    <h3>@item.Name</h3>
                                 </div>
+                                <div class="btn-play"></div>
                             </div>
                         }
                     </div>
+                </div>
+                <div class="mobile video-list">
+                    @foreach (var item in Model.Videos1)
+                    {
+                        <div class="video-item" href="https://www.youtube.com/watch?v=@item.FilePath" data-fancybox="v_5">
+                            <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
+                            <div class="info">
+                                <h3>@item.Name</h3>
+                            </div>
+                            <div class="btn-play"></div>
+                        </div>
+                    }
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="section section-gallery-video gallery-1" fp-title="Ý kiến khách hàng">
+        <div class="content">
+            <div class="title-block">
+                <h2 class="main-title center">Ý kiến khách hàng</h2>
+            </div>
+            <div class="video-slider">
+                <div class="swiper-prev"><img src="/Content/resources/assets/btn_toggle.png"></div>
+                <div class="swiper-next"><img src="/Content/resources/assets/btn_toggle.png"></div>
+                <div class="swiper-container desktop">
+                    <div class="swiper-wrapper">
+                        @foreach (var item in Model.Videos2)
+                        {
+                            <div class="swiper-slide video-item" data-fancybox href="https://www.youtube.com/watch?v=@item.FilePath">
+                                <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
+                                <div class="info">
+                                    <h3>@item.Name</h3>
+                                </div>
+                                <div class="btn-play"></div>
+                            </div>
+                        }
+                    </div>
+                </div>
+                <div class="mobile video-list">
+                    @foreach (var item in Model.Videos2)
+                    {
+                        <div class="video-item" href="https://www.youtube.com/watch?v=@item.FilePath" data-fancybox="v_5">
+                            <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
+                            <div class="info">
+                                <h3>@item.Name</h3>
+                            </div>
+                            <div class="btn-play"></div>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
@@ -69,39 +113,32 @@
             </div>
         </div>
     </section>
-    <section class="section section-gallery-video">
+    <section class="section section-brochure-list">
+        <div class="bg-image"><img src="/Content/resources/assets/brochure/b_bg_3.png" alt=""></div>
         <div class="content">
             <div class="title-block">
-                <h2 class="main-title center">Video</h2>
+                <h2 class="main-title center">Tải về</h2>
             </div>
-            <div class="video-slider">
+            <div class="brochure-slider">
                 <div class="swiper-prev"><img src="/Content/resources/assets/btn_toggle.png"></div>
                 <div class="swiper-next"><img src="/Content/resources/assets/btn_toggle.png"></div>
-                <div class="swiper-container desktop">
+                <div class="swiper-container">
                     <div class="swiper-wrapper">
-                        @foreach (var item in Model.Videos)
+                        @foreach (var item in Model.Brochures)
                         {
-                            <div class="swiper-slide video-item" data-fancybox href="https://www.youtube.com/watch?v=@item.FilePath">
-                                <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
-                                <div class="info">
-                                    <h3>@item.Name</h3>
+                            <div class="swiper-slide">
+                                <div class="item">
+                                    <div class="img">
+                                        <div class="img-wrapper"><img src="@item.ResourcePath" alt="@item.Name"></div>
+                                    </div>
+                                    <div class="info">
+                                        <h3> <span>Brochure</span><br><span>@item.Name</span></h3>
+                                    </div>
+                                    <div class="btn-wrapper"><a class="btn btn-readmore" href="@item.FilePath" target="_blank">Tải về</a></div>
                                 </div>
-                                <div class="btn-play"></div>
                             </div>
                         }
                     </div>
-                </div>
-                <div class="mobile video-list">
-                    @foreach (var item in Model.Videos)
-                    {
-                        <div class="video-item" href="https://www.youtube.com/watch?v=@item.FilePath" data-fancybox="v_5">
-                            <div class="img"><img src="@item.ResourcePath" alt="@item.Name"></div>
-                            <div class="info">
-                                <h3>@item.Name</h3>
-                            </div>
-                            <div class="btn-play"></div>
-                        </div>
-                    }
                 </div>
             </div>
         </div>

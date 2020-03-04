@@ -646,6 +646,31 @@ const generateFormLienHeTrangIndex = () => {
 // 	})
 // }
 
+
+const popupFirstTime = () => {
+	const check = sessionStorage.getItem('popup');
+	if (check != 'true') {
+		setTimeout(() => {
+			$.fancybox.open({
+				src: '#popup-first-time',
+				type: 'inline',
+				opts: {
+					hash: false,
+					closeExisting: true,
+					afterShow: function(instance, current) {
+						// setTimeout(() => {
+						// 	$.fancybox.close();
+						// }, 8000);
+					},
+				}
+			})
+
+			sessionStorage.setItem('popup', true)
+		}, 3000);
+	}
+
+}
+
 function fixedNewsRelated() {
 
 	$(window).scroll(function() {
@@ -704,6 +729,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	brochureSlider();
 	PhanKhuSlider();
 	generateFormLienHeTrangIndex();
+	popupFirstTime();
 	// newsRelatedSlider();
 	// JS HÙNG
 	fixedNewsRelated();
