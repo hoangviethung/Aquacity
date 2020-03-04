@@ -568,6 +568,13 @@ main {
 
 #popup-first-time {
 	background-color: transparent;
+
+	a {
+		img {
+			max-width: 750px;
+		}
+	}
+
 	.fancybox-close-small {
 		padding: 5px;
 
