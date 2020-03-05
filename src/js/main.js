@@ -177,6 +177,18 @@ const activeFrame2Section4 = () => {
 
 const sliderSection7 = () => {
 	if (document.getElementById('sec-7')) {
+		const itemFirst = $('#sec-7 .video-items .item').eq(0);
+		console.log(itemFirst);
+		
+		const url = itemFirst.find('a').attr('data-href');
+		const imgUrl = itemFirst.find('.img img').attr('src')
+		console.log(url);
+		console.log(imgUrl);
+		console.log(document.querySelector('#sec-7 .video-block > a'));
+
+		document.querySelector('#sec-7 .video-block > a').setAttribute('href', url);
+		document.querySelector('#sec-7 .video-block > a > img').setAttribute('src', imgUrl);
+
 		return new Swiper('#sec-7 .swiper-container', {
 			slidesPerView: 1,
 			observer: true,
@@ -198,7 +210,7 @@ const sliderSection7 = () => {
 			},
 			on: {
 				init: function() {
-					Array.from(document.querySelectorAll('#sec-7 .video-items .item')).forEach(item => {
+					Array.from(document.querySelectorAll('#sec-7 .video-items .item')).forEach((item, index) => {
 						item.addEventListener('click', () => {
 							const url = item.querySelector('a').getAttribute('data-href');
 							const imgUrl = item.querySelector('.img img').getAttribute('src')
@@ -718,7 +730,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	sectionVitriTab();
 	Area4TabFronts();
 	activeFrame2Section4();
-	sliderSection7();
 	imageMapCanvas();
 	changeMapByTime();
 	villasSlider1();
@@ -730,6 +741,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	// newsRelatedSlider();
 	// JS HÙNG
 	fixedNewsRelated();
+	sliderSection7();
 	if (window.innerWidth < 1025) {
 		customFancybox();
 		customFancybox2();
