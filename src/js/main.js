@@ -178,13 +178,8 @@ const activeFrame2Section4 = () => {
 const sliderSection7 = () => {
 	if (document.getElementById('sec-7')) {
 		const itemFirst = $('#sec-7 .video-items .item').eq(0);
-		console.log(itemFirst);
-		
 		const url = itemFirst.find('a').attr('data-href');
 		const imgUrl = itemFirst.find('.img img').attr('src')
-		console.log(url);
-		console.log(imgUrl);
-		console.log(document.querySelector('#sec-7 .video-block > a'));
 
 		document.querySelector('#sec-7 .video-block > a').setAttribute('href', url);
 		document.querySelector('#sec-7 .video-block > a > img').setAttribute('src', imgUrl);
