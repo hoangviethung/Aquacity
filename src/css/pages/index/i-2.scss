@@ -1,6 +1,14 @@
 #sec-2 {
 	background-image: linear-gradient(-150deg, #e8de8b, #07414c);
-	background-size: 300%;
+	background-size : 300%;
+
+	.slider-index-2 {
+		position        : relative;
+		-ms-flex        : 0 0 100%;
+		-webkit-box-flex: 0;
+		flex            : 0 0 100%;
+		max-width       : 100%;
+	}
 
 	.swiper-container,
 	.swiper-wrapper {
@@ -8,22 +16,23 @@
 	}
 
 	.swiper-slide {
-		display: flex;
+		display    : flex;
+		flex-wrap  : wrap;
 		align-items: center;
 	}
 
 	.swiper-prev,
 	.swiper-next {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		display: flex;
+		position       : absolute;
+		top            : 50%;
+		transform      : translateY(-50%);
+		display        : flex;
 		justify-content: center;
-		align-items: center;
-		z-index: 10;
-		color: map-get($mau, main);
-		border-radius: 5px;
-		cursor: pointer;
+		align-items    : center;
+		z-index        : 10;
+		color          : map-get($mau, main);
+		border-radius  : 5px;
+		cursor         : pointer;
 
 		&.swiper-button-disabled {
 			display: none;
@@ -31,7 +40,7 @@
 	}
 
 	.swiper-prev {
-		left: 100px;
+		left     : 100px;
 		transform: rotate(180deg) translateY(50%);
 	}
 
@@ -39,21 +48,11 @@
 		right: 100px;
 	}
 
-	@media (min-width: 1025px) {
-
-		.swiper-next,
-		.swiper-prev {
-			img {
-				max-height: 80px;
-			}
-		}
-	}
-
 	.imgMapCanvas {
 		width: 100%;
 
 		canvas {
-			width: 100%;
+			width : 100%;
 			height: 100%;
 		}
 	}
@@ -61,46 +60,98 @@
 	@media (max-width: 1024px) {
 		padding: 10px;
 
+		.imgMapCanvas {
+			-ms-flex        : 0 0 100%;
+			-webkit-box-flex: 0;
+			flex            : 0 0 100%;
+			max-width       : 100%;
+		}
+
 		.content {
-			background: map-get($mau, main);
-			padding: 10px 0;
+			-ms-flex        : 0 0 100%;
+			-webkit-box-flex: 0;
+			flex            : 0 0 100%;
+			max-width       : 100%;
+
+			background    : map-get($mau, main);
+			padding       : 10px 0;
 			text-transform: uppercase;
 
 			.text {
 				h2 {
-					color: white;
-					font-size: 20px;
-					font-weight: 400;
+					color         : white;
+					font-size     : 20px;
+					font-weight   : 400;
 					text-transform: uppercase;
 				}
 
 				.btn-discover {
 					margin-top: 10px;
-					padding: 5px 15px;
+					padding   : 5px 15px;
 				}
+			}
+		}
+
+		.swiper-prev {
+			left: 10px;
+		}
+
+		.swiper-next {
+			right: 10px;
+		}
+	}
+
+	@media (max-width: 767.98px) {
+		padding: 0;
+
+		.content {
+			.text {
+				h2 {
+					font-size: 16px;
+				}
+			}
+		}
+
+		.swiper-prev {
+			img {
+				width: 22px;
+			}
+		}
+
+		.swiper-next {
+			img {
+				width: 22px;
 			}
 		}
 	}
 
 	@media (min-width: 1025px) {
 		align-items: center;
-		display: flex;
+		display    : flex;
+
+		.swiper-next,
+		.swiper-prev {
+			img {
+				max-height: 80px;
+			}
+		}
+
 
 		.cloud {
-			width: 100%;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			z-index: 1000;
-			opacity: 0;
-			transform: translateY(100%);
-			height: 125px;
+			width         : 100%;
+			position      : absolute;
+			bottom        : 0;
+			left          : 0;
+			z-index       : 1000;
+			opacity       : 0;
+			transform     : translateY(100%);
+			height        : 125px;
 			pointer-events: none;
-			display: flex;
-			align-items: flex-start;
+			display       : flex;
+			align-items   : flex-start;
 
 			img {
-				width: 100%;
+				width     : 100%;
 				margin-top: -75px;
 			}
 
@@ -111,39 +162,39 @@
 
 		.content {
 			position: absolute;
-			z-index: 1001;
-			bottom: 0;
-			left: 0;
-			width: 100%;
+			z-index : 1001;
+			bottom  : 0;
+			left    : 0;
+			width   : 100%;
 
 			.container {
 				h2 {
-					font-size: 30px;
+					font-size    : 30px;
 					margin-bottom: 15px;
-					color: map-get($mau, main);
+					color        : map-get($mau, main);
 				}
 			}
 
 			.text {
-				width: 45%;
-				position: absolute;
-				bottom: 20px;
-				left: 80px;
-				z-index: 6;
+				width     : 45%;
+				position  : absolute;
+				bottom    : 20px;
+				left      : 80px;
+				z-index   : 6;
 				text-align: center;
 
 				h2 {
-					opacity: 0;
-					font-weight: 400;
-					margin-bottom: 0;
-					transform: translateY(100%);
+					opacity       : 0;
+					font-weight   : 400;
+					margin-bottom : 0;
+					transform     : translateY(100%);
 					text-transform: uppercase;
 				}
 
 				.btn-discover {
-					opacity: 0;
-					height: 45px;
-					padding: 0 40px;
+					opacity  : 0;
+					height   : 45px;
+					padding  : 0 40px;
 					transform: translateY(100%);
 				}
 			}
@@ -151,27 +202,27 @@
 
 		&.active {
 			.cloud {
-				transform: translateY(0);
+				transform : translateY(0);
 				transition: all .5s linear;
-				opacity: .75;
+				opacity   : .75;
 			}
 
 			.text {
 
 				h2 {
-					transform: translateY(0);
-					transition: all .4s linear;
+					transform       : translateY(0);
+					transition      : all .4s linear;
 					transition-delay: .4s;
-					opacity: 1;
+					opacity         : 1;
 				}
 
 				.btn-discover {
-					transform: translateY(0);
-					transition-duration: .4s;
+					transform                 : translateY(0);
+					transition-duration       : .4s;
 					transition-timing-function: linear;
-					transition-property: transform, opacity;
-					transition-delay: .6s, .6s;
-					opacity: 1;
+					transition-property       : transform, opacity;
+					transition-delay          : .6s, .6s;
+					opacity                   : 1;
 				}
 			}
 		}
