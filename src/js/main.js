@@ -730,13 +730,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		ripple1();
 		// ripple2();
 	}
-	Loading().then(() => {
-		new WOW({
-			offset: 150,
-		}).init();
-		document.querySelector('body').classList.add('show-page');
-		popupFirstTime();
-	});
+	// Loading().then(() => {
+	// 	new WOW({
+	// 		offset: 150,
+	// 	}).init();
+	// 	document.querySelector('body').classList.add('show-page');
+	// 	popupFirstTime();
+	// });
 	if (!Array.from(document.querySelector('body').classList).includes('index-page')) {
 		document.querySelector('body').classList.add('show-page');
 		popupFirstTime();
