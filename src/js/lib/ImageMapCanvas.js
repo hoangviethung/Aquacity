@@ -71,6 +71,8 @@ export default function() {
 							}
 						})
 						// set class active
+						console.log(mapElement.closest('.imagemap-with-list').querySelector(`[data-utilities-target="${e.target.alt}"]`));
+						
 						mapElement.closest('.imagemap-with-list').querySelector(`[data-utilities-target="${e.target.alt}"]`).classList.add('active')
 					});
 					area.addEventListener('mouseout', (e) => {
@@ -102,13 +104,11 @@ export default function() {
 				}
 			})
 
-
-
 			Array.from(document.querySelectorAll('[data-utilities-target]')).forEach(textItem => {
 				textItem.addEventListener('mouseenter', () => {
 					const alt = textItem.getAttribute('data-utilities-target');
 					textItem.classList.add('active')
-					Array.from(document.querySelectorAll(`area[alt="${alt}"]`)).forEach(area => {
+					Array.from(mapElement.querySelectorAll(`area[alt="${alt}"]`)).forEach(area => {
 						const shape = area.getAttribute('shape');
 						const coords = area.getAttribute('coords');
 						const coordsRef = coords.split(",");

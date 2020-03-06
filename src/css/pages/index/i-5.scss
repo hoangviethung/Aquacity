@@ -1,6 +1,12 @@
 #sec-5 {
-	background-image: linear-gradient(-150deg, #e8de8b, #07414c);
 	background-size: 300%;
+
+	.desktop-content {
+		-ms-flex: 0 0 100%;
+		-webkit-box-flex: 0;
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
 
 	.swiper-container,
 	.swiper-wrapper {
@@ -8,8 +14,10 @@
 	}
 
 	.swiper-slide {
-		display: flex;
-		align-items: center;
+		@media (min-width: 1025px) {
+			align-items: center;
+			display: flex;
+		}
 	}
 
 	.swiper-prev,
@@ -52,6 +60,12 @@
 		padding: 10px 0;
 		background: white;
 
+		a {
+			.img {
+				padding-bottom: 10px;
+			}
+		}
+
 		.text {
 			flex: 0 0 100%;
 			max-width: 100%;
@@ -59,7 +73,6 @@
 
 			h3 {
 				font-weight: 400;
-				padding-top: 10px;
 				color: map-get($mau, main);
 				font-size: 12px;
 
@@ -114,6 +127,7 @@
 			a {
 				padding: 5px;
 				box-shadow: 0 0 5px rgba(map-get($mau, main), .5);
+				display: block;
 			}
 		}
 
@@ -127,8 +141,9 @@
 	}
 
 	@media (min-width: 1025px) {
-		align-items: flex-end;
+		align-items: center;
 		display: flex;
+		background-image: linear-gradient(-150deg, #e8de8b, #07414c);
 
 		.swiper-next,
 		.swiper-prev {
@@ -214,9 +229,22 @@
 			left: 135px;
 		}
 
-		.content {
-			top: 100px;
+		.slide-2 {
+			.content {
+				top: 100px;
+				left: 0;
+			}
 		}
+
+		// .slide-1 {
+		// 	.content {
+		// 		bottom: 40px;
+		// 		left: 90px;
+		// 	}
+		// }
+
+		// .content {
+		// }
 	}
 
 	@media (min-width: 1200px) {

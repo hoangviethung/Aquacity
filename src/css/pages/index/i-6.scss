@@ -3,87 +3,6 @@
 	display: flex;
 	align-items: center;
 
-	// .row {
-	// 	align-items: flex-end;
-
-	// 	@media (min-width: 1025px) {
-	// 		.col-sm-6 {
-
-	// 			&:nth-child(odd) {
-	// 				padding-right: 10px;
-	// 				transform: translateX(-20px);
-	// 				opacity: 0;
-	// 				transition: all .5s linear;
-
-	// 				.item {
-	// 					.content {
-	// 						align-items: flex-start;
-	// 						border-left: 3px solid map-get($mau, main-2);
-	// 					}
-
-	// 					.description-box {
-	// 						background: linear-gradient(90deg, rgba(7, 65, 76, 1) 0%, rgba(7, 65, 76, 1) 45%, rgba(7, 65, 76, 0.7) 60%, rgba(7, 65, 76, 0) 75%);
-	// 						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#07414c", endColorstr="#07414c", GradientType=1);
-	// 					}
-	// 				}
-
-	// 				@media (min-width: 1200px) {
-	// 					padding-right: 15px;
-	// 				}
-
-	// 				@media (min-width: 1460px) {
-	// 					padding-right: 20px;
-	// 				}
-
-	// 				@media (min-width: 1610px) {
-	// 					padding-right: 25px;
-	// 				}
-	// 			}
-
-	// 			&:nth-child(even) {
-	// 				padding-left: 10px;
-	// 				transform: translateX(20px);
-	// 				opacity: 0;
-	// 				transition: all .5s linear;
-
-	// 				.item {
-	// 					text-align: right;
-
-	// 					.content {
-	// 						align-items: flex-end;
-	// 						border-right: 3px solid map-get($mau, main-2);
-	// 					}
-
-	// 					.description-box {
-	// 						background: linear-gradient(270deg, rgba(7, 65, 76, 1) 0%, rgba(7, 65, 76, 1) 35%, rgba(7, 65, 76, 0.7) 50%, rgba(7, 65, 76, 0) 65%);
-	// 						filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#07414c", endColorstr="#07414c", GradientType=1);
-	// 					}
-	// 				}
-
-	// 				@media (min-width: 1200px) {
-	// 					padding-left: 15px;
-	// 				}
-
-	// 				@media (min-width: 1460px) {
-	// 					padding-left: 20px;
-	// 				}
-
-	// 				@media (min-width: 1610px) {
-	// 					padding-left: 25px;
-	// 				}
-	// 			}
-
-	// 			&:nth-child(3),
-	// 			&:nth-child(4) {
-	// 				margin-top: 30px;
-	// 			}
-	// 		}
-	// 	}
-	// }
-	>.container {
-	}
-
-
 	.area-content {
 		max-width: 950px;
 		width: 100%;
@@ -92,7 +11,11 @@
 		display: flex;
 		align-items: center;
 		position: relative;
-		padding: 35px;
+		padding: 0 35px;
+
+		@media (min-width: 1025px) {
+			padding: 35px;
+		}
 
 		.swiper-prev,
 		.swiper-next {
