@@ -45,9 +45,10 @@ export default function() {
 						const alt = area.getAttribute('alt');
 						canvasContext.lineWidth = 3;
 						canvasContext.fillStyle = 'rgba(7, 65, 76,.4)';
-						Array.from(document.querySelectorAll(`area[alt="${alt}"]`)).forEach(item => {
+						Array.from(mapElement.querySelectorAll(`area[alt="${alt}"]`)).forEach(item => {
 							const coords = item.getAttribute('coords');
 							const coordsRef = coords.split(",");
+							console.log(coordsRef);
 							if (shape === 'poly') {
 								canvasContext.strokeStyle = '#e8de8b';
 								canvasContext.beginPath();
@@ -71,8 +72,6 @@ export default function() {
 							}
 						})
 						// set class active
-						console.log(mapElement.closest('.imagemap-with-list').querySelector(`[data-utilities-target="${e.target.alt}"]`));
-						
 						mapElement.closest('.imagemap-with-list').querySelector(`[data-utilities-target="${e.target.alt}"]`).classList.add('active')
 					});
 					area.addEventListener('mouseout', (e) => {
@@ -128,6 +127,7 @@ export default function() {
 							canvasContext.fill();
 						}
 						if (shape === 'circle') {
+							
 							canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
 							canvasContext.beginPath();
 							canvasContext.arc(coordsRef[0], coordsRef[1], coordsRef[2], 0, 2 * Math.PI);
