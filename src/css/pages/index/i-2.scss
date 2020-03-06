@@ -2,8 +2,60 @@
 	background-image: linear-gradient(-150deg, #e8de8b, #07414c);
 	background-size: 300%;
 
+	.swiper-container,
+	.swiper-wrapper {
+		height: 100%;
+	}
+
+	.swiper-slide {
+		display: flex;
+		align-items: center;
+	}
+
+	.swiper-prev,
+	.swiper-next {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 10;
+		color: map-get($mau, main);
+		border-radius: 5px;
+		cursor: pointer;
+
+		&.swiper-button-disabled {
+			display: none;
+		}
+	}
+
+	.swiper-prev {
+		left: 100px;
+		transform: rotate(180deg) translateY(50%);
+	}
+
+	.swiper-next {
+		right: 100px;
+	}
+
+	@media (min-width: 1025px) {
+
+		.swiper-next,
+		.swiper-prev {
+			img {
+				max-height: 80px;
+			}
+		}
+	}
+
 	.imgMapCanvas {
 		width: 100%;
+
+		canvas {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	@media (max-width: 1024px) {

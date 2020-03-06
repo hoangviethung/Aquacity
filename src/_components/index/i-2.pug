@@ -1,21 +1,46 @@
 .section#sec-2(fp-title="Mặt bằng")
-	.imgMapCanvas
-		.map-canvas
-			map(name="imageMap", id="imageMap")
-				area(shape='poly', coords='1435, 569, 1097, 538, 1070, 597, 1044, 615, 1038, 636, 1038, 651, 1026, 682, 1002, 697, 992, 712, 1000, 740, 1078, 801, 1099, 814, 1153, 826, 1195, 847, 1267, 889, 1299, 903, 1342, 913, 1399, 916, 1436, 912, 1469, 896, 1486, 888, 1512, 889, 1513, 769, 1486, 598, 1463, 580' href="/Content/resources/assets/the-suite.pdf")
-				area(shape='poly', coords='1378, 333, 1333, 345, 1307, 352, 1288, 374, 1237, 393, 1119, 427, 970, 450, 961, 461, 972, 476, 1003, 490, 1043, 499, 1077, 512, 1100, 526, 1031, 518, 1014, 504, 984, 498, 936, 482, 898, 460, 838, 458, 800, 452, 770, 443, 754, 432, 748, 413, 752, 378, 744, 359, 724, 341, 678, 321, 642, 318, 621, 322, 611, 332, 614, 346, 630, 396, 608, 413, 578, 418, 576, 445, 694, 569, 795, 542, 875, 531, 961, 528, 1038, 529, 1434, 567, 1454, 564, 1471, 556, 1477, 546, 1472, 522, 1472, 500' href="the-elite")
-				area(shape='poly', coords='695, 571, 794, 543, 874, 533, 962, 528, 1037, 529, 1043, 543, 1039, 573, 1019, 600, 986, 629, 989, 640, 978, 642, 979, 661, 967, 677, 937, 696, 907, 699, 885, 709, 832, 704, 812, 696' href="the-grand-villas")
-				area(shape='poly', coords='813, 696, 575, 449, 523, 428, 238, 377, 171, 378, 146, 387, 147, 401, 166, 410, 336, 449, 354, 454, 369, 466, 374, 489, 367, 506, 330, 547, 282, 582, 226, 629, 155, 704, 150, 700, 136, 707, 137, 714, 118, 718, 107, 724, 91, 742, 96, 756, 128, 770, 186, 786, 240, 792, 269, 793, 293, 789, 374, 804, 407, 807, 443, 799, 472, 789, 544, 753, 590, 746, 741, 702' href="the-stella")
-			canvas
-		.map-image
-			img.lazyload(src="./assets/index/i_2.jpg", usemap="#imageMap")
-	.content
-		.container
-			.text
-				h2 Đô thị 
-					b sinh thái thông minh
-					br
-					| phía Đông TP.HCM
-				a.btn.btn-discover.d-none(href='utilities.html') Khám phá ngay
-	.cloud.desktop
-		img.lazyload(data-src="./assets/index/cloud.png", alt="")
+	.swiper-prev
+		img.lazyload(data-src="./assets/btn_toggle.png", alt="")
+	.swiper-next
+		img.lazyload(data-src="./assets/btn_toggle.png", alt="")
+	.swiper-container
+		.swiper-wrapper
+			.swiper-slide
+				.imgMapCanvas(data-canvas="fill")
+					.map-canvas
+						map(name="imgMap_1", id="imgMap_1")
+							area(shape="poly" coords="1234, 544, 1163, 541, 826, 719, 835, 827, 859, 865, 914, 910, 959, 927, 1010, 924, 1036, 905, 1152, 886, 1179, 894, 1238, 882, 1326, 831, 1397, 828, 1413, 836, 1426, 833, 1551, 878, 1589, 878, 1590, 861, 1574, 833, 1598, 800, 1625, 795, 1635, 784, 1629, 765, 1612, 738, 1264, 557, 1260, 525, 1254, 520, 1237, 533")
+						canvas
+					.map-image
+						img(src="./assets/index/i_2_1.png", usemap="#imgMap_1")
+				.content
+					.container
+						.text
+							h2 Đô thị 
+								b sinh thái thông minh
+								br
+								| phía Đông TP.HCM
+							a.btn.btn-discover.d-none(href='utilities.html') Khám phá ngay
+				.cloud.desktop
+					img.lazyload(data-src="./assets/index/cloud.png", alt="")
+			.swiper-slide
+				.imgMapCanvas(data-canvas="fill")
+					.map-canvas
+						map(name="imgMap_2", id="imgMap_2")
+							area(shape='poly', coords='1435, 569, 1097, 538, 1070, 597, 1044, 615, 1038, 636, 1038, 651, 1026, 682, 1002, 697, 992, 712, 1000, 740, 1078, 801, 1099, 814, 1153, 826, 1195, 847, 1267, 889, 1299, 903, 1342, 913, 1399, 916, 1436, 912, 1469, 896, 1486, 888, 1512, 889, 1513, 769, 1486, 598, 1463, 580' href="/Content/resources/assets/the-suite.pdf")
+							area(shape='poly', coords='1378, 333, 1333, 345, 1307, 352, 1288, 374, 1237, 393, 1119, 427, 970, 450, 961, 461, 972, 476, 1003, 490, 1043, 499, 1077, 512, 1100, 526, 1031, 518, 1014, 504, 984, 498, 936, 482, 898, 460, 838, 458, 800, 452, 770, 443, 754, 432, 748, 413, 752, 378, 744, 359, 724, 341, 678, 321, 642, 318, 621, 322, 611, 332, 614, 346, 630, 396, 608, 413, 578, 418, 576, 445, 694, 569, 795, 542, 875, 531, 961, 528, 1038, 529, 1434, 567, 1454, 564, 1471, 556, 1477, 546, 1472, 522, 1472, 500' href="the-elite")
+							area(shape='poly', coords='695, 571, 794, 543, 874, 533, 962, 528, 1037, 529, 1043, 543, 1039, 573, 1019, 600, 986, 629, 989, 640, 978, 642, 979, 661, 967, 677, 937, 696, 907, 699, 885, 709, 832, 704, 812, 696' href="the-grand-villas")
+							area(shape='poly', coords='813, 696, 575, 449, 523, 428, 238, 377, 171, 378, 146, 387, 147, 401, 166, 410, 336, 449, 354, 454, 369, 466, 374, 489, 367, 506, 330, 547, 282, 582, 226, 629, 155, 704, 150, 700, 136, 707, 137, 714, 118, 718, 107, 724, 91, 742, 96, 756, 128, 770, 186, 786, 240, 792, 269, 793, 293, 789, 374, 804, 407, 807, 443, 799, 472, 789, 544, 753, 590, 746, 741, 702' href="the-stella")
+						canvas
+					.map-image
+						img(src="./assets/index/i_2.jpg", usemap="#imgMap_2")
+				.content
+					.container
+						.text
+							h2 Đô thị 
+								b sinh thái thông minh
+								br
+								| phía Đông TP.HCM
+							a.btn.btn-discover.d-none(href='utilities.html') Khám phá ngay
+				.cloud.desktop
+					img.lazyload(data-src="./assets/index/cloud.png", alt="")

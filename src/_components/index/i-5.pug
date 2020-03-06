@@ -1,64 +1,103 @@
 .section#sec-5(fp-title="Tiện ích")
-	.imgMapCanvas.desktop
-		.map-canvas
-			map(name="imageMap2", id="imageMap2")
-				<area shape="circle" coords="724, 537, 18" alt="12" />
-				<area shape="circle" coords="1199, 452, 18" alt="11" />
-				<area shape="circle" coords="342, 527, 18" alt="10" />
-				<area shape="circle" coords="772, 404, 18" alt="10" />
-				<area shape="circle" coords="748, 580, 18" alt="10" />
-				<area shape="circle" coords="1082, 628, 18" alt="10" />
-				<area shape="circle" coords="1360, 657, 18" alt="10" />
-				<area shape="circle" coords="1232, 385, 18" alt="10" />
-				<area shape="circle" coords="1130, 598, 18" alt="9" />
-				<area shape="circle" coords="1270, 620, 18" alt="9" />
-				<area shape="circle" coords="1380, 502, 18" alt="8" />
-				<area shape="circle" coords="1431, 526, 18" alt="7" />
-				<area shape="circle" coords="339, 634, 18" alt="6" />
-				<area shape="circle" coords="400, 459, 18" alt="6" />
-				<area shape="circle" coords="608, 355, 18" alt="6" />
-				<area shape="circle" coords="840, 522, 18" alt="6" />
-				<area shape="circle" coords="1204, 343, 18" alt="6" />
-				<area shape="circle" coords="1220, 758, 18" alt="6" />
-				<area shape="circle" coords="566, 356, 18" alt="5" />
-				<area shape="circle" coords="1142, 357, 18" alt="5" />
-				<area shape="circle" coords="1241, 797, 18" alt="5" />
-				<area shape="circle" coords="1520, 780, 18" alt="4" />
-				<area shape="circle" coords="1137, 460, 18" alt="4" />
-				<area shape="circle" coords="951, 437, 18" alt="3" />
-				<area shape="circle" coords="475, 407, 18" alt="3" />
-				<area shape="circle" coords="543, 608, 18" alt="3" />
-				<area shape="circle" coords="193, 705, 18" alt="3" />
-				<area shape="circle" coords="298, 670, 18" alt="3" />
-				<area shape="circle" coords="1704, 536, 18" alt="2" />
-				<area shape="circle" coords="1100, 445, 18" alt="1" />
-				<area shape="circle" coords="1412, 848, 18" alt="1" />
-				<area shape="circle" coords="362, 727, 18" alt="1" />
-			canvas
-		.map-image
-			img(src="./assets/index/i_5.jpg", usemap="#imageMap2")
-	.content
-		.title-block
-			h2 Tiện ích đa dạng
-		.utilities-list.desktop
-			.row
-				-for(let i =1; i<13; i++)
-					.col-6
-						a(href="./assets/utilities/"+i+".jpg")
-							.text(data-utilities-target=i)
-								h3 #{i} - #{titlePosition[i-1]}
-			//- .btn-wrapper
-			//- 	a.btn.btn-discover(href="#") Tìm hiểu thêm
-	.content.mobile
-		.container
-			.utilities-list.row
-				.col-12.desktop
-					.img
-						img.lazyload(data-src="./assets/index/i_5.jpg", alt="")
-				-for(let i =1; i<13; i++)
-					.col-6.col-sm-4
-						a(href="./assets/utilities/"+i+".jpg" data-fancybox="utilities_"+i)
-							.img
-								img.lazyload(data-src="./assets/utilities/"+i+".jpg", alt="")
-							.text
-								h3= titlePosition[i-1]
+	.swiper-prev
+		img.lazyload(data-src="./assets/btn_toggle.png", alt="")
+	.swiper-next
+		img.lazyload(data-src="./assets/btn_toggle.png", alt="")
+	.swiper-container
+		.swiper-wrapper
+			.swiper-slide.imagemap-with-list.slide-1
+				.imgMapCanvas.desktop(data-canvas="label")
+					.map-canvas
+						map(name="imgMap_3", id="imgMap_3")
+						canvas
+					.map-image
+						img(src="./assets/index/i_5_1.png", usemap="#imgMap_3")
+				.content
+					.title-block
+						h2 Tiện ích đa dạng
+					.utilities-list.desktop
+						.row
+							-for(let i =1; i<13; i++)
+								.col-6
+									.text(data-utilities-target=i)
+										h3 #{i} - #{titlePosition[i-1]}
+						//- .btn-wrapper
+						//- 	a.btn.btn-discover(href="#") Tìm hiểu thêm
+				.content.mobile
+					.container
+						.utilities-list.row
+							.col-12.desktop
+								.img
+									img.lazyload(data-src="./assets/index/i_5_1.png", alt="")
+							-for(let i =1; i<13; i++)
+								.col-6.col-sm-4
+									a(href="./assets/utilities/"+i+".jpg" data-fancybox="utilities_"+i)
+										.img
+											img.lazyload(data-src="./assets/utilities/"+i+".jpg", alt="")
+										.text
+											h3= titlePosition[i-1]
+
+			.swiper-slide.imagemap-with-list.slide-2
+				.imgMapCanvas.desktop(data-canvas="label")
+					.map-canvas
+						map(name="imgMap_4", id="imgMap_4")
+							<area shape="circle" coords="724, 537, 18" alt="12" />
+							<area shape="circle" coords="1199, 452, 18" alt="11" />
+							<area shape="circle" coords="342, 527, 18" alt="10" />
+							<area shape="circle" coords="772, 404, 18" alt="10" />
+							<area shape="circle" coords="748, 580, 18" alt="10" />
+							<area shape="circle" coords="1082, 628, 18" alt="10" />
+							<area shape="circle" coords="1360, 657, 18" alt="10" />
+							<area shape="circle" coords="1232, 385, 18" alt="10" />
+							<area shape="circle" coords="1130, 598, 18" alt="9" />
+							<area shape="circle" coords="1270, 620, 18" alt="9" />
+							<area shape="circle" coords="1380, 502, 18" alt="8" />
+							<area shape="circle" coords="1431, 526, 18" alt="7" />
+							<area shape="circle" coords="339, 634, 18" alt="6" />
+							<area shape="circle" coords="400, 459, 18" alt="6" />
+							<area shape="circle" coords="608, 355, 18" alt="6" />
+							<area shape="circle" coords="840, 522, 18" alt="6" />
+							<area shape="circle" coords="1204, 343, 18" alt="6" />
+							<area shape="circle" coords="1220, 758, 18" alt="6" />
+							<area shape="circle" coords="566, 356, 18" alt="5" />
+							<area shape="circle" coords="1142, 357, 18" alt="5" />
+							<area shape="circle" coords="1241, 797, 18" alt="5" />
+							<area shape="circle" coords="1520, 780, 18" alt="4" />
+							<area shape="circle" coords="1137, 460, 18" alt="4" />
+							<area shape="circle" coords="951, 437, 18" alt="3" />
+							<area shape="circle" coords="475, 407, 18" alt="3" />
+							<area shape="circle" coords="543, 608, 18" alt="3" />
+							<area shape="circle" coords="193, 705, 18" alt="3" />
+							<area shape="circle" coords="298, 670, 18" alt="3" />
+							<area shape="circle" coords="1704, 536, 18" alt="2" />
+							<area shape="circle" coords="1100, 445, 18" alt="1" />
+							<area shape="circle" coords="1412, 848, 18" alt="1" />
+							<area shape="circle" coords="362, 727, 18" alt="1" />
+						canvas
+					.map-image
+						img(src="./assets/index/i_5.jpg", usemap="#imgMap_4")
+				.content
+					.title-block
+						h2 Tiện ích đa dạng
+					.utilities-list.desktop
+						.row
+							-for(let i =1; i<13; i++)
+								.col-6
+									a(href="./assets/utilities/"+i+".png" data-fancybox="utilities_2_"+i)
+										.text(data-utilities-target=i)
+											h3 #{i} - #{titlePosition[i-1]}
+						//- .btn-wrapper
+						//- 	a.btn.btn-discover(href="#") Tìm hiểu thêm
+				.content.mobile
+					.container
+						.utilities-list.row
+							.col-12.desktop
+								.img
+									img.lazyload(data-src="./assets/index/i_5.jpg", alt="")
+							-for(let i =1; i<13; i++)
+								.col-6.col-sm-4
+									a(href="./assets/utilities/"+i+".jpg" data-fancybox="utilities_"+i)
+										.img
+											img.lazyload(data-src="./assets/utilities/"+i+".jpg", alt="")
+										.text
+											h3= titlePosition[i-1]

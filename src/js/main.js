@@ -220,19 +220,6 @@ const sliderSection7 = () => {
 	}
 }
 
-const imageMapCanvas = () => {
-	const imageMap_1 = new ImageMapCanvas('#sec-2 .imgMapCanvas');
-	const imageMap_2 = new ImageMapCanvas('#sec-5 .imgMapCanvas');
-	imageMap_2.customLabel();
-
-	// Custom Canvas
-	const imageMap_3 = new ImageMapCanvas('.area-2 .imgMapCanvas');
-	const imageMap_4 = new ImageMapCanvas('.area-3 .imgMapCanvas');
-
-	const imageMap_5 = new ImageMapCanvas('.villas-2 .imgMapCanvas');
-	const imageMap_6 = new ImageMapCanvas('.villas-3 .imgMapCanvas');
-}
-
 const changeMapByTime = () => {
 	const section3 = document.getElementById('sec-3');
 	if (section3) {
@@ -616,44 +603,6 @@ const generateFormLienHeTrangIndex = () => {
 	// }, 62000);
 }
 
-// const newsRelatedSlider = () => {
-
-// 	if (window.innerWidth > 1024) {
-// 		const swiperContainer = document.createElement('div');
-// 		const swiperWrapper = document.createElement('div');
-// 		swiperContainer.classList.add('swiper-container');
-// 		swiperWrapper.classList.add('swiper-wrapper');
-
-// 		const newsItems = Array.from(document.querySelectorAll('.news-related .news-item'));
-// 		const newsItemsWrapper = document.querySelector('.news-related .news-items');
-// 		newsItems.forEach(item => {
-// 			const swiperSlide = document.createElement('div');
-// 			swiperSlide.classList.add('swiper-slide');
-// 			swiperSlide.append(item);
-// 			swiperWrapper.appendChild(swiperSlide);
-// 		})
-// 		swiperContainer.appendChild(swiperWrapper);
-// 		if (newsItemsWrapper) {
-// 			newsItemsWrapper.appendChild(swiperContainer);
-// 		}
-// 	}
-// 	return new Swiper('.news-related .swiper-container', {
-// 		slidesPerView: 4,
-// 		loop: true,
-// 		spaceBetween: 15,
-// 		navigation: {
-// 			prevEl: '.news-related .swiper-prev',
-// 			nextEl: '.news-related .swiper-next'
-// 		},
-// 		breakpoints: {
-// 			1200: {
-// 				spaceBetween: 25
-// 			},
-// 		}
-// 	})
-// }
-
-
 const popupFirstTime = () => {
 	const check = sessionStorage.getItem('popup');
 	if (check != 'true') {
@@ -709,6 +658,40 @@ const PhanKhuSlider = () => {
 	})
 }
 
+
+const matBangSlider = () => {
+	return new Swiper('#sec-2 .swiper-container', {
+		slidesPerView: 1,
+		speed: 1000,
+		autoplay: false,
+		// effect: 'fade',
+		// fadeEffect: {
+		// 	crossFade: true,
+		// },
+		navigation: {
+			prevEl: '#sec-2 .swiper-prev',
+			nextEl: '#sec-2 .swiper-next'
+		}
+	})
+}
+
+
+const tienichSlider = () => {
+	return new Swiper('#sec-5 .swiper-container', {
+		slidesPerView: 1,
+		speed: 1000,
+		autoplay: false,
+		// effect: 'fade',
+		// fadeEffect: {
+		// 	crossFade: true,
+		// },
+		navigation: {
+			prevEl: '#sec-5 .swiper-prev',
+			nextEl: '#sec-5 .swiper-next'
+		}
+	})
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -725,7 +708,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	sectionVitriTab();
 	Area4TabFronts();
 	activeFrame2Section4();
-	imageMapCanvas();
+	ImageMapCanvas();
 	changeMapByTime();
 	villasSlider1();
 	villasSlider2();
@@ -737,6 +720,8 @@ document.addEventListener('DOMContentLoaded', () => {
 	// JS HÙNG
 	fixedNewsRelated();
 	sliderSection7();
+	tienichSlider();
+	matBangSlider();
 	if (window.innerWidth < 1025) {
 		customFancybox();
 		customFancybox2();
