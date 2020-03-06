@@ -3,7 +3,11 @@
 	background-size : 300%;
 
 	.slider-index-2 {
-		position: relative;
+		position        : relative;
+		-ms-flex        : 0 0 100%;
+		-webkit-box-flex: 0;
+		flex            : 0 0 100%;
+		max-width       : 100%;
 	}
 
 	.swiper-container,
