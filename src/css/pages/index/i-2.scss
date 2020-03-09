@@ -147,7 +147,7 @@
 			z-index: 1000;
 			opacity: 0;
 			transform: translateY(100%);
-			height: 125px;
+			height: 75px;
 			pointer-events: none;
 			display: flex;
 			align-items: flex-start;
@@ -171,7 +171,7 @@
 
 			.container {
 				h2 {
-					font-size: 30px;
+					font-size: 24px;
 					margin-bottom: 15px;
 					color: map-get($mau, main);
 				}
@@ -180,8 +180,8 @@
 			.text {
 				width: 45%;
 				position: absolute;
-				bottom: 20px;
-				left: 80px;
+				bottom: 5px;
+				left: 20px;
 				z-index: 6;
 				text-align: center;
 
