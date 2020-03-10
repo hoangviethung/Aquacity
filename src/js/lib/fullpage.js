@@ -96,10 +96,10 @@ export default class FullPage {
 		const navItems = U.qAll(this.navigator, '.fp-nav-item');
 		navItems[currentIndex].classList.remove('active');
 		navItems[nextIndex].classList.add('active');
-		const hashUrl = navItems[nextIndex].querySelector('a').getAttribute('fp-hash');
-		if (hashUrl != 'undefined') {
-			window.location.hash = hashUrl;
-		}
+		// const hashUrl = navItems[nextIndex].querySelector('a').getAttribute('fp-hash');
+		// if (hashUrl != 'undefined') {
+		// 	window.location.hash = hashUrl;
+		// }
 
 
 		const onAnimateCompleted = (currentSection, nextSection, cb) => {
@@ -212,15 +212,15 @@ export default class FullPage {
 			this.generateFullpageHTML();
 			this.on.init();
 			this.navigate();
-			let hashUrl = window.location.hash;
-			if (hashUrl.length > 0) {
-				document.querySelector(`[fp-hash="${hashUrl.split('#')[1]}"]`).click();
-			} else {
-				let hashUrl = U.qAll(this.navigator, '.fp-nav-item')[0].querySelector('a').getAttribute('fp-hash');
-				if (hashUrl != 'undefined') {
-					window.location.hash = hashUrl;
-				}
-			}
+			// let hashUrl = window.location.hash;
+			// if (hashUrl.length > 0) {
+			// 	document.querySelector(`[fp-hash="${hashUrl.split('#')[1]}"]`).click();
+			// } else {
+			// 	let hashUrl = U.qAll(this.navigator, '.fp-nav-item')[0].querySelector('a').getAttribute('fp-hash');
+			// 	if (hashUrl != 'undefined') {
+			// 		window.location.hash = hashUrl;
+			// 	}
+			// }
 			this.run();
 			this.mouseScrollDown();
 		}

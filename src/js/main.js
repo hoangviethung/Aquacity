@@ -36,24 +36,24 @@ const fullpageInit = () => {
 						getSVGImage();
 					},
 					afterRunEffect: function() {
-						const currentIndex = Number(document.querySelector('#fullpage [fp-active="1"]').getAttribute('fp-index'));
-						Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
-							ele.classList.remove('active');
-						})
-						Array.from(document.querySelectorAll('.header-nav-wrapper nav a'))[currentIndex].classList.add('active');
-						if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
-							if (document.querySelector('header .header-nav-icon')) {
-								document.querySelector('header .header-nav-icon').classList.remove('active');
-							}
-							if (document.querySelector('.section .frame-1 .button-toggle')) {
-								document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
-							}
-							if (document.querySelector('.section .frame-2')) {
-								document.querySelector('.section .frame-2').classList.remove('active');
-							}
-						}
-						localStorage.removeItem('isScroll');
-						localStorage.removeItem('nextIndex');
+						// const currentIndex = Number(document.querySelector('#fullpage [fp-active="1"]').getAttribute('fp-index'));
+						// Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
+						// 	ele.classList.remove('active');
+						// })
+						// Array.from(document.querySelectorAll('.header-nav-wrapper nav a'))[currentIndex].classList.add('active');
+						// if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
+						// 	if (document.querySelector('header .header-nav-icon')) {
+						// 		document.querySelector('header .header-nav-icon').classList.remove('active');
+						// 	}
+						// 	if (document.querySelector('.section .frame-1 .button-toggle')) {
+						// 		document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
+						// 	}
+						// 	if (document.querySelector('.section .frame-2')) {
+						// 		document.querySelector('.section .frame-2').classList.remove('active');
+						// 	}
+						// }
+						// localStorage.removeItem('isScroll');
+						// localStorage.removeItem('nextIndex');
 					}
 				}
 			});
@@ -77,31 +77,31 @@ const fullpageInit = () => {
 				}
 			})
 			if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
-				const callback = () => {
-					localStorage.removeItem('isScroll');
-					localStorage.removeItem('nextIndex');
-					const currentIndex = Number(document.querySelector('#fullpage [fp-index="0"]').getAttribute('fp-index'));
-					Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
-						ele.classList.remove('active');
-					})
-					Array.from(document.querySelectorAll('.header-nav-wrapper nav a'))[currentIndex].classList.add('active');
-					if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
-						document.querySelector('header .header-nav-icon').classList.remove('active');
-						document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
-						document.querySelector('.section .frame-2').classList.remove('active');
-					}
-				}
+				// const callback = () => {
+				// 	localStorage.removeItem('isScroll');
+				// 	localStorage.removeItem('nextIndex');
+				// 	const currentIndex = Number(document.querySelector('#fullpage [fp-index="0"]').getAttribute('fp-index'));
+				// 	Array.prototype.forEach.call(document.querySelectorAll('.header-nav-wrapper nav a'), (ele, eleIndex) => {
+				// 		ele.classList.remove('active');
+				// 	})
+				// 	Array.from(document.querySelectorAll('.header-nav-wrapper nav a'))[currentIndex].classList.add('active');
+				// 	if (document.getElementById('js-page-verify').getAttribute('class') === 'index-page') {
+				// 		document.querySelector('header .header-nav-icon').classList.remove('active');
+				// 		document.querySelector('.section .frame-1 .button-toggle').classList.remove('active');
+				// 		document.querySelector('.section .frame-2').classList.remove('active');
+				// 	}
+				// }
 
-				if (localStorage.getItem('isScroll')) {
-					if (localStorage.getItem('nextIndex') != 0) {
-						const targetIndex = localStorage.getItem('nextIndex');
-						const targetSection = document.querySelector(`.fp-section[fp-index="${targetIndex}"]`);
-						const currentSection = document.querySelector(`.fp-section[fp-index="0"]`);
-						fullpage.runEffect(currentSection, targetSection, 'down', callback);
-						localStorage.removeItem('isScroll');
-						localStorage.removeItem('nextIndex');
-					}
-				}
+				// if (localStorage.getItem('isScroll')) {
+				// 	if (localStorage.getItem('nextIndex') != 0) {
+				// 		const targetIndex = localStorage.getItem('nextIndex');
+				// 		const targetSection = document.querySelector(`.fp-section[fp-index="${targetIndex}"]`);
+				// 		const currentSection = document.querySelector(`.fp-section[fp-index="0"]`);
+				// 		fullpage.runEffect(currentSection, targetSection, 'down', callback);
+				// 		localStorage.removeItem('isScroll');
+				// 		localStorage.removeItem('nextIndex');
+				// 	}
+				// }
 
 				document.querySelector('#widget-left .subscribe').addEventListener('click', e => {
 					e.preventDefault();
@@ -142,8 +142,8 @@ const fullpageInit = () => {
 						const targetSection = document.querySelector(`.fp-section[fp-index="${targetIndex}"]`);
 						const currentSection = document.querySelector(`.fp-section[fp-index="0"]`);
 						fullpage.runEffect(currentSection, targetSection, 'down', callback);
-						localStorage.removeItem('isScroll');
-						localStorage.removeItem('nextIndex');
+						// localStorage.removeItem('isScroll');
+						// localStorage.removeItem('nextIndex');
 					}
 				}
 			}
@@ -234,12 +234,6 @@ const changeMapByTime = () => {
 	}
 }
 
-const setLinkDownload = () => {
-	const className = document.getElementById('js-page-verify').getAttribute('class');
-	if (className.includes('stella-page')) {
-		document.querySelector('#widget-left .download').setAttribute('href', 'https://drive.google.com/file/d/1Wz2ra8qI1h5HWfWJsdLDC75YKsP72V9D/view')
-	}
-}
 
 const customFancybox = param => {
 	$('.area-3 area, .area-3 .fronts-list .item a').on('click', function() {
@@ -704,7 +698,6 @@ document.addEventListener('DOMContentLoaded', () => {
 	}
 	fullpageInit();
 	sliderArea_1();
-	// setLinkDownload();
 	sectionVitriTab();
 	Area4TabFronts();
 	activeFrame2Section4();
