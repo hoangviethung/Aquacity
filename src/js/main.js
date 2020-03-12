@@ -569,7 +569,7 @@ const generateFormLienHeTrangIndex = () => {
 		const checkIdDom = document.getElementById('js-page-verify');
 		if (checkIdDom) {
 			const checkIndexPage = Array.from(checkIdDom.classList);
-			if (checkIndexPage.includes('index-page') || checkIndexPage.includes('elite-page')) {
+			if (checkIndexPage.includes('index-page') || checkIndexPage.includes('elite-page') || checkIndexPage.includes('valencia-page')) {
 				const formIndex9 = document.querySelector('#sec-9 form').outerHTML;
 				document.querySelector('#form-register-now').innerHTML = formIndex9;
 			}
@@ -686,6 +686,141 @@ const tienichSlider = () => {
 	})
 }
 
+const valenciaSlider1 = () => {
+	return new Swiper('#valencia-4 .swiper-container', {
+		slidesPerView: 1,
+		centeredSlides: true,
+		loop: true,
+		speed: 900,
+		loopAdditionalSlides: 2,
+		navigation: {
+			prevEl: '#valencia-4 .swiper-prev',
+			nextEl: '#valencia-4 .swiper-next',
+		},
+		breakpoints: {
+			1025: {
+				direction: 'vertical',
+				spaceBetween: -200,
+			},
+			1200: {
+				direction: 'vertical',
+				spaceBetween: -250,
+			}
+		}
+	})
+}
+const valenciaSlider2 = () => {
+	return new Swiper('#valencia-5 .swiper-container', {
+		slidesPerView: 1,
+		centeredSlides: true,
+		loop: true,
+		speed: 900,
+		loopAdditionalSlides: 2,
+		navigation: {
+			prevEl: '#valencia-5 .swiper-prev',
+			nextEl: '#valencia-5 .swiper-next',
+		},
+		breakpoints: {
+			1025: {
+				direction: 'vertical',
+				spaceBetween: -200,
+			},
+			1200: {
+				direction: 'vertical',
+				spaceBetween: -250,
+			}
+		}
+	})
+}
+const valenciaSlider3 = () => {
+	return new Swiper('#valencia-6 .swiper-container', {
+		slidesPerView: 1,
+		centeredSlides: true,
+		loop: true,
+		speed: 900,
+		loopAdditionalSlides: 2,
+		navigation: {
+			prevEl: '#valencia-6 .swiper-prev',
+			nextEl: '#valencia-6 .swiper-next',
+		},
+		breakpoints: {
+			1025: {
+				direction: 'vertical',
+				spaceBetween: -200,
+			},
+			1200: {
+				direction: 'vertical',
+				spaceBetween: -250,
+			}
+		}
+	})
+}
+const valenciaSlider4 = () => {
+	return new Swiper('#valencia-8 .swiper-container', {
+		spaceBetween: -20,
+		slidesPerView: 1,
+		loop: true,
+		simulateTouch: false,
+		speed: 900,
+		breakpoints: {
+			1025: {
+				slidesPerView: 1.7,
+			}
+		},
+		navigation: {
+			prevEl: '#valencia-8 .swiper-prev',
+			nextEl: '#valencia-8 .swiper-next',
+		},
+		on: {
+			init: function() {
+				$('#valencia-8 .swiper-slide').each(function() {
+					$(this).find('a').fancybox({
+						infobar: false,
+						hash: false
+					})
+				})
+			}
+		}
+	})
+}
+const valenciaSlider5 = () => {
+	return new Swiper('#valencia-9 .swiper-container', {
+		spaceBetween: -20,
+		slidesPerView: 1,
+		loop: true,
+		simulateTouch: false,
+		speed: 900,
+		breakpoints: {
+			1025: {
+				slidesPerView: 1.7,
+			}
+		},
+		navigation: {
+			prevEl: '#valencia-9 .swiper-prev',
+			nextEl: '#valencia-9 .swiper-next',
+		},
+		on: {
+			init: function() {
+				$('#valencia-9 .swiper-slide').each(function() {
+					$(this).find('a').fancybox({
+						infobar: false,
+						hash: false,
+						youtube: {
+							autoplay: 1,
+						}
+					})
+				})
+			}
+		}
+	})
+}
+
+const setBackgroundValenciaContact = () => {
+	if ($('body.valencia-page')) {
+		$('body.valencia-page #sec-9>.img img').attr('src', './assets/valencia/v_10-background.png')
+	}
+}
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -715,6 +850,12 @@ document.addEventListener('DOMContentLoaded', () => {
 	sliderSection7();
 	tienichSlider();
 	matBangSlider();
+	valenciaSlider1();
+	valenciaSlider2();
+	valenciaSlider3();
+	valenciaSlider4();
+	valenciaSlider5();
+	setBackgroundValenciaContact(0);
 	if (window.innerWidth < 1025) {
 		customFancybox();
 		customFancybox2();

@@ -1,0 +1,100 @@
+#valencia-2 {
+	.background {
+		background-image: url('../assets/valencia/v_2-background.png');
+		background-position: right;
+		height: 100%;
+	}
+
+	.section-content {
+		position: relative;
+	}
+
+	.text {
+		padding: 15px 10px 30px 10px;
+		text-align: center;
+
+		h2 {
+			color: #07414c;
+			font-size: 28px;
+
+			br {
+				display: none;
+			}
+		}
+
+		.utilities-list {
+			padding: 10px 0;
+			justify-content: center;
+		}
+
+		p {
+			white-space: nowrap;
+			color: #07414c;
+			font-size: 13px;
+			font-style: italic;
+		}
+
+		@media (min-width: 1025px) {
+			background-color: transparent;
+			text-align: left;
+			position: absolute;
+			bottom: 40px;
+			left: 90px;
+			z-index: 1001;
+			padding: 0;
+
+			.utilities-list {
+				background-color: rgba(#2B4C47, .8);
+				justify-content: flex-start;
+			}
+
+			h2 {
+				color: white;
+				font-size: 40px;
+
+				br {
+					display: inline;
+				}
+			}
+
+			p {
+				color: white;
+			}
+		}
+
+		@media (min-width: 1200px) {
+			bottom: 55px;
+			left: 115px;
+
+			h2 {
+				font-size: 50px;
+			}
+
+			p {
+				font-size: 15px;
+			}
+		}
+
+		@media (min-width: 1440px) {
+			bottom: 70px;
+			left: 125px;
+
+			h2 {
+				font-size: 60px;
+			}
+
+			p {
+				font-size: 16px;
+			}
+		}
+	}
+
+	@media (min-width: 1025px) {
+		.imgMapCanvas {
+			position: absolute;
+			top: 50%;
+			transform: translateY(-50%);
+			left: 0;
+		}
+	}
+}

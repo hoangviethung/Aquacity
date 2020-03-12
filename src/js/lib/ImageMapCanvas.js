@@ -78,7 +78,37 @@ export default function() {
 						mapElement.closest('.imagemap-with-list').querySelector(`[data-utilities-target="${e.target.alt}"]`).classList.remove('active')
 						clearCanvas(canvasContext, canvas);
 					})
-
+				} else if (dataCanvas == "auto") {
+					const coords = area.getAttribute('coords');
+					const coordsRef = coords.split(",");
+					let degreeStep = 90 / 100;
+					let degree = 0;
+					let opacity = 0;
+					const getOpacityPeriod = degrees => {
+						return Math.abs(Math.sin(degrees * (Math.PI / 180))) * 3 / 2;
+					}
+					const effect = () => {
+						clearCanvas(canvasContext, canvas);
+						canvasContext.lineWidth = 2;
+						canvasContext.strokeStyle = '#e8de8b';
+						canvasContext.opacity = 0.5;
+						canvasContext.fillStyle = `rgba(7, 65, 76, ${opacity})`;
+						canvasContext.beginPath();
+						canvasContext.moveTo(coordsRef[0], coordsRef[1]);
+						for (let i = 0; i < coordsRef.length; i++) {
+							if (i % 2 == 0 && i > 1) {
+								canvasContext.lineTo(coordsRef[i], coordsRef[i + 1]);
+							}
+						}
+						canvasContext.closePath();
+						canvasContext.stroke();
+						canvasContext.fill();
+					}
+					const autoEffect = setInterval(() => {
+						degree += degreeStep;
+						opacity = getOpacityPeriod(degree) / 2;
+						effect();
+					}, 1000 / 200);
 				} else {
 					area.addEventListener('mouseenter', () => {
 						const coords = area.getAttribute('coords');
@@ -127,7 +157,7 @@ export default function() {
 							canvasContext.fill();
 						}
 						if (shape === 'circle') {
-							
+
 							canvasContext.strokeStyle = 'rgba(7, 65, 76, 1)';
 							canvasContext.beginPath();
 							canvasContext.arc(coordsRef[0], coordsRef[1], coordsRef[2], 0, 2 * Math.PI);

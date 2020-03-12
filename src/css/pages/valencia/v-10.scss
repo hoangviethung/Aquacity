@@ -1,0 +1,52 @@
+.valencia-page {
+	#sec-9 {
+		.title-block {
+			h2.title {
+				color: map-get($mau, main);
+				-webkit-text-fill-color: initial;
+			}
+
+			.tagline {
+				display: none;
+			}
+		}
+
+		form {
+			>p {
+				color: map-get($mau, main);
+			}
+
+			input[type=text],
+			textarea {
+				background-color: map-get($mau, main);
+				color: white;
+			}
+		}
+
+		@media (max-width: 1024.98px) {
+			background-color: white;
+			background-image: url('../assets/valencia/v_10-background.png');
+			padding: 30px 0;
+			display: none;
+
+			.title-block {
+				h2.title {
+					color: map-get($mau, main);
+					-webkit-text-fill-color: initial;
+				}
+			}
+
+			form {
+				.form-button {
+					margin-top: 15px;
+				}
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		main {
+			padding-bottom: 45px;
+		}
+	}
+}
