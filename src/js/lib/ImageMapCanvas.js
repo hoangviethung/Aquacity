@@ -79,6 +79,7 @@ export default function() {
 						clearCanvas(canvasContext, canvas);
 					})
 				} else if (dataCanvas == "auto") {
+					
 					const coords = area.getAttribute('coords');
 					const coordsRef = coords.split(",");
 					let degreeStep = 90 / 100;
