@@ -71,7 +71,6 @@
 			}
 
 			.sub {
-				text-transform: uppercase;
 				font-size: 19px;
 				font-weight: 400;
 				font-style: italic;
@@ -91,6 +90,9 @@
 
 				@media (min-width: 768px) {
 					font-size: 32px;
+				}
+				@media (min-width: 1025px) {
+					font-weight: 700;
 				}
 
 				@media (min-width: 1200px) {
