@@ -817,7 +817,7 @@ const valenciaSlider5 = () => {
 
 const setBackgroundValenciaContact = () => {
 	if ($('body.valencia-page')) {
-		$('body.valencia-page #sec-9>.img img').attr('src', './assets/valencia/v_10-background.png')
+		$('body.valencia-page #sec-9>.img img').attr('src', '/Content/resources/assets/valencia/v_10-background.png')
 	}
 }
 
