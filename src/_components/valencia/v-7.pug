@@ -7,6 +7,8 @@
 					br
 					span.tagline
 					span.sub Master plan
+				a(data-fancybox data-src="#popup-fronts-1") Popup 1
+				a(data-fancybox data-src="#popup-fronts-2") Popup 2
 		.col-lg-8.col-plan
 			.imgMapCanvas(data-canvas="fill")
 				.map-canvas
@@ -14,3 +16,47 @@
 					canvas
 				.map-image
 					img(src="./assets/valencia/v_7.jpg", usemap="#valenciaMap_7")
+	.d-none
+		#popup-fronts-1.popup-fronts-valencia.style-1
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-8
+						.img
+							img.ofcv(src="./assets/valencia/item-popup-1.png", alt="")
+					.col-lg-4
+						.info
+							h2 DELUXE GREEN HOUSE
+							ul.list-info
+								li.item-info.group-1
+									.flex-box
+										p Z-T1-V1A
+										p (Type A)
+									h4 6 x 19.5 (m)
+								li.item-info.group-2
+									.box-content
+										h3 DIỆN TÍCH KHU ĐẤT
+										p Site area
+										h4 117 m
+											sup 2
+									.box-content
+										h3 DIỆN TÍCH KHU ĐẤT
+										p Gross ﬂoor area (GFA)
+										h4 222.63 m
+											sup 2
+							i.note (*) Không bao gồm sân thượng và ô trống cầu thang
+							a.btn.btn-viewmore(href="#") Chi tiết
+		#popup-fronts-2.popup-fronts-valencia
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-6
+						.img
+							img.ofcv(src="./assets/valencia/item-popup-2-01.png", alt="alt")
+					.col-lg-6
+						.img
+							img.ofcv(src="./assets/valencia/item-popup-2-02.png", alt="alt")

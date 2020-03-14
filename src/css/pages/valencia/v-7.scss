@@ -1,9 +1,9 @@
 #valencia-7 {
 	.block-title {
 		@media (min-width: 1025px) {
-			background-image: url('../assets/valencia/v_7-background.png');
+			background-image   : url('../assets/valencia/v_7-background.png');
 			background-position: bottom;
-			background-size: cover;
+			background-size    : cover;
 		}
 	}
 
@@ -18,12 +18,12 @@
 			position: relative;
 
 			&:before {
-				content: '';
-				position: absolute;
-				height: 45px;
-				width: 100%;
-				bottom: 0;
-				left: 0;
+				content         : '';
+				position        : absolute;
+				height          : 45px;
+				width           : 100%;
+				bottom          : 0;
+				left            : 0;
 				background-color: #A5503F;
 			}
 		}
@@ -31,35 +31,35 @@
 
 	.col-plan {
 		background-color: #f9f8f6;
-		display: inline-flex;
-		align-items: center;
+		display         : inline-flex;
+		align-items     : center;
 
 		@media (min-width: 1025px) {
 			.imgMapCanvas {
-				width: 100%;
-				display: flex;
+				width      : 100%;
+				display    : flex;
 				align-items: center;
-				overflow: hidden;
+				overflow   : hidden;
 			}
 		}
 	}
 
 	.block-title {
-		height: 100%;
-		display: flex;
-		align-items: center;
+		height         : 100%;
+		display        : flex;
+		align-items    : center;
 		justify-content: center;
-		padding-bottom: 50%;
+		padding-bottom : 50%;
 
 		h2 {
 			color: #07414C;
 
 			.tagline {
-				height: 2px;
-				display: inline-block;
+				height          : 2px;
+				display         : inline-block;
 				background-color: #A5503F;
-				width: 100px;
-				margin-right: 20px;
+				width           : 100px;
+				margin-right    : 20px;
 
 				@media (min-width: 1200px) {
 					width: 125px;
@@ -71,9 +71,9 @@
 			}
 
 			.sub {
-				font-size: 19px;
+				font-size  : 19px;
 				font-weight: 400;
-				font-style: italic;
+				font-style : italic;
 
 				@media (min-width: 1200px) {
 					font-size: 24px;
@@ -85,12 +85,13 @@
 			}
 
 			.main {
-				font-size: 26px;
+				font-size  : 26px;
 				font-weight: 500;
 
 				@media (min-width: 768px) {
 					font-size: 32px;
 				}
+
 				@media (min-width: 1025px) {
 					font-weight: 700;
 				}
@@ -117,22 +118,22 @@
 			padding-bottom: 0;
 
 			h2 {
-				-ms-flex: 0 0 100%;
+				-ms-flex        : 0 0 100%;
 				-webkit-box-flex: 0;
-				flex: 0 0 100%;
-				max-width: 100%;
-				text-align: center;
-				position: relative;
-				margin-bottom: 20px;
+				flex            : 0 0 100%;
+				max-width       : 100%;
+				text-align      : center;
+				position        : relative;
+				margin-bottom   : 20px;
 
 				&:before {
-					content: '';
-					height: 2px;
-					width: 70px;
-					position: absolute;
-					top: 100%;
-					left: 50%;
-					transform: translateX(-50%);
+					content         : '';
+					height          : 2px;
+					width           : 70px;
+					position        : absolute;
+					top             : 100%;
+					left            : 50%;
+					transform       : translateX(-50%);
 					background-color: #A5503F;
 				}
 
@@ -145,5 +146,220 @@
 
 	@media (max-width: 767.98px) {
 		padding: 30px 0;
+	}
+}
+
+.popup-fronts-valencia {
+	width           : 100%;
+	height          : 100%;
+	padding         : 0 0 40px 0;
+	background-color: #ffffff;
+
+	&::-webkit-scrollbar {
+		background: #cfcfcf;
+		width     : 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #003b28;
+	}
+
+	.fancybox-close-small {
+		right  : 15px;
+		padding: 0;
+		border : 0;
+
+		svg {
+			path {
+				stroke-width: 1;
+				stroke      : #4c8343;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			top: 15px;
+		}
+	}
+
+	.logo {
+		position: absolute;
+		height  : 70px;
+		top     : 15px;
+
+		img {
+			height: 100%;
+		}
+
+		@media (max-width: 1024px) {
+			height: 50px;
+		}
+	}
+
+	>.container {
+		padding-top: 160px;
+		height     : 100%;
+
+		@media (max-width: 1609.98px) and (min-width: 1025px) {
+			padding: 80px 50px 0 50px;
+		}
+
+		@media (max-width: 1024px) {
+			padding-top: 80px;
+		}
+
+		.row {
+			height     : 100%;
+			align-items: center;
+		}
+	}
+
+	&.style-1 {
+		.info {
+			margin-left: 50px;
+
+			h2 {
+				font-size        : 25px;
+				color            : #2B4C47;
+				line-height      : 1.2;
+				background-image : url(../assets/bg_btn_discover.png);
+				background-repeat: no-repeat;
+				background-size  : 100% 100%;
+				padding          : 8.5px 60px 13px 20px;
+			}
+
+			.note {
+				font-size: 11px;
+				display  : block;
+			}
+
+			.list-info {
+				color          : #2B4C47;
+				list-style-type: none;
+				padding-left   : 0;
+
+				.item-info {
+					padding      : 20px 0;
+					border-bottom: 1px solid #D6BB76;
+
+					&.group-1 {
+						.flex-box {
+							display  : flex;
+							font-size: 18px;
+
+							p {
+								&:last-child {
+									font-weight : 700;
+									margin-left : 6px;
+									padding-left: 6px;
+									border-left : 1px solid #2b4c47;
+								}
+							}
+						}
+
+						h4 {
+							font-size  : 24px;
+							font-weight: 700;
+						}
+					}
+
+					&.group-2 {
+						.box-content {
+							margin-bottom: 15px;
+
+							h3 {
+								font-size  : 18px;
+								font-weight: 700;
+							}
+
+							p {
+								font-style: italic;
+								font-size : 14px;
+							}
+
+							h4 {
+								font-size: 18px;
+							}
+						}
+					}
+
+					&:last-child {
+						padding      : 20px 0 8px 0;
+						border-bottom: 0;
+					}
+				}
+			}
+
+			.btn-viewmore {
+				margin-top   : 63px;
+				height       : 26px;
+				padding      : 0 18px 0 12px;
+				background   : #07414C;
+				font-size    : 14px;
+				color        : white;
+				border-radius: 17px;
+			}
+
+			@media (max-width: 1439.98px) {
+				margin-left: 0;
+			}
+
+			@media (max-width: 1609.98px) {
+				h2 {
+					font-size  : 32px;
+					color      : #4c8343;
+					line-height: 1.2;
+				}
+			}
+
+			@media (max-width: 1024px) {
+				h2 {
+					font-size: 25px;
+				}
+
+				.btn-viewmore {
+					height    : 40px;
+					font-size : 24px;
+					padding   : 0 30px;
+					margin-top: 10px;
+				}
+			}
+		}
+
+		.img {
+			margin-left   : 275px;
+			position      : relative;
+			padding-top   : 60px;
+			padding-bottom: 88px;
+
+			img {
+				width: 100%;
+			}
+
+			&:after {
+				content        : '';
+				position       : absolute;
+				top            : 0;
+				left           : 0;
+				width          : 100%;
+				height         : 60px;
+				background     : url(../assets/valencia/before-img-popup.png);
+				background-size: cover;
+			}
+
+			&:before {
+				content        : '';
+				position       : absolute;
+				bottom         : 0;
+				left           : 0;
+				width          : 100%;
+				height         : 88px;
+				background     : url(../assets/valencia/after-img-popup.png);
+				background-size: cover;
+			}
+
+			@media (max-width: 1439.98px) {
+				margin-left: 0;
+			}
+		}
 	}
 }
