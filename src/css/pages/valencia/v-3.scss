@@ -17,6 +17,22 @@
 			color: white;
 			font-size: 22px;
 			text-transform: uppercase;
+
+			@media (min-width: 768px) {
+				font-size: 28px;
+			}
+
+			@media (min-width: 1025px) {
+				font-size: 34px;
+			}
+
+			@media (min-width: 1440px) {
+				font-size: 40px;
+			}
+
+			@media (min-width: 1610px) {
+				font-size: 46px;
+			}
 		}
 
 		.utilities-list {
@@ -41,19 +57,11 @@
 			.utilities-list {
 				background-color: rgba(#2B4C47, .8);
 			}
-
-			h2 {
-				font-size: 32px;
-			}
 		}
 
 		@media (min-width: 1200px) {
 			bottom: 55px;
 			left: 115px;
-
-			h2 {
-				font-size: 42px;
-			}
 
 			p {
 				font-size: 14px;
@@ -63,10 +71,6 @@
 		@media (min-width: 1440px) {
 			bottom: 70px;
 			left: 125px;
-
-			h2 {
-				font-size: 52px;
-			}
 
 			p {
 				font-size: 15px;

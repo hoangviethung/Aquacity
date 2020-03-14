@@ -1,8 +1,8 @@
 #valencia-5 {
+	background-image: url('../assets/valencia/v_5-background.png');
+	background-position: center;
+	background-size: cover;
 	.section-content {
-		background-image: url('../assets/valencia/v_4-background.png');
-		background-position: center;
-		background-size: cover;
 		padding: 110px 0;
 		overflow: hidden;
 
@@ -11,8 +11,10 @@
 
 			>.row {
 				height: 100%;
+				justify-content: center;
+				align-items: center;
 
-				>.col-lg-6 {
+				>.col-lg-9 {
 					height: 100%;
 				}
 			}
@@ -31,13 +33,10 @@
 		}
 	}
 
-	.col-lg-6 {
+	.col-lg-9 {
 		display: flex;
 		align-items: center;
-		min-width: 55%;
 		justify-content: flex-end;
-		margin-right: auto;
-		padding-left: 5%;
 
 		@media (max-width: 1024.98px) {
 			padding: 0 10px;
@@ -53,6 +52,7 @@
 			background-color: #A5503F;
 			width: 100px;
 			display: none;
+
 			@media (min-width: 1025px) {
 				display: inline-block;
 			}
@@ -67,13 +67,12 @@
 		}
 
 		h2 {
-			font-size: 26px;
+			font-size: 22px;
 			font-weight: 500;
 			letter-spacing: 2px;
 			color: #2B4C47;
 			text-align: center;
 			position: relative;
-			margin-bottom: 20px;
 
 			&:before {
 				content: '';
@@ -91,11 +90,11 @@
 			}
 
 			@media (min-width: 768px) {
-				font-size: 40px;
+				font-size: 28px;
 			}
 
 			@media (min-width: 1025px) {
-				font-size: 55px;
+				font-size: 34px;
 				text-align: left;
 
 				&:before {
@@ -115,83 +114,52 @@
 			}
 
 			@media (min-width: 1440px) {
-				font-size: 65px;
+				font-size: 40px;
 			}
 
 			@media (min-width: 1610px) {
-				font-size: 75px;
+				font-size: 46px;
 			}
 		}
 
 		@media (max-width: 1024.98px) {
-			order: 1;
-			padding: 0 10px;
-			-ms-flex: 0 0 100%;
 			-webkit-box-flex: 0;
-			flex: 0 0 100%;
+			flex: 0 0 auto;
+			width: auto;
 			max-width: 100%;
+			background-color: #ECE9E0;
+			padding: 7px 10px;
 		}
 
 		@media (min-width: 1025px) {
-			width: 50%;
-			position: absolute;
-			bottom: 44%;
-			right: 5%;
-			background-color: #ECE9E0;
-			padding: 20px 0 20px 45px;
 			display: flex;
-			justify-content: center;
+			position: absolute;
+			top: 90px;
+			right: 0;
+			justify-content: flex-end;
+			padding: 10px 25px;
+			width: 50%;
+			padding-right: 7%;
+		}
 
-			&:before {
-				width: 2000px;
-				height: 40px;
-				bottom: 0;
-				position: absolute;
-				right: 100%;
-				background-color: #A5503F;
-				content: '';
-			}
+		@media (min-width: 1440px) {
+			top: 130px;
 		}
 	}
 
 	.slider-wrapper {
 		width: 100%;
 		height: 100%;
+		position: relative;
+		padding: 0 30px;
 		display: flex;
 		align-items: center;
-		position: relative;
-		max-width: 100%;
-		padding: 0 30px;
-
-		@media (min-width: 1025px) {
-			height: 400px;
-			width: 450px;
-			padding: 0;
-		}
-
-		@media (min-width: 1200px) {
-			height: 475px;
-			width: 550px;
-		}
-
-		@media (min-width: 1440px) {
-			height: 550px;
-			width: 600px;
-		}
-
-		@media (min-width: 1610px) {
-			height: 650px;
-			width: 700px;
-		}
-
-		.swiper-container {
-			height: 100%;
-		}
+		padding-top: 5%;
 
 		.swiper-slide {
 			display: flex;
 			align-items: center;
-			transform: scale(0.9);
+			transform: scale(0.8);
 			z-index: 1;
 			transition: all .3s ease;
 
@@ -261,18 +229,18 @@
 			.swiper-prev,
 			.swiper-next {
 				position: absolute;
-				left: 50%;
-				transform: translateX(-50%);
+				top: 50%;
+				transform: translateY(-50%);
 				z-index: 5;
 				cursor: pointer;
 			}
 
 			.swiper-prev {
-				top: 10px;
+				left: -20px;
 			}
 
 			.swiper-next {
-				bottom: 10px;
+				right: -20px;
 			}
 		}
 	}

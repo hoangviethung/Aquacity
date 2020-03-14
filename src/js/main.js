@@ -700,11 +700,11 @@ const valenciaSlider1 = () => {
 		},
 		breakpoints: {
 			1025: {
-				direction: 'vertical',
+				slidesPerView: 2,
 				spaceBetween: -200,
 			},
 			1200: {
-				direction: 'vertical',
+				slidesPerView: 2,
 				spaceBetween: -250,
 			}
 		}
@@ -723,11 +723,11 @@ const valenciaSlider2 = () => {
 		},
 		breakpoints: {
 			1025: {
-				direction: 'vertical',
+				slidesPerView: 2,
 				spaceBetween: -200,
 			},
 			1200: {
-				direction: 'vertical',
+				slidesPerView: 2,
 				spaceBetween: -250,
 			}
 		}
@@ -746,11 +746,11 @@ const valenciaSlider3 = () => {
 		},
 		breakpoints: {
 			1025: {
-				direction: 'vertical',
+				slidesPerView: 2,
 				spaceBetween: -200,
 			},
 			1200: {
-				direction: 'vertical',
+				slidesPerView: 2,
 				spaceBetween: -250,
 			}
 		}
