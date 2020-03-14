@@ -48,7 +48,6 @@ export default function() {
 						Array.from(mapElement.querySelectorAll(`area[alt="${alt}"]`)).forEach(item => {
 							const coords = item.getAttribute('coords');
 							const coordsRef = coords.split(",");
-							console.log(coordsRef);
 							if (shape === 'poly') {
 								canvasContext.strokeStyle = '#e8de8b';
 								canvasContext.beginPath();
@@ -79,7 +78,7 @@ export default function() {
 						clearCanvas(canvasContext, canvas);
 					})
 				} else if (dataCanvas == "auto") {
-					
+
 					const coords = area.getAttribute('coords');
 					const coordsRef = coords.split(",");
 					let degreeStep = 90 / 100;
@@ -110,6 +109,36 @@ export default function() {
 						opacity = getOpacityPeriod(degree) / 2;
 						effect();
 					}, 1000 / 200);
+				} else if (dataCanvas == 'popup') {
+					area.addEventListener('mouseenter', (e) => {
+						const shape = area.getAttribute('shape');
+						const alt = area.getAttribute('alt');
+						Array.from(mapElement.querySelectorAll(`area[alt="${alt}"]`)).forEach(item => {
+							const coords = item.getAttribute('coords');
+							const coordsRef = coords.split(",");
+							canvasContext.lineWidth = 3;
+							canvasContext.fillStyle = 'rgba(7, 65, 76,.4)';
+							canvasContext.strokeStyle = '#e8de8b';
+							canvasContext.beginPath();
+							if (shape === 'poly') {
+								canvasContext.moveTo(coordsRef[0], coordsRef[1]);
+								for (let i = 0; i < coordsRef.length; i++) {
+									if (i % 2 == 0 && i > 1) {
+										canvasContext.lineTo(coordsRef[i], coordsRef[i + 1]);
+									}
+								}
+							}
+							if (shape === 'circle') {
+								canvasContext.arc(coordsRef[0], coordsRef[1], coordsRef[2], 0, 2 * Math.PI);
+							}
+							canvasContext.closePath();
+							canvasContext.stroke();
+							canvasContext.fill();
+						})
+					});
+					area.addEventListener('mouseout', (e) => {
+						clearCanvas(canvasContext, canvas);
+					})
 				} else {
 					area.addEventListener('mouseenter', () => {
 						const coords = area.getAttribute('coords');

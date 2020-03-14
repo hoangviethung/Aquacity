@@ -10,11 +10,6 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
-		<div id="loading">
-			<div class="logo-loader"><img class="svg-image" data-src="./assets/logo.svg" alt=""></div>
-			<div class="progstat-wrapper d-none">Loading:<span id="progstat">0</span>%</div>
-			<div id="progress"></div>
-		</div>
 		<header>
 			<div class="container">
 				<div class="row no-gutters">
@@ -40,26 +35,36 @@
 					</div>
 				</div>
 				<div class="section" id="valencia-2" fp-title="Bản đồ">
-					<div class="section-content">
+					<div class="section-content imagemap-with-list">
 						<div class="background"></div>
-						<div class="imgMapCanvas" data-canvas="fill">
-							<div class="map-canvas"><map name="imgMap_1" id="imgMap_1"><area shape="poly" coords="845, 275, 797, 312, 871, 325, 906, 332, 924, 332, 941, 330, 955, 327, 964, 323, 980, 317, 991, 317, 1001, 312, 1002, 304, 991, 299, 921, 287" href="/the-suite" />
-<area shape="poly" coords="796, 313, 788, 321, 786, 330, 786, 338, 789, 346, 798, 357, 894, 345, 899, 336, 880, 329, 861, 326" href="/the-grand-villas" />
-<area shape="poly" coords="634, 256, 767, 268, 839, 275, 800, 302, 791, 310, 783, 316, 780, 322, 778, 329, 778, 337, 778, 342, 783, 347, 785, 350, 792, 356, 654, 375, 598, 371, 513, 376, 463, 379, 438, 379, 435, 376, 434, 369, 441, 367, 466, 357, 493, 352, 518, 348, 568, 344, 619, 348, 643, 349, 684, 342, 703, 328, 702, 320, 691, 295, 673, 282, 655, 271, 640, 271, 627, 258" href="/the-elite" />
-<area shape="poly" coords="654, 376, 893, 348, 892, 358, 905, 363, 910, 369, 918, 371, 918, 378, 926, 385, 942, 390, 950, 396, 950, 400, 950, 403, 948, 407, 944, 411, 943, 412, 943, 415, 943, 418, 943, 420, 943, 424, 942, 427, 939, 429, 939, 431, 936, 433, 934, 437, 932, 439, 930, 441, 927, 444, 926, 445, 923, 449, 916, 455, 913, 456, 908, 457, 906, 459, 878, 450, 770, 437, 721, 427, 605, 429, 432, 509, 412, 513, 402, 513, 397, 510, 394, 508, 393, 505, 394, 499, 400, 493, 406, 488, 410, 483, 415, 480, 604, 391" href="/the-stella" />
-<area shape="poly" coords="1066, 525, 1001, 524, 710, 679, 708, 704, 717, 780, 740, 812, 781, 844, 820, 860, 847, 862, 875, 856, 893, 841, 915, 838, 948, 829, 963, 832, 992, 824, 1009, 831, 1016, 837, 1062, 828, 1146, 774, 1161, 775, 1197, 772, 1218, 781, 1232, 777, 1247, 786, 1304, 808, 1345, 817, 1365, 817, 1373, 813, 1373, 800, 1360, 773, 1367, 762, 1374, 751, 1389, 746, 1408, 744, 1415, 734, 1395, 694, 1090, 536, 1087, 507, 1078, 500, 1069, 508, 1065, 515" /></map>
+						<div class="imgMapCanvas" data-canvas="label">
+							<div class="map-canvas"><map name="imgMap_1" id="imgMap_1"><area shape="poly" coords="845, 275, 797, 312, 871, 325, 906, 332, 924, 332, 941, 330, 955, 327, 964, 323, 980, 317, 991, 317, 1001, 312, 1002, 304, 991, 299, 921, 287" href="/the-suite" alt="1"/>
+<area shape="poly" coords="796, 313, 788, 321, 786, 330, 786, 338, 789, 346, 798, 357, 894, 345, 899, 336, 880, 329, 861, 326" href="/the-grand-villas" alt="3"/>
+<area shape="poly" coords="634, 256, 767, 268, 839, 275, 800, 302, 791, 310, 783, 316, 780, 322, 778, 329, 778, 337, 778, 342, 783, 347, 785, 350, 792, 356, 654, 375, 598, 371, 513, 376, 463, 379, 438, 379, 435, 376, 434, 369, 441, 367, 466, 357, 493, 352, 518, 348, 568, 344, 619, 348, 643, 349, 684, 342, 703, 328, 702, 320, 691, 295, 673, 282, 655, 271, 640, 271, 627, 258" href="/the-elite" alt="2"/>
+<area shape="poly" coords="654, 376, 893, 348, 892, 358, 905, 363, 910, 369, 918, 371, 918, 378, 926, 385, 942, 390, 950, 396, 950, 400, 950, 403, 948, 407, 944, 411, 943, 412, 943, 415, 943, 418, 943, 420, 943, 424, 942, 427, 939, 429, 939, 431, 936, 433, 934, 437, 932, 439, 930, 441, 927, 444, 926, 445, 923, 449, 916, 455, 913, 456, 908, 457, 906, 459, 878, 450, 770, 437, 721, 427, 605, 429, 432, 509, 412, 513, 402, 513, 397, 510, 394, 508, 393, 505, 394, 499, 400, 493, 406, 488, 410, 483, 415, 480, 604, 391" href="/the-stella" alt="4"/>
+<area shape="poly" coords="1066, 525, 1001, 524, 710, 679, 708, 704, 717, 780, 740, 812, 781, 844, 820, 860, 847, 862, 875, 856, 893, 841, 915, 838, 948, 829, 963, 832, 992, 824, 1009, 831, 1016, 837, 1062, 828, 1146, 774, 1161, 775, 1197, 772, 1218, 781, 1232, 777, 1247, 786, 1304, 808, 1345, 817, 1365, 817, 1373, 813, 1373, 800, 1360, 773, 1367, 762, 1374, 751, 1389, 746, 1408, 744, 1415, 734, 1395, 694, 1090, 536, 1087, 507, 1078, 500, 1069, 508, 1065, 515" alt="5"/></map>
 								<canvas></canvas>
 							</div>
 							<div class="map-image"><img src="./assets/valencia/v_2.jpg" usemap="#imgMap_1"></div>
 						</div>
-						<div class="text">
-							<h2>Bản đồ <br>phân khu</h2>
-							<div class="utilities-list row">
-								<div class="col-auto">
+						<div class="content">
+							<div class="title-block">
+								<h2>Bản đồ <br>phân khu</h2>
+							</div>
+							<div class="utilities-list">
+								<div class="text" data-utilities-target="1">
 									<p>1. THE SUITE</p>
+								</div>
+								<div class="text" data-utilities-target="2">
 									<p>2. THE ELITE</p>
+								</div>
+								<div class="text" data-utilities-target="3">
 									<p>3. THE GRAND VILLAS</p>
+								</div>
+								<div class="text" data-utilities-target="4">
 									<p>4. THE STELLA</p>
+								</div>
+								<div class="text" data-utilities-target="5">
 									<p>5. THE VALENCIA</p>
 								</div>
 							</div>
@@ -108,12 +113,120 @@
 							</div>
 						</div>
 						<div class="col-lg-8 col-plan">
-							<div class="imgMapCanvas" data-canvas="fill">
-								<div class="map-canvas"><map name="valenciaMap_7" id="valenciaMap_7"></map>
+							<div class="imgMapCanvas" data-canvas="popup">
+								<div class="map-canvas"><map name="valenciaMap_7" id="valenciaMap_7">
+										<!-- 6--><area shape="poly" coords="714, 542, 695, 577, 761, 612, 780, 574" alt="6" />
+<area shape="poly" coords="737, 496, 717, 533, 781, 566, 801, 528" alt="6" />
+<area shape="poly" coords="760, 449, 740, 485, 805, 518, 827, 482" alt="6" />
+<area shape="poly" coords="845, 389, 810, 457, 829, 467, 866, 395" alt="6" />
+<area shape="poly" coords="531, 283, 535, 302, 559, 317, 570, 298, 568, 284, 553, 276" alt="6" />
+										<!-- 5--><area shape="poly" coords="337, 221, 346, 262, 508, 226, 478, 190" alt="6" />
+<area shape="poly" coords="179, 158, 179, 199, 304, 201, 304, 157" alt="6" />
+<area shape="poly" coords="558, 462, 538, 495, 684, 571, 703, 535" alt="5" />
+<area shape="poly" coords="582, 417, 563, 451, 705, 524, 724, 489" alt="5" />
+<area shape="poly" coords="604, 371, 584, 404, 730, 479, 749, 443" alt="5" />
+<area shape="poly" coords="626, 324, 607, 361, 709, 413, 729, 375" alt="5" />
+<area shape="poly" coords="533, 445, 510, 482, 526, 491, 550, 455" alt="5" />
+<area shape="poly" coords="556, 401, 535, 439, 552, 449, 574, 409" alt="5" />
+<area shape="poly" coords="575, 355, 557, 391, 574, 402, 594, 363" alt="5" />
+<area shape="poly" coords="348, 273, 506, 235, 535, 258, 534, 273, 359, 313" alt="5" />
+<area shape="poly" coords="816, 330, 839, 340, 847, 353, 877, 371, 870, 390, 803, 357" alt="5" />
+<area shape="poly" coords="770, 316, 783, 314, 801, 319, 810, 326, 799, 354, 760, 336" alt="5" />
+<area shape="poly" coords="459, 295, 450, 312, 436, 306, 428, 323, 528, 376, 548, 340" alt="5" />
+										<!-- 4--><area shape="poly" coords="800, 367, 763, 437, 798, 455, 837, 384" alt="4" />
+<area shape="poly" coords="754, 345, 719, 417, 753, 436, 792, 364" alt="4" />
+<area shape="poly" coords="538, 383, 586, 290, 600, 296, 555, 393" alt="4" />
+<area shape="poly" coords="516, 428, 537, 389, 555, 398, 534, 437" alt="4" />
+<area shape="poly" coords="493, 471, 514, 434, 532, 443, 510, 481" alt="4" />
+<area shape="poly" coords="368, 364, 350, 401, 483, 468, 502, 432" alt="4" />
+<area shape="poly" coords="393, 318, 373, 355, 506, 423, 525, 388" alt="4" />
+<area shape="poly" coords="319, 385, 304, 414, 321, 421, 346, 384" alt="4" />
+<area shape="poly" coords="177, 362, 176, 383, 343, 381, 343, 361" alt="4" />
+<area shape="poly" coords="177, 312, 177, 352, 344, 352, 343, 311" alt="4" />
+<area shape="poly" coords="177, 260, 177, 299, 322, 300, 321, 258" alt="4" />
+<area shape="poly" coords="179, 209, 179, 249, 316, 248, 314, 207" alt="4" />
+										<!-- 3--><area shape="poly" coords="534, 509, 680, 584, 672, 602, 525, 527" alt="3" />
+<area shape="poly" coords="346, 410, 507, 492, 498, 512, 336, 429" alt="3" />
+<area shape="poly" coords="149, 358, 149, 400, 169, 401, 168, 358" alt="3" />
+<area shape="poly" coords="150, 310, 150, 351, 170, 352, 170, 311" alt="3" />
+<area shape="poly" coords="150, 256, 149, 304, 170, 304, 170, 256" alt="3" />
+<area shape="poly" coords="151, 206, 151, 249, 170, 250, 169, 205" alt="3" />
+<area shape="poly" coords="149, 157, 149, 197, 170, 197, 170, 158" alt="3" />
+<area shape="poly" coords="697, 592, 687, 599, 685, 612, 744, 641, 756, 621" alt="3" />
+										<!-- 2--><area shape="poly" coords="152, 97, 151, 149, 172, 149, 171, 97" alt="2" />
+<area shape="poly" coords="613, 278, 581, 348, 594, 355, 601, 354, 634, 284" alt="2" />
+<area shape="poly" coords="185, 107, 180, 114, 180, 142, 187, 149, 290, 150, 289, 108" alt="2" />
+<area shape="poly" coords="318, 123, 312, 131, 322, 164, 333, 165, 443, 139, 447, 129, 429, 98" alt="2" />
+<area shape="poly" coords="331, 171, 324, 178, 332, 212, 340, 215, 469, 184, 471, 178, 458, 149, 446, 145" alt="2" />
+										<!-- 1--><area shape="poly" coords="413, 37, 486, 178, 503, 169, 476, 121, 476, 103, 450, 50, 421, 28" alt="1" />
+<area shape="poly" coords="639, 300, 651, 290, 724, 327, 733, 310, 756, 318, 734, 361, 725, 363, 630, 315" alt="1" />
+<area shape="poly" coords="492, 192, 530, 247, 587, 289, 602, 295, 613, 277, 554, 232, 547, 221, 512, 177" alt="1" />
+<area shape="poly" coords="305, 91, 358, 78, 367, 68, 388, 69, 393, 62, 407, 56, 423, 84, 422, 91, 318, 115, 310, 110" alt="1" />
+<area shape="poly" coords="176, 69, 175, 99, 295, 101, 295, 70" alt="1" /></map>
 									<canvas></canvas>
 								</div>
 								<div class="map-image"><img src="./assets/valencia/v_7.jpg" usemap="#valenciaMap_7"></div>
 							</div>
+						</div>
+					</div>
+					<div class="container mobile">
+						<div class="row fronts-list">
+							<div class="col-6 col-md-4 item"><a alt="1"> 
+									<h3>Grand River View Villa</h3>
+									<p>17x26M</p></a></div>
+							<div class="col-6 col-md-4 item"><a alt="2"> 
+									<h3>Premium Green Villa</h3>
+									<p>12x18.5M</p></a></div>
+							<div class="col-6 col-md-4 item"><a alt="3"> 
+									<h3>Grand Light Shophouse</h3>
+									<p>6x19.5M</p></a></div>
+							<div class="col-6 col-md-4 item"><a alt="4"> 
+									<h3>Deluxe Green House</h3>
+									<p>6x19.5M</p></a></div>
+							<div class="col-6 col-md-4 item"><a alt="5"> 
+									<h3>Deluxe Green House</h3>
+									<p>7x19.5M</p></a></div>
+							<div class="col-6 col-md-4 item"><a alt="6"> 
+									<h3>Deluxe Green House</h3>
+									<p>8x19.5M</p></a></div>
+						</div>
+					</div>
+					<div class="d-none">
+						<div class="v7-popup" id="v7-popup-1">
+							<p>1</p><a class="btn-viewmore" data-src="#v7-popup-d-1">Xem thêm</a>
+						</div>
+						<div class="v7-popup" id="v7-popup-2">
+							<p>2</p><a class="btn-viewmore" data-src="#v7-popup-d-2">Xem thêm</a>
+						</div>
+						<div class="v7-popup" id="v7-popup-3">
+							<p>3</p><a class="btn-viewmore" data-src="#v7-popup-d-3">Xem thêm</a>
+						</div>
+						<div class="v7-popup" id="v7-popup-4">
+							<p>4</p><a class="btn-viewmore" data-src="#v7-popup-d-4">Xem thêm</a>
+						</div>
+						<div class="v7-popup" id="v7-popup-5">
+							<p>5</p><a class="btn-viewmore" data-src="#v7-popup-d-5">Xem thêm</a>
+						</div>
+						<div class="v7-popup" id="v7-popup-6">
+							<p>6</p><a class="btn-viewmore" data-src="#v7-popup-d-6">Xem thêm</a>
+						</div>
+						<div class="v7-popup v7-popup-d" id="v7-popup-d-1">
+							<p>1</p>
+						</div>
+						<div class="v7-popup v7-popup-d" id="v7-popup-d-2">
+							<p>2</p>
+						</div>
+						<div class="v7-popup v7-popup-d" id="v7-popup-d-3">
+							<p>3</p>
+						</div>
+						<div class="v7-popup v7-popup-d" id="v7-popup-d-4">
+							<p>4</p>
+						</div>
+						<div class="v7-popup v7-popup-d" id="v7-popup-d-5">
+							<p>5</p>
+						</div>
+						<div class="v7-popup v7-popup-d" id="v7-popup-d-6">
+							<p>6</p>
 						</div>
 					</div>
 				</div>

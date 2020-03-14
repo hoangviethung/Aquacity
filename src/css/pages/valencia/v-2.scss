@@ -9,13 +9,14 @@
 		position: relative;
 	}
 
-	.text {
+	.content {
 		padding: 15px 10px 30px 10px;
 		text-align: center;
 
 		h2 {
 			color: #07414c;
-			font-size: 28px;
+			font-size: 22px;
+			line-height: 1.2;
 
 			br {
 				display: none;
@@ -23,8 +24,14 @@
 		}
 
 		.utilities-list {
-			padding: 10px 0;
+			padding: 10px;
 			justify-content: center;
+			.text.active{
+				cursor: pointer;
+				p{
+					color: #e8de8b;
+				}
+			}
 		}
 
 		p {
@@ -50,7 +57,7 @@
 
 			h2 {
 				color: white;
-				font-size: 40px;
+				font-size: 32px;
 
 				br {
 					display: inline;
@@ -67,7 +74,7 @@
 			left: 115px;
 
 			h2 {
-				font-size: 50px;
+				font-size: 42px;
 			}
 
 			p {
@@ -80,7 +87,7 @@
 			left: 125px;
 
 			h2 {
-				font-size: 60px;
+				font-size: 50px;
 			}
 
 			p {

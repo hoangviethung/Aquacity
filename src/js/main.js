@@ -59,6 +59,7 @@ const fullpageInit = () => {
 			});
 			customFancybox(fullpage);
 			customFancybox2(fullpage);
+			valenciaPopup(fullpage);
 			document.querySelector('#widget-left .go-first').addEventListener('click', e => {
 				e.preventDefault();
 
@@ -821,6 +822,64 @@ const setBackgroundValenciaContact = () => {
 	}
 }
 
+
+const valenciaPopup = param => {
+	$('#valenciaMap_7 area, #valencia-7 .mobile .item a').on('click', function(e) {
+		e.preventDefault();
+		const index = Number($(this).attr('alt'));
+		const src = `#v7-popup-${index}`
+		$.fancybox.open({
+			src: src,
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+				animationDuration: 800,
+				smallBtn: "auto",
+				touch: false,
+				animationEffect: 'zoom-in-out',
+				beforeLoad: function() {
+					if (param) {
+						param.canBeScrolled = false;
+					}
+				},
+				afterClose: function() {
+					if (param) {
+						param.canBeScrolled = true;
+					}
+				}
+			}
+		})
+	})
+
+	$('.v7-popup .btn-viewmore').on('click', function() {
+		const src = $(this).attr('data-src');
+		$.fancybox.open({
+			src: src,
+			type: 'inline',
+			opts: {
+				hash: false,
+				closeExisting: true,
+				animationDuration: 800,
+				smallBtn: "auto",
+				touch: false,
+				animationEffect: 'zoom-in-out',
+				beforeLoad: function() {
+					if (param) {
+						param.canBeScrolled = false;
+					}
+				},
+				afterClose: function() {
+					if (param) {
+						param.canBeScrolled = true;
+					}
+				}
+			}
+		})
+	})
+}
+
+
 // ==> Call functions here
 document.addEventListener('DOMContentLoaded', () => {
 	// GGMapInit();
@@ -859,6 +918,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (window.innerWidth < 1025) {
 		customFancybox();
 		customFancybox2();
+		valenciaPopup();
 	}
 	if (window.innerWidth >= 1025) {
 		ripple1();

@@ -69,6 +69,7 @@
 
 		@media (max-width: 1024px) {
 			background: transparent;
+			padding: 10px;
 
 			p:not(.title-text) {
 				padding: 0 0;
@@ -188,8 +189,8 @@
 			left: 50%;
 			transform: translateX(-50%);
 			height: 40px;
-			padding: 0 30px;
-			font-size: 18px;
+			padding: 0 10px;
+			font-size: 16px;
 			z-index: 2;
 		}
 
@@ -222,7 +223,7 @@
 		.title {
 
 			p:not(.title-text) {
-				font-size: 22px;
+				font-size: 18px;
 
 				span {
 					display: block;

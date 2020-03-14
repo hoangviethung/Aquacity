@@ -91,6 +91,7 @@
 				@media (min-width: 768px) {
 					font-size: 32px;
 				}
+
 				@media (min-width: 1025px) {
 					font-weight: 700;
 				}
@@ -107,6 +108,20 @@
 
 		@media (min-width: 1025px) {
 			min-width: 400px;
+		}
+	}
+
+	.fronts-list {
+		.item {
+			margin-top: 20px;
+
+			a {
+				display: block;
+				background: #07414c;
+				padding: 10px;
+				color: white;
+				height: 100%;
+			}
 		}
 	}
 
