@@ -162,3 +162,219 @@
 		padding: 30px 0;
 	}
 }
+
+.popup-fronts-valencia {
+	width: 100%;
+	min-height: 100%;
+	padding: 0 0 40px 0;
+	background-color: #ffffff;
+
+	&::-webkit-scrollbar {
+		background: #cfcfcf;
+		width: 5px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background: #003b28;
+	}
+
+	.fancybox-close-small {
+		right: 15px;
+		padding: 0;
+		border: 0;
+
+		svg {
+			path {
+				stroke-width: 1;
+				stroke: #4c8343;
+			}
+		}
+
+		@media (max-width: 1024px) {
+			top: 15px;
+		}
+	}
+
+	.logo {
+		position: absolute;
+		height: 70px;
+		top: 15px;
+
+		img {
+			height: 100%;
+		}
+
+		@media (max-width: 1024px) {
+			height: 50px;
+		}
+	}
+
+	>.container {
+		padding-top: 110px;
+		height: 100%;
+
+		@media (max-width: 1609.98px) and (min-width: 1025px) {
+			padding: 80px 50px 0 50px;
+		}
+
+		@media (max-width: 1024px) {
+			padding-top: 80px;
+		}
+
+		.row {
+			height: 100%;
+			align-items: center;
+		}
+
+		.img {
+			max-width: 1000px;
+			margin: 0 auto;
+		}
+	}
+
+	&.style-1 {
+		.info {
+			margin-left: 50px;
+
+			h2 {
+				font-size: 25px;
+				color: #2B4C47;
+				line-height: 1.2;
+				background-image: url(../assets/bg_btn_discover.png);
+				background-repeat: no-repeat;
+				background-size: 100% 100%;
+				padding: 8.5px 60px 13px 20px;
+			}
+
+			.note {
+				font-size: 11px;
+				display: block;
+			}
+
+			.list-info {
+				color: #2B4C47;
+				list-style-type: none;
+				padding-left: 0;
+
+				.item-info {
+					padding: 20px 0;
+					border-bottom: 1px solid #D6BB76;
+
+					&.group-1 {
+						.flex-box {
+							display: flex;
+							font-size: 18px;
+
+							p {
+								&:last-child {
+									font-weight: 700;
+									margin-left: 6px;
+									padding-left: 6px;
+									border-left: 1px solid #2b4c47;
+								}
+							}
+						}
+
+						h4 {
+							font-size: 24px;
+							font-weight: 700;
+						}
+					}
+
+					&.group-2 {
+						.box-content {
+							margin-bottom: 15px;
+
+							h3 {
+								font-size: 18px;
+								font-weight: 700;
+							}
+
+							p {
+								font-style: italic;
+								font-size: 14px;
+							}
+
+							h4 {
+								font-size: 18px;
+							}
+						}
+					}
+
+					&:last-child {
+						padding: 20px 0 8px 0;
+						border-bottom: 0;
+					}
+				}
+			}
+
+			.btn-viewmore {
+				margin-top: 63px;
+				height: 26px;
+				padding: 0 18px 0 12px;
+				background: #07414C;
+				font-size: 14px;
+				color: white;
+				border-radius: 17px;
+				cursor: pointer;
+			}
+
+			@media (max-width: 1439.98px) {
+				margin-left: 0;
+			}
+
+			@media (max-width: 1609.98px) {
+				h2 {
+					font-size: 32px;
+					color: #4c8343;
+					line-height: 1.2;
+				}
+			}
+
+			@media (max-width: 1024px) {
+				h2 {
+					font-size: 25px;
+				}
+
+				.btn-viewmore {
+					height: 40px;
+					font-size: 24px;
+					padding: 0 30px;
+					margin-top: 10px;
+				}
+			}
+		}
+
+		.img {
+			position: relative;
+			padding-top: 60px;
+			padding-bottom: 88px;
+
+			img {
+				width: 100%;
+			}
+
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 60px;
+				background: url(../assets/valencia/before-img-popup.png);
+				background-size: cover;
+			}
+
+			&:before {
+				content: '';
+				position: absolute;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				height: 88px;
+				background: url(../assets/valencia/after-img-popup.png);
+				background-size: cover;
+			}
+		}
+	}
+}

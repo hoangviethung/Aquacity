@@ -7,6 +7,8 @@
 					br
 					span.tagline
 					span.sub Master plan
+				//- a(data-fancybox data-src="#popup-fronts-1") Popup 1
+				//- a(data-fancybox data-src="#popup-fronts-2") Popup 2
 		.col-lg-8.col-plan
 			.imgMapCanvas(data-canvas="popup")
 				.map-canvas
@@ -68,7 +70,6 @@
 					canvas
 				.map-image
 					img(src="./assets/valencia/v_7.jpg", usemap="#valenciaMap_7")
-	
 	.container.mobile
 		.row.fronts-list
 			.col-6.col-md-4.item
@@ -96,33 +97,267 @@
 					h3 Deluxe Green House
 					p 8x19.5M
 	.d-none
-		.v7-popup#v7-popup-1
-			p 1
-			a.btn-viewmore(data-src='#v7-popup-d-1') Xem thêm
-		.v7-popup#v7-popup-2
-			p 2
-			a.btn-viewmore(data-src='#v7-popup-d-2') Xem thêm
-		.v7-popup#v7-popup-3
-			p 3
-			a.btn-viewmore(data-src='#v7-popup-d-3') Xem thêm
-		.v7-popup#v7-popup-4
-			p 4
-			a.btn-viewmore(data-src='#v7-popup-d-4') Xem thêm
-		.v7-popup#v7-popup-5
-			p 5
-			a.btn-viewmore(data-src='#v7-popup-d-5') Xem thêm
-		.v7-popup#v7-popup-6
-			p 6
-			a.btn-viewmore(data-src='#v7-popup-d-6') Xem thêm
-		.v7-popup.v7-popup-d#v7-popup-d-1
-			p 1
-		.v7-popup.v7-popup-d#v7-popup-d-2
-			p 2
-		.v7-popup.v7-popup-d#v7-popup-d-3
-			p 3
-		.v7-popup.v7-popup-d#v7-popup-d-4
-			p 4
-		.v7-popup.v7-popup-d#v7-popup-d-5
-			p 5
-		.v7-popup.v7-popup-d#v7-popup-d-6
-			p 6
+		.v7-popup#v7-popup-1.popup-fronts-valencia.style-1
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-7
+						.img
+							img.ofcv(src="./assets/valencia/v_7-img-grand-light.jpg", alt="")
+					.col-lg-5
+						.info
+							h2 Grand River View Villa
+							//- ul.list-info
+							//- 	li.item-info.group-1
+							//- 		.flex-box
+							//- 			p Z-T1-V1A
+							//- 			p (Type A)
+							//- 		h4 6 x 19.5 (m)
+							//- 	li.item-info.group-2
+							//- 		.box-content
+							//- 			h3 DIỆN TÍCH KHU ĐẤT
+							//- 			p Site area
+							//- 			h4 117 m
+							//- 				sup 2
+							//- 		.box-content
+							//- 			h3 DIỆN TÍCH KHU ĐẤT
+							//- 			p Gross ﬂoor area (GFA)
+							//- 			h4 222.63 m
+							//- 				sup 2
+							//- i.note (*) Không bao gồm sân thượng và ô trống cầu thang
+							//- a.btn.btn-viewmore(data-src='#v7-popup-d-1') Chi tiết
+		.v7-popup#v7-popup-2.popup-fronts-valencia.style-1
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-7
+						.img
+							img.ofcv(src="./assets/valencia/v_7-img-grand-light.jpg", alt="")
+					.col-lg-5
+						.info
+							h2 Premium Green Villa
+							//- ul.list-info
+							//- 	li.item-info.group-1
+							//- 		.flex-box
+							//- 			p Z-T1-V1A
+							//- 			p (Type A)
+							//- 		h4 6 x 19.5 (m)
+							//- 	li.item-info.group-2
+							//- 		.box-content
+							//- 			h3 DIỆN TÍCH KHU ĐẤT
+							//- 			p Site area
+							//- 			h4 117 m
+							//- 				sup 2
+							//- 		.box-content
+							//- 			h3 DIỆN TÍCH KHU ĐẤT
+							//- 			p Gross ﬂoor area (GFA)
+							//- 			h4 222.63 m
+							//- 				sup 2
+							//- i.note (*) Không bao gồm sân thượng và ô trống cầu thang
+							//- a.btn.btn-viewmore(data-src='#v7-popup-d-2') Chi tiết
+		.v7-popup#v7-popup-3.popup-fronts-valencia.style-1
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-7
+						.img
+							img.ofcv(src="./assets/valencia/v_7-img-grand-light.jpg", alt="")
+					.col-lg-5
+						.info
+							h2 Grand Light Shophouse
+							ul.list-info
+								li.item-info.group-1
+									.flex-box
+										p Z-T1-V1A 
+										p (Type A)
+									h4 6 x 19.5 (m)
+								li.item-info.group-2
+									.box-content
+										h3 DIỆN TÍCH KHU ĐẤT
+										p Site area
+										h4 117 m
+											sup 2
+									.box-content
+										h3 TỔNG DIỆN TÍCH SÀN SỬ DỤNG
+										p Gross ﬂoor area (GFA)
+										h4 222.63 m
+											sup 2
+							i.note (*) Không bao gồm sân thượng và ô trống cầu thang
+							a.btn.btn-viewmore(data-src='#v7-popup-d-3') Chi tiết
+		.v7-popup#v7-popup-4.popup-fronts-valencia.style-1
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-7
+						.img
+							img.ofcv(src="./assets/valencia/v_7-img-deluxe.jpg", alt="")
+					.col-lg-5
+						.info
+							h2 DELUXE GREEN HOUSE
+							ul.list-info
+								li.item-info.group-1
+									.flex-box
+										p SH-T1
+										p (Type A)
+									h4 6 x 19.5 (m)
+								li.item-info.group-2
+									.box-content
+										h3 DIỆN TÍCH KHU ĐẤT
+										p Site area
+										h4 117 m
+											sup 2
+									.box-content
+										h3 TỔNG DIỆN TÍCH SÀN SỬ DỤNG
+										p Gross ﬂoor area (GFA)
+										h4 250.3 m
+											sup 2
+							i.note (*) Không bao gồm sân thượng và ô trống cầu thang
+							a.btn.btn-viewmore(data-src='#v7-popup-d-4') Chi tiết
+		.v7-popup#v7-popup-5.popup-fronts-valencia.style-1
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-7
+						.img
+							img.ofcv(src="./assets/valencia/v_7-img-deluxe.jpg", alt="")
+					.col-lg-5
+						.info
+							h2 DELUXE GREEN HOUSE
+							ul.list-info
+								li.item-info.group-1
+									.flex-box
+										p Z-T1-V1A
+										p (Type A)
+									h4 6 x 19.5 (m)
+								li.item-info.group-2
+									.box-content
+										h3 DIỆN TÍCH KHU ĐẤT
+										p Site area
+										h4 117 m
+											sup 2
+									.box-content
+										h3 DIỆN TÍCH KHU ĐẤT
+										p Gross ﬂoor area (GFA)
+										h4 222.63 m
+											sup 2
+							i.note (*) Không bao gồm sân thượng và ô trống cầu thang
+							//- a.btn.btn-viewmore(data-src='#v7-popup-d-5') Chi tiết
+		.v7-popup#v7-popup-6.popup-fronts-valencia.style-1
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-7
+						.img
+							img.ofcv(src="./assets/valencia/v_7-img-deluxe.jpg", alt="")
+					.col-lg-5
+						.info
+							h2 DELUXE GREEN HOUSE
+							ul.list-info
+								li.item-info.group-1
+									.flex-box
+										p Z-T1-V1A
+										p (Type A)
+									h4 6 x 19.5 (m)
+								li.item-info.group-2
+									.box-content
+										h3 DIỆN TÍCH KHU ĐẤT
+										p Site area
+										h4 117 m
+											sup 2
+									.box-content
+										h3 DIỆN TÍCH KHU ĐẤT
+										p Gross ﬂoor area (GFA)
+										h4 222.63 m
+											sup 2
+							i.note (*) Không bao gồm sân thượng và ô trống cầu thang
+							//- a.btn.btn-viewmore(data-src='#v7-popup-d-6') Chi tiết
+		.v7-popup.v7-popup-d#v7-popup-d-1.popup-fronts-valencia
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-6
+						.img
+							img.ofcv(src="./assets/valencia/item-popup-2-01.png", alt="alt")
+					.col-lg-6
+						.img
+							img.ofcv(src="./assets/valencia/item-popup-2-02.png", alt="alt")
+		.v7-popup.v7-popup-d#v7-popup-d-2.popup-fronts-valencia
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-lg-6
+						.img
+							img.ofcv(src="./assets/valencia/item-popup-2-01.png", alt="alt")
+					.col-lg-6
+						.img
+							img.ofcv(src="./assets/valencia/item-popup-2-02.png", alt="alt")
+		.v7-popup.v7-popup-d#v7-popup-d-3.popup-fronts-valencia
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-12
+						.img
+							img.ofcv(src="./assets/valencia/v_7-grand-light.jpg", alt="alt")
+						.img
+							img.ofcv(src="./assets/valencia/v_7-grand-light-a.jpg", alt="alt")
+						.img
+							img.ofcv(src="./assets/valencia/v_7-grand-light-b.jpg", alt="alt")
+					//- .col-lg-6
+					//- 	.img
+					//- 		img.ofcv(src="./assets/valencia/item-popup-2-01.png", alt="alt")
+					//- .col-lg-6
+					//- 	.img
+					//- 		img.ofcv(src="./assets/valencia/item-popup-2-02.png", alt="alt")
+		.v7-popup.v7-popup-d#v7-popup-d-4.popup-fronts-valencia
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-12
+						.img
+							img.ofcv(src="./assets/valencia/v_7-deluxe-a.jpg", alt="alt")
+						.img
+							img.ofcv(src="./assets/valencia/v_7-deluxe-b.jpg", alt="alt")
+					//- .col-lg-6
+					//- 	.img
+					//- 		img.ofcv(src="./assets/valencia/item-popup-2-02.png", alt="alt")
+		.v7-popup.v7-popup-d#v7-popup-d-5.popup-fronts-valencia
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+					.col-12
+						.img
+							img.ofcv(src="./assets/valencia/v_7-deluxe-a.jpg", alt="alt")
+						.img
+							img.ofcv(src="./assets/valencia/v_7-deluxe-b.jpg", alt="alt")
+		.v7-popup.v7-popup-d#v7-popup-d-6.popup-fronts-valencia
+			.container
+				.logo
+					a(href="/", title="title")
+						img(src="./assets/logo.png", alt="")
+				.row
+					.col-12
+						.img
+							img.ofcv(src="./assets/valencia/v_7-deluxe-a.jpg", alt="alt")
+						.img
+							img.ofcv(src="./assets/valencia/v_7-deluxe-b.jpg", alt="alt")
