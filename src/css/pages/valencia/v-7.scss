@@ -57,6 +57,7 @@
 			margin: 0 auto;
 			padding-left: 30px;
 			padding-right: 30px;
+			text-align: right;
 
 			.tagline {
 				height: 2px;
@@ -78,6 +79,7 @@
 				font-size: 19px;
 				font-weight: 400;
 				font-style: italic;
+				text-transform: uppercase;
 
 				@media (min-width: 1200px) {
 					font-size: 24px;
