@@ -4,6 +4,34 @@
 	display: none !important;
 }
 
+.tab-container {
+	.list-tab {
+		.item {
+			cursor: pointer;
+		}
+	}
+
+	.tab-content {
+		margin-top: 35px;
+
+		.content {
+			display: none;
+			opacity: 0;
+			transition: all .3s cubic-bezier(.2, .5, .5, .8);
+
+			&.show {
+				opacity: 1;
+			}
+		}
+	}
+
+	@media (max-width: 1024.98px) {
+		.tab-content {
+			margin-top: 25px;
+		}
+	}
+}
+
 .clearfix:after {
 	clear: both;
 	display: table;

@@ -118,29 +118,28 @@
 				line-height: 1.1;
 				color: #ffffff;
 				font-weight: 700;
-				margin-bottom: 10px;
 
 				img {
 					max-height: 50px;
 				}
 
 				@media (min-width: 1025px) {
-					font-size: 45px;
+					font-size: 32px;
 				}
 
 				@media (min-width: 1460px) {
-					font-size: 52px;
+					font-size: 38px;
 
 					img {
-						max-height: 63px;
+						max-height: 55px;
 					}
 				}
 
 				@media (min-width: 1610px) {
-					font-size: 60px;
+					font-size: 44px;
 
 					img {
-						max-height: 70px;
+						max-height: 62px;
 					}
 				}
 			}
@@ -148,16 +147,39 @@
 			.description-box {
 				margin-bottom: 10px;
 				width: 100%;
-				background: linear-gradient(90deg, rgba(7, 65, 76, 1) 0%, rgba(7, 65, 76, 1) 45%, rgba(7, 65, 76, 0.7) 60%, rgba(7, 65, 76, 0) 75%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#07414c", endColorstr="#07414c", GradientType=1);
+				// background: linear-gradient(90deg, rgba(7, 65, 76, 1) 0%, rgba(7, 65, 76, 1) 45%, rgba(7, 65, 76, 0.7) 60%, rgba(7, 65, 76, 0) 75%);
+				// filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#07414c", endColorstr="#07414c", GradientType=1);
+				background-color: #07414c;
+
+				.row {
+					align-items: center;
+					justify-content: center;
+
+					.col-sm-12 {
+						text-align: center;
+					}
+
+					@media (min-width: 576px) {
+						.col-sm {
+							padding: 0 25px;
+
+							+.col-sm {
+								border-left: 1px solid white;
+							}
+
+							&:nth-child(odd) {
+								text-align: right;
+							}
+
+							&:nth-child(even) {
+								text-align: left;
+							}
+						}
+					}
+				}
 
 				@media (min-width: 1025px) {
 					padding: 5px 10px;
-				}
-
-				@media (min-width: 1610px) {
-					padding: 15px 40px;
-
 				}
 
 				p {
@@ -165,11 +187,11 @@
 					color: #ffffff;
 
 					@media (min-width: 1025px) {
-						font-size: 20px;
+						font-size: 18px;
 					}
 
 					@media (min-width: 1610px) {
-						font-size: 25px;
+						font-size: 23px;
 					}
 				}
 			}

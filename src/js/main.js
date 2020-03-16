@@ -637,8 +637,9 @@ const PhanKhuSlider = () => {
 		slidesPerView: 1,
 		spaceBetween: 15,
 		loop: true,
-		observeParents: true,
 		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		speed: 1000,
 		navigation: {
 			prevEl: '.area-content .swiper-prev',
@@ -663,6 +664,9 @@ const matBangSlider = () => {
 		// fadeEffect: {
 		// 	crossFade: true,
 		// },
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		navigation: {
 			prevEl: '#sec-2 .swiper-prev',
 			nextEl: '#sec-2 .swiper-next'
@@ -680,6 +684,9 @@ const tienichSlider = () => {
 		// fadeEffect: {
 		// 	crossFade: true,
 		// },
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		navigation: {
 			prevEl: '#sec-5 .swiper-prev',
 			nextEl: '#sec-5 .swiper-next'
@@ -688,15 +695,17 @@ const tienichSlider = () => {
 }
 
 const valenciaSlider1 = () => {
-	return new Swiper('#valencia-4 .swiper-container', {
+	const slider = new Swiper('#valencia-4 .slider-wrapper-1 .swiper-container', {
 		slidesPerView: 1,
 		centeredSlides: true,
 		loop: true,
 		speed: 900,
-		loopAdditionalSlides: 2,
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		navigation: {
-			prevEl: '#valencia-4 .swiper-prev',
-			nextEl: '#valencia-4 .swiper-next',
+			prevEl: '#valencia-4 .slider-wrapper-1 .swiper-prev',
+			nextEl: '#valencia-4 .slider-wrapper-1 .swiper-next',
 		},
 		breakpoints: {
 			1025: {
@@ -707,19 +716,27 @@ const valenciaSlider1 = () => {
 				slidesPerView: 2,
 				spaceBetween: -250,
 			}
+		},
+		on: {
+			observerUpdate: function() {
+				slider.update();
+			}
 		}
 	})
 }
+
 const valenciaSlider2 = () => {
-	return new Swiper('#valencia-5 .swiper-container', {
+	const slider = new Swiper('#valencia-4 .slider-wrapper-2 .swiper-container', {
 		slidesPerView: 1,
 		centeredSlides: true,
 		loop: true,
 		speed: 900,
-		loopAdditionalSlides: 2,
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		navigation: {
-			prevEl: '#valencia-5 .swiper-prev',
-			nextEl: '#valencia-5 .swiper-next',
+			prevEl: '#valencia-4 .slider-wrapper-2 .swiper-prev',
+			nextEl: '#valencia-4 .slider-wrapper-2 .swiper-next',
 		},
 		breakpoints: {
 			1025: {
@@ -730,19 +747,27 @@ const valenciaSlider2 = () => {
 				slidesPerView: 2,
 				spaceBetween: -250,
 			}
+		},
+		on: {
+			observerUpdate: function() {
+				slider.update();
+			}
 		}
 	})
 }
+
 const valenciaSlider3 = () => {
-	return new Swiper('#valencia-6 .swiper-container', {
+	const slider = new Swiper('#valencia-4 .slider-wrapper-3 .swiper-container', {
 		slidesPerView: 1,
 		centeredSlides: true,
 		loop: true,
 		speed: 900,
-		loopAdditionalSlides: 2,
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		navigation: {
-			prevEl: '#valencia-6 .swiper-prev',
-			nextEl: '#valencia-6 .swiper-next',
+			prevEl: '#valencia-4 .slider-wrapper-3 .swiper-prev',
+			nextEl: '#valencia-4 .slider-wrapper-3 .swiper-next',
 		},
 		breakpoints: {
 			1025: {
@@ -753,15 +778,28 @@ const valenciaSlider3 = () => {
 				slidesPerView: 2,
 				spaceBetween: -250,
 			}
+		},
+		on: {
+			observerUpdate: function() {
+				slider.update();
+			}
 		}
 	})
 }
+
+const valenciaTabSlider = () => {
+	const tab = new Tab('.tab-container')
+}
+
 const valenciaSlider4 = () => {
 	return new Swiper('#valencia-8 .swiper-container', {
 		spaceBetween: -20,
 		slidesPerView: 1,
 		loop: true,
 		simulateTouch: false,
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		speed: 900,
 		breakpoints: {
 			1025: {
@@ -784,6 +822,7 @@ const valenciaSlider4 = () => {
 		}
 	})
 }
+
 const valenciaSlider5 = () => {
 	return new Swiper('#valencia-9 .swiper-container', {
 		spaceBetween: -20,
@@ -791,6 +830,9 @@ const valenciaSlider5 = () => {
 		loop: true,
 		simulateTouch: false,
 		speed: 900,
+		observer: true,
+		observeParents: true,
+		observeSlideChildren: true,
 		breakpoints: {
 			1025: {
 				slidesPerView: 1.7,
@@ -821,7 +863,6 @@ const setBackgroundValenciaContact = () => {
 		$('body.valencia-page #sec-9>.img img').attr('src', '/Content/resources/assets/valencia/v_10-background.png')
 	}
 }
-
 
 const valenciaPopup = param => {
 	$('#valenciaMap_7 area, #valencia-7 .mobile .item a').on('click', function(e) {
@@ -909,11 +950,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	sliderSection7();
 	tienichSlider();
 	matBangSlider();
-	valenciaSlider1();
-	valenciaSlider2();
-	valenciaSlider3();
-	valenciaSlider4();
-	valenciaSlider5();
+	valenciaTabSlider();
 	setBackgroundValenciaContact(0);
 	if (window.innerWidth < 1025) {
 		customFancybox();
@@ -932,12 +969,18 @@ document.addEventListener('DOMContentLoaded', () => {
 		popupFirstTime();
 	});
 	if (!Array.from(document.querySelector('body').classList).includes('index-page')) {
-		document.querySelector('body').classList.add('show-page');
-		popupFirstTime();
 		new WOW({
 			offset: 150,
 		}).init();
+		document.querySelector('body').classList.add('show-page');
+		popupFirstTime();
 	}
+
+	valenciaSlider1();
+	valenciaSlider2();
+	valenciaSlider3();
+	valenciaSlider4();
+	valenciaSlider5();
 
 	if (document.getElementById('player')) {
 		const player = new Plyr('#player', {

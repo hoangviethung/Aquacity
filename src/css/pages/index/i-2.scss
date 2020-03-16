@@ -147,7 +147,7 @@
 			z-index: 1000;
 			opacity: 0;
 			transform: translateY(100%);
-			height: 75px;
+			height: 115px;
 			pointer-events: none;
 			display: flex;
 			align-items: flex-start;
@@ -155,10 +155,6 @@
 			img {
 				width: 100%;
 				margin-top: -75px;
-			}
-
-			@media (min-width: 1440px) {
-				height: 175px;
 			}
 		}
 
@@ -203,10 +199,6 @@
 					padding: 0 40px;
 					transform: translateY(100%);
 				}
-
-				@media (min-width: 1440px) {
-					bottom: 30px;
-				}
 			}
 		}
 
@@ -235,6 +227,24 @@
 					opacity: 1;
 				}
 			}
+		}
+	}
+
+	@media (min-width: 1440px) {
+		.cloud {
+			height: 150px
+		}
+
+		.content {
+			.text {
+				bottom: 25px
+			}
+		}
+	}
+
+	@media (min-width: 1610px) {
+		.cloud {
+			height: 175px
 		}
 	}
 }

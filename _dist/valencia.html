@@ -10,6 +10,11 @@
 		<link rel="stylesheet" href="./css/main.min.css">
 	</head>
 	<body>
+		<div id="loading">
+			<div class="logo-loader"><img class="svg-image" data-src="./assets/logo.svg" alt=""></div>
+			<div class="progstat-wrapper d-none">Loading:<span id="progstat">0</span>%</div>
+			<div id="progress"></div>
+		</div>
 		<header>
 			<div class="container">
 				<div class="row no-gutters">
@@ -30,11 +35,11 @@
 						<div class="background"><img src="./assets/valencia/v_1-mobile.jpg" alt=""></div>
 						<div class="text">
 							<h2><img src="./assets/valencia/valencia.svg" alt=""></h2><span class="tagline"><img src="./assets/valencia/tagline_1.svg" alt=""></span>
-							<p>"Cảm hứng từ miền đất của những  kiến trúc tuyệt mỹ với nắng ấm chan hòa, những sự kiện sôi động và những lễ hội rực rỡ sắc màu miền Địa Trung Hải"</p>
+							<p>"Cảm hứng từ Miền đất của những  kiến trúc tuyệt mỹ với nắng ấm chan hòa, những sự kiện sôi động và những lễ hội rực rỡ sắc màu miền Địa Trung Hải"</p>
 						</div>
 					</div>
 				</div>
-				<div class="section" id="valencia-2" fp-title="Bản đồ">
+				<div class="section" id="valencia-2" fp-title="Mặt bằng">
 					<div class="section-content imagemap-with-list">
 						<div class="background"></div>
 						<div class="imgMapCanvas" data-canvas="label">
@@ -109,7 +114,7 @@
 					<div class="row no-gutters">
 						<div class="col-lg-4 col-title">
 							<div class="block-title">
-								<h2> <span class="main">Mặt bằng tổng thể</span><br><span class="tagline"></span><span class="sub">Master plan</span></h2>
+								<h2> <span class="main">MẶT BẰNG TỔNG THỂ</span><br><span class="tagline"></span><span class="sub">Master plan</span></h2>
 							</div>
 						</div>
 						<div class="col-lg-8 col-plan">
@@ -438,70 +443,71 @@
 						</div>
 					</div>
 				</div>
-				<div class="section" id="valencia-4" fp-title="Kiến trúc">
+				<div class="section" id="valencia-4" fp-title="Kiến trúc - Tiện nghi - Sự kiện">
 					<div class="section-content">
 						<div class="container">
 							<div class="row jc-c">
-								<div class="block-title">
-									<h2> <span>Kiến trúc</span><br><span> <span class="tagline"></span><span>tuyệt mỹ</span></span></h2>
-								</div>
-								<div class="col-lg-9 col-2xl-10">
-									<div class="slider-wrapper">
-										<div class="swiper-prev"><img src="./assets/valencia/arrow_left.png"></div>
-										<div class="swiper-next"><img src="./assets/valencia/arrow_right.png"></div>
-										<div class="swiper-container">
-											<div class="swiper-wrapper">
-												<div class="swiper-slide"><span><img src="./assets/valencia/v_4-1.png"></span></div>
-												<div class="swiper-slide"><span><img src="./assets/valencia/v_4-2.png"></span></div>
-												<div class="swiper-slide"><span><img src="./assets/valencia/v_4-3.png"></span></div>
+								<div class="col-lg-10 col-tab">
+									<div class="tab-container">
+										<div class="list-tab">
+											<div class="item" toggle-for="slider_1"> 
+												<p>KIẾN TRÚC TUYỆT MỸ</p>
+											</div>
+											<div class="item" toggle-for="slider_2"> 
+												<p>TIỆN NGHI & HIỆN ĐẠI</p>
+											</div>
+											<div class="item" toggle-for="slider_3"> 
+												<p>SỰ KIỆN & LỄ HỘI</p>
 											</div>
 										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="section" id="valencia-5" fp-title="Tiện nghi">
-					<div class="section-content">
-						<div class="block-title">
-							<h2> <span>Tiện nghi </span><span class="percent">&</span><br><span> <span class="tagline"></span><span> Hiện đại</span></span></h2>
-						</div>
-						<div class="container">
-							<div class="row">
-								<div class="col-lg-9 col-xl-10">
-									<div class="slider-wrapper">
-										<div class="swiper-prev"><img src="./assets/valencia/arrow_left.png"></div>
-										<div class="swiper-next"><img src="./assets/valencia/arrow_right.png"></div>
-										<div class="swiper-container">
-											<div class="swiper-wrapper">
-												<div class="swiper-slide"><span><img src="./assets/valencia/v_5-1.png"></span></div>
-												<div class="swiper-slide"><span><img src="./assets/valencia/v_5-2.png"></span></div>
-												<div class="swiper-slide"><span><img src="./assets/valencia/v_5-3.png"></span></div>
+										<div class="tab-content">
+											<div class="content" tab-id="slider_1">
+												<div class="slider-wrapper slider-wrapper-1">
+													<div class="swiper-prev"><img src="./assets/valencia/arrow_left.png"></div>
+													<div class="swiper-next"><img src="./assets/valencia/arrow_right.png"></div>
+													<div class="swiper-container">
+														<div class="swiper-wrapper">
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_4-1.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_4-2.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_4-3.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_4-1.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_4-2.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_4-3.png"></span></div>
+														</div>
+													</div>
+												</div>
 											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="section" id="valencia-6" fp-title="Sự kiện">
-					<div class="section-content">
-						<div class="container">
-							<div class="block-title">
-								<h2> <span>Sự kiện </span><span class="percent">&</span><br><span> <span class="tagline"></span><span>lễ hội</span></span></h2>
-							</div>
-							<div class="row">
-								<div class="col-lg-9 col-2xl-10">
-									<div class="slider-wrapper">
-										<div class="swiper-prev"><img src="./assets/valencia/arrow_left.png"></div>
-										<div class="swiper-next"><img src="./assets/valencia/arrow_right.png"></div>
-										<div class="swiper-container">
-											<div class="swiper-wrapper">
-												<div class="swiper-slide"><span><img src="./assets/valencia/v_6-1.png"></span></div>
-												<div class="swiper-slide"><span><img src="./assets/valencia/v_6-2.png"></span></div>
-												<div class="swiper-slide"><span><img src="./assets/valencia/v_6-3.png"></span></div>
+											<div class="content" tab-id="slider_2">
+												<div class="slider-wrapper slider-wrapper-2">
+													<div class="swiper-prev"><img src="./assets/valencia/arrow_left.png"></div>
+													<div class="swiper-next"><img src="./assets/valencia/arrow_right.png"></div>
+													<div class="swiper-container">
+														<div class="swiper-wrapper">
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_5-1.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_5-2.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_5-3.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_5-1.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_5-2.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_5-3.png"></span></div>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="content" tab-id="slider_3">
+												<div class="slider-wrapper slider-wrapper-3">
+													<div class="swiper-prev"><img src="./assets/valencia/arrow_left.png"></div>
+													<div class="swiper-next"><img src="./assets/valencia/arrow_right.png"></div>
+													<div class="swiper-container">
+														<div class="swiper-wrapper">
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_6-1.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_6-2.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_6-3.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_6-1.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_6-2.png"></span></div>
+															<div class="swiper-slide"><span><img src="./assets/valencia/v_6-3.png"></span></div>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
 									</div>
@@ -514,7 +520,7 @@
 					<div class="section-content">
 						<div class="container">
 							<div class="block-title">
-								<h2> <span class="main">Hình ảnh </span><br><span class="tagline"></span><span class="sub">VALENCIA</span></h2>
+								<h2> <span class="main">HÌNH ẢNH</span><br><span class="tagline"></span><span class="sub">VALENCIA</span></h2>
 							</div>
 							<div class="images-slider">
 								<div class="slider-wrapper">
@@ -539,7 +545,7 @@
 					<div class="section-content">
 						<div class="container">
 							<div class="block-title">
-								<h2> <span class="main">Video clip</span><br><span class="tagline"></span><span class="sub">VALENCIA</span></h2>
+								<h2> <span class="main">VIDEO CLIP</span><br><span class="tagline"></span><span class="sub">VALENCIA</span></h2>
 							</div>
 							<div class="images-slider">
 								<div class="slider-wrapper">

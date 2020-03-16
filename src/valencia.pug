@@ -3,7 +3,7 @@ extends _components/_layout/_layout.pug
 block var
 	- let title = 'The Valencia';
 	- let bodyClass = 'valencia-page';
-//- block loading
+block loading
 	#loading
 		.logo-loader
 			img.svg-image(data-src="./assets/logo.svg", alt="")
@@ -20,8 +20,8 @@ block main
 		include _components/valencia/v-3
 		include _components/valencia/v-7
 		include _components/valencia/v-4
-		include _components/valencia/v-5
-		include _components/valencia/v-6
+		//- include _components/valencia/v-5
+		//- include _components/valencia/v-6
 		include _components/valencia/v-8
 		include _components/valencia/v-9
 		include _components/index/i-9
