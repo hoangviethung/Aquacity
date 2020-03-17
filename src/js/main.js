@@ -718,7 +718,7 @@ const valenciaSlider1 = () => {
 			}
 		},
 		on: {
-			observerUpdate: function() {
+			init: function() {
 				slider.update();
 			}
 		}
@@ -749,7 +749,7 @@ const valenciaSlider2 = () => {
 			}
 		},
 		on: {
-			observerUpdate: function() {
+			init: function() {
 				slider.update();
 			}
 		}
@@ -780,7 +780,7 @@ const valenciaSlider3 = () => {
 			}
 		},
 		on: {
-			observerUpdate: function() {
+			init: function() {
 				slider.update();
 			}
 		}
