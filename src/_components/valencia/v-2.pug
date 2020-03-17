@@ -1,7 +1,11 @@
 .section#valencia-2(fp-title="Mặt bằng")
 	.section-content.imagemap-with-list
+		.title-block.mobile
+			h2 PHÂN KHU DỰ ÁN
+				//- br
+				//- | DỰ ÁN
 		.background
-		.imgMapCanvas(data-canvas="label")
+		.imgMapCanvas(data-canvas="label").desktop
 			.map-canvas
 				map(name="imgMap_1", id="imgMap_1")
 					<area shape="poly" coords="845, 275, 797, 312, 871, 325, 906, 332, 924, 332, 941, 330, 955, 327, 964, 323, 980, 317, 991, 317, 1001, 312, 1002, 304, 991, 299, 921, 287" href="/the-suite" alt="1"/>
@@ -12,8 +16,11 @@
 				canvas
 			.map-image
 				img(src="./assets/valencia/v_2.jpg", usemap="#imgMap_1")
+		.mobile
+			.map-image
+				img(src="./assets/valencia/v_2-mobile.jpg")
 		.content
-			.title-block
+			.title-block.desktop
 				h2 PHÂN KHU DỰ ÁN
 					//- br
 					//- | DỰ ÁN

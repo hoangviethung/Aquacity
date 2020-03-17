@@ -118,6 +118,7 @@
 				line-height: 1.1;
 				color: #ffffff;
 				font-weight: 700;
+				white-space: nowrap;
 
 				img {
 					max-height: 50px;
@@ -147,13 +148,14 @@
 			.description-box {
 				margin-bottom: 10px;
 				width: 100%;
-				// background: linear-gradient(90deg, rgba(7, 65, 76, 1) 0%, rgba(7, 65, 76, 1) 45%, rgba(7, 65, 76, 0.7) 60%, rgba(7, 65, 76, 0) 75%);
-				// filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#07414c", endColorstr="#07414c", GradientType=1);
-				background-color: #07414c;
+				display: flex;
+				background: linear-gradient(90deg, rgba(7, 65, 76, 1) 0%, rgba(7, 65, 76, 1) 45%, rgba(7, 65, 76, 0.7) 60%, rgba(7, 65, 76, 0) 75%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#07414c", endColorstr="#07414c", GradientType=1);
+				// background-color: #07414c;
 
 				.row {
 					align-items: center;
-					justify-content: center;
+					justify-content: flex-start;
 
 					.col-sm-12 {
 						text-align: center;
@@ -185,6 +187,7 @@
 				p {
 					text-transform: uppercase;
 					color: #ffffff;
+					white-space: nowrap;
 
 					@media (min-width: 1025px) {
 						font-size: 18px;

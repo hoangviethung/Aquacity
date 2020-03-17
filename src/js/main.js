@@ -2,8 +2,8 @@ import {
 	gsap
 } from "../../bower_components/gsap/esm/index.js";
 import Header from "./lib/Header";
-import Tab from './lib/Tab';
 import Loading from "./lib/loading";
+import Tab from "./lib/tab";
 import FullPage from "./lib/Fullpage";
 import ImageMapCanvas from "./lib/ImageMapCanvas";
 
@@ -694,39 +694,9 @@ const tienichSlider = () => {
 	})
 }
 
-const valenciaSlider1 = () => {
-	const slider = new Swiper('#valencia-4 .slider-wrapper-1 .swiper-container', {
-		slidesPerView: 1,
-		centeredSlides: true,
-		loop: true,
-		speed: 900,
-		observer: true,
-		observeParents: true,
-		observeSlideChildren: true,
-		navigation: {
-			prevEl: '#valencia-4 .slider-wrapper-1 .swiper-prev',
-			nextEl: '#valencia-4 .slider-wrapper-1 .swiper-next',
-		},
-		breakpoints: {
-			1025: {
-				slidesPerView: 2,
-				spaceBetween: -200,
-			},
-			1200: {
-				slidesPerView: 2,
-				spaceBetween: -250,
-			}
-		},
-		on: {
-			init: function() {
-				slider.update();
-			}
-		}
-	})
-}
 
-const valenciaSlider2 = () => {
-	const slider = new Swiper('#valencia-4 .slider-wrapper-2 .swiper-container', {
+const valencia4Slider = () => {
+	return new Swiper("#valencia-4 .slider-append .swiper-container", {
 		slidesPerView: 1,
 		centeredSlides: true,
 		loop: true,
@@ -735,8 +705,8 @@ const valenciaSlider2 = () => {
 		observeParents: true,
 		observeSlideChildren: true,
 		navigation: {
-			prevEl: '#valencia-4 .slider-wrapper-2 .swiper-prev',
-			nextEl: '#valencia-4 .slider-wrapper-2 .swiper-next',
+			prevEl: '#valencia-4 .slider-append .swiper-prev',
+			nextEl: '#valencia-4 .slider-append .swiper-next',
 		},
 		breakpoints: {
 			1025: {
@@ -746,49 +716,23 @@ const valenciaSlider2 = () => {
 			1200: {
 				slidesPerView: 2,
 				spaceBetween: -250,
-			}
-		},
-		on: {
-			init: function() {
-				slider.update();
-			}
-		}
-	})
-}
-
-const valenciaSlider3 = () => {
-	const slider = new Swiper('#valencia-4 .slider-wrapper-3 .swiper-container', {
-		slidesPerView: 1,
-		centeredSlides: true,
-		loop: true,
-		speed: 900,
-		observer: true,
-		observeParents: true,
-		observeSlideChildren: true,
-		navigation: {
-			prevEl: '#valencia-4 .slider-wrapper-3 .swiper-prev',
-			nextEl: '#valencia-4 .slider-wrapper-3 .swiper-next',
-		},
-		breakpoints: {
-			1025: {
-				slidesPerView: 2,
-				spaceBetween: -200,
-			},
-			1200: {
-				slidesPerView: 2,
-				spaceBetween: -250,
-			}
-		},
-		on: {
-			init: function() {
-				slider.update();
 			}
 		}
 	})
 }
 
 const valenciaTabSlider = () => {
-	const tab = new Tab('.tab-container')
+	const sliderAppend = $('#valencia-4 .slider-append');
+	$('#valencia-4 .list-tab .item').each(function() {
+		$(this).on('click', function() {
+			const tabId = $(this).attr('toggle-for');
+			const sliderHTML = $(`#valencia-4 .tab-content [tab-id="${tabId}"]`).html();
+			sliderAppend.html(sliderHTML);
+			valencia4Slider();
+		})
+	})
+
+	$('#valencia-4 .list-tab .item').eq(0).trigger('click');
 }
 
 const valenciaSlider4 = () => {
@@ -975,10 +919,9 @@ document.addEventListener('DOMContentLoaded', () => {
 		document.querySelector('body').classList.add('show-page');
 		popupFirstTime();
 	}
-
-	valenciaSlider1();
-	valenciaSlider2();
-	valenciaSlider3();
+	// valenciaSlider1();
+	// valenciaSlider2();
+	// valenciaSlider3();
 	valenciaSlider4();
 	valenciaSlider5();
 

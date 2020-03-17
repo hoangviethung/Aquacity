@@ -325,7 +325,8 @@
 			align-items: center;
 			height: 100%;
 
-			.content {
+			.content,
+			.slider-append {
 				-ms-flex: 0 0 100%;
 				-webkit-box-flex: 0;
 				flex: 0 0 100%;

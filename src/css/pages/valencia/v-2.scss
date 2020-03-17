@@ -9,12 +9,14 @@
 		position: relative;
 	}
 
-	.content {
-		padding: 15px 10px 30px 10px;
-		text-align: center;
+	.title-block {
+		&.mobile {
+			margin-bottom: 10px;
+			text-align: center;
+		}
 
 		h2 {
-			color: #07414c;
+			color: map-get($mau, main);
 			font-size: 22px;
 			line-height: 1.2;
 
@@ -23,38 +25,7 @@
 			}
 		}
 
-		.utilities-list {
-			padding: 10px;
-			justify-content: center;
-			.text.active{
-				cursor: pointer;
-				p{
-					color: #e8de8b;
-				}
-			}
-		}
-
-		p {
-			white-space: nowrap;
-			color: #07414c;
-			font-size: 13px;
-			font-style: italic;
-		}
-
 		@media (min-width: 1025px) {
-			background-color: transparent;
-			text-align: left;
-			position: absolute;
-			bottom: 40px;
-			left: 90px;
-			z-index: 1001;
-			padding: 0;
-
-			.utilities-list {
-				background-color: rgba(#2B4C47, .8);
-				justify-content: flex-start;
-			}
-
 			h2 {
 				color: white;
 				font-size: 32px;
@@ -63,19 +34,66 @@
 					display: inline;
 				}
 			}
+		}
 
-			p {
-				color: white;
+		@media (min-width: 1200px) {
+			h2 {
+				font-size: 42px;
+			}
+		}
+
+		@media (min-width: 1440px) {
+			h2 {
+				font-size: 50px;
+			}
+		}
+	}
+
+	.content {
+		padding: 0 10px;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 100;
+
+		.utilities-list {
+			padding: 10px 0;
+			justify-content: center;
+
+			.text.active {
+				cursor: pointer;
+
+				p {
+					color: #e8de8b;
+				}
+			}
+		}
+
+		p {
+			white-space: nowrap;
+			color: white;
+			font-size: 13px;
+			font-style: italic;
+		}
+
+		@media (min-width: 1025px) {
+			background-color: transparent;
+			padding: 15px 10px 30px 10px;
+			bottom: 40px;
+			left: 90px;
+			z-index: 1001;
+			padding: 0;
+
+			.utilities-list {
+				padding: 10px;
+				background-color: rgba(#2B4C47, .8);
+				justify-content: flex-start;
 			}
 		}
 
 		@media (min-width: 1200px) {
 			bottom: 55px;
 			left: 115px;
-
-			h2 {
-				font-size: 42px;
-			}
 
 			p {
 				font-size: 15px;
@@ -85,10 +103,6 @@
 		@media (min-width: 1440px) {
 			bottom: 70px;
 			left: 125px;
-
-			h2 {
-				font-size: 50px;
-			}
 
 			p {
 				font-size: 16px;
